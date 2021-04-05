@@ -1,0 +1,40 @@
+# Branching Model
+
+DX@Scale follows a slightly modified version of Scaled Truk Based Development. 
+
+To understand it further, let's understand the original scaled trunk based development.
+
+### Scaled Trunk Based Development
+
+![Scaled Trunk Based Development \(c\) trunkbaseddevelopment.com](../.gitbook/assets/image%20%281%29.png)
+
+In Scaled Trunk Based Development, developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **\("main"\)** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk. 
+
+Release branches are cut from trunk at a point in time, some days ahead before the release is ready to be deployed to production. This branch is typically cut to harden the release, especially minor bug fixes etc. The key thing to be noted here is developers are not allowed to merge to release branches directly. They are only allowed to merge to trunk \("**main**"\) branch and [cherry pick ](https://www.atlassian.com/git/tutorials/cherry-pick)the changes to the respective release branch.
+
+#### DX@Scale Branching Model
+
+![DX@Scale Branch Model](../.gitbook/assets/image%20%2811%29.png)
+
+DX@Scale follows the **scaled trunk based** branching model, with only caveat being we allow developers to commit changes to a release branch. This is based on our experience working with a large number of Salesforce programs in certain scenarios.
+
+{% hint style="success" %}
+**Please note, commits to release branch is only allowed in a large program where you have a larger team and the trunk has immediately switched to the items in next release and the time difference between releases are very significant.**
+{% endhint %}
+
+{% hint style="warning" %}
+Development teams should strive to follow a scaled trunk based development as much as possible.  Commits on release branches often results in merge complexities if not frequently merged back to trunk. Read more about it [here](https://trunkbaseddevelopment.com/branch-for-release/). We only allow this considering Salesforce Development typically doesn't align well with techniques that are suitable for code based platforms
+{% endhint %}
+
+### Handling Concurrent Releases
+
+Having concurrent releases in a large program is inevitable due to a variety of reasons, such as alignment to different business units, time taken to develop a feature etc.
+
+> "Your company wants a stream of major functionality to arrive in the application you are pushing live at a regular cadence. Because you are good Extreme Programmers, you know that consecutive development of consecutive releases is best. However, the effort and length of time needed to complete each major piece of functionality is large enough to require different project teams cooperating towards that plan. Some of those teams will be within the same codebase. Some may be dependent services that the application will invoke over the wire. Not everything is equal effort it seems, yet the business wants a specific rollout, including dates and can plan that even eighteen months ahead. They are very specific because there is an impact on the user community \(staff, clients, customers or members of the public\). Driving departments may include training, marketing, finance." -- Paul Hammant@trunkbaseddevelopment.com
+
+
+
+
+
+
+

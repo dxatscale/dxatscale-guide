@@ -1,0 +1,2 @@
+# Typical Environment Strategy
+
