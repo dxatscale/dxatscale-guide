@@ -6,7 +6,7 @@ To understand it further, let's understand the original scaled trunk based devel
 
 ### Scaled Trunk Based Development
 
-![Scaled Trunk Based Development \(c\) trunkbaseddevelopment.com](../.gitbook/assets/image%20%281%29.png)
+![Scaled Trunk Based Development \(c\) trunkbaseddevelopment.com](../../.gitbook/assets/image%20%281%29.png)
 
 In Scaled Trunk Based Development, developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **\("main"\)** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk. 
 
@@ -14,7 +14,7 @@ Release branches are cut from trunk at a point in time, some days ahead before t
 
 #### DX@Scale Branching Model
 
-![DX@Scale Branch Model](../.gitbook/assets/image%20%2811%29.png)
+![DX@Scale Branch Model](../../.gitbook/assets/image%20%2811%29.png)
 
 DX@Scale follows the **scaled trunk based** branching model, with only caveat being we allow developers to commit changes to a release branch. This is based on our experience working with a large number of Salesforce programs in certain scenarios.
 
@@ -42,7 +42,9 @@ The best plan of action to handle concurrent release strategy is not to handle i
 
 If the components that are being developed, could be segmented into a new package and ensuring the package doesn't get deployed is an alternate option to using branches in version control.
 
-**3. Feature Flags**
+**3. Feature Toggling**
+
+Read more about how feature toggling could be applied in Salesforce development in the [next section](feature-toggling.md)
 
 4. **Branch by abstraction**
 

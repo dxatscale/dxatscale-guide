@@ -12,14 +12,14 @@
   * [Source Packages](development-practices/types-of-package/source-packages.md)
   * [Data Packages](development-practices/types-of-package/data-packages.md)
 * [Applying SOLID principles](development-practices/applying-solid-principles.md)
-* [Feature Toggling](development-practices/feature-toggling.md)
 
 ## Source Code Management <a id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
 * [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata/README.md)
   * [Managing Profiles](scm/dealing-with-sensitive-metadata/managing-profiles.md)
-* [Branching Model](scm/branching-model.md)
+* [Branching Model](scm/branching-model/README.md)
+  * [Feature Toggling](scm/branching-model/feature-toggling.md)
 * [Syncing Changes from Production](scm/syncing-changes-from-production.md)
 * [Tracking Manual Steps](scm/tracking-manual-steps.md)
 
