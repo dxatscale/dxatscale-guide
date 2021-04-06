@@ -32,9 +32,24 @@ Having concurrent releases in a large program is inevitable due to a variety of 
 
 > "Your company wants a stream of major functionality to arrive in the application you are pushing live at a regular cadence. Because you are good Extreme Programmers, you know that consecutive development of consecutive releases is best. However, the effort and length of time needed to complete each major piece of functionality is large enough to require different project teams cooperating towards that plan. Some of those teams will be within the same codebase. Some may be dependent services that the application will invoke over the wire. Not everything is equal effort it seems, yet the business wants a specific rollout, including dates and can plan that even eighteen months ahead. They are very specific because there is an impact on the user community \(staff, clients, customers or members of the public\). Driving departments may include training, marketing, finance." -- Paul Hammant@trunkbaseddevelopment.com
 
+The following approaches are recommended 
 
+#### 1. Shifting the order of releases
 
+The best plan of action to handle concurrent release strategy is not to handle it all, by trying to shift the order of the deployments in a way that could be done in a sequence. If that approach is not feasible, one should look into the below options
 
+#### 2. Branch by packaging
+
+If the components that are being developed, could be segmented into a new package and ensuring the package doesn't get deployed is an alternate option to using branches in version control.
+
+**3. Feature Flags**
+
+4. **Branch by abstraction**
+
+Branch by abstraction is a technique that is commonly used in Continous Delivery. This technique is detailed in many articles. Some links are the following
+
+1. Branch By Abstraction - [trunkbasedevelopment.com](https://trunkbaseddevelopment.com/branch-by-abstraction/)
+2. Branch By Abstraction by Martin Fowler - [https://martinfowler.com/bliki/BranchByAbstraction.html](https://martinfowler.com/bliki/BranchByAbstraction.html)
 
 
 

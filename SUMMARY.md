@@ -12,6 +12,7 @@
   * [Source Packages](development-practices/types-of-package/source-packages.md)
   * [Data Packages](development-practices/types-of-package/data-packages.md)
 * [Applying SOLID principles](development-practices/applying-solid-principles.md)
+* [Feature Toggling](development-practices/feature-toggling.md)
 
 ## Source Code Management <a id="scm"></a>
 
