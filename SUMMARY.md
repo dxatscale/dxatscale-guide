@@ -6,7 +6,8 @@
 
 ## DEVELOPMENT PRACTICES
 
-* [Dependency Injection](development-practices/dependency-injection.md)
+* [Dependency Injection](development-practices/dependency-injection/README.md)
+  * [Utilizing Callable Interface](development-practices/dependency-injection/utilizing-callable-interface.md)
 * [Packaging your configuration/code](development-practices/types-of-package/README.md)
   * [Unlocked Packages](development-practices/types-of-package/unlocked-packages.md)
   * [Source Packages](development-practices/types-of-package/source-packages.md)
