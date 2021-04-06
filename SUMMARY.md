@@ -7,6 +7,7 @@
 ## DEVELOPMENT PRACTICES
 
 * [Dependency Injection](development-practices/dependency-injection/README.md)
+  * [Using Trigger Frameworks](development-practices/dependency-injection/using-trigger-frameworks.md)
   * [Utilizing Callable Interface](development-practices/dependency-injection/utilizing-callable-interface.md)
 * [Packaging your configuration/code](development-practices/types-of-package/README.md)
   * [Unlocked Packages](development-practices/types-of-package/unlocked-packages.md)
