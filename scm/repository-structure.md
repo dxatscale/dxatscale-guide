@@ -12,5 +12,5 @@ Different folders in each of the structure are explained as below
 4. src-access-management:  This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles that are applied across the org
 5. src-env-specific: An aliasified packaged  which carries metadata for each particular stage of your path to production 
 
-This will form your initial structure of packaging. Once some development cycles are being completed,  frameworks can be moved into its own repository.  If you also figure a particular domain is being not iterated upon frequently anymore and the there are no upward dependency, they could also be removed into  another reposiotrye
+This will form your initial structure of packaging. Once some development cycles are being completed,  frameworks can be moved into its own repository.  If you also figure a particular domain is being not iterated upon frequently anymore and the there are no upward dependency, they could also be removed into  another reposiotry
 
