@@ -6,6 +6,8 @@
 
 ![Alan Ly - Lead sfpowerscripts engineer](../.gitbook/assets/alan-ly.png)
 
+Alan is a software engineer who builds automation and delivery tools for Salesforce. He has implemented effective CICD solutions on large-enterprise projects, and is a primary contributor to sfpowerscripts.  
+
 ![Manivasaga Murugesan - Lead sfpowerkit engineer](../.gitbook/assets/manivasaga-murugesan.png)
 
 ![Jothy Sivanand - NSW Consultant](../.gitbook/assets/sivanand.jothy.jpg)
