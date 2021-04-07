@@ -50,7 +50,7 @@
 * [Prerequisites](hands-on-challenges/prerequisites.md)
 * [Deploy to a Sandbox](hands-on-challenges/1.-deploy-to-a-sandbox.md)
 * [Using Source Format](hands-on-challenges/2.-using-source-format.md)
-* [Using a package](hands-on-challenges/3.-using-a-package.md)
+* [Using a Package](hands-on-challenges/3.-using-a-package.md)
 * [Scratch Org Introduction](hands-on-challenges/4.-scratch-org-introduction.md)
 * [Scratch Org Shape](hands-on-challenges/5.-scratch-org-shape.md)
 * [Scratch Org Pooling Part 1](hands-on-challenges/scratch-org-pooling.md)
