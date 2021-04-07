@@ -80,6 +80,6 @@
 
 ## About Us
 
-* [Meet our team](about-us/meet-our-team.md)
+* [Meet Our Team](about-us/meet-our-team.md)
 * [Contact Us](about-us/contact-us.md)
 

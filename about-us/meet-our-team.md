@@ -1,4 +1,4 @@
-# Meet our team
+# Meet Our Team
 
 ![Azlam Abdulsalam - Brain Child and Lead Engineer](../.gitbook/assets/azlam-abdulsalam.jpg)
 
