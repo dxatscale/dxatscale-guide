@@ -20,6 +20,7 @@ Follow Instructions on installing GIT
 [https://www.atlassian.com/git/tutorials/install-git](https://www.atlassian.com/git/tutorials/install-git) 
 
 * Please note this hands on will not cover GIT and GIT experience is a pre-requisite
+* Ensure you have setup and configured your SSH keys as well
 
 ## Install sfpowerkit <a id="user-content-4.-install-sfpowerkit"></a>
 
