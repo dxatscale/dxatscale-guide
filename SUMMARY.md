@@ -28,7 +28,9 @@
 ## Environment Management <a id="environment"></a>
 
 * [Managing Runbooks](environment/managing-runbooks.md)
-* [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
+* [Scratch Orgs](environment/scratch-orgs/README.md)
+  * [Pooling Scratch Orgs](environment/scratch-orgs/pooling-scratch-orgs.md)
+* [Sandboxes](environment/sandboxes.md)
 * [Typical Environment Strategy](environment/untitled.md)
 
 ## Artifact Management <a id="packages"></a>
