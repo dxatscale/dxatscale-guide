@@ -1,6 +1,6 @@
 # Branching Model
 
-DX@Scale follows a slightly modified version of Scaled Truk Based Development. 
+DX@Scale follows a slightly modified version of Scaled Trunk Based Development. 
 
 To understand it further, let's understand the original scaled trunk based development.
 
@@ -8,7 +8,7 @@ To understand it further, let's understand the original scaled trunk based devel
 
 ![Scaled Trunk Based Development \(c\) trunkbaseddevelopment.com](../../.gitbook/assets/image%20%281%29.png)
 
-In Scaled Trunk Based Development, developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **\("main"\)** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk. 
+In [Scaled Trunk Based Development](https://trunkbaseddevelopment.com/), developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **\("main"\)** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk. 
 
 Release branches are cut from trunk at a point in time, some days ahead before the release is ready to be deployed to production. This branch is typically cut to harden the release, especially minor bug fixes etc. The key thing to be noted here is developers are not allowed to merge to release branches directly. They are only allowed to merge to trunk \("**main**"\) branch and [cherry pick ](https://www.atlassian.com/git/tutorials/cherry-pick)the changes to the respective release branch.
 
@@ -34,11 +34,11 @@ Having concurrent releases in a large program is inevitable due to a variety of 
 
 The following approaches are recommended 
 
-#### 1. Shifting the order of releases
+#### 1. Shifting the Order of Releases
 
 The best plan of action to handle concurrent release strategy is not to handle it all, by trying to shift the order of the deployments in a way that could be done in a sequence. If that approach is not feasible, one should look into the below options
 
-#### 2. Branch by packaging
+#### 2. Branch by Packaging
 
 If the components that are being developed, could be segmented into a new package and ensuring the package doesn't get deployed is an alternate option to using branches in version control.
 
@@ -46,9 +46,9 @@ If the components that are being developed, could be segmented into a new packag
 
 Read more about how feature toggling could be applied in Salesforce development in the [next section](feature-toggling.md)
 
-4. **Branch by abstraction**
+4. **Branch by Abstraction**
 
-Branch by abstraction is a technique that is commonly used in Continous Delivery. This technique is detailed in many articles. Some links are the following
+Branch by abstraction is a technique that is commonly used in Continuous Delivery. This technique is detailed in many articles. Some links are the following
 
 1. Branch By Abstraction - [trunkbasedevelopment.com](https://trunkbaseddevelopment.com/branch-by-abstraction/)
 2. Branch By Abstraction by Martin Fowler - [https://martinfowler.com/bliki/BranchByAbstraction.html](https://martinfowler.com/bliki/BranchByAbstraction.html)
