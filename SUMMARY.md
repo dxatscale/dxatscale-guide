@@ -31,7 +31,7 @@
 * [Scratch Orgs](environment/scratch-orgs/README.md)
   * [Pooling Scratch Orgs](environment/scratch-orgs/pooling-scratch-orgs.md)
 * [Sandboxes](environment/sandboxes.md)
-* [Typical Environment Strategy](environment/untitled.md)
+* [Environment Strategy](environment/untitled.md)
 
 ## Artifact Management <a id="packages"></a>
 

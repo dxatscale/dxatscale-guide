@@ -1,4 +1,6 @@
-# Typical Environment Strategy
+# Environment Strategy
+
+
 
 ![During normal development cycle](../.gitbook/assets/image%20%2824%29.png)
 

@@ -1,6 +1,6 @@
 # Pooling Scratch Orgs
 
-Scratch Org pools help development teams to solve the time taken to spin up a scratch org and install al the dependencies and make it ready for development or for using as a just in time CI environment. The following links discuss how DX@Scale's tooling \(sfpowerkit and sfpowerscripts\) enable scratch org pools.
+Scratch Org pools help development teams to solve the time taken to spin up a scratch org, install all dependencies and make it ready for development.  Another use case for Scratch Org Pools is for a just in time CI environment. The following links discuss how DX@Scale's tooling \(sfpowerkit and sfpowerscripts\) enable scratch org pools.
 
 {% page-ref page="../../media-library/knowledge-articles/scratch-org-pooling-for-ci.md" %}
 
