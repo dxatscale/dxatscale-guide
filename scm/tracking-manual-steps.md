@@ -12,11 +12,11 @@ The following structure is advised for every DX@Scale implementation
 
 ![](../.gitbook/assets/image%20%2825%29.png)
 
-The repository need to contain a folder called runbooks, with the following subfolders
+The repository need to contain a folder called _runbooks_, with the following subfolders
 
-**\(1\) env-refresh :**  This folder contains a single file in markdown format that is all about the manual  steps taken after a sandbox is refreshed. Read more about it here.
+**\(1\) env-refresh :**  This folder contains a single file in markdown format that is all about the manual steps taken after a sandbox is refreshed. Read more about it here.
 
-**\(2\) release-X** : Each release need to have a dedicated folder with the name of the release. It needs to have two files in markdown format titled runbook_post.md_ and _runbook\_pre.md._ These files will track any steps that need to be done before a release and after a release into an environment.
+**\(2\) release-X** : Each release needs to have a dedicated folder with the name of the release. It needs to have two files in markdown format titled _runbookpost.md_ and _runbook\_pre.md._ These files will track any steps that need to be done before a release and after a release into an environment.
 
 {% hint style="danger" %}
 Any addition to the runbook should be carefully reviewed and ascertained that it is indeed a manual step during the pull request validation process.  If its a recurring step, all effort should be taken to avoid it, including changing the design.
