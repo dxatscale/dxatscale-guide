@@ -4,7 +4,7 @@
 
 Salesforce API surface has been steadily increasing over the years, however, there are still gaps around various components, which need to be manually enabled for deployment to succeed.  Typically these manual steps are tracked in excel sheets or as a document in confluence or any other system outside the version control.
 
-#### Runbooks Managed in Source Code Repository
+### Runbooks Managed in Source Code Repository
 
 In the DX@Scale model, manual steps are managed in version control in the same repository along with any other packages. It also has the same importance of code/configuration that is being version controlled.
 
@@ -22,7 +22,7 @@ The repository need to contain a folder called runbooks, with the following subf
 Any addition to the runbook should be carefully reviewed and ascertained that it is indeed a manual step during the pull request validation process.  If its a recurring step, all effort should be taken to avoid it, including changing the design.
 {% endhint %}
 
-#### Template for runbooks
+### Template for runbooks
 
 {% tabs %}
 {% tab title="Runbook Template" %}
