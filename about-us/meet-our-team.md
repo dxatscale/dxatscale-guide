@@ -12,6 +12,8 @@ Alan is a software engineer who builds automation and delivery tools for Salesfo
 
 ![Jothy Sivanand - NSW Consultant](../.gitbook/assets/sivanand.jothy.jpg)
 
+Siv is Accenture Certified Senior Technology Architect and an inventor. He specializes in software architecture with a passion for automation and innovation. As a consultant, he had been advocating for DX@Scale, since October 2019 for large Salesforce implementation and transformations.
+
 ![Vu Ha - North American Consultant](../.gitbook/assets/vu.ha.jpg)
 
 Vu is a Tech Architect with a broad range of experience across different technology platforms and software productivity tools. His recent areas of interest includes Salesforce DevOps, Cloud Native Architecture and General DevOps tooling, processes, and governance.  He has been involved with DX@Scale since January 2020 as an implementation consultant, trainer, blog writer, and contributor and enjoys the endless potential to simplify and streamline Salesforce DevOps for the masses.
