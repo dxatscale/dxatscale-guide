@@ -2,7 +2,7 @@
 
 ![Azlam Abdulsalam - Brain Child and Lead Engineer](../.gitbook/assets/azlam-abdulsalam.jpg)
 
-Azlam has been always fascinated by how simple scripts could enhance developer experience.  From backgrounds in multiple technologies such as mobile games, mobile app development, web apps and backend, Azlam's real calling was always creating nifty tools that help one to push the boundaries of the platform. Ever since Azlam was tasked with solving Salesforce Development and Deployment experience,  Azlam has been working with the broader Salesforce community and leading the vision of DX@Scale.
+Azlam has been always fascinated by how simple scripts could enhance developer experience.  From backgrounds in multiple technologies such as mobile games, mobile app development, web apps and backend, Azlam found his real calling, which is to create nifty tools that help one to push the boundaries of a platform. Ever since Azlam was tasked with solving Salesforce Development and Deployment experience,  Azlam has been working with the broader Salesforce community and leading the vision of DX@Scale.
 
 ![Ramzi Akremi - Executive Sponsor](../.gitbook/assets/ramzi.akremi%20%281%29.jpg)
 
