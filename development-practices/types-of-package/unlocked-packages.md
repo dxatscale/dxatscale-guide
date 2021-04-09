@@ -4,6 +4,22 @@ description: All the details about unlocked package
 
 # Unlocked Packages
 
+There is a huge amount of documentation on unlocked packages. Rather than repeating all the information here, a curated list of links are provide which every DX@Scale practitioner should be well versed with  
+  
+_**The Basics**_
+
+Package Development Model : [https://trailhead.salesforce.com/content/learn/modules/sfdx\_dev\_model](https://trailhead.salesforce.com/content/learn/modules/sfdx_dev_model)  
+Unlocked Package for Customers: [https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers](https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers)  
+Successfully Creating Unlocked Package: [https://www.youtube.com/watch?v=xJNmHOtIgO0](https://www.youtube.com/watch?v=xJNmHOtIgO0)  
+Salesforce Developer Guide to Unlocked Package: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)  
+Unlocked Package FAQ: [https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html](https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html)
+
+_**Advanced Materials**_  
+
+
+Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)  
+
+
 ### Unlocked Package and Test Coverage
 
 ### Managing Version Numbers of Unlocked Package
