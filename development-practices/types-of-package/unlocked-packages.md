@@ -14,13 +14,16 @@ Successfully Creating Unlocked Package: [https://www.youtube.com/watch?v=xJNmHOt
 Salesforce Developer Guide to Unlocked Package: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)  
 Unlocked Package FAQ: [https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html](https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html)
 
-_**Advanced Materials**_  
-
+_**Advanced Materials**_
 
 Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)  
 
 
+The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs
+
 ### Unlocked Package and Test Coverage
+
+
 
 ### Managing Version Numbers of Unlocked Package
 
