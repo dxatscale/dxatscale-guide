@@ -22,8 +22,6 @@ The number of the scratch orgs in the pool have to be determined depending on th
 
 Scratch Org pools need to be replenished in the following manner.
 
-
-
 ### Recreating Pools
 
 
