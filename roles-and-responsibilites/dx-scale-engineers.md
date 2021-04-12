@@ -1,8 +1,10 @@
 # DX@Scale Engineers
 
-### DX@Scale Engineer
+### Description
 
-A DX@Scale engineer will be able to define a working model that fits the client’s/project’s needs \(branching model, environment strategy, deployment pipeline\)​
+A DX@Scale engineer will be able to define a working model that fits the client’s/project’s needs \(branching model, environment strategy, deployment pipeline\)
+
+DX@Scale engineer will maintain and monitor the pipeline but will not be responsible for release orchestration.​​
 
 ### Key Skills
 
