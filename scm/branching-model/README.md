@@ -23,7 +23,7 @@ DX@Scale follows the **scaled trunk based** branching model, with only caveat be
 {% endhint %}
 
 {% hint style="warning" %}
-Development teams should strive to follow a scaled trunk based development as much as possible.  Commits on release branches often results in merge complexities if not frequently merged back to trunk. Read more about it [here](https://trunkbaseddevelopment.com/branch-for-release/). We only allow this considering Salesforce Development typically doesn't align well with techniques that are suitable for code based platforms
+Development teams should strive to follow a scaled trunk based development as much as possible.  Commits on release branches often results in merge complexities if not frequently merged back to trunk. Read more about it [here](https://trunkbaseddevelopment.com/branch-for-release/). We only allow this considering Salesforce Development typically doesn't align well with techniques that are suitable for code based platforms and on a large scale transformation scenario, the releases are  spaced out by a few months 
 {% endhint %}
 
 ### Handling Concurrent Releases

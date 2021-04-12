@@ -30,7 +30,8 @@
 * [Environment Strategy](environment/untitled.md)
 * [Scratch Orgs](environment/scratch-orgs/README.md)
   * [Pooling Scratch Orgs](environment/scratch-orgs/pooling-scratch-orgs.md)
-* [Sandboxes](environment/sandboxes.md)
+* [Sandboxes](environment/sandboxes/README.md)
+  * [Refreshing Sandboxes](environment/sandboxes/refreshing-sandboxes.md)
 * [Managing Runbooks](environment/managing-runbooks.md)
 
 ## Artifact Management <a id="packages"></a>

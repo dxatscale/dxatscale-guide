@@ -4,7 +4,14 @@ Salesforce is a SaaS based lowcode platform, where changes in production is dire
 
 ### Components Allowed to be changed in Production Org
 
+* **Reports/Dashboards** :  We allow admins or users with sufficient permissions to create reports/dashboards directly in prod, as long as they do not modify any reports that are delivered by the development teams. The Reports/Dashboards that are delivered by development teams are either built to a spec or should be treated as a template
+* Changes to most  [Org specific Metadata](dealing-with-sensitive-metadata/):  As mentioned in the earlier section, most of these settings are not captured in version control and would directly need to be changed in production
+
 ### Hotfixes in Production
 
-### Identifying changes in Production and retrofitting to Repository
+DX@Scale disallows any changes in production directly. However, in the extreme cases, where it is required, admins are allowed to change the particular entity and immediately raise an equivalent pull request detailing the approach
+
+#### Identifying changes in Production and retrofitting to Repository
+
+
 

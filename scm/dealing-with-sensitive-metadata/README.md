@@ -13,8 +13,7 @@ The type of org specific metadata include
 * NamedCredential
 * RemoteSiteSettings
 * SamlSSOConfigs
-* Settings
-* WebLink
+* Settings \(that contains any sensitive information\)
 
 {% hint style="info" %}
 **sfpowerscripts'** provide a concept of an [aliasified](https://dxatscale.gitbook.io/sfpowerscripts/faq/source-packages#what-are-my-options-with-source-packages) package, where a source package will have folders that match the alias of the target org where the metadata is getting deployed. The components ****have to be duplicated across each of the environments with settings 
