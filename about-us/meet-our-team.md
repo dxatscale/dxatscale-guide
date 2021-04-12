@@ -22,5 +22,10 @@ Vu is a Tech Architect with a broad range of experience across different technol
 
 ![Caitlyn Mills - Engineer and Developer Relations](../.gitbook/assets/caitlyn-1.png)
 
-Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in. 
+Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.   
+
+
+![Henry Lay - Engineer](../.gitbook/assets/henry_lay.jpg)
+
+Henry is a Software Engineer who enjoys finding gaps and inefficiencies in processes and building the optimal way of solving those problems. He has been a part of DX@Scale in engineering since March 2021. He is keen to work with the broader Salesforce community.
 
