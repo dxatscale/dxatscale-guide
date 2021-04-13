@@ -5,6 +5,8 @@ Profiles in Salesforce need a special emphasis, as they are org-specific metadat
 
 {% page-ref page="../../media-library/knowledge-articles/version-controlling-profiles-and-why-it-makes-sense-for-deployments.md" %}
 
+The above article is also available on public space at this [link](https://www.linkedin.com/pulse/version-controlling-profiles-why-makes-sense-deployments-vu-ha/). 
+
 While using a scratch org based development, there is no specific need to use sfpowerkit command such as retrieve as normal sfdx push/pull would be suffice. sfpowerscripts automatically does a reconcile against the target org when the profile is deployed. 
 
 
