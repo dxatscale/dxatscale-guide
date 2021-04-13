@@ -22,6 +22,7 @@
   * [Managing Profiles](scm/dealing-with-sensitive-metadata/managing-profiles.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
+  * [Branching Conventions](scm/branching-model/branching-conventions.md)
 * [Tracking Manual Steps](scm/tracking-manual-steps.md)
 
 ## Environment Management <a id="environment"></a>
