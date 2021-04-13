@@ -27,7 +27,7 @@ Follow Instructions on installing GIT
 Follow Instructions on installing sfpowerkit  
 [https://github.com/accenture/sfpowerkit\#installation](https://github.com/accenture/sfpowerkit#installation) 
 
-## Install sfpowerscrtips 
+## Install sfpowerscripts 
 
 ```text
 sfdx plugins:install @dxatscale/sfpowerscripts

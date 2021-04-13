@@ -22,7 +22,6 @@
   * [Managing Profiles](scm/dealing-with-sensitive-metadata/managing-profiles.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
-* [Syncing Changes from Production](scm/syncing-changes-from-production.md)
 * [Tracking Manual Steps](scm/tracking-manual-steps.md)
 
 ## Environment Management <a id="environment"></a>
@@ -32,6 +31,7 @@
   * [Pooling Scratch Orgs](environment/scratch-orgs/pooling-scratch-orgs.md)
 * [Sandboxes](environment/sandboxes/README.md)
   * [Refreshing Sandboxes](environment/sandboxes/refreshing-sandboxes.md)
+* [Syncing Changes from Production](environment/syncing-changes-from-production.md)
 * [Managing Runbooks](environment/managing-runbooks.md)
 
 ## Artifact Management <a id="packages"></a>
