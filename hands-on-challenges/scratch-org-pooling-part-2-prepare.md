@@ -35,7 +35,20 @@ We will begin by creating another pool config file. We won't be recapping the cr
 }
 ```
 
-#### Create a 'prepare' yaml file 
+#### GitHub Actions 
+
+We will be using GitHub Actions paired with Yaml to create our CICD files. For more information on these, we recommend the following: 
+
+* [https://docs.github.com/en/actions/learn-github-actions](https://docs.github.com/en/actions/learn-github-actions) 
+* [https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops ](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema)
+
+While this last article is related to Azure Pipelines, the concepts are relatively universal and can be applied to GitHub Actions. 
+
+#### Create a 'prepare' file 
+
+In the root of your project file structure create a file called 'prepare.yml'
+
+
 
 
 
