@@ -80,7 +80,7 @@ jobs:
 
             # Prepare a pool of scratch orgs
             - name: 'Prepare a pool of scratch orgs'
-              run: 'sfdx sfpowerscripts:orchestrator:prepare -t CI1 -v devhub --installall --installassourcepackages -m 3 --succeedondeploymenterrors'
+              run: 'sfdx sfpowerscripts:orchestrator:prepare -t preparepool -v devhub --installall -m 3 --succeedondeploymenterrors'
 ```
 
 Save this file and push your changes to your repo. 
@@ -103,9 +103,30 @@ Notice in the code above, there are 'secrets' in the authentication task. Secret
 
 Let's set up the secrets we need.
 
-First, if you haven't previously, you will need to set up a JWT flow. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm\#sfdx\_dev\_auth\_jwt\_flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm#sfdx_dev_auth_jwt_flow) under the topic heading 'Authorize an Org Using the JWT Bearer Flow'. 
+**First**, if you haven't previously, you will need to set up a JWT flow. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm\#sfdx\_dev\_auth\_jwt\_flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm#sfdx_dev_auth_jwt_flow) under the topic heading 'Authorize an Org Using the JWT Bearer Flow'. 
 
+* Go to your GitHub repository and select 'Settings' 
 
+![](../.gitbook/assets/image%20%2836%29.png)
+
+* Now select 'Secrets' 
+
+![](../.gitbook/assets/image%20%2831%29.png)
+
+* Select 'New repository secret' 
+
+![](../.gitbook/assets/image%20%2834%29.png)
+
+* Add your DevHub login username as a 'secret' value with the name DEVHUB\_USERNAME
+
+![](../.gitbook/assets/image%20%2832%29.png)
+
+* Navigate to the Connected App you created in setting up the JWT flow and copy the 'Consumer Key'
+
+![](../.gitbook/assets/image%20%2840%29.png)
+
+* Add this consumer key as a 'secret' value with the name DEVHUB\_CLIENT\_ID
+* Now open the 'server.key' file you created when setting up the JWT flow and add the entire contents of the file as a 'secret' value with the name DEVHUB\_SERVER\_KEY 
 
 
 
