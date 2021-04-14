@@ -18,22 +18,10 @@ Prepare command helps you to build a pool of prebuilt scratch orgs which include
 
 Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, go back to this module and follow the instructions under the steps '**Install the prerequisite fields'**. 
 
-#### Create a Pool Config File 
+#### Fork the 'Easy Spaces' Repo 
 
-We will begin by creating another pool config file. We won't be recapping the creation steps here, as we have already covered it in part 1. The schema we are going to use is below. 
-
-```text
-{
-  "pool": {
-        "expiry": 1,
-        "tag":"preparepool",
-        "max_allocation": 10,
-        "config_file_path": "config/project-scratch-def.json",
-        "relax_all_ip_ranges": true,  
-    }
-  ]
-}
-```
+* For the repo located at [https://github.com/trailheadapps/easy-spaces-lwc](https://github.com/trailheadapps/easy-spaces-lwc)
+* Delete all files located under ./github, ./github/workflows and ./github/ISSUE\_TEMPLATE 
 
 #### GitHub Actions 
 
@@ -46,7 +34,12 @@ While this last article is related to Azure Pipelines, the concepts are relative
 
 #### Create a 'prepare' file 
 
-In the root of your project file structure create a file called 'prepare.yml'. In the contents of this file place: 
+* Click on 'Actions' in the newly forked repo
+
+![](../.gitbook/assets/image%20%2843%29.png)
+
+* Create a new workflow and name it 'prepare'
+* Replace the contents of the file with the file below 
 
 ```text
 # Unique name for this workflow
@@ -80,10 +73,8 @@ jobs:
 
             # Prepare a pool of scratch orgs
             - name: 'Prepare a pool of scratch orgs'
-              run: 'sfdx sfpowerscripts:orchestrator:prepare -t preparepool -v devhub --installall -m 3 --succeedondeploymenterrors'
+              run: 'sfdx sfpowerscripts:orchestrator:prepare -t preparepool -v devhub --installall -m 3 --succeedondeploymenterrors' 
 ```
-
-Save this file and push your changes to your repo. 
 
 What is this file doing? Let's have a look. 
 
@@ -128,5 +119,19 @@ Let's set up the secrets we need.
 * Add this consumer key as a 'secret' value with the name DEVHUB\_CLIENT\_ID
 * Now open the 'server.key' file you created when setting up the JWT flow and add the entire contents of the file as a 'secret' value with the name DEVHUB\_SERVER\_KEY 
 
+#### Run your workflow
 
+* Go back to actions and select the workflow 
+
+![](../.gitbook/assets/image%20%2841%29.png)
+
+* Run the workflow by selecting 'run workflow' 
+
+![](../.gitbook/assets/image%20%2842%29.png)
+
+* Select the job to watch it running through the tasks and create the scratch orgs required
+
+### Recap
+
+Congratulations! You have just created a scratch org pool specifically for use in your CICD workflow! You have also learned about GitHub actions and are on your way to being a CI/CD Master. 
 
