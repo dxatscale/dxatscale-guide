@@ -16,7 +16,7 @@ Prepare command helps you to build a pool of prebuilt scratch orgs which include
 
 ### Steps
 
-Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, follow the instructions under the steps '**Install the prerequisite fields'**. 
+Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, go back to this module and follow the instructions under the steps '**Install the prerequisite fields'**. 
 
 #### Create a Pool Config File 
 
@@ -46,7 +46,64 @@ While this last article is related to Azure Pipelines, the concepts are relative
 
 #### Create a 'prepare' file 
 
-In the root of your project file structure create a file called 'prepare.yml'
+In the root of your project file structure create a file called 'prepare.yml'. In the contents of this file place: 
+
+```text
+# Unique name for this workflow
+name: sfpowerscripts prepare
+
+# Definition when the workflow should run
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '0 0 * * *'
+
+# Jobs to be executed
+jobs:
+    prepare:
+        runs-on: ubuntu-latest
+        container: dxatscale/sfpowerscripts
+        steps:
+            # Checkout the code in the pull request
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  ref: master
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: |
+                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
+                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
+              env:
+                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
+
+            # Prepare a pool of scratch orgs
+            - name: 'Prepare a pool of scratch orgs'
+              run: 'sfdx sfpowerscripts:orchestrator:prepare -t CI1 -v devhub --installall --installassourcepackages -m 3 --succeedondeploymenterrors'
+```
+
+Save this file and push your changes to your repo. 
+
+What is this file doing? Let's have a look. 
+
+**First**, it's given a name 'sfpowerscripts prepare' 
+
+**Secondly**, it's given a time schedule on which to run. This schedule is set to run every day at midnight. 
+
+**Thirdly** it is given a list of steps to execute in a specific order. These steps are are: 
+
+1. Checkout the source code of your project, on branch 'master'. If you would prefer a different branch checked out, supply this branch in the 'ref' section
+2. Authenticate the DevHub using JWT flow, [more information on JWT flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm%20)
+3. Execute the 'prepare' command 
+
+#### Add GitHub Secrets 
+
+Notice in the code above, there are 'secrets' in the authentication task. Secrets are GitHub Action's way of hiding variables within your code, in this case your yaml file. More information on secrets can be found here: [https://docs.github.com/en/actions/reference/encrypted-secrets\#:~:text=The%20secrets%20that%20you%20create,use%20them%20in%20a%20workflow.](https://docs.github.com/en/actions/reference/encrypted-secrets#:~:text=The%20secrets%20that%20you%20create,use%20them%20in%20a%20workflow.)
+
+Let's set up the secrets we need.
+
+First, if you haven't previously, you will need to set up a JWT flow. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm\#sfdx\_dev\_auth\_jwt\_flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm#sfdx_dev_auth_jwt_flow) under the topic heading 'Authorize an Org Using the JWT Bearer Flow'. 
 
 
 
