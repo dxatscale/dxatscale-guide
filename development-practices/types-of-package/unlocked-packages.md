@@ -4,6 +4,8 @@ description: All the details about unlocked package
 
 # Unlocked Packages
 
+### Introduction
+
 There is a huge amount of documentation on unlocked packages. Rather than repeating all the information here, a curated list of links are provide which every DX@Scale practitioner should be well versed with  
   
 _**The Basics**_
@@ -16,11 +18,30 @@ Unlocked Package FAQ: [https://sfdc-db-gmail.github.io/unlocked-packages/faq-unl
 
 _**Advanced Materials**_
 
-Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)  
-
+Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)
 
 The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs
 
+### Placing  metadata components in Unlocked Package
+
+* Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
+
+```text
+                 sfdx sfpowerkit:package:valid -n <name_of_package> 
+```
+
+* If you have the following scenarios, it may be a good idea to put them in **domain specific packages**.
+  * A group of related code and customization
+  * Independent from other components and can be called from other packages
+  * Standalone and released independently
+* Don’t package the metadata merely because it is supported by Unlocked Packaging.There are many scenarios where if a particular metadata is cross cutting across different packages \(say layouts\) and packaging them might result in too many dependendencies
+* **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment  errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use sfpowerkit's label create command to create these labels.  **Please ensure you use custom label's for its intended purpose as in for support texts in a multilingual app, do not use it to store constants etc.**
+* Care must be taken when dealing with  the following metadata. Most often, they must be placed in a source package in the respective domain, or if its a cross cutting concern, move it to global packages such as src-access-managements/src-ui  
+  * Proiles
+  * Permission Sets
+  * Layouts    
+* **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object defintion. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
+* 
 ### Unlocked Package and Test Coverage
 
 
@@ -31,29 +52,13 @@ The following sections deal with items that are particular to DX@Scale or more e
 
 ### Utilizing unlocked packages effectively
 
-* Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://developer.salesforce.com/docs/metadata-coverage/)
-* Don’t package the metadata merely because it is supported by Metadata API.There are many scenarios where if your metadata is cross cutting across multiple packages.  It is a good candidate to be placed in a cro \(?\).
+* * Don’t package the metadata merely because it is supported by Metadata API.There are many scenarios where if your metadata is cross cutting across multiple packages.  It is a good candidate to be placed in a cro \(?\).
 * Configuration that is generally **shared across verticals** should be placed in Core \(example is custom Address object and related fields or a Flow for address maintenance\)
-* If you have the following scenarios, it may be a good idea to put them in **domain specific packages**.
-  * A group of related code and customization
-  * Independent from other components and can be called from other packages
-  * Standalone and released independently
-* Don't move configuration up to core just to manage **cross-vertical dependencies** - do this only where it logically makes sense, otherwise re-factor if possible or move to unpackaged.
-* Keep metadata of a shared nature **unpackaged**, eg: 
-  * Profiles
-  * Permission Sets
-  * Dashboards
-  * Reports
-  * ReportTypes
-  * Email Templates
-  * Flows, PB and Workflow if Email alert is needed
-* If functionality would be useful to future apps or other parts of the org, consider moving it to **base packages**
+* * Don't move configuration up to core just to manage **cross-vertical dependencies** - do this only where it logically makes sense, otherwise re-factor if possible or move to unpackaged.
+* * If functionality would be useful to future apps or other parts of the org, consider moving it to **base packages**
 * **Flow:** Where cross-package dependencies exist \(but it should not be in core as it is functionally aligned to a vertical\) place in unpackaged,
 * **Workflow**: Must be packaged alongside its parent object, otherwise move to unpackaged post
 * **FlexiPages:** Need to be packaged alongside components included in its metadata \(such as its parent object if it's a record page or any lwc's embedded in the page\) - if this is not possible move to unpackaged post
 * **Apex**: All fields referenced in an apex class must exist in your package or a dependent package \(i.e. Core\) - do not create dependencies between vertical packages, instead use dependency injection or platform events
-* **Process Builders**: Be aware of the following issues related to Process Builders
-  * They generate a blank Workflow metadata file when created, and this needs to be present for the PB to be deployed \(though doesn't need to be in the same package\)
-  * If the Process Builder has an email alert, this will create a Workflow Definition file that the PB is dependent on - however as discussed earlier workflows must be packaged alongside their parent object - if this means moving the PB out of a vertical package into core, instead move to unpackaged.
-* **Custom Labels:** Group and managed custom labels for each package separately to ensure they don't cause deployment validation errors.
+* \*\*\*\*
 
