@@ -14,15 +14,6 @@ The prepare command, which is apart of the orchestrator functionality of sfpower
 
 Prepare command helps you to build a pool of prebuilt scratch orgs which include managed packages as well as packages in your repository. This process allows you to considerably cut down time in re-creating a scratch org during validation process when a scratch org is used as Just-in-time CI environment.
 
-### Steps
-
-Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, go back to this module and follow the instructions under the steps '**Install the prerequisite fields'**. 
-
-#### Fork the 'Easy Spaces' Repo 
-
-* For the repo located at [https://github.com/trailheadapps/easy-spaces-lwc](https://github.com/trailheadapps/easy-spaces-lwc)
-* Delete all files located under ./github, ./github/workflows and ./github/ISSUE\_TEMPLATE 
-
 #### GitHub Actions 
 
 We will be using GitHub Actions paired with Yaml to create our CICD files. For more information on these, we recommend the following: 
@@ -31,6 +22,15 @@ We will be using GitHub Actions paired with Yaml to create our CICD files. For m
 * [https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops ](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema)
 
 While this last article is related to Azure Pipelines, the concepts are relatively universal and can be applied to GitHub Actions. 
+
+### Steps
+
+Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, go back to this module and follow the instructions under the steps '**Install the prerequisite fields'**. 
+
+#### Fork the 'Easy Spaces' Repo 
+
+* For the repo located at [https://github.com/trailheadapps/easy-spaces-lwc](https://github.com/trailheadapps/easy-spaces-lwc)
+* Delete all files located under ./github, ./github/workflows and ./github/ISSUE\_TEMPLATE 
 
 #### Create a 'prepare' file 
 
