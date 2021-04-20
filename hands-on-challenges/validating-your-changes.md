@@ -7,7 +7,7 @@
 
 **Time to complete:** 40 minutes
 
-### The Validate Command
+### Validate Command
 
 **Validate** command helps you to validate a change made to your configuration / code. This command is triggered as part of your pull request process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using the [prepare ](scratch-org-pooling-part-2-prepare.md)command.
 
