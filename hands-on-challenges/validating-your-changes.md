@@ -33,6 +33,10 @@ sfdx sfpowerscripts:orchestrator:validate --help
 2. Create the action using the examples here: [https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.azure-pipelines](https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.azure-pipelines) \(Hint: Make sure you align the validate command with the prepare command from the previous module\)
 3. Run your new workflow 
 
+{% hint style="danger" %}
+If you validation command fails, replace your sfdx-project.json file with the contents here: [https://github.com/dxatscale/easy-spaces-lwc/blob/develop/sfdx-project.json](https://github.com/dxatscale/easy-spaces-lwc/blob/develop/sfdx-project.json) 
+{% endhint %}
+
 ### Recap
 
 This is a short module, as it reuses the concepts learned in prepare. Well done, you now know how to simply validate your changes. You can now see how you can have this set up to be triggered on every pull request to your main or develop branches. 
