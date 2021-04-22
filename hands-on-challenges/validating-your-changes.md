@@ -5,7 +5,7 @@
 * How DX@Scale has combined SFDX and Continuous Integration 
 * How to validate changes using the 'validate' command 
 
-**Time to complete:** 40 minutes
+**Time to complete:** 20 minutes
 
 ### Validate Command
 
