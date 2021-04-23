@@ -29,5 +29,29 @@ The **quickbuild** command does almost the same thing as the build command, but 
 
 ### Steps
 
+#### Create your packages 
+
+* Clone the repo to your local machine 
+* Create all of the Easy Spaces packages using the [package create](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_package.htm) command: 
+
+```text
+   $ sfdx force:package:create -n YourPackageName -t Unlocked -r force-app -v YourDevHubAlias
+```
+
+{% hint style="info" %}
+Use your project-sfdx.json to find the values for the package names
+{% endhint %}
+
+* After you have created all four packages, look at your project-sfdx.json file and notice how the package Aliases have been updates 
+* Push the project-sfdx.json file back into your repo
+* In your command line or terminal use the `sfdx force:package:list -v devhub@example.com` command to verify that the packages have been created and are installed in your DevHub
+
+#### Create your QuickBuild file 
+
+* Create a new 'Action' in GitHub Actions called 'quickbuild-deploy' 
+* Use 
+
+
+
 
 
