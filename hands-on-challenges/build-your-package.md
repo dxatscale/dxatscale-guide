@@ -250,15 +250,13 @@ jobs:
             - name: 'Promote packages'
               id: sfpowerscripts-build
               run: 'sfdx sfpowerscripts:orchestrator:promote -v devhub -o promoted-artifacts'
-
-            # Publish artifacts
-            - uses: actions/upload-artifact@v2
-              with:
-                  name: promoted-artifacts
-                  path: promoted-artifacts
 ```
 
 * Run this file and see if you can spot the differences between what happens in quickbuild vs what happens in build. 
+
+Did you spot what we've left out of the build-deploy? Yes, we left off the deploy component! 
+
+Your last task for this module is to use what you have learnt to add in your own deploy stage to this action. 
 
 ### Recap 
 
