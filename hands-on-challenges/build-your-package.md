@@ -15,6 +15,8 @@ To build a package means to bundle up all your code in a neat little virtual box
 
 In later modules we will also refer to a package build as an 'artifact'. A package is an artifact that is used in pipelines, but all artifacts are not necessarily packages as there can be many different types of artifacts. 
 
+The commands in orchestrator follow the order as listed in your sfdx-project.json file to determine the order in which packages are built. The commands also factor in any dependencies and do not commence building a package until dependencies are resolved. More information on how package build order is determined is [here](https://dxatscale.gitbook.io/sfpowerscripts/commands/build-and-quickbuild). 
+
 ### Build commands
 
 The Orchestrator provides two types of build commands. **Build** and **quickbuild**. 
