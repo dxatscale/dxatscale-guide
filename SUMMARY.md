@@ -66,6 +66,7 @@
 ## Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
+  * [Building packages for deployment](media-library/knowledge-articles/building-packages-for-deployment.md)
   * [Version Controlling Profiles and Why It Makes Sense for Deployments?](media-library/knowledge-articles/version-controlling-profiles-and-why-it-makes-sense-for-deployments.md)
   * [Validation in Continuous Integration](media-library/knowledge-articles/validation-in-continuous-integration.md)
   * [Scratch Org pooling for CI](media-library/knowledge-articles/scratch-org-pooling-for-ci.md)
