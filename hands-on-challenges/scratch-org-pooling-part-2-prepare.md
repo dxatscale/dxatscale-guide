@@ -94,6 +94,10 @@ Notice in the code above, there are 'secrets' in the authentication task. Secret
 
 Let's set up the secrets we need.
 
+{% hint style="warning" %}
+It is recommended to set up a new trailhead playground with DevHub and Unlocked packages enabled for the Orchestrator modules. 
+{% endhint %}
+
 **First**, if you haven't previously, you will need to set up a JWT flow. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm\#sfdx\_dev\_auth\_jwt\_flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm#sfdx_dev_auth_jwt_flow) under the topic heading 'Authorize an Org Using the JWT Bearer Flow'. 
 
 * Go to your GitHub repository and select 'Settings' 
