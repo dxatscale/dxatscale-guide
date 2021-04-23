@@ -254,9 +254,15 @@ jobs:
 
 * Run this file and see if you can spot the differences between what happens in quickbuild vs what happens in build. 
 
-Did you spot what we've left out of the build-deploy? Yes, we left off the deploy component! 
+{% hint style="danger" %}
+Did you spot what we've left out of the build-deploy? 
 
-Your last task for this module is to use what you have learnt to add in your own deploy stage to this action. 
+
+
+Yes, we left off the deploy component! 
+{% endhint %}
+
+Your **last task** for this module is to use what you have learnt to add in your own deploy stage to this action. 
 
 ### Recap 
 
