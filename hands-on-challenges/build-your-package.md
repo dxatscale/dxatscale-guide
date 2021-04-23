@@ -1,11 +1,11 @@
-# Build your package
+# Build and Deploy your package
 
 ### **Learning Objectives**
 
 * What does it mean to 'build' a package 
 * What are the differences between the 'build' and 'quickbuild' orchestrator commands
-* How does the command determine the packages to be built? 
-* How to use the build command correctly 
+* How do we deploy packages
+* How to use the build and deploy commands correctly
 
 **Time to complete:** 40 minutes
 
@@ -48,10 +48,211 @@ Use your project-sfdx.json to find the values for the package names
 
 #### Create your QuickBuild file 
 
-* Create a new 'Action' in GitHub Actions called 'quickbuild-deploy' 
-* Use 
+* Create a new 'Action' in GitHub Actions called 'quickbuild-deploy' using the code below
 
+```text
+# Unique name for this workflow
+name: quick build and deploy
 
+# Definition when the workflow should run
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - develop
 
+# Jobs to be executed
+jobs:
+    quickbuild:
+        name: QuickBuild the packages
+        runs-on: ubuntu-latest
+        container: dxatscale/sfpowerscripts
+        steps:
+            # Checkout the code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
 
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: |
+                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
+                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
+                  rm -f ./JWT_KEYFILE
+              env:
+                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
+
+            # Create all packages
+            - name: 'Create packages'
+              id: sfpowerscripts-build
+              run: |
+                  pwd
+                  sfdx sfpowerscripts:orchestrator:quickbuild -v devhub --diffcheck
+            # Publish artifacts
+            - uses: actions/upload-artifact@v2
+              with:
+                  name: quickbuild-artifacts
+                  path: artifacts
+
+    # Simulating a deploy to System Test Environment using a scratch org
+    deploy:
+        name: Deploy and Validate the packages
+        runs-on: ubuntu-latest
+        container: dxatscale/sfpowerscripts
+        needs: quickbuild
+        steps:
+            # Checkout the code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+    #Github Actions are event based and are triggered independently,  There is no currently an option to control concurrency settings
+    #on pipelines and in this model, build should be run sequentially
+            - name: Wait till previous pipeline has finished this stage
+              uses: softprops/turnstyle@v0.1.5
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                abort-after-seconds: 1800
+
+              # Download Artifacts
+            - name: Download Artifacts
+              uses: actions/download-artifact@v2
+              with:
+                  name: quickbuild-artifacts
+                  path: artifacts
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: |
+                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
+                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
+              env:
+                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
+
+            # Create scratch org
+            - name: Create scratch org
+              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 -v devhub
+
+            # Install all new packages into scratch org
+            - name: 'Install new package versions into scratch org'
+              run: 'sfdx sfpowerscripts:orchestrator:deploy -u scratch-org'
+
+            # Housekeeping
+            - name: Delete scratch org
+              if: always()
+              run: sfdx force:org:delete -p -u scratch-org
+```
+
+* Run the file, and take a look at what is happening inside the action. 
+
+{% hint style="info" %}
+Notice that this command is still deploying, it's just using a scratch org, if you were using an ST sandbox to do testing, you would supply the alias or username of this sandbox in the -u portion of the deploy command 
+{% endhint %}
+
+#### Create your Build file 
+
+* Create a new action in GitHub actions called 'build - deploy' using the following code
+
+```text
+# Unique name for this workflow
+name: build and deploy
+
+# Definition when the workflow should run
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - develop
+
+# Jobs to be executed
+jobs:
+    build:
+        name: Build Production Ready packages
+        runs-on: ubuntu-latest
+        container: dxatscale/sfpowerscripts
+        steps:
+            # Checkout the code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+              # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: |
+                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
+                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
+                  rm -f ./JWT_KEYFILE
+              env:
+                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
+
+#Github Actions are event based and are triggered independently,  There is no currently an option to control concurrency settings
+#on pipelines and in this model, build should be run sequentially
+            - name: Wait till previous pipeline has finished this stage
+              uses: softprops/turnstyle@v0.1.5
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                abort-after-seconds: 1800
+
+              # Create all packages
+            - name: 'Create packages'
+              id: sfpowerscripts-build
+              run: 'sfdx sfpowerscripts:orchestrator:build -v devhub'
+
+              # Publish artifacts
+            - uses: actions/upload-artifact@v2
+              with:
+                  name: validated-artifacts
+                  path: artifacts
+
+    promote:
+        runs-on: ubuntu-latest
+        container: dxatscale/sfpowerscripts
+        needs: build
+        name: Promote the packages
+        steps:
+            # Checkout the code
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+              # Download Artifacts
+
+            - name: Download Artifacts
+              uses: actions/download-artifact@v2
+              with:
+                  name: validated-artifacts
+                  path: artifacts
+
+            # Authenticate dev hub
+            - name: 'Authenticate Dev Hub'
+              run: |
+                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
+                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
+                  rm -f ./JWT_KEYFILE
+              env:
+                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
+
+            # Promoted all packages
+            - name: 'Promote packages'
+              id: sfpowerscripts-build
+              run: 'sfdx sfpowerscripts:orchestrator:promote -v devhub -o promoted-artifacts'
+
+            # Publish artifacts
+            - uses: actions/upload-artifact@v2
+              with:
+                  name: promoted-artifacts
+                  path: promoted-artifacts
+```
+
+* Run this file and see if you can spot the differences between what happens in quickbuild vs what happens in build. 
+
+### Recap 
+
+Hopefully we've learnt a lot in this module! You should now have the basic steps together for how to build and deploy your unlocked packages. 
 

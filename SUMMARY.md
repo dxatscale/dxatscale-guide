@@ -60,8 +60,7 @@
 * [Intro to Orchestrator](hands-on-challenges/intro-to-orchestrator.md)
 * [Scratch Org Pooling Part 2 \(prepare\)](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
 * [Validating your changes](hands-on-challenges/validating-your-changes.md)
-* [Build your package](hands-on-challenges/build-your-package.md)
-* [Deploy your package](hands-on-challenges/deploy-your-package.md)
+* [Build and Deploy your package](hands-on-challenges/build-your-package.md)
 * [Publish and Fetch your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
 
 ## Media Library
