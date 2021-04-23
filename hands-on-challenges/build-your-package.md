@@ -27,6 +27,12 @@ The **quickbuild** command does almost the same thing as the build command, but 
 
 ![](../.gitbook/assets/image%20%2846%29.png)
 
+### Deploy command
+
+The deploy command deploys the package to the given alias \(this can be a scratch org, sandbox or devhub org\) 
+
+![](../.gitbook/assets/image%20%2848%29.png)
+
 ### Steps
 
 #### Create your packages 
@@ -46,7 +52,7 @@ Use your project-sfdx.json to find the values for the package names
 * Push the project-sfdx.json file back into your repo
 * In your command line or terminal use the `sfdx force:package:list -v devhub@example.com` command to verify that the packages have been created and are installed in your DevHub
 
-#### Create your QuickBuild file 
+#### Create your QuickBuild and Deploy file 
 
 * Create a new 'Action' in GitHub Actions called 'quickbuild-deploy' using the code below
 
@@ -152,7 +158,7 @@ jobs:
 Notice that this command is still deploying, it's just using a scratch org, if you were using an ST sandbox to do testing, you would supply the alias or username of this sandbox in the -u portion of the deploy command 
 {% endhint %}
 
-#### Create your Build file 
+#### Create your Build and Deploy file 
 
 * Create a new action in GitHub actions called 'build - deploy' using the following code
 
