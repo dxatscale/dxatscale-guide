@@ -38,10 +38,9 @@
 
 * [Releasing to an environment](release/untitled.md)
 
-## Roles and Responsibilites
+## Team Topology <a id="roles-and-responsibilites"></a>
 
-* [DX@Scale Engineers](roles-and-responsibilites/dx-scale-engineers.md)
-* [DX@Scale Practitioners](roles-and-responsibilites/dx-scale-practitioners.md)
+* [Roles and Responsibilities](roles-and-responsibilites/dx-scale-engineers.md)
 
 ## Hands-On Challenges
 
