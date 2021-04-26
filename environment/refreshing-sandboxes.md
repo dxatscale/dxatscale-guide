@@ -4,6 +4,8 @@ When refreshing sandboxes from production, care must be taken to address the fol
 
 ![Sandbox Refresh Interval](../.gitbook/assets/image%20%2850%29.png)
 
+Following steps need to be kept in mind while designing a Post Refresh runbook that need to be executed after each refresh
+
 * **Users** 
   * When sandbox is created, typically all users email address get suffixed with instance name to prevent emails from being sent to actual users. This is automatically taken care by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset. This can only be done by the user who initiated the refresh of the sandbox.
 * **Single Sign On**
@@ -22,10 +24,9 @@ When refreshing sandboxes from production, care must be taken to address the fol
   * Check If Queue's has an email address from non-production
   * Email deliverability usually after refresh it reflects “System Only Email” instead of “All Email”
 * Check for the site URLs which might be pointing to production rather than non prod environments
-* **Emails**
-  * Reconfiguration of Connected-Apps with non-prod cert which will be required for the JWT …etc. based on project requirements
-  * Update the pipelines with new keys if the environment is connected to the CI/CD pipelines. 
-* Community publish \(if applicable\) 
+* Reconfiguration of Connected-Apps with non-prod cert which will be required for the JWT …etc. based on project requirements
+* Update the pipelines with new keys if the environment is connected to the CI/CD pipelines.
+* Community publish \(if applicable\)
 * Execute Post Steps as per the project requirements, since the Dev/Dev-Prod sandboxes will have only metadata, to bring the env to shape and make available for Devs/Testers, this step will be required
 
 Read more about refreshing Partial or Fully Copy Sandboxes here [https://help.salesforce.com/articleView?id=000313358&type=1&mode=1](https://help.salesforce.com/articleView?id=000313358&type=1&mode=1)
