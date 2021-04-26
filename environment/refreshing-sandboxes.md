@@ -1,6 +1,6 @@
 # Refreshing Sandboxes
 
-When refreshing sandboxes from production, care must be taken to address the following concerns, a [runbook](../managing-runbooks.md) should be maintained which addresses the below areas
+When refreshing sandboxes from production, care must be taken to address the following concerns, a [runbook]() should be maintained which addresses the below areas
 
 * **Users** 
   * When sandbox is created, typically all users email address get suffixed with instance name to prevent emails from being sent to actual users. This is automatically taken care by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset. This can only be done by the user who initiated the refresh of the sandbox.
