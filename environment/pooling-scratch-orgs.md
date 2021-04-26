@@ -34,5 +34,7 @@ There would be situations when pools need to be killed, such as change in shape 
 
 It is highly recommended to build a delete pool pipeline that could be triggered manually to delete all the pools.
 
+### Monitoring Pools
+
 
 

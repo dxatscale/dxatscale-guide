@@ -1,6 +1,8 @@
 # Refreshing Sandboxes
 
-When refreshing sandboxes from production, care must be taken to address the following concerns, a [runbook]() should be maintained which addresses the below areas
+When refreshing sandboxes from production, care must be taken to address the following concerns, a [runbook](../scm/tracking-manual-steps.md) should be maintained which addresses the below areas. Also care must be taken when refreshing sandboxes with license type partial copy and full copy as they have refresh dates associated. They should be scheduled along with the testing team to make the most out of it.
+
+![Sandbox Refresh Interval](../.gitbook/assets/image%20%2850%29.png)
 
 * **Users** 
   * When sandbox is created, typically all users email address get suffixed with instance name to prevent emails from being sent to actual users. This is automatically taken care by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset. This can only be done by the user who initiated the refresh of the sandbox.
@@ -25,4 +27,6 @@ When refreshing sandboxes from production, care must be taken to address the fol
   * Update the pipelines with new keys if the environment is connected to the CI/CD pipelines. 
 * Community publish \(if applicable\) 
 * Execute Post Steps as per the project requirements, since the Dev/Dev-Prod sandboxes will have only metadata, to bring the env to shape and make available for Devs/Testers, this step will be required
+
+Read more about refreshing Partial or Fully Copy Sandboxes here [https://help.salesforce.com/articleView?id=000313358&type=1&mode=1](https://help.salesforce.com/articleView?id=000313358&type=1&mode=1)
 
