@@ -30,7 +30,7 @@
 * [Environment Strategy](environment/untitled.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
-* [Syncing Changes from Production](environment/syncing-changes-from-production.md)
+* [Syncing Changes from Production \[DRAFT\]](environment/syncing-changes-from-production.md)
 
 ## Artifact Management <a id="packages"></a>
 

@@ -44,9 +44,6 @@ AsyncProcessorBatch.start();
 | DEV TRAINING | X |  |  |
 | STAGING | X |  |  |
 | PROD |  |  |  |
-
-* |  |
-  | :--- |
 {% endtab %}
 {% endtabs %}
 
