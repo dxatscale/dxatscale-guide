@@ -14,7 +14,7 @@ Access Product Role object which is hosted in an upstream  package in the produc
 
 ### Code example:
 
-To solve the above sceneario, the following implementation needs to be added to the package in the product domain. 
+To solve the above scneario, the following implementation needs to be added to the package in the product domain. 
 
 ```text
 public class ProductRoleCallable implements Callable {
