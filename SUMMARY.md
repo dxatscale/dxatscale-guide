@@ -13,7 +13,6 @@
 * [Dependency Injection](development-practices/dependency-injection/README.md)
   * [Using Trigger Frameworks](development-practices/dependency-injection/using-trigger-frameworks.md)
   * [Utilizing Callable Interface](development-practices/dependency-injection/utilizing-callable-interface.md)
-* [Applying SOLID principles](development-practices/applying-solid-principles.md)
 
 ## Source Code Management <a id="scm"></a>
 

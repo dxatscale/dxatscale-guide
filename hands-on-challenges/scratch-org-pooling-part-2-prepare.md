@@ -66,7 +66,6 @@ jobs:
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
               run: |
-                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
                   sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
               env:
                   SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
