@@ -30,5 +30,7 @@ For every major release,  we ask you to define an individual release definition 
 DX@Scale practitioners follow a concept of deployment budget, that is a deployment as part of the release should not take more than an hour \(for minor releases\) and more than three retries to an org. If it takes more than three retries the release should be abandoned
 {% endhint %}
 
+#### 
+
 
 

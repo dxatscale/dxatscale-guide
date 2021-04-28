@@ -2,7 +2,7 @@
 
 When refreshing sandboxes from production, care must be taken to address the following concerns, a [runbook](../scm/tracking-manual-steps.md) should be maintained which addresses the below areas. Also, care must be taken when refreshing sandboxes with license type partial copy and full copy as they have refresh dates associated. They should be scheduled along with the testing team to make the most out of it.
 
-![Sandbox Refresh Interval](../.gitbook/assets/image%20%2850%29.png)
+![Sandbox Refresh Interval](../.gitbook/assets/image%20%2853%29.png)
 
 Read more about refreshing Partial or Fully Copy Sandboxes here [https://help.salesforce.com/articleView?id=000313358&type=1&mode=1](https://help.salesforce.com/articleView?id=000313358&type=1&mode=1)  
   

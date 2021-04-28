@@ -36,6 +36,8 @@
 ## Release Management <a id="release"></a>
 
 * [Releasing to an environment](release/untitled.md)
+* [Monitoring Releases](release/monrel.md)
+* [Rolling Back a Release](release/rolling-back-a-release.md)
 
 ## Team Topology <a id="roles-and-responsibilites"></a>
 
