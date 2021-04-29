@@ -27,6 +27,7 @@
 ## Environment Management <a id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
+* [Connecting environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 * [Syncing Changes from Production \[DRAFT\]](environment/syncing-changes-from-production.md)
