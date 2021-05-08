@@ -4,9 +4,9 @@ One of the key tenants of DX@Scale is a simplified environment strategy that is 
 
 * Any org should be able to be recreated using artifacts as well as the runbooks.
 * Any development should be carried out in an individual scratch org provisioned just for the feature/task in hand
-* There will be no long-lived continuous integration environments 
+* There will be no long-lived continuous integration environments
 
-![](../.gitbook/assets/environment-strategy.png)
+![](../.gitbook/assets/environment-strategy-2-.png)
 
   
 
