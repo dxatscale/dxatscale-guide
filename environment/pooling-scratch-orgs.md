@@ -36,8 +36,11 @@ It is highly recommended to build a delete pool pipeline that could be triggered
 
 ### Monitoring Pools
 
-Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sfpowerscripts documentation to understand the metrics emitted by sfpowerscripts. A sample dashboard is attached below  
+Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sfpowerscripts documentation to understand the metrics emitted by sfpowerscripts. A sample dashboard is attached below
 
+
+
+![](../.gitbook/assets/image%20%2854%29.png)
 
 
 
