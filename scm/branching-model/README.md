@@ -14,7 +14,9 @@ Release branches are cut from trunk at a point in time, some days ahead before t
 
 #### DX@Scale Branching Model
 
-![DX@Scale Branch Model](../../.gitbook/assets/image%20%2811%29.png)
+![DX@Scale branching model](../../.gitbook/assets/brannchingmodel-1-.png)
+
+
 
 DX@Scale follows the **scaled trunk based** branching model, with only caveat being we allow developers to commit changes to a release branch. This is based on our experience working with a large number of Salesforce programs in certain scenarios.
 
