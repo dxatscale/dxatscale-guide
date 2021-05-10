@@ -6,6 +6,10 @@ DX@Scale is typically applied to  enterprise development, where you have **major
   
 Assuming you are following the release model mentioned above, there will be artifacts that are generated from the trunk \(dev channel\) which will be tested in the day to day cycle, and once it is satisfactorily tested, a release branch is cut to release to production.  Please check the [branching model ](../scm/branching-model/)and [environment strategy](../environment/env-strategy.md) to understand it further.   
   
+
+
+![](../.gitbook/assets/environment-strategy-2-.png)
+
 For every major release,  we ask you to define an individual release definition file, the release definition should have the name of the release and a list of the packages that are planned during the phase. The release definition will typically have the artifacts pointing to the **LATEST\_TAG**  \(implies that it utilizes the latest git tags filtered to the branch if the release definition exists on the same branch as of the code base\)
 
 1. **Releases from the dev channel** These are releases composed of artifacts from the trunk\(master/main\) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.   

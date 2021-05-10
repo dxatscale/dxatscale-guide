@@ -41,7 +41,7 @@ The following sections deal with items that are particular to DX@Scale or more e
   * Permission Sets
   * Layouts    
 * **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object defintion. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
-* 
+
 ### Unlocked Package and Test Coverage
 
 
@@ -50,15 +50,5 @@ The following sections deal with items that are particular to DX@Scale or more e
 
 ### Deprecating an Unlocked Package
 
-### Utilizing unlocked packages effectively
-
-* * Don’t package the metadata merely because it is supported by Metadata API.There are many scenarios where if your metadata is cross cutting across multiple packages.  It is a good candidate to be placed in a cro \(?\).
-* Configuration that is generally **shared across verticals** should be placed in Core \(example is custom Address object and related fields or a Flow for address maintenance\)
-* * Don't move configuration up to core just to manage **cross-vertical dependencies** - do this only where it logically makes sense, otherwise re-factor if possible or move to unpackaged.
-* * If functionality would be useful to future apps or other parts of the org, consider moving it to **base packages**
-* **Flow:** Where cross-package dependencies exist \(but it should not be in core as it is functionally aligned to a vertical\) place in unpackaged,
-* **Workflow**: Must be packaged alongside its parent object, otherwise move to unpackaged post
-* **FlexiPages:** Need to be packaged alongside components included in its metadata \(such as its parent object if it's a record page or any lwc's embedded in the page\) - if this is not possible move to unpackaged post
-* **Apex**: All fields referenced in an apex class must exist in your package or a dependent package \(i.e. Core\) - do not create dependencies between vertical packages, instead use dependency injection or platform events
-* \*\*\*\*
+\*\*\*\*
 
