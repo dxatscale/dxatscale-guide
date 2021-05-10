@@ -1,14 +1,15 @@
 # Connecting environments
 
-Environments \(Sandbox\) need to be connected to the CI/CD pipelines for deploying packages to an environment. The preferred authentication mechanism for integrating environments to pipelines is to utilize JWT based authentication which is detailed at this [link](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). The environment should also be provisioned with a service user \( API only user, with a System Admin Profile\)
+Environments \(Sandbox\) need to be connected to the CI/CD pipelines for deploying packages to an environment. The preferred authentication mechanism for integrating environments to pipelines is to utilize JWT based authentication which is detailed at this [link](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). The environment should also be provisioned with a service user \( API only user, with a System Admin Profile\) and should have the same username.
 
-Each sandbox need to have this below three  secrets being added to a secrets manager such as AWS Secrets Manager or Azure Key Vault.
+Each sandbox needs to have these below two secrets being added to a secrets manager such as AWS Secrets Manager or Azure Key Vault.  
+  
+
 
 |  | Naming Pattern in Secrets Manager | Description |
 | :--- | :--- | :--- |
 | SERVER\_KEY | &lt;ALIAS&gt;SERVER\_KEY | The Private Key used while creating the connected app, The alias is the alias used for the particular enviornment  |
 | CLIENTID/CONSUMER\_KEY | &lt;ALIAS&gt;_CONSUMER\_KEY_ | The client identifier also know as the consumer key from the connected app |
-| USERNAME | USERNAME | The username o fhe integration user to be used for authenticating to the connected app. This username should ideally be created  |
 
 ```text
 SERVER_KEY=`aws secretsmanager get-secret-value --secret-id $(server_key) --query SecretString --output text | jq -r .server_key`
@@ -19,5 +20,5 @@ sfdx force:auth:jwt:grant -u buildbot@yourorg.com.$(org_suffix) -i $CONSUMER_KEY
 
 ```
 
-
+The above script demonstrates how one can fetch the secrets from AWS Secrets Manager
 
