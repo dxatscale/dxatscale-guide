@@ -25,6 +25,7 @@ A DX@Scale practitioner helps the whole team adopt a DevOps culture, where the t
 
 #### Key Skills
 
+* Strong Salesforce Development Experience
 * Understanding of Salesforce DX and version control
 * Strong knowledge of DX@Scale practices
 * Knowledge of the differences between CI and CD
