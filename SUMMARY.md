@@ -42,6 +42,7 @@
 ## Team Topology <a id="roles-and-responsibilites"></a>
 
 * [Roles and Responsibilities](roles-and-responsibilites/dx-scale-engineers.md)
+* [Team Structure](roles-and-responsibilites/team-structure.md)
 
 ## Hands-On Challenges
 
