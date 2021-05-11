@@ -1,5 +1,52 @@
 # Roles and Responsibilities
 
+## DX@Scale Practitioners
+
+#### Description
+
+DX@Scale practitioners are seasoned developers who understand what DevOps on Salesforce is about, i.e., it is all about Application Architecture. They follow software engineering principles and is deeply familiar with Salesforce DX and Packaging.​
+
+A DX@Scale practitioner helps the whole team adopt a DevOps culture, where the team is responsible for the path to production. A project should have at least one DX@Scale practitioner full time.
+
+#### Key Skills
+
+* Lead a cross-functional team to examine and translate business requirements into a solution using Salesforce capabilities
+* Implement highly maintainable Salesforce solutions and perform peer code reviews to ensure the same.
+* Participate in development workstreams, from design through testing and deployment.
+* Maintain effective client relationships, delivering timely and relevant information with the ability to quickly identify and report project risks.
+* Work with other developers, designers, and architects to ensure the build meets business requirements and performance goals.
+* Understanding of Salesforce DX and version control
+* Strong knowledge of DX@Scale practices
+* Knowledge of the differences between CI and CD
+* Experience with modular application architecture
+* Participate in ‘Go-Live’ support and testing activities
+
+## Salesforce Developers
+
+#### Description
+
+Salesforce Developers are team members either from a functional or technical background who along with DX@Scale practitioners are responsible for developing features in Salesforce by utilizing software engineering principles and writing testable and deployable code/config. Salesforce Developers in a DX@Scale project is responsible for collaborating with Application Support teams and deploying packages to production
+
+#### Key Skills
+
+* Equivalent Salesforce Development Experience
+* Understanding of Salesforce DX and version control
+* Participate in ‘Go-Live’ support and testing activities
+
+## Application Support Team
+
+#### Description
+
+Application support team are responsible for maintaining salesforce production \(includes all the operational activities in a salesforce org \) rolling out hotfixes and maintaining the health of the org.
+
+#### Key Skills
+
+* Equivalent Salesforce Development Experience typically an Advanced Salesforce Administrator
+* Environment Management
+* Support Development Teams in orchestrating releases if required.
+* Understanding of Salesforce DX and version control
+* Participate in ‘Go-Live’ support and testing activities
+
 ## DX@Scale Engineers
 
 #### Description
@@ -13,24 +60,9 @@ DX@Scale engineer will maintain and monitor the pipeline but will not be respons
 * Strong knowhow on Salesforce Development Lifecycle​
 * Salesforce Plugin Development using Typescript/Node.js​
 * Authoring CI/CD pipelines​
-* Typically from a DevOps background and is comfortable handling multiple tools
+* Understands DevOps tools such as Artifact Registry, Docker Image and comfortable with YAML
 
-## DX@Scale Practitioners
-
-#### Description
-
-DX@Scale practitioners are seasoned developers who understand what DevOps on Salesforce is about, i.e., it is all about Application Architecture. They follow software engineering principles and is deeply familiar with Salesforce DX and Packaging.​
-
-A DX@Scale practitioner helps the whole team adopt a DevOps culture, where the team is responsible for the path to production. A project should have at least one DX@Scale practitioner full time.
-
-#### Key Skills
-
-* Strong Salesforce Development Experience
-* Understanding of Salesforce DX and version control
-* Strong knowledge of DX@Scale practices
-* Knowledge of the differences between CI and CD
-* Experience with modular application architecture
-* Experience leading or coaching a team
+## 
 
 
 
