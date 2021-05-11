@@ -6,11 +6,11 @@ description: All the details about unlocked package
 
 ### Introduction
 
-There is a huge amount of documentation on unlocked packages. Rather than repeating all the information here, a curated list of links are provide which every DX@Scale practitioner should be well versed with  
+There is a huge amount of documentation on unlocked packages. Rather than repeating all the information here, a curated list of links are provided which every DX@Scale practitioner should be well versed with  
   
 _**The Basics**_
 
-Package Development Model : [https://trailhead.salesforce.com/content/learn/modules/sfdx\_dev\_model](https://trailhead.salesforce.com/content/learn/modules/sfdx_dev_model)  
+Package Development Model: [https://trailhead.salesforce.com/content/learn/modules/sfdx\_dev\_model](https://trailhead.salesforce.com/content/learn/modules/sfdx_dev_model)  
 Unlocked Package for Customers: [https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers](https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers)  
 Successfully Creating Unlocked Package: [https://www.youtube.com/watch?v=xJNmHOtIgO0](https://www.youtube.com/watch?v=xJNmHOtIgO0)  
 Salesforce Developer Guide to Unlocked Package: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)  
@@ -34,19 +34,30 @@ The following sections deal with items that are particular to DX@Scale or more e
   * A group of related code and customization
   * Independent from other components and can be called from other packages
   * Standalone and released independently
-* Don’t package the metadata merely because it is supported by Unlocked Packaging.There are many scenarios where if a particular metadata is cross cutting across different packages \(say layouts\) and packaging them might result in too many dependendencies
-* **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment  errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use sfpowerkit's label create command to create these labels.  **Please ensure you use custom label's for its intended purpose as in for support texts in a multilingual app, do not use it to store constants etc.**
-* Care must be taken when dealing with  the following metadata. Most often, they must be placed in a source package in the respective domain, or if its a cross cutting concern, move it to global packages such as src-access-managements/src-ui  
-  * Proiles
+* Don’t package the metadata merely because it is supported by Unlocked Packaging. There are many scenarios where if  particular metadata is cross-cutting across different packages \(say layouts\) and packaging them might result in too many dependencies
+* **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use[ sfpowerkit label create ](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate)command to create these labels.  **Please ensure you use custom label's for its intended purpose as in for support texts in a multilingual app, do not use it to store constants etc.**
+* Care must be taken when dealing with the following metadata. Most often, they must be placed in a source package in the respective domain, or if its a cross-cutting concern, move it to global packages such as src-access-managements/src-ui  
+  * Profiles
   * Permission Sets
   * Layouts    
-* **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object defintion. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
+* **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object definition. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
 
 ### Unlocked Package and Test Coverage
 
+Unlocked Packages, excluding Org-Dependent unlocked packages have mandatory test coverage requirements. Each package should have minimum of 75% coverage requirement.  A validated build \(or [build command ](https://dxatscale.gitbook.io/sfpowerscripts/commands/build-and-quickbuild)in sfpowerscripts\) validates the coverage of package during the build phase. To enable the feedback earlier in the process, sfpowerscripts provide you functionality to validate test coverage of a package during the Pull Request Validation process.
 
+{% hint style="info" %}
+Please note that during pull request validation, all apex tests in a package are triggered in parallel and test cases must be written to ensure the guidelines mentioned in the link below  
+[https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon\_apex\_locking\_records.htm](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_locking_records.htm)
+{% endhint %}
 
 ### Managing Version Numbers of Unlocked Package
+
+For unlocked packages, we ask our practitioners to follow a semantic versioning of packages. You can read more about semantic version at this [link](https://semver.org/).
+
+{% hint style="info" %}
+Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by salesforce rather than rolling out your own build number substitution \( Use  'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
+{% endhint %}
 
 ### Deprecating an Unlocked Package
 
