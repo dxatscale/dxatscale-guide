@@ -40,7 +40,7 @@ Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sf
 
 
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 
 
