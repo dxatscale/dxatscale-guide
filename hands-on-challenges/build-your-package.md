@@ -33,7 +33,7 @@ The **quickbuild** command does almost the same thing as the build command, but 
 
 The deploy command deploys the package to the given alias \(this can be a scratch org, sandbox or devhub org\) 
 
-![](../.gitbook/assets/image%20%2848%29.png)
+![](../.gitbook/assets/image%20%2849%29.png)
 
 ### Steps
 

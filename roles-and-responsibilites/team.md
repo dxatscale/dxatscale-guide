@@ -66,7 +66,7 @@ DX@Scale engineer will maintain and monitor the pipeline but will not be respons
 
 DX@Scale works with various team structures. One of the most successful team structure is depicted below
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2856%29.png)
 
 
 

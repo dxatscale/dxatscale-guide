@@ -101,15 +101,15 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 * Go to your GitHub repository and select 'Settings' 
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2838%29.png)
 
 * Now select 'Secrets' 
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2837%29.png)
 
 * Select 'New repository secret' 
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2834%29%20%281%29.png)
 
 * Add your DevHub login username as a 'secret' value with the name DEVHUB\_USERNAME
 
@@ -117,7 +117,7 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 * Navigate to the Connected App you created in setting up the JWT flow and copy the 'Consumer Key'
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2835%29%20%281%29.png)
 
 * Add this consumer key as a 'secret' value with the name DEVHUB\_CLIENT\_ID
 * Now open the 'server.key' file you created when setting up the JWT flow and add the entire contents of the file as a 'secret' value with the name DEVHUB\_SERVER\_KEY 

@@ -31,8 +31,6 @@
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 * [Syncing Changes from Production \[DRAFT\]](environment/syncing-changes-from-production.md)
 
-## Artifact Management <a id="packages"></a>
-
 ## Release Management <a id="release"></a>
 
 * [Releasing to an environment](release/untitled.md)
