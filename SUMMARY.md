@@ -26,7 +26,6 @@
 * [Connecting environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
-* [Syncing Changes from Production \[DRAFT\]](environment/syncing-changes-from-production.md)
 
 ## Release Management <a id="release"></a>
 
