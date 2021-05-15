@@ -2,7 +2,12 @@
 
 * [DX@Scale](README.md)
 * [Principles](principles.md)
-* [Assets Registry](assets-registry.md)
+
+## TOOLS
+
+* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+* [sfpowerkit](https://github.com/Accenture/sfpowerkit)
+* [sfdmu](https://help.sfdmu.com/)
 
 ## DEVELOPMENT PRACTICES
 
@@ -36,6 +41,10 @@
 ## Team Topology <a id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
+
+---
+
+* [Assets Registry](assets-registry.md)
 
 ## Hands-On Challenges
 
