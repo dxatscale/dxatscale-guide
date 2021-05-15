@@ -9,9 +9,6 @@
 * [Unlocked Packages](development-practices/unlocked-packages.md)
 * [Source Packages](development-practices/source-packages.md)
 * [Data Packages](development-practices/data-packages.md)
-* [Dependency Injection](development-practices/dependency-injection/README.md)
-  * [Using Trigger Frameworks](development-practices/dependency-injection/using-trigger-frameworks.md)
-  * [Utilizing Callable Interface](development-practices/dependency-injection/utilizing-callable-interface.md)
 
 ## Source Code Management <a id="scm"></a>
 
