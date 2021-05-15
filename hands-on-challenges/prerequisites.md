@@ -46,8 +46,5 @@ sfdx plugins:install @dxatscale/sfpowerscripts
 * Signup for a GitHub account \(Skip this step if you already had a github account\)  [https://docs.github.com/en/github/getting-started-with-github/signing-up-for-github](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-github) 
 * Set up your CLI to use the Github account [https://docs.github.com/en/github/getting-started-with-github/set-up-git](https://docs.github.com/en/github/getting-started-with-github/set-up-git) 
 
-## Create an Azure Pipelines Account by using your GitHub Account <a id="user-content-7.--create-an-azure-pipelines-account-by-using-your-github-account"></a>
 
-Use your GitHub account to create your own azure pipelines account  
-[https://azure.microsoft.com/en-us/services/devops/?nav=min](https://azure.microsoft.com/en-us/services/devops/?nav=min) 
 
