@@ -1,3 +1,7 @@
+---
+description: All the tool and assets used by DX@Scale practitioners
+---
+
 # Assets Registry
 
 | Asset Name | Type | Distribution Model | License | URL | Docs |
