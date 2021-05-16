@@ -20,8 +20,8 @@
 ## Source Code Management <a id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
-* [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata/README.md)
-  * [Managing Profiles](scm/dealing-with-sensitive-metadata/managing-profiles.md)
+* [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata.md)
+* [Managing Profiles](scm/managing-profiles.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
