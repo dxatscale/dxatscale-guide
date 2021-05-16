@@ -17,7 +17,7 @@ DX@Scale practitioners utilize metrics emitted from sfpowerscripts to track the 
 | Average number of Work Item/Commit per release |  |  |  |
 | Success Ratio | 100 - \(  Failed Releases / \( Succes Releases + Failed Releases \) \) \* 100 | Success Ration of releases |  |
 
-![](../.gitbook/assets/image%20%2852%29%20%281%29.png)
+![](../.gitbook/assets/image%20%2852%29%20%281%29%20%281%29.png)
 
 {% hint style="info" %}
 DX@Scale practitioners follow a concept of deployment budget, where a maximum time is set for a release to production. This is an inherent SLA for the team to focus on and the time of deployment should be below this mark. If any particular deployment exceeds the allocated budget, the team should discuss various approaches and plans to mitigate it.

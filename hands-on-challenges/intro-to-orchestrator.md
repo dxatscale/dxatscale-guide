@@ -25,11 +25,5 @@ The first step is to install sfpowerscripts as a plugin to your sfdx-cli
  echo'y' | sfdx plugins:install sfpowerkit
 ```
 
-#### **Install the prerequisite fields** 
-
-In order for scratch org pooling to work, you will need to install the **sfpower-scratchorg-pool** unlocked package into your DevHub
-
-* Log into your DevHub 
-* Navigate to [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOkXQAU](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOkXQAU)
-* Select 'Install for Admin Only' 
+#### 
 

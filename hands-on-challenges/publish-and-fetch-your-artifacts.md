@@ -2,10 +2,9 @@
 
 ### **Learning Objectives**
 
-* What an artifact is 
-* How artifacts are used in sfdx development 
-* How to publish artifacts
-* How to retrieve artifacts 
+* What is an artifact?
+* How to publish artifacts to an artifact registry?
+* How artifacts are used  by orchestrator?
 
 **Time to complete:** 40 minutes
 

@@ -1,4 +1,4 @@
-# Build and Deploy your package
+# Orchestrating your packages
 
 ### **Learning Objectives**
 
@@ -39,7 +39,32 @@ The deploy command deploys the package to the given alias \(this can be a scratc
 
 #### Utilize build command to build all packages in the repository
 
+```text
+sfdx sfpowerscripts:orchestrator:build -v <devhub> --branch <your branch>
+```
+
+Notice how the packages are being built and placed into the artifacts directory.
+
 #### Utilize deploy command to deploy the packages to a new scratch org
+
+1. Create a new scratch org
+2. Install sfpowerscripts pre-requisite package into the new scratch org
+
+```text
+sfdx force:package:install --package 04t1P000000ka0fQAA -u <so_alias> -w 10
+```
+
+3. Use sfpowerscripts deploy command to deploy into the new scratch org
+
+```text
+sfdx sfpowerscripts:orchestrator:deploy -u <so_laias>
+```
+
+4. Did it fail? Notice the error and try to fix the error using required command
+
+5. Try retriggering Step 3 and notice it sucessfully deployed to the org.
+
+6. Try retriggering deploy one more time and notice how sfpowerscripts automatically skipped all the installed packages in the org.. Isn't it neat?
 
 ### Recap 
 
