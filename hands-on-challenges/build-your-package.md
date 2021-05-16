@@ -1,4 +1,4 @@
-# Orchestrating your packages
+# Building your packages
 
 ### **Learning Objectives**
 
