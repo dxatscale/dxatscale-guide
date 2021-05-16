@@ -59,7 +59,7 @@
 * [Create your own package](hands-on-challenges/7.-create-your-own-package.md)
 * [Intro to sfpowerscripts orchestrator](hands-on-challenges/intro-to-orchestrator.md)
 * [Orchestrating your packages](hands-on-challenges/build-your-package.md)
-* [Publish and Fetch your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
+* [Publish and Release your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
 * [Validating your changes](hands-on-challenges/validating-your-changes.md)
 * [Scratch Org Pooling Part 1](hands-on-challenges/scratch-org-pooling.md)
 * [Scratch Org Pooling Part 2 \(prepare\)](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
