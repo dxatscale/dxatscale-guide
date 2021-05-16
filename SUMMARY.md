@@ -6,6 +6,7 @@
 ## TOOLS
 
 * [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+* [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 * [sfpowerkit](https://github.com/Accenture/sfpowerkit)
 * [sfdmu](https://help.sfdmu.com/)
 
