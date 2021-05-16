@@ -6,4 +6,5 @@
 | sfpowerscripts | Build System | sfdx plugin | MIT | [https://github.com/Accenture/sfpowerscripts](https://github.com/Accenture/sfpowerscripts) | [https://dxatscale.gitbook.io/sfpowerscripts/](https://dxatscale.gitbook.io/sfpowerscripts/) |
 | sfdmu | Utilities | sfdx plugin | BSD-3 | [https://github.com/forcedotcom/SFDX-Data-Move-Utility](https://github.com/forcedotcom/SFDX-Data-Move-Utility) | [https://help.sfdmu.com/](https://help.sfdmu.com/) |
 | sfmc-devtools | Utilities | npm | MIT | [https://github.com/Accenture/sfmc-devtools](https://github.com/Accenture/sfmc-devtools) | [https://github.com/Accenture/sfmc-devtools](https://github.com/Accenture/sfmc-devtools) |
+| sfdx-browserforce-plugin | Utilties | sfdx plugin | MIT | [https://github.com/amtrack/sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin) | [https://github.com/amtrack/sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin) |
 
