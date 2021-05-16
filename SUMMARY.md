@@ -9,6 +9,7 @@
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 * [sfpowerkit](https://github.com/Accenture/sfpowerkit)
 * [sfdmu](https://help.sfdmu.com/)
+* [sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin)
 
 ## DEVELOPMENT PRACTICES
 
