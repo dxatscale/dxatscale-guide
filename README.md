@@ -10,5 +10,7 @@ The introduction of Salesforce DX revolutionized the ways of working with Salesf
 
 ## 
 
+{% embed url="https://www.youtube.com/watch?v=De9euEin67A" caption="" %}
+
 
 
