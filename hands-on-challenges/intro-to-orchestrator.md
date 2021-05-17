@@ -19,10 +19,10 @@ The orchestrator commands are built to be used through a CICD platform, but can 
 
 #### **Install sfpowerscripts** 
 
-The first step is to install sfpowerscripts as a plugin to your sfdx-cli
+The first step is to install sfpowerscripts as a plugin to your sfdx-cli, if you have not already done it
 
 ```text
- echo'y' | sfdx plugins:install sfpowerkit
+ echo'y' | sfdx plugins:install sfpowerscripts
 ```
 
 #### 
