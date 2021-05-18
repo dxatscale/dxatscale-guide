@@ -22,7 +22,7 @@ The orchestrator commands are built to be used through a CICD platform, but can 
 The first step is to install sfpowerscripts as a plugin to your sfdx-cli, if you have not already done it
 
 ```text
- echo'y' | sfdx plugins:install sfpowerscripts
+ echo'y' | sfdx plugins:install @dxatscale/sfpowerscripts
 ```
 
 #### 
