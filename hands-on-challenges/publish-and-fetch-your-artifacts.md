@@ -31,7 +31,7 @@ $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
 #### Publish your packages to Github Package Registry
 
 ```text
-sfdx sfpowerscripts:orchestrator:publish -d artifacts --npm --scope <your_github_org_name> --gittag --pushgittag
+sfdx sfpowerscripts:orchestrator:publish -d artifacts --npm --scope <your_github_org_name> --npmrcpath <path_to_your_npmrc> --gittag --pushgittag
 ```
 
 Notice how the packages are published into you repo.
