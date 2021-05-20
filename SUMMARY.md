@@ -2,22 +2,26 @@
 
 * [DX@Scale](README.md)
 * [Principles](principles.md)
-* [Assets Registry](assets-registry.md)
+
+## TOOLS
+
+* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+* [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
+* [sfpowerkit](https://github.com/Accenture/sfpowerkit)
+* [sfdmu](https://help.sfdmu.com/)
+* [sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin)
 
 ## DEVELOPMENT PRACTICES
 
 * [Unlocked Packages](development-practices/unlocked-packages.md)
 * [Source Packages](development-practices/source-packages.md)
 * [Data Packages](development-practices/data-packages.md)
-* [Dependency Injection](development-practices/dependency-injection/README.md)
-  * [Using Trigger Frameworks](development-practices/dependency-injection/using-trigger-frameworks.md)
-  * [Utilizing Callable Interface](development-practices/dependency-injection/utilizing-callable-interface.md)
 
 ## Source Code Management <a id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
-* [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata/README.md)
-  * [Managing Profiles](scm/dealing-with-sensitive-metadata/managing-profiles.md)
+* [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata.md)
+* [Managing Profiles](scm/managing-profiles.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
@@ -29,17 +33,19 @@
 * [Connecting environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
-* [Syncing Changes from Production \[DRAFT\]](environment/syncing-changes-from-production.md)
 
 ## Release Management <a id="release"></a>
 
 * [Releasing to an environment](release/untitled.md)
 * [Monitoring Releases](release/monrel.md)
-* [Rolling Back a Release](release/rolling-back-a-release.md)
 
 ## Team Topology <a id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
+
+---
+
+* [Assets Registry](assets-registry.md)
 
 ## Hands-On Challenges
 
@@ -51,12 +57,12 @@
 * [Scratch Org Introduction](hands-on-challenges/4.-scratch-org-introduction.md)
 * [Scratch Org Shape](hands-on-challenges/5.-scratch-org-shape.md)
 * [Create your own package](hands-on-challenges/7.-create-your-own-package.md)
-* [Intro to Orchestrator](hands-on-challenges/intro-to-orchestrator.md)
-* [Build and Deploy your package](hands-on-challenges/build-your-package.md)
+* [Intro to sfpowerscripts orchestrator](hands-on-challenges/intro-to-orchestrator.md)
+* [Building your packages](hands-on-challenges/build-your-package.md)
+* [Publish and Release your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
 * [Scratch Org Pooling Part 1](hands-on-challenges/scratch-org-pooling.md)
 * [Scratch Org Pooling Part 2 \(prepare\)](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
 * [Validating your changes](hands-on-challenges/validating-your-changes.md)
-* [Publish and Fetch your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
 
 ## Media Library
 

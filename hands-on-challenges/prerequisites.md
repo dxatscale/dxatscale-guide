@@ -39,7 +39,7 @@ sfdx plugins:install @dxatscale/sfpowerscripts
 2. Go to [https://trailhead.salesforce.com/users/profiles/orgs ](https://trailhead.salesforce.com/users/profiles/orgs%20) 
 3. Create 2 trailhead playgrounds
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%288%29%20%281%29%20%281%29%20%281%29.png)
 
 ## Signup for your own Github Account <a id="user-content-6.--signup-for-your-own-github-account%2C-ignore-if-you-already-have-one"></a>
 

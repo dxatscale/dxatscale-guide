@@ -8,7 +8,7 @@ We always recommend using unlocked packages over source packages whenever you ca
 
 1. [Unlocked Packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)
 2. [Unlocked Packages \(Org-Dependent\)](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_org_dependent.htm)
-3. [Source Packages]()
+3. Source Packages
 4. [Change Sets](https://help.salesforce.com/articleView?id=changesets.htm&type=5)
 
 Source Pages are typically used when you come across these constraints

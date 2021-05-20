@@ -1,4 +1,4 @@
-# Build and Deploy your package
+# Building your packages
 
 ### **Learning Objectives**
 
@@ -37,232 +37,34 @@ The deploy command deploys the package to the given alias \(this can be a scratc
 
 ### Steps
 
-#### Create your packages 
-
-* Clone the repo to your local machine 
-* Create all of the Easy Spaces packages using the [package create](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_package.htm) command: 
+#### Utilize build command to build all packages in the repository
 
 ```text
-   $ sfdx force:package:create -n YourPackageName -t Unlocked -r force-app -v YourDevHubAlias
+sfdx sfpowerscripts:orchestrator:build -v <devhub> --branch <your branch>
 ```
 
-{% hint style="info" %}
-Use your project-sfdx.json to find the values for the package names
-{% endhint %}
+Notice how the packages are being built and placed into the artifacts directory.
 
-* After you have created all four packages, look at your project-sfdx.json file and notice how the package Aliases have been updates 
-* Push the project-sfdx.json file back into your repo
-* In your command line or terminal use the `sfdx force:package:list -v devhub@example.com` command to verify that the packages have been created and are installed in your DevHub
+#### Utilize deploy command to deploy the packages to a new scratch org
 
-#### Create your QuickBuild and Deploy file 
-
-* Create a new 'Action' in GitHub Actions called 'quickbuild-deploy' using the code below
+1. Create a new scratch org
+2. Install sfpowerscripts pre-requisite package into the new scratch org
 
 ```text
-# Unique name for this workflow
-name: quick build and deploy
-
-# Definition when the workflow should run
-on:
-    workflow_dispatch:
-    push:
-        branches:
-            - develop
-
-# Jobs to be executed
-jobs:
-    quickbuild:
-        name: QuickBuild the packages
-        runs-on: ubuntu-latest
-        container: dxatscale/sfpowerscripts
-        steps:
-            # Checkout the code
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
-
-            # Authenticate dev hub
-            - name: 'Authenticate Dev Hub'
-              run: |
-                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
-                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
-                  rm -f ./JWT_KEYFILE
-              env:
-                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
-
-            # Create all packages
-            - name: 'Create packages'
-              id: sfpowerscripts-build
-              run: |
-                  pwd
-                  sfdx sfpowerscripts:orchestrator:quickbuild -v devhub --diffcheck
-            # Publish artifacts
-            - uses: actions/upload-artifact@v2
-              with:
-                  name: quickbuild-artifacts
-                  path: artifacts
-
-    # Simulating a deploy to System Test Environment using a scratch org
-    deploy:
-        name: Deploy and Validate the packages
-        runs-on: ubuntu-latest
-        container: dxatscale/sfpowerscripts
-        needs: quickbuild
-        steps:
-            # Checkout the code
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
-
-    #Github Actions are event based and are triggered independently,  There is no currently an option to control concurrency settings
-    #on pipelines and in this model, build should be run sequentially
-            - name: Wait till previous pipeline has finished this stage
-              uses: softprops/turnstyle@v0.1.5
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                abort-after-seconds: 1800
-
-              # Download Artifacts
-            - name: Download Artifacts
-              uses: actions/download-artifact@v2
-              with:
-                  name: quickbuild-artifacts
-                  path: artifacts
-
-            # Authenticate dev hub
-            - name: 'Authenticate Dev Hub'
-              run: |
-                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
-                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
-              env:
-                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
-
-            # Create scratch org
-            - name: Create scratch org
-              run: sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1 -v devhub
-
-            # Install all new packages into scratch org
-            - name: 'Install new package versions into scratch org'
-              run: 'sfdx sfpowerscripts:orchestrator:deploy -u scratch-org'
-
-            # Housekeeping
-            - name: Delete scratch org
-              if: always()
-              run: sfdx force:org:delete -p -u scratch-org
+sfdx force:package:install --package 04t1P000000ka0fQAA -u <so_alias> -w 10
 ```
 
-* Run the file, and take a look at what is happening inside the action. 
-
-{% hint style="info" %}
-Notice that this command is still deploying, it's just using a scratch org, if you were using an ST sandbox to do testing, you would supply the alias or username of this sandbox in the -u portion of the deploy command 
-{% endhint %}
-
-#### Create your Build and Deploy file 
-
-* Create a new action in GitHub actions called 'build - deploy' using the following code
+3. Use sfpowerscripts deploy command to deploy into the new scratch org
 
 ```text
-# Unique name for this workflow
-name: build and deploy
-
-# Definition when the workflow should run
-on:
-    workflow_dispatch:
-    push:
-        branches:
-            - develop
-
-# Jobs to be executed
-jobs:
-    build:
-        name: Build Production Ready packages
-        runs-on: ubuntu-latest
-        container: dxatscale/sfpowerscripts
-        steps:
-            # Checkout the code
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
-
-              # Authenticate dev hub
-            - name: 'Authenticate Dev Hub'
-              run: |
-                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
-                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
-                  rm -f ./JWT_KEYFILE
-              env:
-                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
-
-#Github Actions are event based and are triggered independently,  There is no currently an option to control concurrency settings
-#on pipelines and in this model, build should be run sequentially
-            - name: Wait till previous pipeline has finished this stage
-              uses: softprops/turnstyle@v0.1.5
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                abort-after-seconds: 1800
-
-              # Create all packages
-            - name: 'Create packages'
-              id: sfpowerscripts-build
-              run: 'sfdx sfpowerscripts:orchestrator:build -v devhub'
-
-              # Publish artifacts
-            - uses: actions/upload-artifact@v2
-              with:
-                  name: validated-artifacts
-                  path: artifacts
-
-    promote:
-        runs-on: ubuntu-latest
-        container: dxatscale/sfpowerscripts
-        needs: build
-        name: Promote the packages
-        steps:
-            # Checkout the code
-            - name: 'Checkout source code'
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 0
-
-              # Download Artifacts
-
-            - name: Download Artifacts
-              uses: actions/download-artifact@v2
-              with:
-                  name: validated-artifacts
-                  path: artifacts
-
-            # Authenticate dev hub
-            - name: 'Authenticate Dev Hub'
-              run: |
-                  echo "${SALESFORCE_JWT_SECRET_KEY}" > ./JWT_KEYFILE
-                  sfdx auth:jwt:grant -u ${{ secrets.DEVHUB_USERNAME }} -i ${{ secrets.DEVHUB_CLIENT_ID }} -f ./JWT_KEYFILE -a devhub -r https://login.salesforce.com
-                  rm -f ./JWT_KEYFILE
-              env:
-                  SALESFORCE_JWT_SECRET_KEY: ${{ secrets.DEVHUB_SERVER_KEY }}
-
-            # Promoted all packages
-            - name: 'Promote packages'
-              id: sfpowerscripts-build
-              run: 'sfdx sfpowerscripts:orchestrator:promote -v devhub -o promoted-artifacts'
+sfdx sfpowerscripts:orchestrator:deploy -u <so_laias>
 ```
 
-* Run this file and see if you can spot the differences between what happens in quickbuild vs what happens in build. 
+4. Did it fail? Notice the error and try to fix the error using required command
 
-{% hint style="danger" %}
-Did you spot what we've left out of the build-deploy? 
+5. Try retriggering Step 3 and notice it sucessfully deployed to the org.
 
-
-
-Yes, we left off the deploy component! 
-{% endhint %}
-
-Your **last task** for this module is to use what you have learnt to add in your own deploy stage to this action. 
+6. Try retriggering deploy one more time and notice how sfpowerscripts automatically skipped all the installed packages in the org.. Isn't it neat?
 
 ### Recap 
 
