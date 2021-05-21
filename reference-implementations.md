@@ -2,11 +2,11 @@
 
 DX@Scale can be implemented by combining any  CI/CD platforms with an [artifact registry](https://dxatscale.gitbook.io/sfpowerscripts/faq/artifacts) . Here are some sample reference architectures that we had great success with.
 
-1. **Gitlab Stack**
+## **Gitlab**
 
 ![](.gitbook/assets/image%20%285%29.png)
 
-2.  **Azure DevOps**  
+## **Azure DevOps**  
 
 ![](.gitbook/assets/image%20%282%29.png)
 
