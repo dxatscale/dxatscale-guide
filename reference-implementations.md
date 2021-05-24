@@ -2,10 +2,6 @@
 
 DX@Scale can be implemented by combining any  CI/CD platforms with an [artifact registry](https://dxatscale.gitbook.io/sfpowerscripts/faq/artifacts). Here are some sample reference architectures that we had great success with.
 
-## **GitLab**
-
-![](.gitbook/assets/image%20%286%29.png)
-
 ## **Azure DevOps**  
 
 This implementation predominantly utilizes application from Azure DevOps Services.
@@ -22,6 +18,10 @@ This reference implementation utilizes predominantly GitHub along with Jira and 
 
   
 Starter pipelines for Github are available [here](https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.github).
+
+## **GitLab**
+
+![](.gitbook/assets/image%20%286%29.png)
 
   
 Please reach out to the team for analysis on tool stacks and our highly biased opinions on various stacks.
