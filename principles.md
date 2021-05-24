@@ -14,15 +14,15 @@ DX@Scale projects will strive to improve developer productivity by ensuring ease
 
 ## 3. Limit Batch Size
 
-Every DX@Scale practitioner will follow a concept of build/deployment budget.  They will look to minimize the duration of which a feature branch lives and strive to do whatever they can to keep these attributes in check across their packages.   
+Every DX@Scale Practitioner will follow a concept of build/deployment budget.  They will look to minimize the duration of which a feature branch lives and strive to do whatever they can to keep these attributes in check across their packages.   
 
 ## 4. Loosely Coupled Architecture
 
-DX@Scale practitioners will design their modules in such a way that it reduce the inter-dependencies, facilitate integration, deployment and test.
+DX@Scale Practitioners will design their modules in such a way that it reduce the inter-dependencies, facilitate integration, deployment and test.
 
 ## 5. Automate Manual Deployment Steps
 
-Recurring manual steps hampers the path to production by making it unaffordable to deploy at will.  This is one of the major reasons why Salesforce deployments infrequent and batched together. DX@Scale practitioners will remove any such recurring manual steps, by designing the code or config around it or introduce automation using variety of techniques.
+Recurring manual steps hampers the path to production by making it unaffordable to deploy at will.  This is one of the major reasons why Salesforce deployments are infrequent and batched together. DX@Scale practitioners will remove any such recurring manual steps, by designing the code or config around it or introduce automation using variety of techniques.
 
 ## 6. Continuous Emphasis on Reducing Technical Debt
 
