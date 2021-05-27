@@ -9,10 +9,6 @@
 * [sfpowerkit](https://github.com/Accenture/sfpowerkit)
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 
----
-
-* [Reference Implementations](reference-implementations.md)
-
 ## DEVELOPMENT PRACTICES
 
 * [Unlocked Packages](development-practices/unlocked-packages.md)
