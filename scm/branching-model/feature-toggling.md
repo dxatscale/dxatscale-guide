@@ -8,11 +8,11 @@ This pattern can decouple the risk and logistics of the deployment itself from t
 
 Use a Custom Metadata Type to define one or more feature activation flags \(i.e. one for the release or one per feature, depending on granularity needed\). This can then be referenced in the following to dynamically activate configuration:  
 Formula fields \(e.g. AND\($CustomMetadata.FeatureActivation\_\_mdt.MyFeature.IsActive\_\_c, \[my\_condition\]\)  
-Workflow, Process Builders and Visual Workflows \(branching condition that checks the met value as shown above\).
+Workflow, Process Builders and Visual Workflows \(branching condition that checks the met value as shown above\)
 
 ### App Logic - Code <a id="user-content-app-logic---code"></a>
 
-* Use a Trigger Framework which allows for deactivation of any given trigger handler via a Custom Metadata Type or Custom Permission. [Apex Trigger Actions](https://github.com/mitchspano/apex-trigger-actions-framework) and [Nebula Triggers](https://bitbucket.org/nebulaconsulting/nebula-core/src/master/) are examples of open source framerworks which provide this capability.
+* Use a Trigger Framework which allows for deactivation of any given trigger handler via a Custom Metadata Type or Custom Permission. [Apex Trigger Actions](https://github.com/mitchspano/apex-trigger-actions-framework) and [Nebula Triggers](https://bitbucket.org/nebulaconsulting/nebula-core/src/master/) are examples of open source framerworks which provide this capability
 * Apex REST services should return an appropriate error if code is not active \(e.g. “Service Inactive”\)
 
 ### UI: Page Layouts, Lightning Pages \(Flexipages\) and Components <a id="user-content-ui%3A-page-layouts%2C-lightning-pages-(flexipages)-and-components"></a>
@@ -28,7 +28,7 @@ These will be left active unless there are clear impacts from this approach \(th
 
 ### Apex Managed Sharing <a id="user-content-apex-managed-sharing"></a>
 
-Use a sharing framework that is metadata driven and caters for dormancy. The open source apex sharing framework [FormulaShare](https://github.com/LawrenceLoz/FormulaShare-DX) operates through metadata-driven rules which can be deployed in a disabled state until required.
+Use a sharing framework that is metadata driven and caters for dormancy. The open source apex sharing framework [FormulaShare](https://github.com/LawrenceLoz/FormulaShare-DX) operates through metadata-driven rules which can be deployed in a disabled state until required
 
 ### Other <a id="user-content-other"></a>
 

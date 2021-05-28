@@ -39,7 +39,7 @@ The following sections deal with items that are particular to DX@Scale or more e
   * **Permission Sets**, which should be granular and specific to an object or package
   * **Flows**, which should be small and modular
   * **Triggers and Trigger Handler Classes**, which should be implemented through a dependency injection framework, and scoped to be lightweight, calling service classes from common packages where necessary
-* **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object definition. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
+* **Workflows and Process Builders** need to be placed in the same unlocked package that contains the parent object definition. This is a restriction of this particular metadata component. In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
 * **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use[ sfpowerkit label create ](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate)command to create these labels.  **Please ensure you use custom labels for their intended purpose to support translation and renaming of standard components, do not use these to store constants etc.**
 * Usually some metadata will be cross-cutting, and these components should generally be moved to global packages such as src-access-managements and src-ui:
   * **Permission Set Groups**, which should collate granular permission sets from multiple packages into a specific access level
@@ -65,7 +65,7 @@ For unlocked packages, we ask our practitioners to follow a semantic versioning 
 Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by salesforce rather than rolling out your own build number substitution \( Use  'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
 {% endhint %}
 
-Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch (not build) version **must** be higher than the last version of this package which was promoted. These version number changes should be made manually in the sfdx-project.json file before the final package build and promotion.
+Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch (not build) version **must** be higher than the last version of this package which was promoted. These version number changes should be made in the sfdx-project.json file before the final package build and promotion.
 
 ### Deprecating components from an  Unlocked Package
 
