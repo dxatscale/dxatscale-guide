@@ -34,7 +34,7 @@ The following sections deal with items that are particular to DX@Scale or more e
   * A group of related code and customization
   * Independent from other components and can be called from other packages
   * Standalone and released independently
-* Don’t package the metadata merely because it is supported by Unlocked Packaging. Some components (e.g. profiles) will need to be managed outside of unlocked packages and it may be preferable to deploy other related metadata using the same mechanism. Some metadata types, such as non-critical reports, email templates etc, may be better to manage outside of source control entirely to allow these to be changed dynamically by end users.
+* Don’t package the metadata merely because it is supported by Unlocked Packaging. Some components (e.g. profiles) will need to be managed outside of unlocked packages and it may be preferable to deploy other related metadata using the same mechanism. In other cases, metadata like non-critical reports, email templates etc, may be better to manage outside of source control entirely to allow these to be changed dynamically by end users.
 * **Objects** should be "owned", where possible, by one domain specific package which includes the majority of fields, validation rules and other metadata related to this object. Other metadata acting on the object should be scoped where possible to operate within the confines of the package. Examples include:
   * **Permission Sets**, which should be granular and specific to an object or package
   * **Flows**, which should be small and modular
