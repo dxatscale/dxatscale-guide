@@ -22,7 +22,7 @@ Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-archi
 
 The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs
 
-### Placing  metadata components in Unlocked Package
+### Placing metadata components in Unlocked Package
 
 * Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
 
@@ -34,13 +34,19 @@ The following sections deal with items that are particular to DX@Scale or more e
   * A group of related code and customization
   * Independent from other components and can be called from other packages
   * Standalone and released independently
-* Don’t package the metadata merely because it is supported by Unlocked Packaging. There are many scenarios where if  particular metadata is cross-cutting across different packages \(say layouts\) and packaging them might result in too many dependencies
-* **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use[ sfpowerkit label create ](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate)command to create these labels.  **Please ensure you use custom label's for its intended purpose as in for support texts in a multilingual app, do not use it to store constants etc.**
-* Care must be taken when dealing with the following metadata. Most often, they must be placed in a source package in the respective domain, or if its a cross-cutting concern, move it to global packages such as src-access-managements/src-ui  
-  * Profiles
-  * Permission Sets
-  * Layouts    
+* Don’t package the metadata merely because it is supported by Unlocked Packaging. Some components (e.g. profiles) will need to be managed outside of unlocked packages and it may be preferable to deploy other related metadata using the same mechanism. Some metadata types, such as non-critical reports, email templates etc, may be better to manage outside of source control entirely to allow these to be changed dynamically by end users.
+* **Objects** should be "owned", where possible, by one domain specific package which includes the majority of fields, validation rules and other metadata related to this object. Other metadata acting on the object should be scoped where possible to operate within the confines of the package. Examples include:
+  * **Permission Sets**, which should be granular and specific to an object or package
+  * **Flows**, which should be small and modular
+  * **Triggers and Trigger Handler Classes**, which should be implemented through a dependency injection framework, and scoped to be lightweight, calling service classes from common packages where necessary
 * **Workflows and ProcessBuilders** need to be placed in the same unlocked package that contains the parent object definition. This is a restriction of this particular metadata component, In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
+* **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use[ sfpowerkit label create ](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate)command to create these labels.  **Please ensure you use custom labels for their intended purpose to support translation and renaming of standard components, do not use these to store constants etc.**
+* Usually some metadata will be cross-cutting, and these components should generally be moved to global packages such as src-access-managements and src-ui:
+  * **Permission Set Groups**, which should collate granular permission sets from multiple packages into a specific access level
+  * **Apps**, which include tabs from multiple packages
+  * **Layouts**, which can include related lists, buttons and fields referencing metadata outside of the object's package
+  * **Flexipages**, which may include components, actions and lists from across packages
+* **Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
 
 ### Unlocked Package and Test Coverage
 
@@ -58,6 +64,8 @@ For unlocked packages, we ask our practitioners to follow a semantic versioning 
 {% hint style="info" %}
 Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by salesforce rather than rolling out your own build number substitution \( Use  'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
 {% endhint %}
+
+Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch (not build) version **must** be higher than the last version of this package which was promoted. These version number changes should be made manually in the sfdx-project.json file before the final package build and promotion.
 
 ### Deprecating components from an  Unlocked Package
 

@@ -16,6 +16,7 @@ Different folders in each of the structure are explained as below
 src-env-specific should be added to .forceignore files and should not be deployed to a scratch org.   
 {% endhint %}
 
+6. **src-ui:** Should include page layouts, flexipages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and Visualforce should be included in a relevant domain package.
 7. **src-temp :** This folder is marked as the default folder in sfdx-project.json This is the landing folder for all metadata and this particular folder doesnt get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. 
 
 This will form your initial structure of packaging. Once some development cycles are being completed,  frameworks can be moved into its own repository.  If you also figure a particular domain is being not iterated upon frequently anymore and there are no upward dependency, they could also be removed into another repository.
