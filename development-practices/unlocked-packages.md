@@ -22,23 +22,18 @@ Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-archi
 
 The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs
 
-### Placing metadata components in Unlocked Package
-
-* Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
-
-```text
-                 sfdx sfpowerkit:package:valid -n <name_of_package> 
-```
+### What to Package
 
 * If you have the following scenarios, it may be a good idea to put them in **domain specific packages**.
   * A group of related code and customization
   * Independent from other components and can be called from other packages
   * Standalone and released independently
 * Don’t package the metadata merely because it is supported by Unlocked Packaging. Some components (e.g. profiles) will need to be managed outside of unlocked packages and it may be preferable to deploy other related metadata using the same mechanism. In other cases, metadata like non-critical reports, email templates etc, may be better to manage outside of source control entirely to allow these to be changed dynamically by end users.
-* **Objects** should be "owned", where possible, by one domain specific package which includes the majority of fields, validation rules and other metadata related to this object. Other metadata acting on the object should be scoped where possible to operate within the confines of the package. Examples include:
-  * **Permission Sets**, which should be granular and specific to an object or package
+* Metadata acting on components in a package should be scoped where possible to operate within the confines of the package so these can be included too. Examples include:
+  * **Permission Sets**, which should be granular and specific to a function, for example **ability to create customers** (create/edit accounts and contacts) or **ability to administrate customers** (delete/view all accounts and contacts). It's also important that permission sets are composable to reduce the impact of changes - for example including field security for all non-sensitive fields of an object/package in a single permission set simplifies the process of creating a new field, as permissions for this field can be added to just this permission set
   * **Flows**, which should be small and modular
   * **Triggers and Trigger Handler Classes**, which should be implemented through a dependency injection framework, and scoped to be lightweight, calling service classes from common packages where necessary
+* **Objects** should ideally be "owned" by one domain specific package which includes the majority of fields, validation rules and other metadata related to this object. This allows for simpler governance around core object changes and ensures that when metadata is added to an object this is pulled by SFDX into the owning package by default.
 * **Workflows and Process Builders** need to be placed in the same unlocked package that contains the parent object definition. This is a restriction of this particular metadata component. In these scenarios rather than building  automation using workflows and process builders, it is better to use apex or flow
 * **Custom Labels:** Group and manage custom labels for each package separately to ensure they don't cause deployment errors. sfpowerkit provides some tooling around to work with maintaining custom labels. Check the command [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate) and [here](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelreconcile). Ensure you use[ sfpowerkit label create ](https://github.com/Accenture/sfpowerkit#sfpowerkitsourcecustomlabelcreate)command to create these labels.  **Please ensure you use custom labels for their intended purpose to support translation and renaming of standard components, do not use these to store constants etc.**
 * Usually some metadata will be cross-cutting, and these components should generally be moved to global packages such as src-access-managements and src-ui:
@@ -46,7 +41,21 @@ The following sections deal with items that are particular to DX@Scale or more e
   * **Apps**, which include tabs from multiple packages
   * **Layouts**, which can include related lists, buttons and fields referencing metadata outside of the object's package
   * **Flexipages**, which may include components, actions and lists from across packages
-* **Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
+
+### What Not to Package
+
+* Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://**developer.salesforce.com/docs/metadata-coverage/).
+**Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
+* **Reports** can only be put in an unlocked if
+  * They serve a specific purpose within the package, for example: providing behavioural data of some components
+  * They serve as a template that admin can clone
+* Ensure you run the following command during Pull Request Validation / Locally using the following command to check that metadata included in the package directory can be packaged:
+
+```text
+                 sfdx sfpowerkit:package:valid -n <name_of_package> 
+```
+
+
 
 ### Unlocked Package and Test Coverage
 
