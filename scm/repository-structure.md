@@ -2,15 +2,15 @@
 
 ![Repository Structure](../.gitbook/assets/repostructure.png)
 
-DX@Scale projects predominantly follow a multiple mono-repo structure similar to the picture shown above.  Each repository has as src folder that holds one or more packages.
+DX@Scale projects predominantly follow a multiple mono-repo structure similar to the picture shown above.  Each repository has as src folder that holds one or more packages that map to your **sfdx-project.json** file.
 
 Different folders in each of the structure are explained as below
 
-1. **core-crm:**  A folder to house all the core model of your org which is shared with all other domains
-2. **frameworks:** This folder houses multiple packages which are basically utilities/technical frameworks  such as Trigger, Logging and Error Handling, Dependency Injection etc.
-3. **sales:**  An example of a domain in your org. Under this particular domain, multiple packages that belong to the domain are included
-4. **src-access-management:**  This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles and permission sets that are applied across the org
-5. **src-env-specific:** An aliasified packaged which carries metadata for each particular stage of your path to production.  Some examples include named credentials, remote site settings, web links, etc 
+1. **core-crm:**  A folder to house all the core model of your org which is shared with all other domains.
+2. **frameworks:** This folder houses multiple packages which are basically utilities/technical frameworks such as Triggers, Logging and Error Handling, Dependency Injection etc.
+3. **sales:**  An example of a domain in your org. Under this particular domain, multiple packages that belong to the domain are included.  Domains can map to the Salesforce Products but it is up to you to define.
+4. **src-access-management:**  This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org.
+5. **src-env-specific:** An aliasified packaged which carries metadata for each particular stage \(environment\) of your path to production.  Some examples include named credentials, remote site settings, web links, custom metadata, custom settings, etc 
 
 {% hint style="warning" %}
 src-env-specific should be added to .forceignore files and should not be deployed to a scratch org.   
