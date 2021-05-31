@@ -64,7 +64,7 @@ sfdx sfpowerkit:source:profile:reconcile -u newDevOrg -f src-access-mgmt/main/de
 
 #### **Sample SFDX Project Folder**
 
-![](../../.gitbook/assets/repository_structure.png)
+![](../../.gitbook/assets/1615422434503.png)
 
 #### **Some Guiding Principles to Leave You With**
 
