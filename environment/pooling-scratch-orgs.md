@@ -26,7 +26,7 @@ Scratch Org pools need to be replenished in the following manner.
 * **CI/CD pools with only dependencies installed** Replenished periodically through out the day, completely deleted at end of the day and recreated in the very early hours of the day to provide a fresh set of pools each day. These pools will have the expiry set to 2 day only.
 * **Developer Pool** Replenished periodically through out the day, never deleted automatically. Scratch orgs are left to expire by itself. The expiry for each org is set to 7 days and developers need to be aware of the expiry and should be encouraged to work on feature/tasks that should be less than these number of days and should fetch a new org from the pool
 
-Pipelines should be built and invoked using a scheduler to replenish the scratch orgs in the pool
+Pipelines should be built and invoked using a scheduler to replenish the scratch orgs in the pool.
 
 ### Recreating Pools
 
