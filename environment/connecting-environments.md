@@ -1,4 +1,4 @@
-# Connecting environments
+# Connecting Environments
 
 Environments \(Sandbox\) need to be connected to the CI/CD pipelines for deploying packages to an environment. The preferred authentication mechanism for integrating environments to pipelines is to utilize JWT based authentication which is detailed at this [link](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). The environment should also be provisioned with a service user \( API only user, with a System Admin Profile\) and should have the same username.
 
