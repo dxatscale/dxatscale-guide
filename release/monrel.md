@@ -4,18 +4,18 @@ Monitoring releases is a critical activity for DX@Scale practitioners. DX@Scale 
 
 DX@Scale practitioners utilize metrics emitted from sfpowerscripts to track the following attributes of a release
 
-| METRIC | Description | Goal | SLI |
+| Metric | Description | Service Level Objective \(SLO\) | SLI |
 | :--- | :--- | :--- | :--- |
-| Average Number of packages in a release | The average number of packages carried in a release | Smaller the better, strive to keep releases under 10 packages  |  |
-| Average time taken for a release to Prod | The average time taken for a release to production | Should strive for all the release activity including manual step to be completed in less than an hour |  |
-| Average time taken for a release to Non-Production environments | The average time taken for a release to non-production environments | Should strive for all the release activity including manual step to be completed in less than an hour |  |
-| Time taken for Last release to prod | The last time taken for a release to prod | Should strive for all the release activity including manual step to be completed in less than an hour |  |
-| Time taken for a release to each environment | The average time taken for a release to each non-production environments | Should strive for all the release activity including manual step to be completed in less than an hour |  |
-| Number of releases to prod | Number of releases in a defined a time period     | More the better |  |
-| Number of releases to non -prod | Number of releases in a defined a time period     | More the better |  |
-| Number of failed releases / environments | Number of failed releases per environment | Less the better |  |
-| Average number of Work Item/Commit per release | Number of work items/release | Less the better |  |
-| Success Ratio | 100 - \(  Failed Releases / \( Succes Releases + Failed Releases \) \) \* 100 | Success Ration of releases |  |
+| Average Number of Packages in a Release | The average number of packages carried in a release | Smaller the better, strive to keep releases under 10 packages  |  |
+| Average Time taken for a Release to Prod | The average time taken for a release to production | Should strive for all the release activity including manual step to be completed in less than an hour |  |
+| Average Time taken for a Release to Non-Production Environments | The average time taken for a release to non-production environments | Should strive for all the release activity including manual step to be completed in less than an hour |  |
+| Time taken for Last Release to prod | The last time taken for a release to prod | Should strive for all the release activity including manual step to be completed in less than an hour |  |
+| Time taken for a Release to Each Environment | The average time taken for a release to each non-production environments | Should strive for all the release activity including manual step to be completed in less than an hour |  |
+| Number of Releases to Prod | Number of releases in a defined a time period     | More the better |  |
+| Number of Releases to Non-prod Environments | Number of releases in a defined a time period     | More the better |  |
+| Number of Failed Releases per Environments | Number of failed releases per environment | Less the better |  |
+| Average Number of Work Items/Commits per Release | Number of work items/commits per release | Less the better |  |
+| Success Ratio | 100 - \( Failed Releases / \( Success Releases + Failed Releases \) \) \* 100 | Success Ration of Releases |  |
 
 ![](../.gitbook/assets/dashboard_edited.png)
 
