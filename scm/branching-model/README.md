@@ -30,7 +30,7 @@ Development teams should strive to follow a scaled trunk based development as mu
 
 ### Handling Concurrent Releases
 
-Having concurrent releases in a large program is inevitable due to a variety of reasons, such as alignment to different business units, time taken to develop a feature etc.
+Having concurrent releases in a large program is inevitable due to a variety of reasons, such as alignment to different business units, time taken to develop a feature, etc.
 
 > "Your company wants a stream of major functionality to arrive in the application you are pushing live at a regular cadence. Because you are good Extreme Programmers, you know that consecutive development of consecutive releases is best. However, the effort and length of time needed to complete each major piece of functionality is large enough to require different project teams cooperating towards that plan. Some of those teams will be within the same codebase. Some may be dependent services that the application will invoke over the wire. Not everything is equal effort it seems, yet the business wants a specific rollout, including dates and can plan that even eighteen months ahead. They are very specific because there is an impact on the user community \(staff, clients, customers or members of the public\). Driving departments may include training, marketing, finance." -- Paul Hammant@trunkbaseddevelopment.com
 
