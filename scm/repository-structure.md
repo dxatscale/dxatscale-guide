@@ -2,7 +2,7 @@
 
 ![Repository Structure](../.gitbook/assets/repository_structure.png)
 
-DX@Scale projects predominantly follow a multiple mono-repo structure similar to the picture shown above.  Each repository has a "**src"** folder that holds one or more packages that map to your **sfdx-project.json** file.
+DX@Scale projects predominantly follow a multiple mono-repo structure similar to the picture shown above. Each repository has a "**src"** folder that holds one or more packages that map to your **sfdx-project.json** file.
 
 Different folders in each of the structure are explained as below
 
@@ -18,10 +18,8 @@ Different folders in each of the structure are explained as below
 10. **release-definitions:** This folder stores the release definition YAML files mapped to the **sfpowerscripts:orchestrator:release** path definition switch.  
 
 {% hint style="warning" %}
-src-env-specific should be added to .forceignore files and should not be deployed to a scratch org. 
+src-env-specific should be added to .forceignore files and should not be deployed to a scratch org.
 {% endhint %}
 
-
-This will form your initial structure of packaging. Once some development cycles are being completed,  frameworks can be moved into its own repository.  If you also figure a particular domain is being not iterated upon frequently anymore and there are no upward dependency, they could also be removed into another repository.
-
+This will form your initial structure of packaging. Once some development cycles are being completed, frameworks can be moved into its own repository. If you also figure a particular domain is being not iterated upon frequently anymore and there are no upward dependency, they could also be removed into another repository.
 
