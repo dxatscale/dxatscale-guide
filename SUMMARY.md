@@ -28,13 +28,13 @@
 ## Environment Management <a id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
-* [Connecting environments](environment/connecting-environments.md)
+* [Connecting Environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
 ## Release Management <a id="release"></a>
 
-* [Releasing to an environment](release/untitled.md)
+* [Releasing to an Environment](release/untitled.md)
 * [Monitoring Releases](release/monrel.md)
 
 ## Team Topology <a id="roles-and-responsibilites"></a>

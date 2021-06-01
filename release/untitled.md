@@ -1,4 +1,4 @@
-# Releasing to an environment
+# Releasing to an Environment
 
 A release is a set of packages \(or artifacts\) and their dependencies being deployed to an environment.  Releases are defined using a YAML file definition and orchestrated by sfpowerscripts. Read more about the release definition [here](https://dxatscale.gitbook.io/sfpowerscripts/commands/release).
 
@@ -10,10 +10,10 @@ Assuming you are following the release model mentioned above, there will be arti
 
 ![](../.gitbook/assets/environment-strategy-2-.png)
 
-For every major release,  we ask you to define an individual release definition file, the release definition should have the name of the release and a list of the packages that are planned during the phase. The release definition will typically have the artifacts pointing to the **LATEST\_TAG**  \(implies that it utilizes the latest git tags filtered to the branch if the release definition exists on the same branch as of the code base\)
+For every major release, we ask you to define an individual release definition file, the release definition should have the name of the release and a list of the packages that are planned during the phase. The release definition will typically have the artifacts pointing to the **LATEST\_TAG** \(implies that it utilizes the latest git tags filtered to the branch if the release definition exists on the same branch as of the code base\)
 
-1. **Releases from the dev channel** These are releases composed of artifacts from the trunk\(master/main\) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.   
-2. **Releases from the release channel** Once release is cut from a particular commit id from the develop branch, the release definition based on **LATEST\_TAG** or **exact version** is utilized to form the release. The release pipelines are triggered on demand
+1. **Releases from the dev channel** These are releases composed of artifacts from the trunk \(main\) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.   
+2. **Releases from the release channel** Once release is cut from a particular commit id from the develop branch, the release definition based on **LATEST\_TAG** or **exact version** is utilized to form the release. The release pipelines are triggered on demand.
 
 #### Activities during a Release to non-prod environment
 
@@ -22,9 +22,9 @@ For every major release,  we ask you to define an individual release definition 
 3. Execute Post Runbook for the particular release
 4. Conduct Post verification test of your release in the particular environment
 
-#### Activities during a Release to prod environment
+#### Activities during a Release to Prod environment
 
-1. Trigger a dry run of the release using release command with --dryrun feature, so that it displays the artifacts, workitems and commits that form the particular release. Ensure all of the work items are tested and signed off previously in your ALM application, 
+1. Trigger a dry run of the release using release command with --dryrun feature, so that it displays the artifacts, work items and commits that form the particular release. Ensure all of the work items are tested and signed off previously in your ALM application, 
 2. Execute Pre Runbook for the particular release
 3. Trigger Release from your CI/CD Platform
 4. Execute Post Runbook for the particular release

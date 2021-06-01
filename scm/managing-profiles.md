@@ -1,5 +1,6 @@
 # Managing Profiles
 
+
 We would recommend profiles to be version controlled, but the approach should ensure permissions configuration provides the level of flexibility required for the organisation.
 
 As mentioned in the [repo structure](repository-structure.md), profiles need to be placed in src-access-management.

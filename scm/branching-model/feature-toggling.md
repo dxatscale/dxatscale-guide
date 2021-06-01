@@ -1,16 +1,19 @@
 # Feature Toggling
 
+
 Feature Toggles allow new components and changes to be deployed in an inactive state and enabled at a time when stakeholders or technical dependencies are ready.
 
 This pattern can decouple the risk and logistics of the deployment itself from the business considerations involved in adopting a new feature, and helps to support the practice of small and frequent deployments.
 
-### App Logic - Configuration: Validation Rules, Workflow, Process Builder, Lightning Flow <a id="user-content-app-logic---configuration%3A-validation-rules%2C-workflow%2C-process-builder%2C-lightning-flow"></a>
 
-Use a Custom Metadata Type to define one or more feature activation flags \(i.e. one for the release or one per feature, depending on granularity needed\). This can then be referenced in the following to dynamically activate configuration:  
-Formula fields \(e.g. AND\($CustomMetadata.FeatureActivation\_\_mdt.MyFeature.IsActive\_\_c, \[my\_condition\]\)  
-Workflow, Process Builders and Visual Workflows \(branching condition that checks the met value as shown above\)
+### App Logic: Configuration: Validation Rules, Workflow, Process Builder, Lightning Flow <a id="user-content-app-logic---configuration%3A-validation-rules%2C-workflow%2C-process-builder%2C-lightning-flow"></a>
 
-### App Logic - Code <a id="user-content-app-logic---code"></a>
+Use a Custom Metadata Type to define one or more feature activation flags \(i.e. one for the release or one per feature, depending on granularity needed\). This can then be referenced in the following to dynamically activate configuration:
+
+* Formula fields \(e.g. AND\($CustomMetadata.FeatureActivation\_\_mdt.MyFeature.IsActive\_\_c, \[my\_condition\]\)
+* Workflow, Process Builders and Visual Workflows \(branching condition that checks the met value as shown above\)
+
+### App Logic: Code <a id="user-content-app-logic---code"></a>
 
 * Use a Trigger Framework which allows for deactivation of any given trigger handler via a Custom Metadata Type or Custom Permission. [Apex Trigger Actions](https://github.com/mitchspano/apex-trigger-actions-framework) and [Nebula Triggers](https://bitbucket.org/nebulaconsulting/nebula-core/src/master/) are examples of open source frameworks which provide this capability
 * Apex REST services should return an appropriate error if code is not active \(e.g. “Service Inactive”\)
@@ -24,10 +27,9 @@ Workflow, Process Builders and Visual Workflows \(branching condition that check
 
 ### Sharing Rules / OWD’s <a id="user-content-sharing-rules-%2F-owd%E2%80%99s"></a>
 
-These will be left active unless there are clear impacts from this approach \(this assumes features that are inactive are not fundamentally changing the security or sharing model of core objects such as Account or Case in a way that impacts existing user groups\)
+These will be left active unless there are clear impacts from this approach \(this assumes features that are inactive are not fundamentally changing the security or sharing model of core objects such as Account or Case in a way that impacts existing user groups\).
 
 ### Apex Managed Sharing <a id="user-content-apex-managed-sharing"></a>
-
 Use a sharing framework that is metadata driven and caters for dormancy. The open source apex sharing framework [FormulaShare](https://github.com/LawrenceLoz/FormulaShare-DX) operates through metadata-driven rules which can be deployed in a disabled state until required
 
 ### Other <a id="user-content-other"></a>

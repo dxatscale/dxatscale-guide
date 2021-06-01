@@ -10,17 +10,18 @@ There is a huge amount of documentation on unlocked packages. Rather than repeat
   
 _**The Basics**_
 
-Package Development Model: [https://trailhead.salesforce.com/content/learn/modules/sfdx\_dev\_model](https://trailhead.salesforce.com/content/learn/modules/sfdx_dev_model)  
-Unlocked Package for Customers: [https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers](https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers)  
-Successfully Creating Unlocked Package: [https://www.youtube.com/watch?v=xJNmHOtIgO0](https://www.youtube.com/watch?v=xJNmHOtIgO0)  
-Salesforce Developer Guide to Unlocked Package: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)  
-Unlocked Package FAQ: [https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html](https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html)
+* [Package Development Model](https://trailhead.salesforce.com/content/learn/modules/sfdx_dev_model) 
+* [Unlocked Package for Customers](https://trailhead.salesforce.com/content/learn/modules/unlocked-packages-for-customers) 
+* [Successfully Creating Unlocked Package](https://www.youtube.com/watch?v=xJNmHOtIgO0)
+* [Salesforce Developer Guide to Unlocked Package](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)
+* [Unlocked Package FAQ](https://sfdc-db-gmail.github.io/unlocked-packages/faq-unlocked-pkgs.html)
 
 _**Advanced Materials**_
 
-Anti Patterns in Package Dependency Design: [https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)
+* [Anti Patterns in Package Dependency Design](https://medium.com/salesforce-architects/5-anti-patterns-in-package-dependency-design-and-how-to-avoid-them-87bb50331cb8)
 
-The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs
+The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs.
+
 
 ### What to Package
 
@@ -50,51 +51,55 @@ The following sections deal with items that are particular to DX@Scale or more e
   * They serve a specific purpose within the package, for example: providing behavioural data of some components
   * They serve as a template that admin can clone
 * Ensure you run the following command during Pull Request Validation / Locally using the following command to check that metadata included in the package directory can be packaged:
+=======
+### Placing metadata components in an Unlocked Package
+
+* Don’t package the metadata that is not supported by **Metadata API**. Always check the latest [Metadata Coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
+
 
 ```text
-                 sfdx sfpowerkit:package:valid -n <name_of_package> 
+sfdx sfpowerkit:package:valid -n <name_of_package> 
 ```
-
-
 
 ### Unlocked Package and Test Coverage
 
 Unlocked Packages, excluding Org-Dependent unlocked packages have mandatory test coverage requirements. Each package should have minimum of 75% coverage requirement.  A validated build \(or [build command ](https://dxatscale.gitbook.io/sfpowerscripts/commands/build-and-quickbuild)in sfpowerscripts\) validates the coverage of package during the build phase. To enable the feedback earlier in the process, sfpowerscripts provide you functionality to validate test coverage of a package during the Pull Request Validation process.
 
 {% hint style="info" %}
-Please note that during pull request validation, all apex tests in a package are triggered in parallel and test cases must be written to ensure the guidelines mentioned in the link below  
-[https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon\_apex\_locking\_records.htm](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_locking_records.htm)
+Please note that during pull request validation, all apex tests in a package are triggered in parallel and test cases must be written to ensure the guidelines mentioned in the [Locking Records](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_locking_records.htm) developer guide notes.
 {% endhint %}
 
 ### Managing Version Numbers of Unlocked Package
 
-For unlocked packages, we ask our practitioners to follow a semantic versioning of packages. You can read more about semantic version at this [link](https://semver.org/).
+For unlocked packages, we ask our practitioners to follow a [semantic](https://semver.org/) versioning of packages. 
 
 {% hint style="info" %}
-Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by salesforce rather than rolling out your own build number substitution \( Use  'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
+Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by Salesforce rather than rolling out your own build number substitution \( Use 'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
 {% endhint %}
+
 
 Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch (not build) version **must** be higher than the last version of this package which was promoted. These version number changes should be made in the sfdx-project.json file before the final package build and promotion.
 
 ### Deprecating components from an  Unlocked Package
 
+
 Unlocked packages provide traceability in the org by locking down the metadata components to the package that introduces it. This feature which is the main benefit of unlocked package can also create issues when you want to refactor components from one package to another. Let's look at  some scenarios and common strategies that need to be applied
 
-For a project that has two packages, Package A and Package B, and Package B is dependent on Package A  
+For a project that has two packages, **Package A** and **Package B**, and **Package B** is dependent on **Package A.**  
   
- **Scenario 1:  Remove a component from Package A, provided the component has no dependency** 
+**Scenario 1:**  Remove a component from **Package A**, provided the component has no dependency 
 
-Create a new version of package A with the metadata component being removed and install the package
+Create a new version of **Package A** with the metadata component being removed and install the package.
 
- **Scenario 2:  Move a metadata component from Package A to Package B**  
+**Scenario 2:**  Move a metadata component from **Package A** to **Package B**  
   
-This scenario is pretty straight forward, one can remove the metadata component from Package A and move that to Package B.  When ****a new version of Package A gets installed, the following things happen  
-- If the deployment of the unlocked package is set to mixed, and no other metadata component is dependent on the component, the component gets deleted \( [https://help.salesforce.com/articleView?id=sf.fields\_managing\_deleted\_fields.htm&type=5](https://help.salesforce.com/articleView?id=sf.fields_managing_deleted_fields.htm&type=5)\). On subsequent install of Package B, package B restores the field and takes  ownership of the component  
+This scenario is pretty straight forward, one can remove the metadata component from **Package A** and move that to **Package B**.  When ****a new version of **Package A** gets installed, the following things happen  
+- If the deployment of the unlocked package is set to mixed, and no other metadata component is dependent on the component, the component gets [deleted](https://help.salesforce.com/articleView?id=sf.fields_managing_deleted_fields.htm&type=5). On subsequent install of **Package B**, **Package B** restores the field and takes ownership of the component.  
   
- **Scenario 3:  Move a metadata component from Package B to Package A, where the component currently has other dependencies in Package B** 
+**Scenario 3:**  Move a metadata component from **Package B** to **Package A**, where the component currently has other dependencies in **Package B** 
 
-In this scenario, one can move the component to Package A and get the packages built. However during deployment to an org, Package A will fail with an error this component exists in Package B. To mitigate this one should do the following  
- - Deploy a version of Package B which removes the lock on the metadata component using deprecate mode. Some times this needs extensive refactoring to other components to break the dependencies. So evaluate whether the approach will work. If not, you can goto the UI \(**Setup --&gt; Packaging --&gt; Installed Packages --&gt; &lt;name of package&gt; --&gt; View Components  and Remove** \)  and remove the lock for a package.
+In this scenario, one can move the component to **Package A** and get the packages built. However during deployment to an org, **Package A** will fail with an error this component exists in **Package B**. To mitigate this one should do the following:  
+ - Deploy a version of **Package B** which removes the lock on the metadata component using deprecate mode. Some times this needs extensive refactoring to other components to break the dependencies. So evaluate whether the approach will work. If not, you can goto the **UI** \(**Setup &gt; Packaging &gt; Installed Packages &gt; &lt;Name of Package&gt; &gt; View Components and Remove** \) and remove the lock for a package.
 
 \*\*\*\*
 
