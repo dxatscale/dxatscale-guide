@@ -17,7 +17,7 @@ Source Pages are typically used when you come across these constraints
 * Facing bugs while deploying the metadata using unlocked packages  
 * Unlocked Package validation takes too long \(still we recommend go org-dependent,\)  
 * Dealing with metadata that is global or org-specific in nature \(such as queues, profiles, etc or composite UI layouts, which doesn't make sense to be packaged using unlocked package\)
-* Non-mature development team but want to move to package-based metadata organization
+* Development team who  is starting to adopt package-based development
 
 Read more about how you can use source packages at this [link](https://dxatscale.gitbook.io/sfpowerscripts/faq/package-types/source-packages).
 
