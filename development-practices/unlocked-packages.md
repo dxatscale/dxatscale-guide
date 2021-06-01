@@ -44,22 +44,18 @@ The following sections deal with items that are particular to DX@Scale or more e
 
 ### What Not to Package
 
-* Don’t package the metadata that is not supported by **Metadata API**. Always check [Metadata coverage](https://**developer.salesforce.com/docs/metadata-coverage/).
-
-  **Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
-
-* **Reports** can only be put in an unlocked if
-  * They serve a specific purpose within the package, for example: providing behavioural data of some components
-  * They serve as a template that admin can clone
-* **Ensure you run the following command during Pull Request Validation / Locally using the following command to check that metadata included in the package directory can be packaged:**
-
-  **Placing metadata components in an Unlocked Package**
-
 * Don’t package the metadata that is not supported by **Metadata API**. Always check the latest [Metadata Coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
 
 ```text
 sfdx sfpowerkit:package:valid -n <name_of_package>
 ```
+
+* **Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
+* **Reports** can only be put in an unlocked if
+  * They serve a specific purpose within the package, for example: providing behavioural data of some components
+  * They serve as a template that admin can clone
+
+
 
 ### Unlocked Package and Test Coverage
 
