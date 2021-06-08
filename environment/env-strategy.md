@@ -6,7 +6,7 @@ One of the key tenants of DX@Scale is a simplified environment strategy that is 
 * Any development should be carried out in an individual scratch org provisioned just for the feature/task in hand
 * There will be no long-lived continuous integration environments
 
-![](../.gitbook/assets/environment-strategy-2-.png)
+![](../.gitbook/assets/environment-strategy-3-.png)
 
   
 

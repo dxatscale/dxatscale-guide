@@ -4,7 +4,7 @@ description: All the details about unlocked package
 
 # Unlocked Packages
 
-### Introduction
+## Introduction
 
 There is a huge amount of documentation on unlocked packages. Rather than repeating all the information here, a curated list of links are provided which every DX@Scale practitioner should be well versed with
 
@@ -22,7 +22,7 @@ _**Advanced Materials**_
 
 The following sections deal with items that are particular to DX@Scale or more emphasis is required in large scale programs.
 
-### What to Package
+## What to Package
 
 * If you have the following scenarios, it may be a good idea to put them in **domain specific packages**.
   * A group of related code and customization
@@ -42,7 +42,7 @@ The following sections deal with items that are particular to DX@Scale or more e
   * **Layouts**, which can include related lists, buttons and fields referencing metadata outside of the object's package
   * **Flexipages**, which may include components, actions and lists from across packages
 
-### What Not to Package
+## What Not to Package
 
 * Don’t package the metadata that is not supported by **Metadata API**. Always check the latest [Metadata Coverage](https://developer.salesforce.com/docs/metadata-coverage/). Ensure you run the following command during Pull Request Validation / Locally using the following command.
 
@@ -55,9 +55,7 @@ sfdx sfpowerkit:package:valid -n <name_of_package>
   * They serve a specific purpose within the package, for example: providing behavioural data of some components
   * They serve as a template that admin can clone
 
-
-
-### Unlocked Package and Test Coverage
+## Unlocked Package and Test Coverage
 
 Unlocked Packages, excluding Org-Dependent unlocked packages have mandatory test coverage requirements. Each package should have minimum of 75% coverage requirement. A validated build \(or [build command ](https://dxatscale.gitbook.io/sfpowerscripts/commands/build-and-quickbuild)in sfpowerscripts\) validates the coverage of package during the build phase. To enable the feedback earlier in the process, sfpowerscripts provide you functionality to validate test coverage of a package during the Pull Request Validation process.
 
@@ -65,7 +63,7 @@ Unlocked Packages, excluding Org-Dependent unlocked packages have mandatory test
 Please note that during pull request validation, all apex tests in a package are triggered in parallel and test cases must be written to ensure the guidelines mentioned in the [Locking Records](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_locking_records.htm) developer guide notes.
 {% endhint %}
 
-### Managing Version Numbers of Unlocked Package
+## Managing Version Numbers of Unlocked Package
 
 For unlocked packages, we ask our practitioners to follow a [semantic](https://semver.org/) versioning of packages.
 
@@ -75,7 +73,7 @@ Please note Salesforce packages do not support the concept of PreRelease/BuildMe
 
 Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch \(not build\) version **must** be higher than the last version of this package which was promoted. These version number changes should be made in the sfdx-project.json file before the final package build and promotion.
 
-### Deprecating components from an  Unlocked Package
+## Deprecating components from an  Unlocked Package
 
 Unlocked packages provide traceability in the org by locking down the metadata components to the package that introduces it. This feature which is the main benefit of unlocked package can also create issues when you want to refactor components from one package to another. Let's look at some scenarios and common strategies that need to be applied
 
