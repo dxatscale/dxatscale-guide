@@ -82,5 +82,6 @@
 ## About Us
 
 * [Meet Our Team](about-us/meet-our-team.md)
+* [Contributors](about-us/contributors.md)
 * [Contact Us](about-us/contact-us.md)
 
