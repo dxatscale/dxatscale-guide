@@ -1,3 +1,9 @@
+---
+description: >-
+  All the Folks who have significantly contributed to DX@Scale. Thanks to each
+  one of you.
+---
+
 # Contributors
 
 ![Lawrence Newcombe](../.gitbook/assets/lawrence.jpg)
