@@ -25,6 +25,10 @@
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
 * [Tracking Manual Steps](scm/tracking-manual-steps.md)
 
+## CI/CD
+
+* [A Typical DX@Scale CI/CD Pipeline](ci-cd/a-typical-dx-scale-ci-cd-pipeline.md)
+
 ## Environment Management <a id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
