@@ -15,7 +15,7 @@ sfpowerscripts [December 2020 release](https://github.com/Accenture/sfpowerscrip
 1. First it calculates how many scratch orgs to provide based both on how many scratch orgs requested and what your org limits are
 2. Then it fetches the packages required, using “ArtifactFetchScript” if specified, alternatively it builds all packages
 3. Next it creates the scratch orgs and updates a record which tracks your scratch orgs in production to “In progress”
-4. SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE \(04t1P000000ka0fQAA\) is installed in each scratch org which keeps track of all of the packages to be installed
+4. SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE \(04t1P000000ka9mQAA\) is installed in each scratch org which keeps track of all of the packages to be installed
 5. All dependencies as marked in the sfdx-project.json file are installed to the scratch org
 6. Each scratch org installs all packages that are either built/fetched
 7. All scratch orgs are then marked as “available”

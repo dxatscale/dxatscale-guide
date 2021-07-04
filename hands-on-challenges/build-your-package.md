@@ -51,7 +51,7 @@ Notice how the packages are being built and placed into the artifacts directory.
 2. Install sfpowerscripts pre-requisite package into the new scratch org
 
 ```text
-sfdx force:package:install --package 04t1P000000ka0fQAA -u <so_alias> -w 10
+sfdx force:package:install --package 04t1P000000ka9mQAA -u <so_alias> -w 10
 ```
 
 3. Use sfpowerscripts deploy command to deploy into the new scratch org
