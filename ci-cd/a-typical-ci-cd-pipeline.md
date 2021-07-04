@@ -1,4 +1,4 @@
-# A Typical DX@Scale CI/CD Pipeline
+# A Typical  CI/CD Pipeline
 
  Let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, validation before integration is not discussed
 

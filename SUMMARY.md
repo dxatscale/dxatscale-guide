@@ -27,7 +27,7 @@
 
 ## CI/CD
 
-* [A Typical DX@Scale CI/CD Pipeline](ci-cd/a-typical-dx-scale-ci-cd-pipeline.md)
+* [A Typical  CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
 
 ## Environment Management <a id="environment"></a>
 
