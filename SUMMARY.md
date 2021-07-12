@@ -49,7 +49,7 @@
 
 * [Tools & Assets Registry](assets-registry.md)
 
-## Hands-On Challenges
+## Developer Onboarding <a id="hands-on-challenges"></a>
 
 * [Intro](hands-on-challenges/intro.md)
 * [Prerequisites](hands-on-challenges/prerequisites.md)
