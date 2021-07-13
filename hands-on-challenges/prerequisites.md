@@ -6,7 +6,7 @@ description: >-
 
 # Prerequisites
 
-## Learning  Pre-requisites
+## Learning Pre-requisites
 
 {% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting\_force\_com" %}
 
