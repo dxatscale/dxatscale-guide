@@ -6,6 +6,14 @@ description: >-
 
 # Prerequisites
 
+## Learning  Pre-requisites
+
+{% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting\_force\_com" %}
+
+{% embed url="https://trailhead.salesforce.com/en/users/vuha-acn/trailmixes/sfdx-dev-ops-starter-pack" %}
+
+{% embed url="https://www.pluralsight.com/courses/master-git" %}
+
 ## Install SFDX CLI <a id="user-content-1.-sfdx-cli"></a>
 
 [https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-salesforce-dx](https://trailhead.salesforce.com/en/content/learn/projects/quick-start-lightning-web-components/set-up-salesforce-dx) 
