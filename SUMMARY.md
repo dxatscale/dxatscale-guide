@@ -45,9 +45,9 @@
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
----
+## DEVELOPER EXPERIENCE
 
-* [Tools & Assets Registry](assets-registry.md)
+* [Focus on Developer Experience](developer-experience/focus-on-developer-experience.md)
 
 ## Developer Onboarding <a id="hands-on-challenges"></a>
 
@@ -83,6 +83,10 @@
   * [Get the most out of your Salesforce DX Implementation - Part 1](media-library/knowledge-articles/get-the-most-out-of-your-salesforce-dx-implementation-part-1.md)
   * [Effective Pull Reviews in Salesforce DX Development - Persistent CI](media-library/knowledge-articles/effective-pull-reviews-in-salesforce-dx-development-persistent-ci.md)
 * [DX@Scale in the media](media-library/notable-mentions.md)
+
+---
+
+* [Tools & Assets Registry](assets-registry.md)
 
 ## About Us
 
