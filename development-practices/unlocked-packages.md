@@ -50,7 +50,7 @@ The following sections deal with items that are particular to DX@Scale or more e
 sfdx sfpowerkit:package:valid -n <name_of_package>
 ```
 
-* **Profiles** cannot be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
+* **Profiles** should not be included in unlocked packages and need[ special attention](https://docs.dxatscale.io/scm/managing-profiles).
 * **Reports** can only be put in an unlocked if
   * They serve a specific purpose within the package, for example: providing behavioural data of some components
   * They serve as a template that admin can clone
