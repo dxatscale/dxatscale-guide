@@ -22,7 +22,7 @@ DX@Scale Practitioners will design their modules in such a way that it reduce th
 
 ## 5. Automate Manual Deployment Steps
 
-Recurring manual steps hampers the path to production by making it unaffordable to deploy at will.  This is one of the major reasons why Salesforce deployments are infrequent and batched together. DX@Scale practitioners will remove any such recurring manual steps, by designing the code or config around it or introduce automation using variety of techniques.
+Recurring manual steps hampers the path to production by making it unaffordable to deploy at will.  This is one of the major reasons why Salesforce deployments are infrequent and batched together. DX@Scale practitioners will remove any such recurring manual steps, by designing the code or config around it or introduce automation using a variety of techniques.
 
 ## 6. Continuous Emphasis on Reducing Technical Debt
 
