@@ -71,27 +71,33 @@ For unlocked packages, we ask our practitioners to follow a [semantic](https://s
 Please note Salesforce packages do not support the concept of PreRelease/BuildMetadata. The last segment of a version number is a build number. We recommend to utilize the auto increment functionality provided by Salesforce rather than rolling out your own build number substitution \( Use 'NEXT' while describing the build version of the package and 'LATEST' to the build number where the package is used as a dependency\)
 {% endhint %}
 
-Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch \(not build\) version **must** be higher than the last version of this package which was promoted. These version number changes should be made in the sfdx-project.json file before the final package build and promotion.
+Note that an unlocked package must be [promoted](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-orchestrator-promote) before it can be installed to a production org, and either the major, minor or patch \(not build\) version **must** be higher than the last version of this package which was promoted. These version number changes should be made in the `sfdx-project.json` file before the final package build and promotion.
 
-## Deprecating components from an  Unlocked Package
+## Deprecating Components from an Unlocked Package
 
 Unlocked packages provide traceability in the org by locking down the metadata components to the package that introduces it. This feature which is the main benefit of unlocked package can also create issues when you want to refactor components from one package to another. Let's look at some scenarios and common strategies that need to be applied
 
-For a project that has two packages, **Package A** and **Package B**, and **Package B** is dependent on **Package A.**
+For a project that has two packages.
 
-**Scenario 1:** Remove a component from **Package A**, provided the component has no dependency
+* **Package A** and **Package B**
+* **Package B** is dependent on **Package A.**
 
-Create a new version of **Package A** with the metadata component being removed and install the package.
+### **Scenario 1:** 
 
-**Scenario 2:** Move a metadata component from **Package A** to **Package B**
+* Remove a component from **Package A**, provided the component has no dependency
+* **Solution:** Create a new version of **Package A** with the metadata component being removed and install the package.
 
-This scenario is pretty straight forward, one can remove the metadata component from **Package A** and move that to **Package B**. When **\*\*a new version of** Package A\*\* gets installed, the following things happen
+### **Scenario 2:** 
 
-* If the deployment of the unlocked package is set to mixed, and no other metadata component is dependent on the component, the component gets [deleted](https://help.salesforce.com/articleView?id=sf.fields_managing_deleted_fields.htm&type=5). On subsequent install of **Package B**, **Package B** restores the field and takes ownership of the component.  
+* Move a metadata component from **Package A** to **Package B**
+* **Solution:** This scenario is pretty straight forward, one can remove the metadata component from **Package A** and move that to **Package B**. When a new version of **Package A** gets installed, the following things happen:
+  * If the deployment of the unlocked package is set to mixed, and no other metadata component is dependent on the component, the component gets [deleted](https://help.salesforce.com/articleView?id=sf.fields_managing_deleted_fields.htm&type=5). 
+  * On the subsequent install of **Package B**, **Package B** restores the field and takes ownership of the component.  
 
-**Scenario 3:** Move a metadata component from **Package B** to **Package A**, where the component currently has other dependencies in **Package B**
+### **Scenario 3:** 
 
-In this scenario, one can move the component to **Package A** and get the packages built. However during deployment to an org, **Package A** will fail with an error this component exists in **Package B**. To mitigate this one should do the following:
-
-* Deploy a version of **Package B** which removes the lock on the metadata component using deprecate mode. Some times this needs extensive refactoring to other components to break the dependencies. So evaluate whether the approach will work. If not, you can goto the **UI** \(**Setup &gt; Packaging &gt; Installed Packages &gt; &lt;Name of Package&gt; &gt; View Components and Remove** \) and remove the lock for a package.
+* Move a metadata component from **Package B** to **Package A**, where the component currently has other dependencies in **Package B**
+* **Solution:** In this scenario, one can move the component to **Package A** and get the packages built. However during deployment to an org, **Package A** will fail with an error this component exists in **Package B**. To mitigate this one should do the following:
+  * Deploy a version of **Package B** which removes the lock on the metadata component using deprecate mode. Some times this needs extensive refactoring to other components to break the dependencies. So evaluate whether the approach will work. 
+  * If not, you can go to the **UI** \(**Setup &gt; Packaging &gt; Installed Packages &gt; &lt;Name of Package&gt; &gt; View Components and Remove**\) and remove the lock for a package.
 
