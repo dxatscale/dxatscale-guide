@@ -1,6 +1,6 @@
 # Repository Structure
 
-![Repository Structure](../.gitbook/assets/repository_structure.png)
+![Sample Repository Structure](../.gitbook/assets/repository_structure.png)
 
 DX@Scale projects predominantly follow a multiple mono-repo structure similar to the picture shown above. Each repository has a "**src"** folder that holds one or more packages that map to your **sfdx-project.json** file.
 
