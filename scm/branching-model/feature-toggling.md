@@ -4,7 +4,7 @@ Feature Toggles allow new components and changes to be deployed in an inactive s
 
 This pattern can decouple the risk and logistics of the deployment itself from the business considerations involved in adopting a new feature, and helps to support the practice of small and frequent deployments.
 
-## App Logic: Configuration: Validation Rules, Workflow, Process Builder, Lightning Flow <a id="user-content-app-logic---configuration%3A-validation-rules%2C-workflow%2C-process-builder%2C-lightning-flow"></a>
+## App Logic: Configuration - Validation Rules, Workflow, Process Builder, Lightning Flow <a id="user-content-app-logic---configuration%3A-validation-rules%2C-workflow%2C-process-builder%2C-lightning-flow"></a>
 
 Use a Custom Metadata Type to define one or more feature activation flags \(i.e. one for the release or one per feature, depending on granularity needed\). This can then be referenced in the following to dynamically activate configuration:
 
@@ -31,9 +31,9 @@ These will be left active unless there are clear impacts from this approach \(th
 
 Use a sharing framework that is metadata driven and caters for dormancy. The open source apex sharing framework [FormulaShare](https://github.com/LawrenceLoz/FormulaShare-DX) operates through metadata-driven rules which can be deployed in a disabled state until required
 
-## Other <a id="user-content-other"></a>
+## Additional Options <a id="user-content-other"></a>
 
 * Whilst technical patterns above can be helpful, it's worth considering the first and simplest way to "toggle" a feature is to avoid deploying it until it's needed - if this is possible within other confines of your deployment process then this option should be considered first.
-* When feature toggles are deployed, CI/CD pipelines and automated testing will need to setup to adjust to this, as code will be deployed dormant to some environments but active to others, this also means maintaining a separate ‘active’ or ‘dormant’ set of artefacts to enable this. Alternatively features are manually enabled/disabled.
+* When feature toggles are deployed, CI/CD pipelines and automated testing will need to setup to adjust to this, as code will be deployed dormant to some environments but active to others, this also means maintaining a separate ‘active’ or ‘dormant’ set of artifacts to enable this. Alternatively features are manually enabled/disabled.
 * Cleanup effort is required post activation - for example we will want to remove references to feature toggles in validation rules and workflows once live as if we do not these statements will continue to proliferate throughout the environment
 
