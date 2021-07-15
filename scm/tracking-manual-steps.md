@@ -32,6 +32,10 @@ Some examples of manual steps to document are:
 Any addition to the run book should be carefully reviewed and ascertained that it is indeed a manual step during the pull request validation process.  If it is a recurring step, all effort should be taken to avoid it, including changing the design.
 {% endhint %}
 
+{% hint style="info" %}
+Screenshots referenced in the runbooks should be stored in the `images`folder and will increase the size of the repository.  If required, older releases can be archived and removed from the repository to reduce the size.
+{% endhint %}
+
 ### Template for Run Books
 
 {% tabs %}
