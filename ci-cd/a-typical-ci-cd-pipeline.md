@@ -2,7 +2,7 @@
 
  Let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, validation before integration is not discussed
 
-![A Typical CI/CD Pipeline with sfpowerscripts orchestrator commands overlayed](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/flowdiagram_revised.png)
 
 There are two key pipelines demonstrated in the above diagram
 
