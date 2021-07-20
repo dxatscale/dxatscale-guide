@@ -29,7 +29,7 @@ We will be discussing type 1 in this module, and will do a "part 2" for scratch 
 In order for scratch org pooling to work, you will need to install the **sfpower-scratchorg-pool** unlocked package into your DevHub
 
 * Log into your DevHub 
-* Navigate to [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOkXQAU](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOkXQAU)
+* Navigate to [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE)
 * Select 'Install for Admin Only' 
 
 #### Build a Pool Configuration
