@@ -10,5 +10,13 @@ The introduction of Salesforce DX revolutionized the ways of working with Salesf
 
 ## Talks on DX@Scale
 
-{% embed url="https://www.youtube.com/watch?v=De9euEin67A" caption="" %}
+
+
+{% embed url="https://trailhead.salesforce.com/live/videos/a2r3k000001vDOJ/adopting-package-based-development-at-scale" %}
+
+{% embed url="https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-paris-france-presents-dxscale-optimizing-salesforce-development-and-deployment-for-large-scale-projects/" %}
+
+
+
+
 
