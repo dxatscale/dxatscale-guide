@@ -26,7 +26,7 @@ Some examples of manual steps to document are:
 * Named Credentials
 * WebLinks
 
-**\(2\) release-X** : Each release needs to have a dedicated folder with the name of the release. It needs to have two files in markdown format titled _runbookpost.md_ and _runbook\_pre.md._ These files will track any steps that need to be done before a release and after a release into an environment.
+**\(2\) release-X** : Each release needs to have a dedicated folder with the name of the release. It needs to have two files in markdown format titled _runbookpost.md_ and _runbook\_pre.md._ These files will track any steps that need to be done before a release and after a release into an environment.  Alternatively, you can make one consolidate markdown file and separate the pre and post runbook steps.
 
 {% hint style="danger" %}
 Any addition to the run book should be carefully reviewed and ascertained that it is indeed a manual step during the pull request validation process.  If it is a recurring step, all effort should be taken to avoid it, including changing the design.
