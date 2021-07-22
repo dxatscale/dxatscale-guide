@@ -8,7 +8,7 @@ There are two key pipelines demonstrated in the above diagram
 
 * **CI Pipeline**: A pipeline that gets triggered on every merge to the trunk. During this process, the following stages happen in sequence.
 
-  * quickbuild a set of changed packages \(packages without validating for dependency or code coverage\) 
+  * quickbuild a set of changed packages \(packages without validating for dependency or code coverage\).  The quickbuild outputs to the local artifact directory to be used by the deploy command. 
   * deploy to a Development Sandbox.  This process ensures the upgrade process of a package is accurate and you could also do a quick round of validation of your packages coming in from a scratch org.
   * Once deploy is successful, the pipeline proceeds to build the set of changed packages \(but this time with dependency validation and code coverage check\)
   * The pipeline could then publish these validated packages to an artifact repository for deployment into higher environments for further testing.
