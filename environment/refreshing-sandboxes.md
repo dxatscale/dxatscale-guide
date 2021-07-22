@@ -11,13 +11,15 @@ Ensure to factor in the preview windows for [Salesforce Upgrades](https://help.s
 {% endhint %}
 
 * **Users** 
-  * When sandbox is created, typically all users email address get suffixed with instance name to prevent emails from being sent to actual users. This activity is automatically initiated by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset and this can only be done by the user who initiated the refresh of the sandbox.
+  * When sandbox is created, typically all users email address get suffixed with **instance name** and  **.invalid** to prevent emails from being sent to actual users. This activity is automatically initiated by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset and this can only be done by the user who initiated the refresh of the sandbox.
 * **Single Sign-On**
   * Check whether there is a need to turn off  SSO \(Single Sign-On\) in all profiles if the refreshed org is not to be set up with SSO. 
   * Update the SSO Delegated URL in case the refresh org needs to be set up with SSO.
   * Check the end-point URLs In case of any SSO applications \(outbound messages etc.\)
 * **Custom Settings**
   * Custom Settings will point to the data available in production. It has to be reset to non-prod values if necessary.  Ensure that all managed package custom settings \(if applicable\) are updated to non-production instances as well to avoid pointing to the wrong environment.
+* **Custom Metadata**
+  * Custom Metadata values that point to production values will need to updated as well.  Using the **aliasifed** source packages will aid in updating these values to the non-production instances.
 * **Workflows**
   * From Address of Workflows will be reset to production
 * **Emails**
@@ -26,9 +28,9 @@ Ensure to factor in the preview windows for [Salesforce Upgrades](https://help.s
   * Update Email Links in Email templates from [https://login.salesforce.com](https://login.salesforce.com/) to [https://test](https://test/)  [salesforce.com](http://salesforce.com/) 
   * Mask Email type fields from Lead, Case, Contact, Opportunity objects \(This list will depend upon the most used Objects in the respective project\).
   * Check If Queue\(s\) have any email address from non-production
-  * Email deliverability usually after refresh it reflects “System Only Email” instead of “All Email”
+  * Email deliverability usually after refresh it reflects “**System Only Email**” instead of “**All Email**”
 * **Others**
-  * Check for the site URLs which might be pointing to production rather than non production environments
+  * Check for the site URLs which might be pointing to production rather than non production environments such as Remote Site Settings.
   * Reconfiguration of Connected-Apps with non-prod cert which will be required for the JWT etc. based on project requirements
   * Update the pipelines with new keys if the environment is connected to the CI/CD pipelines.
   * Community publish \(if applicable\)
