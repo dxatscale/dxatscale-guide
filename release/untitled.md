@@ -24,7 +24,7 @@ For every major release, we ask you to define an individual release definition f
 
 #### Activities during a Release to Prod environment
 
-1. Trigger a dry run of the release using release command with --dryrun feature, so that it displays the artifacts, work items and commits that form the particular release. Ensure all of the work items are tested and signed off previously in your ALM application, 
+1. Trigger a dry run of the release using release command with `--dryrun` feature, so that it displays the artifacts, work items and commits that form the particular release. Ensure all of the work items are tested and signed off previously in your ALM application, 
 2. Execute Pre Runbook for the particular release
 3. Trigger Release from your CI/CD Platform
 4. Execute Post Runbook for the particular release
