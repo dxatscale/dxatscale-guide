@@ -20,6 +20,6 @@ We typically prefer \(feature/bugfix/chore\) branches be merged to the main/mast
 - Commit Details
 ```
 
-In the above example \[XYZ\] denotes the work item number in the issue registry and is utilized by DX@Scale tools to generate meaningful changelogs.  
+In the above example \[XYZ\] denotes the work item number in the issue registry and is utilized by DX@Scale tools to generate meaningful change logs.  
 
 
