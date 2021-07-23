@@ -6,9 +6,8 @@ One of the key tenants of DX@Scale is a simplified environment strategy that is 
 * Any development should be carried out in an individual scratch org provisioned just for the feature/task in hand
 * There will be no long-lived continuous integration environments
 
-![](../.gitbook/assets/environment-strategy-3-.png)
+![](../.gitbook/assets/environment-strategy-revised.png)
 
-  
 
 
 The below table details each environment and the role of each environment in a typical DX@Scale project. Projects could have variation in the number of environments in the dev channel or release channel, such as multiple integrated environments, but the below environments are absolute essential.
@@ -33,6 +32,8 @@ The below table details each environment and the role of each environment in a t
 
 
 If you have sufficient licenses and availability of other systems, you can remove the dual role of staging environment in the above strategy to one mentioned below, where you have a dedicated integration environment both in the develop and release channels. 
+
+![](../.gitbook/assets/environment-strategy-optional-1-.png)
 
 
 
