@@ -25,8 +25,19 @@ The below table details each environment and the role of each environment in a t
 | Data Migration Mock\*\* | Sandbox | Full Sandbox | No | Used by data migration teams to test the full data migration scripts to a full sandbox to benchmark performance and data quality issues.  Depending on the release model, this could be refreshed multiple times before the major release to ensure migration success. |
 | Training\*\* | Sandbox | Developer Pro, Partial, or Full Sandbox | No | Environment utilized for developing training assets.  Depending on requirements for data sets, a partial or full sandbox may be required. |
 | Hotfix | Sandbox | Developer Pro | No | Environment utilized to test hotfix. This environment follows the artifacts deployed to production and not necessarily one in staging during release hardening phase . |
-| PreProd or DR \(Dress Rehearsal\) or Stage | Sandbox | Developer, Full Sandbox | No | Final staging environment before a release. This environment is deployed all the packages for the release and the data migration scripts are triggered \*\* to test the accuracy of scripts before deploying to production.  Use of a Developer sandbox can be leverage for artifact deployments as they can be refreshed or created more frequently than Full Sandboxes. |
+| PreProd or DR \(Dress Rehearsal\)  | Sandbox | Developer, Full Sandbox | No | Final staging environment before a release. This environment is deployed all the packages for the release and the data migration scripts are triggered \*\* to test the accuracy of scripts before deploying to production.  Use of a Developer sandbox can be leverage for artifact deployments as they can be refreshed or created more frequently than Full Sandboxes. |
 | Prod | Production | Production | Yes | Production Org and Dev Hub |
 
 \*\* Denotes optional environments, only utilized during a large transformation program where salesforce is to be introduced and data must be migrated from existing solutions
+
+
+
+If you have sufficient licenses and availability of other systems, you can remove the dual role of staging environment in the above strategy to one mentioned below, where you have a dedicated integration environment both in the develop and release channels. This 
+
+
+
+| Environment | Type | License Type | Integrated | Role |
+| :--- | :--- | :--- | :--- | :--- |
+| System Integrated Testing \(SIT\) | Sandbox | Developer Pro/Partial | Yes | SIT is the integrated environment where work items are tested against other connected environments. Test data will be deployed to this environment to make it meaningful. During the normal course of development, this environment mainly takes the role of SIT \(System Integration Testing\) environment.  |
+| User Acceptance Tetsing \(UAT\) | Sandbox | Full Sandbox | Yes | UAT is a fully integrated environment where business users test the application prior to sign-off for release to production. The environment will have at a minimum test data and most of the time contained scrubbed Production Data. This is a controlled environment with restricted System Administrator access and will the latest stable release candidate will be deployed. |
 
