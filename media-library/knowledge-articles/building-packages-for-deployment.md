@@ -12,21 +12,17 @@ sfpowerscripts provides two specific commands that can help use here. These comm
 
 Let’s first discuss **quickbuild**! This command creates your package version and bundles it into an artifact. It does so without validating any dependencies or test coverage.
 
-![No alt text provided for this image](https://media-exp1.licdn.com/dms/image/C5612AQHakwmx2RE-PQ/article-inline_image-shrink_1000_1488/0/1619157651934?e=1624492800&v=beta&t=Z3HfJr_lu13STF_2Mfhx4-ku_xiFHlmCpJgY2v7kYRs)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 This command is recommended when wanting to deploy to a ‘developer’ or ST sandbox to validate code before attempting a full build. It has no required flags but must be triggered from within the project directory \(if you are using unlocked packages, dev hub becomes mandatory\)
 
 Now let’s move on to the **build** command!
-
-![No alt text provided for this image](https://media-exp1.licdn.com/dms/image/C5612AQFX_piRG7nUng/article-inline_image-shrink_1000_1488/0/1619157685405?e=1624492800&v=beta&t=yneUkW316OujBYRi07Uk1M8ddGXT2UO0JpVLcZ5EBnE)
 
 This command, like quickbuild, also creates your package version and bundles it into an artifact. This time however, the command analyses your sfdx-project.json file to resolve the order of dependencies correctly and validates apex tests and code coverage \(of course the command asks salesforce to do it\)
 
 The order of dependencies is resolved in both, the order of the packages listed and by reading the dependencies properties of each package. You can also enable the --diffcheck flag which will not build packages which have not been changed, if like us you fancy using a mono repository with all packages that form your org.
 
 The result of the build command is a fully validated package which can be deployed to production, after being promoted using the orchestrator’s promote command.
-
-![No alt text provided for this image](https://media-exp1.licdn.com/dms/image/C5612AQFhkMGUtWsXDw/article-inline_image-shrink_1000_1488/0/1619157815777?e=1624492800&v=beta&t=jaN3m54lJynaIgOcyGyEJhksvjkmcOjzEMOIC3V2WNo)
 
 So why do we think orchestrator has the advantage when it comes to building packages?
 

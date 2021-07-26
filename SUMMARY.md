@@ -28,6 +28,7 @@
 ## CI/CD
 
 * [A Typical  CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [Reference Implementation](ci-cd/reference-implementation.md)
 
 ## Environment Management <a id="environment"></a>
 
@@ -69,6 +70,7 @@
 ## Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
+  * [Streamlined Scratch Orgs are here!](media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md)
   * [Building packages for deployment](media-library/knowledge-articles/building-packages-for-deployment.md)
   * [Version Controlling Profiles and Why It Makes Sense for Deployments?](media-library/knowledge-articles/version-controlling-profiles-and-why-it-makes-sense-for-deployments.md)
   * [Validation in Continuous Integration](media-library/knowledge-articles/validation-in-continuous-integration.md)
