@@ -4,7 +4,7 @@ A release is a set of packages \(or artifacts\) and their dependencies being dep
 
 DX@Scale is typically applied to enterprise development, where you have **major releases**, which can be either a combination of a couple or more sprints, usually developed in the trunk and run through various stages of testing before hitting production or **minor release \(quick release\),** which is changes to say a layout or a hotfix and have a fast-tracked release process.  
   
-Assuming you are following the release model mentioned above, there will be artifacts that are generated from the trunk \(dev channel\) which will be tested in the day-to-day cycle, and once it is satisfactorily tested, a release branch is cut to release to production.  Please check the [branching model ](../scm/branching-model/)and [environment strategy](../environment/env-strategy.md) to understand it further.   
+Assuming you are following the release model mentioned below, there will be artifacts that are generated from the trunk \(dev channel\) which will be tested in the day-to-day cycle, and once it is satisfactorily tested, a release branch is cut to release to production.  Please check the [branching model ](../scm/branching-model/)and [environment strategy](../environment/env-strategy.md) to understand it further.   
 
 
 ![](../.gitbook/assets/environment-strategy-revised.png)
