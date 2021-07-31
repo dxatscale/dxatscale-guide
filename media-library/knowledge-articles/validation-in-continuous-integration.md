@@ -36,17 +36,17 @@ sfdx sfpowerscripts:orchestrator:validate -f $(devhubKey.secureFilePath) -i $(DE
 
 3.    Validate test coverage of the package depending on the type of the package \(source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more\)
 
-That last step \(**number 3**\) is a new one. We have utilised the open-source component [‘apex-parser’](https://github.com/nawforce/apex-parser) to implement a method which determines whether the package is an unlocked or source package and then bases the code coverage validation on which type of package it is.
+That last step \(**number 3**\) is a new one. We have utilized the open-source component [‘apex-parser’](https://github.com/nawforce/apex-parser) to implement a method which determines whether the package is an unlocked or source package and then bases the code coverage validation on which type of package it is.
 
 All of this will run in your CI tool and give you a pass/fail result of the code about to be merged. This will save you time in your current validation practices, especially when combined with the ‘prepare’ orchestrator function offered by sfpowerscripts. 
 
-![A PR Validation mid-run](https://media-exp1.licdn.com/dms/image/C5612AQF21tS1p3Upfg/article-inline_image-shrink_1500_2232/0/1617076893230?e=1622678400&v=beta&t=EVrzHToDhr4jnhyT2HJqZWGsRZ1dOptbJhbC3nIEZSM)
+![](../../.gitbook/assets/1617076893230.png)
 
 If for some reason you don’t want to use the orchestrators ‘prepare’ command or scratch org pooling, you can still use a scratch org or any other org. The variant of this is a command called called ‘**validateAgainstOrg’** where you can supply an org, such as a scratch org \(not a part of a pool\) or even a development org. **Note:** It is strongly recommended to use the prepare commands to build a scratch org pool for use in this validation, as it will be the most effective option in terms of accuracy.
 
 Hold on a minute, why isn’t there a static code analysis in the validation? In terms of pipeline design, it was thought that a static code analysis is best to be run separately, as there will be times when you don’t want your PMD analysis to break your build, or you are working with code which has known static problems on the back-burner for fixing – this doesn’t mean you want your validation or deployment’s to be on hold. There are plans with the sfpowerscripts gurus to create a separate analysis command which will work in a similar way as this. A static code analysis result will not make your code undeployable in a production environment, but it is bad practice, and it is always recommended to use static code analysis in parallel with your Apex tests. Simply put, as the command names suggest, one is an analysis, and one is a validation.
 
-Of course, we are not done with the validate command. Already in the works is an impact analysis, so you can visualise exactly how the changes you are introducing are going to affect your existing components.
+Of course, we are not done with the validate command. Already in the works is an impact analysis, so you can visualize exactly how the changes you are introducing are going to affect your existing components.
 
 Check out the [source code](https://github.com/Accenture/sfpowerscripts/tree/develop/packages/sfpowerscripts-cli/src/commands/sfpowerscripts/orchestrator) for more information on how the validate commands work, look at the [sample pipelines](https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.github/workflows) to get started or get in touch with us on [Slack](http://dxatscale.slack.com/).
 
