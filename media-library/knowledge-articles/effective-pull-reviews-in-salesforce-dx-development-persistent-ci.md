@@ -20,11 +20,17 @@ To improve the quality of the review before the branch is being merged to main l
 
 1. **Modify Scratch Org Info Object to store the repo and pull request number during the creation of the scratch org**
 
+![](../../.gitbook/assets/1543198062791.png)
+
 The Scratch org created for the pull request is kept only for a period of 2 days, after which is deleted, unless a new commit arrives before its killed.
 
  2.   **To delete any scratch org that is still active based on a previous commit on the pull request, a SOQL query is triggered on the Scratch info object to fetch details of an existing scratch org available on the pull request**    
 
+![](../../.gitbook/assets/1543198140998.png)
+
 3. **Submit the URL to as a Github status, we used the Github status API and  a python script for doing it.**
+
+![](../../.gitbook/assets/1543198292613.png)
 
 **4. Finally, the moment of truth!**
 
