@@ -24,7 +24,7 @@ There are also multiple improvements in the pipeline for different kinds of meta
 
 Salesforce has been adopting Kubernetes on a large scale across its data centres and moving their monolithic architecture to microservices. Scratch Org's are believed to be a salesforce container running on Kubernetes Pod and this is what enabling the faster provisioning. Dreamforce 2018 introduced us to a pilot of Lightning Dev Pro Sandbox, which is a turbocharged scratch org \( 200 MB Data vs 1 GB\) and can be the perfect fit for Development / Testing or use in a CI environment where more data set is needed. Also snapshot feature for Sandboxes are also exciting, as it allows to create sandboxes from a specific point in time
 
-![No alt text provided for this image](https://media-exp1.licdn.com/dms/image/C5112AQEgMZd1_GEg5w/article-inline_image-shrink_1000_1488/0/1558873745059?e=1619654400&v=beta&t=kKjX7yBQdt2_5TzoMChLUJDbpIgBl-uosYT9cCWw5i0)
+![](../../.gitbook/assets/1558873745059.png)
 
 ####  CLI Improvements across the board .. And embracing Open Development
 
