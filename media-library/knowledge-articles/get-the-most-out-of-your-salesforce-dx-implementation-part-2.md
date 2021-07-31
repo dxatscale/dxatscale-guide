@@ -36,7 +36,7 @@ If you are an existing program and converting it to unlocked packages, start doi
 
 ### 7. Build a RACI Matrix for each of the packages and communicate it early, so teams know who owns what and what is the process to update on a shared package 
 
-  Packages need ownership, there will be fixes and feature additions during the course of the program. As the team who would have initially contributed a lot to a particular package would have been moved onto attacking another business area, a clear strategy should be planned on transitioning the ownership of these built ones. Is it a shared ownership model? Is it transitioned to the ops team? Remember its no longer an org based development, where all the metadata and code lies in one giant repo, so draw up a RACI matrix, communicate and update it.
+Packages need ownership, there will be fixes and feature additions during the course of the program. As the team who would have initially contributed a lot to a particular package would have been moved onto attacking another business area, a clear strategy should be planned on transitioning the ownership of these built ones. Is it a shared ownership model? Is it transitioned to the ops team? Remember its no longer an org based development, where all the metadata and code lies in one giant repo, so draw up a RACI matrix, communicate and update it.
 
 **Tip**: Treat the 'unpackageable' metadata as a core entity. Some of these are org-wide settings and also need to be treated diligently as of packages. 'Unpackaged' metadata that belongs to a particular package, can leave along with the package itself as a folder, which makes the ownership clear at least in the repo
 
