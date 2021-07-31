@@ -12,6 +12,7 @@ Ensure to factor in the preview windows for [Salesforce Upgrades](https://help.s
 
 * **Users** 
   * When sandbox is created, typically all users email address get suffixed with **.invalid** to prevent emails from being sent to actual users. This activity is automatically initiated by the Salesforce refresh process. Some users such as developers or admins would need to have their email reset and this can only be done by the user who initiated the refresh of the sandbox.
+  * For some managed packages, additional licenses may need to be assigned using Permission Sets in order for users to use the application.
 * **Single Sign-On**
   * Check whether there is a need to turn off  SSO \(Single Sign-On\) in all profiles if the refreshed org is not to be set up with SSO. 
   * Update the SSO Delegated URL in case the refresh org needs to be set up with SSO.
