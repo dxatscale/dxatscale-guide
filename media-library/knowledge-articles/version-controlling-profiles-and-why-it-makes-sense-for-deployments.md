@@ -77,3 +77,13 @@ sfdx sfpowerkit:source:profile:reconcile -u newDevOrg -f src-access-mgmt/main/de
 
 Hopefully this blog gets you started on your journey to **DevOps Maturity** and packaging modulation for Salesforce. Below are some additional reference articles and videos that you can review further to deepen your understanding of profiles, permission sets, and the open source tools in the marketplace to enable you to be successful. 
 
+#### References
+
+* [Salesforce Profile Help Article Reference](https://help.salesforce.com/articleView?id=sf.admin_userprofiles.htm&type=5)
+* [User Profile permission descriptions](https://help.salesforce.com/articleView?id=000332385&type=1&mode=1)
+* [Admin's Guide to Profiles & Permissions](https://www.youtube.com/watch?v=7SLxHuc68x8)
+* [SFDX sfpowerkit plugin](https://github.com/Accenture/sfpowerkit)
+* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+
+All opinions are my own in this article are of my own and based on experiences using the tools and frameworks out there. Enjoy your DevOps Journey!
+
