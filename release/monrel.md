@@ -20,7 +20,7 @@ DX@Scale practitioners utilize metrics emitted from sfpowerscripts to track the 
 ![](../.gitbook/assets/dashboard_edited.png)
 
 {% hint style="info" %}
-DX@Scale practitioners follow a concept of deployment budget, where a maximum time is set for a release to production. This is an inherent SLA for the team to focus on and the time of deployment should be below this mark. If any deployment exceeds the allocated budget, the team should discuss various approaches and plans to mitigate it.
+DX@Scale practitioners follow a concept of deployment budget, where a maximum time is set for a release to production. This is an inherent SLO for the team to focus on and the time of deployment should be below this mark. If any deployment exceeds the allocated budget, the team should discuss various approaches and plans to mitigate it.
 {% endhint %}
 
 {% hint style="danger" %}
