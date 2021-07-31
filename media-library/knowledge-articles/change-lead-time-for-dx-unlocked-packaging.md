@@ -12,7 +12,7 @@ But for today’s discussion, to simplify lets define the change lead time as th
 
 **Change Lead Time for a DX Unlocked Package** _**=**_
 
-**Initializing scratch org for feature development** \( Installing Dependent Packages + Source Push+ Test Data\)
+**Initializing scratch org for feature development** \( Installing Dependent Packages + Source Push + Test Data\)
 
 +**Time for Feature Development**
 
@@ -28,7 +28,7 @@ Let’s look into each of these steps into detail and later onto some tips on re
 
 #### **Initializing scratch org for feature development**
 
-**Average Time Noticed so far in our projects with multiple dependencies and keeping managed package dependency to a minimum : 30 Minutes**
+**Average Time Noticed so far in our projects with multiple dependencies and keeping managed package dependency to a minimum: 30 Minutes**
 
 This activity includes, creation of a feature/topic branch and creating a scratch org for local development. This is often one of the most time consuming activities, where multiple dependent packages has to be installed \(including managed packages\), source codes have to be pushed and test data need to be created in the org.
 
