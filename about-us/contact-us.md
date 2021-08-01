@@ -26,3 +26,11 @@ For discussions on the tools visit the respecting GitHub discussion pages.
 
 Join us on slack [dxatscale.slack.com](https://dxatscale.slack.com) 
 
+## YouTube
+
+Subscribe to our [dxatscale channel](https://www.youtube.com/channel/UCZ4I3Llb9wmEjFAOfjufLNQ).
+
+## Twitter
+
+Follow us [@dxatscale](https://twitter.com/dxatscale) 
+
