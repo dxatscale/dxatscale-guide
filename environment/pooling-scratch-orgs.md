@@ -10,11 +10,17 @@ The following sections deal with the typical pool strategies followed by DX@Scal
 
 ### Number of Pools Required
 
-DX@Scale at the minimum require about 3 pools to be created. These pools serve different purposes and is been detailed below
+At the minimum, DX@Scale requires 3 pools to be created. These pools serve different purposes:
 
-* **CI/CD pools with full packages installed** This particular pool is the one typically used for validation runs.  This pool will be utilizing source packages of the latest validated packages from the particular repository and optimizes the validation stage to only validate a package that is changed, providing maximum time savings
-* **CI/CD pools with only dependencies installed** This is the non-default pool, which will only have managed packages installed and usually utilized only when there are changes that require none of the packages to be pre-installed \(This is mainly needed due to bugs in scratch org, such as the one where pick-list value changes always result in validation failures, when it is deployed on top of an existing package\). A switch to this pool is typically handled by using a specific commit message or a pipeline runtime variable.
-* **Developer Pool** These are the pools that will be used by developers. This is pretty similar to CI/CD pools with only dependencies installed, however, due to an implementation difference, these scratch orgs have to be provisioned using sfpowerkit instead of sfpowerscripts 
+* **CI pools with all packages installed**
+
+  The CI pools are typically used for validation runs. They are pre-installed with the packages from the latest successful build, which allows optimised validations where only the packages that have changed are validated. 
+
+* **CI pools with only dependencies installed**
+
+  Scratch orgs in this pool only have managed packages installed. They are used in special cases where a clean install of all the packages is needed, such as for failures involving picklist value updates. Switching to this pool is handled by pipeline runtime variable or a specific commit message.
+
+* **Developer Pool** These are the scratch orgs that will be used by developers to do their development work. They can either have all of the packages installed or just the dependencies.
 
 The number of scratch orgs in the pool have to be determined depending on the size of the program and adjusted accordingly.
 
