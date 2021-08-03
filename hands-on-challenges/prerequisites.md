@@ -12,7 +12,15 @@ description: >-
 
 {% embed url="https://trailhead.salesforce.com/en/users/vuha-acn/trailmixes/sfdx-dev-ops-starter-pack" %}
 
-{% embed url="https://www.pluralsight.com/courses/master-git" %}
+{% embed url="https://www.pluralsight.com/courses/master-git" caption=" " %}
+
+If you do not have access to Pluralsight, here are some free resources to get you started with Git
+
+{% embed url="https://docs.microsoft.com/en-us/learn/paths/intro-to-vc-git/" %}
+
+{% embed url="https://www.atlassian.com/git" %}
+
+
 
 ## Install SFDX CLI <a id="user-content-1.-sfdx-cli"></a>
 
