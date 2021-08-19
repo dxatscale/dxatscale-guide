@@ -4,12 +4,12 @@ Source Packages is an [sfpowerscripts](https://sfpowerscripts.dxatscale.io/) con
 
 Source Packages are metadata deployments from a Salesforce perspective, it is a group of components that are deployed to an org. Unlocked packages are a **First Class** Salesforce deployment construct, where the lifecycle is governed by the org, such as deleting/deprecating metadata and validating versions.
 
-We always recommend using unlocked packages over source packages whenever you can. As a matter of preference, this is our priority of approach packages.
+We always recommend using unlocked packages over source packages whenever you can. As a matter of preference, this is our priority of package types
 
 1. [Unlocked Packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)
 2. [Unlocked Packages \(Org-Dependent\)](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_org_dependent.htm)
 3. Source Packages
-4. [Change Sets](https://help.salesforce.com/articleView?id=changesets.htm&type=5)
+
 
 Source Pages are typically used when you come across these constraints
 
