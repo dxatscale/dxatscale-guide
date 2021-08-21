@@ -2,7 +2,7 @@
 
 Environments \(Sandbox\) need to be connected to the CI/CD pipelines for deploying packages to an environment. The preferred authentication mechanism for integrating environments to pipelines is to utilize SFDX AUTH URL  based authentication which is detailed at this [link](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_view_info.htm). The environment should also be provisioned with a service user \(API only user, with a System Admin Profile\) and should have the same username.
 
-Each sandbox needs to have these below two secrets being added to a secrets manager in your CI/CD system or a dedicated secrets manager such as AWS Secrets Manager or Azure Key Vault.  
+Each sandbox needs to have the below secret being added to a secrets manager in your CI/CD system or a dedicated secrets manager such as AWS Secrets Manager or Azure Key Vault. Then a new stage is supposed to be created in your CI/CD flow based on your environment strategy.
   
 
 
