@@ -18,7 +18,7 @@
 
 ## Development Practices
 
-* [Deploying your code / config](development-practices/modularizing-your-code-config/README.md)
+* [Organizing your code / config](development-practices/modularizing-your-code-config/README.md)
   * [Unlocked Packages](development-practices/modularizing-your-code-config/unlocked-packages.md)
   * [Source Packages](development-practices/modularizing-your-code-config/source-packages.md)
   * [Data Packages](development-practices/modularizing-your-code-config/data-packages.md)
