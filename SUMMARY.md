@@ -9,21 +9,22 @@
 * [sfpowerkit](https://github.com/Accenture/sfpowerkit)
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 
-## DEVELOPMENT PRACTICES
-
-* [Unlocked Packages](development-practices/unlocked-packages.md)
-* [Source Packages](development-practices/source-packages.md)
-* [Data Packages](development-practices/data-packages.md)
-
 ## Source Code Management <a id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
-* [Dealing with Org Specific Metadata](scm/dealing-with-sensitive-metadata.md)
-* [Managing Profiles](scm/managing-profiles.md)
 * [Branching Model](scm/branching-model/README.md)
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
-* [Tracking Manual Steps](scm/tracking-manual-steps.md)
+
+## Development Practices
+
+* [Deploying your code / config](development-practices/modularizing-your-code-config/README.md)
+  * [Unlocked Packages](development-practices/modularizing-your-code-config/unlocked-packages.md)
+  * [Source Packages](development-practices/modularizing-your-code-config/source-packages.md)
+  * [Data Packages](development-practices/modularizing-your-code-config/data-packages.md)
+* [Dealing with Org Specific Metadata](development-practices/dealing-with-sensitive-metadata.md)
+* [Managing Profiles](development-practices/managing-profiles.md)
+* [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
 ## CI/CD
 
