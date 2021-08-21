@@ -47,10 +47,6 @@
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
-## DEVELOPER EXPERIENCE
-
-* [Focus on Developer Experience](developer-experience/focus-on-developer-experience.md)
-
 ## Developer Onboarding <a id="hands-on-challenges"></a>
 
 * [Intro](hands-on-challenges/intro.md)
