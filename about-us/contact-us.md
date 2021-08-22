@@ -16,9 +16,9 @@ For any issues with our tools, submit an issue at their respective GitHub pages
 
 ## Discussions 
 
-Want to ask more of any of these practices, ask the team directly on Slack
+Want to ask more of any of these practices, ask the team directly on Slack, Click the below link to get an invite
 
-{% embed url="https://join.slack.com/t/dxatscale/shared\_invite/zt-9uahlx2v-r0TczYpEkR7\_1YKg6uk7Yw" %}
+{% embed url="https://launchpass.com/dxatscale" %}
 
 For discussions on the tools visit the respecting GitHub discussion pages. 
 
