@@ -2,7 +2,7 @@
 
 **DX@Scale** is a collection of practices, open-source tools, frameworks and practitioners built on our experience in delivering large and complex Salesforce programs. Utilising our **'curated'** practices, you can build a modular Salesforce Org that is reliable and easy to maintain
 
-![](.gitbook/assets/animated_blocks.gif)
+![](.gitbook/assets/animatedblocks.gif)
 
 ## Why DX@Scale?
 
