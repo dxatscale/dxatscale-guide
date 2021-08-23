@@ -101,3 +101,57 @@ For a project that has two packages.
   * Deploy a version of **Package B** which removes the lock on the metadata component using deprecate mode. Some times this needs extensive refactoring to other components to break the dependencies. So evaluate whether the approach will work. 
   * If not, you can go to the **UI** \(**Setup &gt; Packaging &gt; Installed Packages &gt; &lt;Name of Package&gt; &gt; View Components and Remove**\) and remove the lock for a package.
 
+## Managing Package Dependencies
+
+Package dependencies are defined in the sfdx-project.json. More information on defining package dependencies can be found in the Salesforce [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev2gp_config_file.htm).
+
+```javascript
+{
+  "packageDirectories": [
+    {
+      "path": "util",
+      "default": true,
+      "package": "Expense-Manager-Util",
+      "versionName": "Winter ‘20",
+      "versionDescription": "Welcome to Winter 2020 Release of Expense Manager Util Package",
+      "versionNumber": "4.7.0.NEXT"
+    },
+    {
+      "path": "exp-core",
+      "default": false,
+      "package": "ExpenseManager",
+      "versionName": "v 3.2",
+      "versionDescription": "Winter 2020 Release",
+      "versionNumber": "3.2.0.NEXT",
+      "dependencies": [
+        {
+          "package": "ExpenseManager-Util",
+          "versionNumber": "4.7.0.LATEST"
+        },
+          {
+          "package": "TriggerFramework",
+          "versionNumber": "1.7.0.LATEST"
+        },
+        {
+          "package": "External Apex Library - 1.0.0.4"
+        }
+      ]
+    }
+  ],
+  "sourceApiVersion": "47.0",
+  "packageAliases": {
+    "TriggerFramework": "0HoB00000004RFpLAM",
+    "Expense Manager - Util": "0HoB00000004CFpKAM",
+    "External Apex Library@1.0.0.4": "04tB0000000IB1EIAW",
+    "Expense Manager": "0HoB00000004CFuKAM"
+  }
+}
+```
+
+Let's unpack the concepts utilizing the above example:
+
+* There are two unlocked packages
+  * Expense Manager - Util is an unlocked package in your DevHub, identifiable by 0H in the packageAlias
+  * Expense Manager - another unlocked package which is dependent on ' Expense Manager - Util', 'TriggerFramework' and 'External Apex Library - 1.0.0.4'
+* External Apex Library is an external dependency, it could be a managed package or any unlocked package released on a different Dev Hub. All external package dependencies must be defined with a 04t ID, which can be determined from the installation URL from AppExchange or by contacting your vendor.
+
