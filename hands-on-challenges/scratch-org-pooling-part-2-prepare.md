@@ -84,7 +84,7 @@ What is this file doing? Let's have a look.
 **Thirdly** it is given a list of steps to execute in a specific order. These steps are are: 
 
 1. Checkout the source code of your project, on branch 'master'. If you would prefer a different branch checked out, supply this branch in the 'ref' section
-2. Authenticate the DevHub using JWT flow, [more information on JWT flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm%20)
+2. Authenticate the DevHub using sfdx authURL, [more information on sfdx authURL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm)
 3. Execute the 'prepare' command 
 
 #### Add GitHub Secrets 
