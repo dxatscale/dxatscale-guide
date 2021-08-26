@@ -17,16 +17,16 @@ We discussed what scratch orgs are in an [earlier](4.-scratch-org-introduction.m
 
 DX@Scale offers two types of scratch org pools 
 
-1. A pool which can be used by developers to work on features. These scratch org pools will typically have a longer duration, and would more actively use the 'user-mode' feature
-2. A pool which is used in your validation stage during the Continuous Integration pipeline
+1. A pool that can be used by developers to work on features. These scratch org pools will typically have a longer duration, and would more actively use the 'user-mode' feature
+2. A pool that is used in your validation stage during the Continuous Integration pipeline
 
-We will be discussing type 1 in this module, and will do a "part 2" for scratch orgs in a later module. 
+We will be discussing type 1 in this module and will do a "part 2" for scratch orgs in a later module. 
 
 ### **Steps**
 
 #### **Install the prerequisite fields** 
 
-In order for scratch org pooling to work, you will need to install the **sfpower-scratchorg-pool** unlocked package into your DevHub
+In order for scratch org pooling to work, you will need to install the **sfpowerkit-scratchorg-pool** unlocked package into your DevHub
 
 * Log into your DevHub 
 * Navigate to [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE)
