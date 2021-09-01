@@ -1,4 +1,4 @@
-# Scratch Org Pooling Part 2 \(prepare\)
+# Scratch Org Pooling Part 2
 
 ## **Learning Objectives**
 
@@ -8,17 +8,12 @@
 
 **Time to complete:** 30 minutes
 
-## Prepare Command
-
-The prepare command, which is a part of the orchestrator functionality of sfpowerscripts was introduced in 2020 and provides scratch org pooling, specifically tailored for use in your CICD platform.
-
-Prepare command helps you to build a pool of prebuilt scratch orgs which include managed packages as well as packages in your repository. This process allows you to considerably cut down time in re-creating a scratch org during the validation process when a scratch org is used as a Just-in-time CI environment.
-
 ### GitHub Actions
 
 We will be using GitHub Actions paired with Yaml to create our CICD files. For more information on these, we recommend the following:
 
 * [https://docs.github.com/en/actions/learn-github-actions](https://docs.github.com/en/actions/learn-github-actions) 
+* [https://docs.github.com/en/actions/quickstart](https://docs.github.com/en/actions/quickstart)
 * [https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops ](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema)
 
 While this last article is related to Azure Pipelines, the concepts are relatively universal and can be applied to GitHub Actions.
@@ -27,14 +22,9 @@ While this last article is related to Azure Pipelines, the concepts are relative
 
 Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md) you have already completed the installation steps required. If you haven't, go back to this module and follow the instructions under the steps '**Install the prerequisite fields'**.
 
-### Fork the 'Easy Spaces' Repo
-
-* For the repo located at [https://github.com/trailheadapps/easy-spaces-lwc](https://github.com/trailheadapps/easy-spaces-lwc)
-* Delete all files located under ./github, ./github/workflows and ./github/ISSUE\_TEMPLATE 
-
 ### Create a 'prepare' file
 
-* Click on 'Actions' in the newly forked repo
+* Click on 'Actions' in your Dreamhouse-App repo
 
 ![](../.gitbook/assets/image%20%2843%29.png)
 
@@ -87,9 +77,9 @@ What is this file doing? Let's have a look.
 2. Authenticate the DevHub using sfdx authURL, [more information on sfdx authURL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm)
 3. Execute the 'prepare' command 
 
-### Create a "poolconfig.json" file in the config folder
+### Edit your "poolconfig.json" file in the config folder
 
-Create the file in VSCode and add the code below in poolconfig.json
+Copy and paste the code on your poolconfig.json
 
 ```javascript
 {
@@ -116,7 +106,7 @@ Let's set up the secrets we need.
 It is recommended to set up a new trailhead playground with DevHub and Unlocked packages enabled for the Orchestrator modules.
 {% endhint %}
 
-**First**, if you haven't previously, you will need to set up an sfdx authurl. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) 
+**First**, if you haven't previously, you will need to set up an _sfdx authurl_. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) 
 
 * Go to your GitHub repository and select 'Settings' 
 
@@ -128,7 +118,7 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 ![](../.gitbook/assets/image%20%2834%29%20%282%29.png)
 
-* Now open the 'authFile.json' file you created when setting up the sfdx authURL and add the **sfdxAuthUrl** contents of the file as a 'secret' value with the name **DEVHUB\_SERVER\_KEY** 
+* Now open the '**authFile.json**' file you created when setting up the _sfdx authURL_ and add the **sfdxAuthUrl** contents of the file as a 'secret' value with the name **DEVHUB\_SERVER\_KEY** 
 
 ![](../.gitbook/assets/screen-shot-2021-08-25-at-9.48.16-am.png)
 

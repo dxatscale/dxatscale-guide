@@ -9,7 +9,7 @@
 
 ### Validate Command
 
-**Validate** command helps you to validate a change made to your configuration / code. This command is triggered as part of your pull request process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using the [prepare ](scratch-org-pooling-part-2-prepare.md)command.
+**Validate** command helps you to validate a change made to your configuration/code. This command is triggered as part of your pull request process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using the [prepare ](scratch-org-pooling-part-2-prepare.md)command.
 
 **validate** command runs the following checks
 
@@ -19,7 +19,7 @@
 
 Options available for the validate command are here: 
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/screen-shot-2021-08-30-at-4.50.24-pm.png)
 
 You can also use the command below in the terminal to get more information
 
@@ -29,13 +29,65 @@ sfdx sfpowerscripts:orchestrator:validate --help
 
 ### Steps 
 
-1. Create a new 'action' on GitHub as done on the previous module
-2. Create the action using the examples here: [https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.azure-pipelines](https://github.com/dxatscale/easy-spaces-lwc/tree/develop/.azure-pipelines) \(Hint: Make sure you align the validate command with the prepare command from the previous module\)
-3. Run your new workflow 
+**Create a 'validate' file**
 
-{% hint style="danger" %}
-If you validation command fails, replace your sfdx-project.json file with the contents here: [https://github.com/dxatscale/easy-spaces-lwc/blob/develop/sfdx-project.json](https://github.com/dxatscale/easy-spaces-lwc/blob/develop/sfdx-project.json) 
-{% endhint %}
+* Click on 'Actions' in your Dreamhouse-App repo
+
+![](../.gitbook/assets/image%20%2843%29.png)
+
+* Create a new workflow and name it 'validate'
+* Replace the contents of the file with the file below 
+
+```text
+name: 'PR Validation - Auto Triggered'
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - release/**
+
+# Jobs to be executed
+jobs:
+  validate:
+    name: 'Validate Changed Packages'
+    runs-on: ubuntu-latest
+    container: dxatscale/sfpowerscripts
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - run: |
+          echo 'y' | sfdx plugins:install @dxatscale/sfpowerscripts
+      - name: 'Authenticate Dev Hub'
+        run: |
+          echo "${{ secrets.DEVHUB_SFDX_AUTH_URL }}" > ./authfile
+          sfdx auth:sfdxurl:store -f authfile -a devhub
+          
+      # Validate source and trigger test
+      - name: 'Push source to scratch org'
+        run: 'sfdx sfpowerscripts:orchestrator:validate -p ci -v devhub -x'
+
+```
+
+What is this file doing? Let's have a look.
+
+**First**, it's given the name 'PR Validation - Auto Triggered'
+
+**Secondly**, It's given conditions to when to run, so when a pull request event occurs and within two branches main and release/\*\*
+
+**Thirdly** it is given a list of steps to execute in a specific order. These steps are:
+
+1. Check out the source code of your project, on branch 'master'. If you would prefer a different branch checked out, supply this branch in the 'ref' section
+2. Authenticate the DevHub using sfdx authURL, [more information on sfdx authURL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm)
+3. Execute the 'validate' command 
+
+_\(Hint: Make sure you align the validate command with the prepare command from the previous module\)_
+
+* Run your new workflow 
 
 ### Recap
 

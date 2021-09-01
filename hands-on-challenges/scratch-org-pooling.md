@@ -6,8 +6,10 @@
 * What are the benefits of using a scratch org pool? 
 * What are the different types of scratch org pools?
 * How do I set up a scratch org pool? 
+* What is the prepare command? 
+* How do I use the prepare command? 
 
-**Time to Complete :** 45 Minutes
+**Time to Complete:** 90 Minutes
 
 ### What is a Scratch Org Pool? 
 
@@ -17,16 +19,32 @@ We discussed what scratch orgs are in an [earlier](4.-scratch-org-introduction.m
 
 DX@Scale offers two types of scratch org pools 
 
-1. A pool that can be used by developers to work on features. These scratch org pools will typically have a longer duration, and would more actively use the 'user-mode' feature
+1. A pool that can be used by developers to work on features. These scratch org pools will typically have a longer duration.
 2. A pool that is used in your validation stage during the Continuous Integration pipeline
 
-We will be discussing type 1 in this module and will do a "part 2" for scratch orgs in a later module. 
+We will be discussing type 1 in this module and will do a "part 2" in the next module. 
+
+## Prepare Command
+
+The prepare command, which is a part of the orchestrator functionality of sfpowerscripts was introduced in 2020 and provides scratch org pooling, specifically tailored for use in your CICD platform.
+
+Prepare command helps you to build a pool of prebuilt scratch orgs which include managed packages as well as packages in your repository. This process allows you to considerably cut downtime in re-creating a scratch org during the validation process when a scratch org is used as a Just-in-time CI environment.
+
+#### Options available for the prepare command are here: 
+
+![](../.gitbook/assets/screen-shot-2021-09-01-at-10.58.06-am.png)
+
+You can also use the command below in the terminal to get more information
+
+```text
+  sfdx sfpowerscripts:orchestrator:prepare -f config/mypoolconfig.json  -v <devhub>
+```
 
 ### **Steps**
 
 #### **Install the prerequisite fields** 
 
-In order for scratch org pooling to work, you will need to install the **sfpowerkit-scratchorg-pool** unlocked package into your DevHub
+In order for scratch org pooling to work, you will need to install the **sfpower-scratchorg-pool** unlocked package into your DevHub
 
 * Log into your DevHub 
 * Navigate to [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1P000000gOqzQAE)
@@ -36,54 +54,30 @@ In order for scratch org pooling to work, you will need to install the **sfpower
 
 A pool configuration defines the 'shape' of your scratch org pool. This includes how it is identified, the size and when the pool expires. 
 
-The fields below are exactly what can be specified when defining your pool.
+You can find all the **configuration fields** that can be specified when defining your pool [here](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration).
 
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| expiry | Number | Number of days after which the pooled scratch org will expire |
-| tag | String | \(Required\) Identifier for the pool created |
-| max\_allocation | Number | \(Required\) Size of the pool, ignored if pool users are specified |
-| config\_file\_path | String | \(Required\) Path to the scratch org definition file |
-| script\_file\_path | String | Path to a script file to be executed e.g. to install dependencies in scratch orgs. Currently supports batch file or shell scripts which gets executed by cmd or bash respectively. The script will be passed two arguments the scratchorg username and devhub username respectively as %1 and %2 |
-| relax\_ip\_ranges | Array | Relax IP address ranges from which clients can access created scratch orgs. |
-| relax\_all\_ip\_ranges | Boolean | Relax All IP address ranges from which clients can access created scratch orgs. |
-| poolUsers | Array | List of pool users and their min/max scratch org allocation, expiry, email and priority |
-
-**An example schema**
+### Sample configuration files
 
 ```text
 {
-  "pool": {
-        "expiry": 1,
-        "tag":"examplepool",
-        "max_allocation": 10,
-        "config_file_path": "config/project-scratch-def.json",
-        "relax_all_ip_ranges": true,  
-    }
-  ]
+    "tag": "examplepool",
+    "maxAllocation": 20,
+    "expiry": 10,
+    "batchSize": 10,
+    "configFilePath": "config/project-scratch-def.json",
+    "relaxAllIPRanges": true,
+    "installAll": true,
+    "enableSourceTracking": true,
+    "retryOnFailure": true,
+    "succeedOnDeploymentErrors": true
 }
 ```
 
-There are variations of a scratch org pool with either 
-
-* Relaxing all IP ranges vs Relaxing start/end point IP ranges
-* User mode vs Tag mode 
-
-**Relaxing IP Ranges**
-
-Relaxation of IP ranges is key in tag mode config files to allow users to access the scratch orgs. In tag mode, the scratch orgs belong to the user who is creating it, \(so the CI user\). By relaxing IP ranges, you disable email-based validation, or you have to ask the CI user to provide you a validation code.
-
-**User Mode vs Tag Mode**
-
-**User mode** allows for a specific user or users to have their own pool available, signified by their username. This is good for scenarios where you have developers using the same amount of scratch orgs in a consistent manner. For example, Johnny uses 3 scratch orgs a month, whereas Amy only uses 1.
-
-**Tag mode** is instead identified by the tag given to the pool. For example, you might be developing in a multi-repo scenario and want to have a certain number of scratch orgs allocated per repo. In this case, each repo would have its own pool config file and your tag could be the name of the repo. In a mono-repo scenario, the tag name could be how your packages are broken down, or by your work groups.
-
 {% hint style="info" %}
-**For this module we will be using tag mode with all IP ranges relaxed, as in the example schema above**
+**For this module, all IP ranges relaxed, as in the example schema above**
 {% endhint %}
 
-* Create a **scratchorg-pool-config.json** file in your repo with a file path of **config/scratchorg-pool-config.json**
+* Create a **poolconfig.json** file in your repo with a file path of **config/poolconfig.json**
 * Add the above example schema 
 * Update the "max\_allocation" tag to 2 
 * Make sure the config file path is pointing to your correct project-scratch-def.json location 
@@ -91,10 +85,10 @@ Relaxation of IP ranges is key in tag mode config files to allow users to access
 
 #### Create your pool
 
-With all the pre work we have done, the command to create the pool is deceptively simple 
+With all the pre-work we have done, the command to create the pool is deceptively simple 
 
 ```text
-sfdx sfpowerkit:pool:create -f config/scratchorg-pool-config.json -v Devhub
+sfdx sfpowerscripts:orchestrator:prepare -f config/poolconfig.json -v Devhub
 ```
 
 #### Fetch a scratch org
@@ -102,17 +96,17 @@ sfdx sfpowerkit:pool:create -f config/scratchorg-pool-config.json -v Devhub
 Now try to use your scratch org pool by fetching it using this command 
 
 ```text
-sfdx sfpowerkit:pool:fetch --tag examplepool  -v Devhub
+sfdx sfpowerscripts:pool:fetch --tag examplepool -v Devhub -a Alias
 ```
 
 The username and password will be outputted from this command which you can use to log in at [https://test.salesforce.com](https://test.salesforce.com/) 
 
 #### Delete the pool 
 
-We don't need the pool for the next modules, so lets clear up your scratch org space using the delete command. 
+We don't need the pool for the next modules, so let's clear up your scratch org space using the delete command. 
 
 ```text
-sfdx sfpowerkit:pool:delete --tag examplepool -v Devhub
+sfdx sfpowerscripts:pool:delete --tag examplepool -v Devhub
 ```
 
 ### Recap

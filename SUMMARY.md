@@ -61,7 +61,7 @@
 * [Building your packages](hands-on-challenges/build-your-package.md)
 * [Publish and Release your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
 * [Scratch Org Pooling Part 1](hands-on-challenges/scratch-org-pooling.md)
-* [Scratch Org Pooling Part 2 \(prepare\)](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
+* [Scratch Org Pooling Part 2](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
 * [Validating your changes](hands-on-challenges/validating-your-changes.md)
 
 ## Media Library
