@@ -199,7 +199,7 @@ Let's get started by looking at CI Pool Definition:
    "installAll": true,
     "fetchArtifacts": {
       "npm": {
-        "scope": "@org-name",
+        "scope": "MY_PROJECT_NAME",
         "npmtag": "main"
       }
     }
@@ -207,5 +207,32 @@ Let's get started by looking at CI Pool Definition:
  }
 ```
 
+Let's look at DEV Pool Definition now:
 
+```javascript
+{
+    "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+    "tag": "dev",
+    "maxAllocation": 5,
+    "expiry": 10,
+    "batchSize": 5,
+    "configFilePath": "config/project-scratch-def.json",
+    "relaxAllIPRanges": true,
+    "enableSourceTracking": true,
+    "retryOnFailure": true,
+    "succeedOnDeploymentErrors": true,
+    "installAll": true,
+    "fetchArtifacts": {
+        "npm": {
+          "scope": "MY_PROJECT_NAME",
+          "npmtag": "main"
+        }
+      }
+   
+}
+```
+
+{% hint style="info" %}
+To get an in-depth understanding of the options available to you for configuration refer to this link [here](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration).
+{% endhint %}
 
