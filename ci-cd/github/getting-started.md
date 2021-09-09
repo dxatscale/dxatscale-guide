@@ -137,9 +137,31 @@ Within this stage, this YAML file the following sfpowerscripts orchestrator comm
 sfdx sfpowerscripts:orchestrator:quickbuild --help
 ```
 
-* The deploy command removes the overhead of scripting individual package deployments. This will deploy the artifacts to Dev environment. however
+* The [deploy](https://sfpowerscripts.dxatscale.io/commands/deploy) command removes the overhead of scripting individual package deployments. This will deploy the artifacts to Dev environment. however its dependent on **quickbuild** being successful.
+
+```text
+sfdx sfpowerscripts:orchestrator:deploy --help
+```
+
+* The [Build](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command generates fully validated packages that can be deployed to production. Once packages have been created we can publish build artifacts for publish.
+
+```text
+sfdx sfpowerscripts:orchestrator:build --help
+```
+
+* The [Publish](https://sfpowerscripts.dxatscale.io/commands/publish) command publishes the artifacts that were created in build pushing to artifact registry for further utilization by a release pipeline and publishes into an NPM Registry.
+
+```text
+sfdx sfpowerscripts:orchestrator:publish --help
+```
 
 ### Continuous Delivery Pipeline
 
-* CD Pipeline - User Triggered \| `release.yml`
+#### CD Pipeline - User Triggered \| `release.yml`
+
+This CD pipeline, Release Packages, must be manually triggered by the user. It triggers the pipeline for release, orchestrating fetching artifacts from an artifact repository, deploying to an environment including external dependencies, and generating a changelog driven by a release definition file.  
+
+Within this stage a pipeline defined using  release-packages.yml that must be manually triggered: 
+
+Using the command [orchestrator:release](https://sfpowerscripts.dxatscale.io/commands/publish) this will allow you to release to . It will fetch the artifacts published. 
 
