@@ -161,7 +161,11 @@ sfdx sfpowerscripts:orchestrator:publish --help
 
 This CD pipeline, Release Packages, must be manually triggered by the user. It triggers the pipeline for release, orchestrating fetching artifacts from an artifact repository, deploying to an environment including external dependencies, and generating a changelog driven by a release definition file.  
 
-Within this stage a pipeline defined using  release-packages.yml that must be manually triggered: 
+Within release.yml this must be manually triggered: 
 
-Using the command [orchestrator:release](https://sfpowerscripts.dxatscale.io/commands/publish) this will allow you to release to . It will fetch the artifacts published. 
+Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published. 
+
+```text
+sfdx sfpowerscripts:orchestrator:release --help
+```
 
