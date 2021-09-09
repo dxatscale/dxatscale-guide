@@ -8,7 +8,11 @@ Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github
 
 Click on **Use this template**
 
+![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.06-am.png)
+
 Enter in a **Repository name**, set your repo to **Private** and click **Create repository from template**
+
+![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.25-am.png)
 
 ## Setup your Secrets
 
@@ -21,7 +25,11 @@ Once you have created your `authfile.json` go back to GitHub and create your sec
 3. In the left sidebar, click Secrets.
 4. On the right bar, click on "New repository secret"
 
+![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.35.06-am.png)
+
 Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and paste the `sfdxAuthUrl` from `authfile.json`
+
+![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.45.34-am.png)
 
 {% hint style="info" %}
 Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL
@@ -30,6 +38,8 @@ Once you have done that repeat this step for all other orgs you have for your or
 ## Pipeline Overview
 
 Once you have set up all your Secret Variables make your way to **Actions** 
+
+![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
 
 As you can see there are 8 pipelines, we will be going through each one in sequence as you would expect for a typical workflow.
 
