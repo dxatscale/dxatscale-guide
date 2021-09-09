@@ -43,7 +43,7 @@ Once you have set up all your Secret Variables make your way to **Actions**
 
 As you can see there are 8 pipelines, we will be going through each one in sequence as you would expect for a typical workflow.
 
-
+All GitHub actions pipelines are located `YOUR_REPO/.github/workflows/`
 
 ### Environment Operations Pipelines
 
@@ -125,7 +125,19 @@ sfdx sfpowerkit:package:valid --help
 
 ### Continuous Integration Pipeline
 
-* CI Pipeline - Auto Triggered \| `quickbuild-build-deploy.yml`
+#### CI Pipeline - Auto Triggered \| `quickbuild-build-deploy.yml`
+
+As developers work through their user stories and committing to their short-lived feature branches, they will be raising pull requests against the main branch; their feature branches will be reviewed and approved, triggering the CI Pipelines:
+
+Within this stage, this YAML file the following sfpowerscripts orchestrator commands in sequence:
+
+* The [quickbuild](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command will be the packages without triggering dependency validation or code coverage checks.
+
+```text
+sfdx sfpowerscripts:orchestrator:quickbuild --help
+```
+
+* The deploy command removes the overhead of scripting individual package deployments. This will deploy the artifacts to Dev environment. however
 
 ### Continuous Delivery Pipeline
 
