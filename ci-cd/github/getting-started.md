@@ -2,7 +2,7 @@
 
 
 
-## 1. Clone Repo
+## Clone Repo
 
 Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github.com/dxatscale/dxatscale-template)
 
@@ -42,6 +42,8 @@ Once you have set up all your Secret Variables make your way to **Actions**
 ![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
 
 As you can see there are 8 pipelines, we will be going through each one in sequence as you would expect for a typical workflow.
+
+
 
 ### Environment Operations Pipelines
 
@@ -109,10 +111,16 @@ Validating package changes using sfpowerscripts orchestrator command [validate](
 sfdx sfpowerscripts:orchestrator:validate --help
 ```
 
-Performing a static analysis of Apex classes using the sfpowerscripts analyze command
+Performing a static analysis of Apex classes using the sfpowerscripts analyze command pmd.
 
 ```text
+sfdx sfpowerscripts:analyze:pmd --help
+```
 
+Validating metadata coverage for unlocked packages using sfpowerkit package command valid.
+
+```text
+sfdx sfpowerkit:package:valid --help
 ```
 
 ### Continuous Integration Pipeline
