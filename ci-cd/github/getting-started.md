@@ -165,7 +165,47 @@ Within release.yml this must be manually triggered:
 
 Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published. 
 
-```text
+```bash
 sfdx sfpowerscripts:orchestrator:release --help
 ```
+
+## Configure Scratch Org Pools
+
+In your repo, there is a folder called config, in that folder, you can see there are two JSON files
+
+* `project-ci-pool-def.json`
+* `project-dev-pool-def.json`
+
+As an overview Scratch Pools help development teams save the time taken to spin up scratch orgs allowing more time to be spent on development, installing all dependencies, and having it ready for development; in conjunction, we also use CI Pools.
+
+To configure the time expiry and the number of orgs to be created and more, here are the file paths to the following scratch org definition YAML Files:
+
+```text
+YOUR_REPO/config/project-ci-pool-def.json
+YOUR_REPO/config/project-dev-pool-def.json
+```
+
+Let's get started by looking at CI Pool Definition:
+
+```javascript
+{
+  "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+  "tag": "ci",
+   "maxAllocation": 5,
+   "expiry": 2,
+   "batchSize": 5,
+   "configFilePath": "config/project-scratch-def.json",
+   "enableSourceTracking": false,
+   "installAll": true,
+    "fetchArtifacts": {
+      "npm": {
+        "scope": "@org-name",
+        "npmtag": "main"
+      }
+    }
+ 
+ }
+```
+
+
 
