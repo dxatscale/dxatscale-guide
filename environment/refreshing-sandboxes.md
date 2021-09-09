@@ -39,7 +39,3 @@ Ensure to factor in the preview windows for [Salesforce Upgrades](https://help.s
   * Transaction Security Policies may have to be updated to reflect lower sandbox notifications vs. Production
   * Load Test Data via data packages to enable Developers and Testers to use sandboxes with metadata only.  For Full and Partial Sandboxes, ensure that data scrubbing of PII information is executed to protect data breaches.
 
-
-
-
-

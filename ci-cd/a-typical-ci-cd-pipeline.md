@@ -1,6 +1,6 @@
 # A Typical  CI/CD Pipeline
 
- Let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, validation before integration is not discussed
+Let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, validation before integration is not discussed
 
 ![](../.gitbook/assets/flowdiagram_revised.png)
 
@@ -13,9 +13,9 @@ There are two key pipelines demonstrated in the above diagram
   * Once deploy is successful, the pipeline proceeds to build the set of changed packages \(but this time with dependency validation and code coverage check\)
   * The pipeline could then publish these validated packages to an artifact repository for deployment into higher environments for further testing.
 
-  Each of this stage could have a pre-approval step modelled.  
+  Each of this stage could have a pre-approval step modelled.
 
-* **CD Pipeline**:  A Continuous Delivery Pipeline that gets triggered manually or automatically \(every day on a scheduled time interval\) deploying a set of the latest validated packages to a series of environment. The sequence of stages includes
+* **CD Pipeline**: A Continuous Delivery Pipeline that gets triggered manually or automatically \(every day on a scheduled time interval\) deploying a set of the latest validated packages to a series of environment. The sequence of stages includes
   * Fetch the Artifacts from the artifact repository using the provided release definition
   * Deploy the set of packages say to System Testing environment
   * Upon successful testing, the same set of packages progress to the System Integration Test environment and so forth

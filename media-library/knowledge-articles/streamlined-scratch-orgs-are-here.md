@@ -37,7 +37,7 @@ Prepare for developer pooling is now a 'one stop shop' for creating developer sc
 
 One of the main ways we have been able to do this is by deprecating JWT authentication and instead going forward pools using the ‘prepare’ command will authenticate using the platform Auth URL.
 
-The prepare command is also using the orchestrator inputs from your sfdx-project.json to know which scripts to run and which permission sets to assign. https://sfpowerscripts.dxatscale.io/faq/orchestrator
+The prepare command is also using the orchestrator inputs from your sfdx-project.json to know which scripts to run and which permission sets to assign. [https://sfpowerscripts.dxatscale.io/faq/orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator)
 
 We have also updated the pool config files, you'll notice some slight difference in this config file to what you are currently using and will need to use the config file instead of the current cli flags you are using. Let's take a sneak peak:
 
@@ -62,13 +62,11 @@ We have also updated the pool config files, you'll notice some slight difference
 
 **What's next?**
 
-Going along with the release \(est. 1 August\) we will have some instructions if you are ready to upgrade. Don't stress if you aren’t quite ready, you should switch to the previous version of the docker image in your orchestrator commands, as this is a breaking feature. https://hub.docker.com/r/dxatscale/sfpowerscripts
+Going along with the release \(est. 1 August\) we will have some instructions if you are ready to upgrade. Don't stress if you aren’t quite ready, you should switch to the previous version of the docker image in your orchestrator commands, as this is a breaking feature. [https://hub.docker.com/r/dxatscale/sfpowerscripts](https://hub.docker.com/r/dxatscale/sfpowerscripts)
 
 _You can read my previous articles about scratch org pooling here:_
 
 {% page-ref page="scratch-org-pooling-for-ci.md" %}
 
 {% page-ref page="scratch-org-pooling-for-development.md" %}
-
-
 

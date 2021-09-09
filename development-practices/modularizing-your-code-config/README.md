@@ -10,5 +10,3 @@ The following pages help you understand the correct packaging technique dependin
 
 {% page-ref page="data-packages.md" %}
 
-
-

@@ -26,7 +26,7 @@ But for today’s discussion, to simplify lets define the change lead time as th
 
 Let’s look into each of these steps into detail and later onto some tips on reducing this
 
-#### **Initializing scratch org for feature development**
+## **Initializing scratch org for feature development**
 
 **Average Time Noticed so far in our projects with multiple dependencies and keeping managed package dependency to a minimum: 30 Minutes**
 
@@ -34,13 +34,13 @@ This activity includes, creation of a feature/topic branch and creating a scratc
 
 As ‘snapshot’ feature for Scratch Org’s is not yet ready \(soon to be in pilot\), getting a scratch org created if you have a dependency on large managed packages often takes you an average time anywhere between 20 to 35 minutes to nearly 2 hours plus depending on the dependent packages being installed. Each package installation also triggers an entire org wide apex compilation \( more options are available in Summer 19\) adding to the delays. On top of this you need to push you current package in source format, along with test data if needed.
 
-#### **Time for feature development**
+## **Time for feature development**
 
 **Average Time Noticed so far in our projects : X**
 
 This is often dependent on the topic that is being developed and can go from an hour to few days including unit tests. Let’s keep this as the variable element in our discussion
 
-#### **Time Consumed for Pull Request/Merge Request Validation** \( Creating Scratch org on CI server, Installing Dependent Packages, Source Push, Automated Tests\)
+## **Time Consumed for Pull Request/Merge Request Validation** \( Creating Scratch org on CI server, Installing Dependent Packages, Source Push, Automated Tests\)
 
 **Average Time Noticed so far in our projects : 30 Mins per each PR Validation Run and on an average 2 runs per topic branch ~~ 60 Mins**
 
@@ -48,19 +48,19 @@ One of the practices commonly followed in modern tech stack’s is the practice 
 
 During each of these run’s the CI system has to exactly do the steps as described in Step 1 \(Initializing Scratch Org\) and have additional validation steps to be run. This process is also run on a server, which means depending on your CI setup, there could be a queue before your PR gets triggered for a run.
 
-#### **Time consumed for a Pull/Merge Request Review**
+## **Time consumed for a Pull/Merge Request Review**
 
 **Average Time Noticed so far in our projects : Y**
 
 Again another variable activity as it depends on the team size, the person who is doing the review, and the practices that’s being followed\( is it just your tech lead, then queue on the lead, or a peer review process with multiple votes\)
 
-#### **Time consumed for a Package Creation**
+## **Time consumed for a Package Creation**
 
 **Average Time Noticed so far in our projects : Average of 30 Minutes \( Highly dependent on the size of the package, and its dependents\)**
 
 Assuming you have made your way after the merge to the mainline, then you are left with packaging of the project , where now Salesforce does exactly what what is being mentioned in Step 1 or Step 3 and provide us with the package id. This time will be roughly same as of your PR validation run’s
 
-#### **Time consumed for Package Installation**
+## **Time consumed for Package Installation**
 
 **Average Time Noticed so far in our projects : Average of 8 Minutes**
 

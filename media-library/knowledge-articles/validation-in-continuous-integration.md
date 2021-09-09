@@ -20,25 +20,20 @@ sfdx sfpowerscripts:orchestrator:validate -f $(devhubKey.secureFilePath) -i $(DE
 
 **Let’s give you a quick run through of what this command is doing:**
 
-1.    Authenticates to the DevHub using the provided JWT Key / Client ID
-
-2.    Fetches a scratch org from the provided pools in a sequential manner
-
-3.    Authenticate to the Scratch org using the provided JWT Key / Client ID
-
-4.    Build packages that are changed by comparing the tags in your repo against the packages installed in scratch org
+1. Authenticates to the DevHub using the provided JWT Key / Client ID
+2. Fetches a scratch org from the provided pools in a sequential manner
+3. Authenticate to the Scratch org using the provided JWT Key / Client ID
+4. Build packages that are changed by comparing the tags in your repo against the packages installed in scratch org
 
 **Next for each of the packages**
 
-1.    Deploy changed packages to the scratch org
-
-2.    Trigger Apex Tests if there are any apex test in the package
-
-3.    Validate test coverage of the package depending on the type of the package \(source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more\)
+1. Deploy changed packages to the scratch org
+2. Trigger Apex Tests if there are any apex test in the package
+3. Validate test coverage of the package depending on the type of the package \(source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more\)
 
 That last step \(**number 3**\) is a new one. We have utilized the open-source component [‘apex-parser’](https://github.com/nawforce/apex-parser) to implement a method which determines whether the package is an unlocked or source package and then bases the code coverage validation on which type of package it is.
 
-All of this will run in your CI tool and give you a pass/fail result of the code about to be merged. This will save you time in your current validation practices, especially when combined with the ‘prepare’ orchestrator function offered by sfpowerscripts. 
+All of this will run in your CI tool and give you a pass/fail result of the code about to be merged. This will save you time in your current validation practices, especially when combined with the ‘prepare’ orchestrator function offered by sfpowerscripts.
 
 ![](../../.gitbook/assets/1617076893230.png)
 

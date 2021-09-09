@@ -10,7 +10,7 @@ DX@Scale practitioners will follow the below branching conventions when they are
 | bugfix/XYZ | A bug fix branch that a developer is working on. The XYZ denotes the issue id in your issue registry or User Story in your ALM tool. |  |
 | chore/XYZ | Updates to pipelines and other scripts, not necessarily related to the functionality delivered to the platform. |  |
 
-#### Commit Message
+## Commit Message
 
 We typically prefer \(feature/bugfix/chore\) branches be merged to the main/master or release branches using squash as the option. When it is being merged, most git repository systems allow to combine and edit the commit messages. The commit messages from multiple commits in feature branch should be cleaned up and should follow the similar format
 
@@ -20,6 +20,5 @@ We typically prefer \(feature/bugfix/chore\) branches be merged to the main/mast
 - Commit Details
 ```
 
-In the above example \[XYZ\] denotes the work item number in the issue registry and is utilized by DX@Scale tools to generate meaningful change logs.  
-
+In the above example \[XYZ\] denotes the work item number in the issue registry and is utilized by DX@Scale tools to generate meaningful change logs.
 

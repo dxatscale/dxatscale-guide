@@ -4,7 +4,7 @@ description: 'Published on March 11, 2021 by Vu Ha'
 
 # Version Controlling Profiles and Why It Makes Sense for Deployments?
 
-Profiles have long been a sore spot for Salesforce professionals to deploy, manage, and keep in sync across all environments. Although Salesforce is pushing to move to a more **Permission Set/Permission Set Group** centric model to customers, the truth is that Profiles, for most organizations, are not going to go away any time soon. Profiles serve as the security foundation to define what users can have access to within the Salesforce application as well as to core system permissions. There are still a handful of features such as **Default Record Type, Page Layouts, Login Hours & IP Ranges** that can only be configured through Profiles and not available through Permission sets. As a result, this is the one of the reasons why Profiles will continue to be a mainstay feature to your overall Security Design in Salesforce. 
+Profiles have long been a sore spot for Salesforce professionals to deploy, manage, and keep in sync across all environments. Although Salesforce is pushing to move to a more **Permission Set/Permission Set Group** centric model to customers, the truth is that Profiles, for most organizations, are not going to go away any time soon. Profiles serve as the security foundation to define what users can have access to within the Salesforce application as well as to core system permissions. There are still a handful of features such as **Default Record Type, Page Layouts, Login Hours & IP Ranges** that can only be configured through Profiles and not available through Permission sets. As a result, this is the one of the reasons why Profiles will continue to be a mainstay feature to your overall Security Design in Salesforce.
 
 Due to the ease of point-and-click configuration in Salesforce, adding or removing permissions for a Profile is simple. It's managing a constant influx of changes during each sprint or release, across multiple environments that make Profiles a nightmare for most companies to manage. There are many commercial DevOps tools and ISV Managed Packages in the market place that seek to provide insights and visibility to Profile discrepancies across environments. Some of these tools also have in addition to comparison features, their own native solution to synchronize the changes. From my experience, another option to handle this is through source control, source packaging via SFDX and open source cli plugin extensions.
 
@@ -28,11 +28,11 @@ The limitations for these standard SFDX command for Profile retrieval is they ar
 
 The two plugin commands that have proven invaluable to managing profiles are **sfpowerkit:source:profile:retrieve** and **sfpowerkit:source:profile:reconcile**. Underneath the hood, the **retrieve** command utilizes the underlying Salesforce Metadata API and data model to query and identify metadata in the target orgs. Once the list has been retrieved, it generates a full profile file comprising of the following supported metadata types: **ApexClass, CustomApplication, CustomObject, CustomField, Layout, ApexPage, CustomTab, RecordType, SystemPermissions**. The **reconcile** command takes the output profile file generated from the retrieve command and then goes through a series of steps to cleanse the file of metadata items that are not present in the target org. This automation ensures that you have a profile metadata file that is in a deployable state to your target org.
 
-Once this file is validated to the target org, it can be baseline in your source repository to ensure future additions and modifications are tracked. Repeat the process over again each time you want to obtain a complete set of permissions from your source of truth org for Profiles \(eg. Production initially or Developer Sandboxes for new development going forward\). You now have the option to leverage the retrieve and reconcile commands to get the latest updates from your shared development environment or incrementally merge additional permissions to the profiles during the course of your agile development process.  
+Once this file is validated to the target org, it can be baseline in your source repository to ensure future additions and modifications are tracked. Repeat the process over again each time you want to obtain a complete set of permissions from your source of truth org for Profiles \(eg. Production initially or Developer Sandboxes for new development going forward\). You now have the option to leverage the retrieve and reconcile commands to get the latest updates from your shared development environment or incrementally merge additional permissions to the profiles during the course of your agile development process.
 
-Please note that each time you modify the profiles, whether through tooling or manually modifying the metadata file, the entire profile is saved and not a subset of permissions in the Profile metadata. Having delta snippets of Profiles defeats the purpose of maintaining a complete set of permissions in your Profile package for deployments. There is no need to create an unlocked package for the profiles here as it needs to be treated as separate deployable "**source package**" state that is not managed by default by the Salesforce Dev Hub. There are more advance topics on these types of "[source packages](https://dxatscale.gitbook.io/sfpowerscripts/faq/source-packages)" that I recommend to review further.  
+Please note that each time you modify the profiles, whether through tooling or manually modifying the metadata file, the entire profile is saved and not a subset of permissions in the Profile metadata. Having delta snippets of Profiles defeats the purpose of maintaining a complete set of permissions in your Profile package for deployments. There is no need to create an unlocked package for the profiles here as it needs to be treated as separate deployable "**source package**" state that is not managed by default by the Salesforce Dev Hub. There are more advance topics on these types of "[source packages](https://dxatscale.gitbook.io/sfpowerscripts/faq/source-packages)" that I recommend to review further.
 
-#### **Quick Starter Guide for Initial Profile Package**
+## **Quick Starter Guide for Initial Profile Package**
 
 1 - Create your default SFDX project in source format.
 
@@ -62,11 +62,11 @@ sfdx sfpowerkit:source:profile:reconcile -u newDevOrg -f src-access-mgmt/main/de
 
 8 - Voila, you have now a source package that contains your profiles to deploy consistently across multiple environments.
 
-#### **Sample SFDX Project Folder**
+## **Sample SFDX Project Folder**
 
 ![](../../.gitbook/assets/1615422434503.png)
 
-#### **Some Guiding Principles to Leave You With**
+## **Some Guiding Principles to Leave You With**
 
 1. **Principle of Least Privilege** - Users should have the least number of permissions necessary to do their job and nothing more.
 2. Deploy metadata that is new to your target org first before doing a reconcile. If you forget to this, no new permissions will be deployed with the profile file.
@@ -75,9 +75,9 @@ sfdx sfpowerkit:source:profile:reconcile -u newDevOrg -f src-access-mgmt/main/de
 5. Where possible, move start looking to migration permissions to Permission Sets for role based permissions to layer your access management controls for stackable, flexible, and easier assignments to users. This will help you future proof your organization as Salesforce continues to release updates and support for Permission Sets across more metadata types.
 6. Try it. If you end up not liking this approach, you can always go back to what you are used to.
 
-Hopefully this blog gets you started on your journey to **DevOps Maturity** and packaging modulation for Salesforce. Below are some additional reference articles and videos that you can review further to deepen your understanding of profiles, permission sets, and the open source tools in the marketplace to enable you to be successful. 
+Hopefully this blog gets you started on your journey to **DevOps Maturity** and packaging modulation for Salesforce. Below are some additional reference articles and videos that you can review further to deepen your understanding of profiles, permission sets, and the open source tools in the marketplace to enable you to be successful.
 
-#### References
+## References
 
 * [Salesforce Profile Help Article Reference](https://help.salesforce.com/articleView?id=sf.admin_userprofiles.htm&type=5)
 * [User Profile permission descriptions](https://help.salesforce.com/articleView?id=000332385&type=1&mode=1)

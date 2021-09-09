@@ -62,7 +62,6 @@ jobs:
             # Prepare a pool of scratch orgs
             - name: 'Prepare a pool of scratch orgs'
               run: 'sfdx sfpowerscripts:orchestrator:prepare -f config/poolconfig.json -v devhub'
-
 ```
 
 What is this file doing? Let's have a look.
@@ -106,7 +105,7 @@ Let's set up the secrets we need.
 It is recommended to set up a new trailhead playground with DevHub and Unlocked packages enabled for the Orchestrator modules.
 {% endhint %}
 
-**First**, if you haven't previously, you will need to set up an _sfdx authurl_. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) 
+**First**, if you haven't previously, you will need to set up an _sfdx authurl_. We will not explicitly cover this subject, as the instructions are located here: [https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm)
 
 * Go to your GitHub repository and select 'Settings' 
 
@@ -122,7 +121,7 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 ![](../.gitbook/assets/screen-shot-2021-08-25-at-9.48.16-am.png)
 
-Select 'New repository secret' 
+Select 'New repository secret'
 
 ### Run your workflow
 

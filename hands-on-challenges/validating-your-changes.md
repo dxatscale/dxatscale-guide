@@ -1,13 +1,13 @@
 # Validating your changes
 
-### **Learning Objectives**
+## **Learning Objectives**
 
 * How DX@Scale has combined SFDX and Continuous Integration 
 * How to validate changes using the 'validate' command 
 
 **Time to complete:** 20 minutes
 
-### Validate Command
+## Validate Command
 
 **Validate** command helps you to validate a change made to your configuration/code. This command is triggered as part of your pull request process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using the [prepare ](scratch-org-pooling-part-2-prepare.md)command.
 
@@ -17,7 +17,7 @@
 * Triggers Apex Tests
 * Validate Apex Test coverage of each package
 
-Options available for the validate command are here: 
+Options available for the validate command are here:
 
 ![](../.gitbook/assets/screen-shot-2021-08-30-at-4.50.24-pm.png)
 
@@ -27,7 +27,7 @@ You can also use the command below in the terminal to get more information
 sfdx sfpowerscripts:orchestrator:validate --help
 ```
 
-### Steps 
+## Steps
 
 **Create a 'validate' file**
 
@@ -66,11 +66,10 @@ jobs:
         run: |
           echo "${{ secrets.DEVHUB_SFDX_AUTH_URL }}" > ./authfile
           sfdx auth:sfdxurl:store -f authfile -a devhub
-          
+
       # Validate source and trigger test
       - name: 'Push source to scratch org'
         run: 'sfdx sfpowerscripts:orchestrator:validate -p ci -v devhub -x'
-
 ```
 
 What is this file doing? Let's have a look.
@@ -89,9 +88,7 @@ _\(Hint: Make sure you align the validate command with the prepare command from 
 
 * Run your new workflow 
 
-### Recap
+## Recap
 
-This is a short module, as it reuses the concepts learned in prepare. Well done, you now know how to simply validate your changes. You can now see how you can have this set up to be triggered on every pull request to your main or develop branches. 
-
-
+This is a short module, as it reuses the concepts learned in prepare. Well done, you now know how to simply validate your changes. You can now see how you can have this set up to be triggered on every pull request to your main or develop branches.
 

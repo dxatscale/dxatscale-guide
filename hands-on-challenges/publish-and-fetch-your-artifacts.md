@@ -1,6 +1,6 @@
 # Publish and Release your artifacts
 
-### **Learning Objectives**
+## **Learning Objectives**
 
 * What is an artifact?
 * How to publish artifacts to an artifact registry?
@@ -8,11 +8,11 @@
 
 **Time to complete:** 40 minutes
 
-### Publish Command
+## Publish Command
 
 The **Publish** command pushes artifacts created when you previously ran the **build** command, to an artifact registry primarily for further utilisation by a release pipeline. You must provide a shell script that handles the uploading of artifacts to a package registry of their choice. For this step, we will be going with GitHub Package Manager.
 
-#### Options available for the publish command are here: 
+### Options available for the publish command are here:
 
 ![](../.gitbook/assets/screen-shot-2021-08-31-at-10.23.37-am.png)
 
@@ -22,15 +22,15 @@ You can also use the command below in the terminal to get more information
 sfdx sfpowerscripts:orchestrator:publish --help
 ```
 
-#### Read more about the publish command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/publish) 
+### Read more about the publish command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/publish)
 
 **Artifacts**
 
 Artifacts are a key concept in sfpowerscripts. Artifacts are traceable, versioned, immutable entities that get generated during the build or promote command. sfpowerscripts artifacts contain the source code of the package, metadata information, changelog and much more. Artifacts help sfpowerscripts to orchestrate deployment without being tied to the notion of branches.
 
-#### Read more about artifacts and how it is being used in the [link](https://dxatscale.gitbook.io/sfpowerscripts/faq/artifacts) 
+### Read more about artifacts and how it is being used in the [link](https://dxatscale.gitbook.io/sfpowerscripts/faq/artifacts)
 
-### Release Command
+## Release Command
 
 The **Release** command provides a simplified method of fetching artifacts from an artifact repository using the release definition file which contains the name of the artifacts that you want to download. fetching from the **NPM registry**, the command will handle everything else for you.
 
@@ -44,13 +44,11 @@ You can also use the command below in the terminal to get more information
 sfdx sfpowerscripts:orchestrator:release --help
 ```
 
-#### Read more about the release command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/release) 
+### Read more about the release command and how it is being used in the [link](https://sfpowerscripts.dxatscale.io/commands/release)
 
-### Steps
+## Steps
 
-#### Create a Personal Access token to publish packages to GitHub Package manager
-
-
+### Create a Personal Access token to publish packages to GitHub Package manager
 
 * In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
@@ -96,7 +94,7 @@ $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
 > Email: PUBLIC-EMAIL-ADDRESS
 ```
 
-#### Publish your packages to Github Package Registry
+### Publish your packages to Github Package Registry
 
 ```text
 sfdx sfpowerscripts:orchestrator:publish -d artifacts --npm --scope <your_github_org_name> --npmrcpath <path_to_your_npmrc> --gittag --pushgittag
@@ -104,7 +102,7 @@ sfdx sfpowerscripts:orchestrator:publish -d artifacts --npm --scope <your_github
 
 _Notice how the packages are published into your dreamhouse repo._
 
-#### Utilize Release command to orchestrate deployments at ease
+### Utilize Release command to orchestrate deployments at ease
 
 Create a release definition file in the root of your repository. Information on creating release definition is available at this [link](https://dxatscale.gitbook.io/sfpowerscripts/commands/release)
 
@@ -120,11 +118,9 @@ sfdx sfpowerscripts:orchestrator:release -u <SO_ALIAS> -p .releaseDefinition.yml
 
 **Delete** the artifacts directory in your folder
 
-Notice how the release command install all the dependencies,  deploy all the packages directly and generate a changelog
+Notice how the release command install all the dependencies, deploy all the packages directly and generate a changelog
 
-### Recap 
+## Recap
 
 This module helps you understand how sfpowerscripts can be utilized to orchestrate releases across multiple orgs
-
-
 

@@ -14,7 +14,3 @@ DX@Scale utilizes various open source tools. All the tools are listed below.
 | sfmc-devtools | Utilities | npm | MIT | [https://github.com/Accenture/sfmc-devtools](https://github.com/Accenture/sfmc-devtools) | [https://github.com/Accenture/sfmc-devtools](https://github.com/Accenture/sfmc-devtools) |
 | sfdx-browserforce-plugin | Utilties | sfdx plugin | MIT | [https://github.com/amtrack/sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin) | [https://github.com/amtrack/sfdx-browserforce-plugin](https://github.com/amtrack/sfdx-browserforce-plugin) |
 
-
-
-
-

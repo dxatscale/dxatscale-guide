@@ -10,19 +10,13 @@ The introduction of Salesforce DX revolutionized the ways of working with Salesf
 
 ## Developer Experience with DX@Scale
 
-{% embed url="https://www.youtube.com/watch?v=4og4gR6s0tY" %}
+{% embed url="https://www.youtube.com/watch?v=4og4gR6s0tY" caption="" %}
 
 An optimized Developer Experience is paramount for us while building DX@Scale. We are constantly focusing on improving our tools ensuring these practices are easy to adopt in your organisation.
 
 ## Talks on DX@Scale
 
+{% embed url="https://trailhead.salesforce.com/live/videos/a2r3k000001vDOJ/adopting-package-based-development-at-scale" caption="" %}
 
-
-{% embed url="https://trailhead.salesforce.com/live/videos/a2r3k000001vDOJ/adopting-package-based-development-at-scale" %}
-
-{% embed url="https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-paris-france-presents-dxscale-optimizing-salesforce-development-and-deployment-for-large-scale-projects/" %}
-
-
-
-
+{% embed url="https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-paris-france-presents-dxscale-optimizing-salesforce-development-and-deployment-for-large-scale-projects/" caption="" %}
 
