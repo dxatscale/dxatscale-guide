@@ -97,7 +97,7 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ### F. Authenticate to Lower Sandbox Environments via CLI
 
-The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and authenticated first prior to running the pipeline.  
+The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.  
 
 * SHAREDDEV \(Shared Development\)
 * ST \(System Test\)
@@ -109,9 +109,13 @@ The template assumes you are following the environment strategy defined in our D
 Assuming that Production is also your Dev Hub, we recommend that you still create multiple CLI connections to segregate the environments.
 {% endhint %}
 
-Additional environments and customization can be made once you are familiar with the scripts.
+Additional environments and customization can be made once you are familiar with the scripts.  
 
-Authorize your environments using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  
+```bash
+sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
+```
+
+
 
 ## GitLab: Part I
 
