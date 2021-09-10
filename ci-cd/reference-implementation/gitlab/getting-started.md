@@ -8,21 +8,21 @@ We welcome any feedback from the community to continuously improve upon this use
 
 In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your workstation operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below.
 
-###  A. Git
+###  Git
 
 ```bash
 git version
 > git version 2.32.0
 ```
 
-### B. SFDX CLI
+### SFDX CLI
 
 ```bash
 sfdx version
 > sfdx-cli/7.110.0 darwin-x64 node-v16.6.0
 ```
 
-### C. SFDX Plugins
+### SFDX Plugins
 
 ```bash
 sfdx plugins
@@ -31,7 +31,7 @@ sfdx plugins
   sfpowerkit 3.2.2
 ```
 
-### D. Visual Studio Code
+### Visual Studio Code
 
 ```bash
 code --version
@@ -40,7 +40,7 @@ e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff
 x64
 ```
 
-### E. NPM
+### NPM
 
 ```bash
 npm --version
@@ -87,7 +87,11 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting SfpowerscriptsArtifact2\_\_c that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
+```bash
+sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
+```
 
 ## GitLab: Part I
 
