@@ -1,12 +1,12 @@
 # Getting Started
 
-The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
+The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
-We welcome any feedback from the community to continuously improve upon this user guide so please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
+As always, we welcome any feedback from the community to continuously improve upon this user guide so please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
 
 ## Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your workstation operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your workstation operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
 
 ###  Git
 
@@ -63,6 +63,8 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
+[Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
+
 1. Navigate to the **Setup** menu
 2. Go to **Development &gt; Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
@@ -95,7 +97,21 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ## GitLab: Part I
 
+## A. Create New Project
+
+
+
+B. Create Project Access Token
+
+{% hint style="info" %}
+
+{% endhint %}
+
 ## Repository
+
+A. Clone Repository
+
+
 
 ## GitLab: Part II
 
