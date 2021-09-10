@@ -1,10 +1,18 @@
 # Getting Started
 
-The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for your Salesforce Project.
+The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  
 
-## Getting Super Powers
+## Developer Workstation
 
-Becoming a super hero is a fairly straight forward process:
+## Salesforce
+
+## GitLab: Part I
+
+## Repository
+
+## GitLab: Part II
+
+
 
 ```
 $ give me super-powers
@@ -24,4 +32,8 @@ echo 'You got to trust me on this, I saved the world'
 {% endcode %}
 
 
+
+## Closing Thoughts
+
+Good luck on your journey.
 
