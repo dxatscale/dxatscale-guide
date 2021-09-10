@@ -99,6 +99,8 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ## A. Create New Project
 
+Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working_with_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
+
 1. From the **GitLab Menu**, click on **Projects &gt; Create new project**
 2. Select **Create blank project**
 3. Enter **dxatscale-poc** for the **Project name**
@@ -115,8 +117,14 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ### B. Create Project Access Token
 
-{% hint style="info" %}
+Project access tokens are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository. 
 
+1. From the **GitLab Menu**, click on **Projects &gt; Create new project**
+2. Select **Create blank project**
+3. Enter **dxatscale-poc** for the **Project name**
+
+{% hint style="info" %}
+Project Access Tokens are only supported on self-managed instances on Free tier and above and GitLab SaaS Premium and above.
 {% endhint %}
 
 ## Repository
