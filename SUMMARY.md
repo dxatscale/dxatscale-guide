@@ -30,8 +30,10 @@
 
 * [A Typical  CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)
-  * [Azure DevOps](ci-cd/reference-implementation/azure-devops.md)
-  * [Prerequisites](ci-cd/reference-implementation/prerequisites.md)
+  * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
+    * [Getting Started](ci-cd/reference-implementation/azure-devops/getting-started.md)
+    * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
+    * [Solution Overview](ci-cd/reference-implementation/azure-devops/solution-overview.md)
   * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
     * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
