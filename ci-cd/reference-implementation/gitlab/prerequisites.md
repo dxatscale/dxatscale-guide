@@ -28,7 +28,8 @@ The following list are prerequisite tools required to setup an end-to-end pipeli
     * ​[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)​
     * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
     * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)​
-* [ ] ​[git](https://git-scm.com/)​
+* [ ] ​[git](https://git-scm.com/)
+* [ ] [npm​](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [ ] ​[Salesforce CLI](https://www.npmjs.com/package/sfdx-cli)​
 * [ ] ​[sfpowerkit Plugin](https://github.com/dxatscale/sfpowerkit)​
 * [ ] ​[sfpowerscripts Plugin](https://github.com/Accenture/sfpowerscripts)​
