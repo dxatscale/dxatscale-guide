@@ -195,7 +195,7 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ### C. Create Project Variables
 
-[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template use a number of variables to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
+[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
 1. From the **Project Menu**, click on **Settings &gt; CI/CD**
 2. Scroll down to **Variables** and click on the **Expand** button
@@ -214,7 +214,18 @@ Repeat the steps above and create the following variables below using the sfdxAu
 
 | Key | Value | Type |  Scope | Protect | Mask |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| NPM Scope |  |  |  |  |  |
+| NPM Scope | @dxatscale-poc | Variable | All \(default\) | No | No |
+| PROD\_ALIAS | prod | Variable | All \(default\) | No | No |
+| PROD\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
+| PROJECT\_ACCESS\_TOKEN | &lt;token&gt; | Variable | All \(default\) | No | Yes |
+| SHAREDDEV\_ALIAS | shareddev | Variable | All \(default\) | No | No |
+| SHAREDDEV\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
+| SIT\_ALIAS | sit | Variable | All \(default\) | No | No |
+| SIT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
+| ST\_ALIAS | st | Variable | All \(default\) | No | No |
+| ST\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
+| UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
+| UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
 ![](../../../.gitbook/assets/image%20%287%29.png)
 
