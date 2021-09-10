@@ -6,7 +6,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 ## GitLab Overview
 
-![GitLab Architecture](../../../.gitbook/assets/image%20%2818%29.png)
+![GitLab Architecture](../../../.gitbook/assets/image%20%2819%29.png)
 
 <table>
   <thead>

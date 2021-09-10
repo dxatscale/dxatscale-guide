@@ -214,6 +214,8 @@ Repeat the steps above and create the following variables below using the sfdxAu
 
 | Key | Value | Type |  Scope | Protect | Mask |
 | :--- | :--- | :--- | :--- | :--- | :--- |
+| DEVHUB\_ALIAS | devhub | Variable | All \(default\) | No | No |
+| DEVHUB\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 | NPM Scope | @dxatscale-poc | Variable | All \(default\) | No | No |
 | PROD\_ALIAS | prod | Variable | All \(default\) | No | No |
 | PROD\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
@@ -227,7 +229,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
 | UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![Project Variables](../../../.gitbook/assets/image%20%2818%29.png)
 
 ## Repository
 
