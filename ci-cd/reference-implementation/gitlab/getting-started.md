@@ -127,7 +127,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### G. Generate SFDX auth URL for Pipeline Authentication
 
-In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method.  For each environment, execute the following command and save the auth URL for use in future pipeline configuration steps.
+In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method.  For each environment, execute the following command and save the sfdxAuthUrl for use in future pipeline configuration steps.
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
@@ -146,6 +146,12 @@ cat authFile.json
   }
 }
 ```
+
+{% hint style="info" %}
+Save only the following part of the **sfdxAuthUrl** for each environment  
+  
+`force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@dxatscale--shareddev.my.salesforce.com`
+{% endhint %}
 
 ## GitLab: Part I
 
