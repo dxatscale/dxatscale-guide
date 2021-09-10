@@ -115,8 +115,6 @@ Additional environments and customization can be made once you are familiar with
 sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 ```
 
-
-
 ## GitLab: Part I
 
 ### A. Create New Project
