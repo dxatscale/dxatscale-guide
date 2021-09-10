@@ -29,6 +29,9 @@
 ## CI/CD
 
 * [A Typical  CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [GitLab](ci-cd/gitlab/README.md)
+  * [Getting Started](ci-cd/gitlab/getting-started.md)
+  * [Prerequisites](ci-cd/gitlab/prerequisites.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)
   * [GitHub](ci-cd/reference-implementation/github/README.md)
     * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
