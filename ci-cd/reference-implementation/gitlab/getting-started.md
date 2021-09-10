@@ -99,9 +99,21 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ## A. Create New Project
 
+1. From the **GitLab Menu**, click on **Projects &gt; Create new project**
+2. Select **Create blank project**
+3. Enter **dxatscale-poc** for the **Project name**
+4. Select your correct **Project URL**
+5. Enter a **Project description \(optional\)** as needed
+6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
+7. Click on the **Create project** button
 
+![](../../../.gitbook/assets/image%20%282%29.png)
 
-B. Create Project Access Token
+![](../../../.gitbook/assets/image%20%285%29.png)
+
+![](../../../.gitbook/assets/image%20%286%29.png)
+
+### B. Create Project Access Token
 
 {% hint style="info" %}
 
