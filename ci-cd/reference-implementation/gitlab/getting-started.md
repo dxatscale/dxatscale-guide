@@ -53,6 +53,8 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### A. Enable Dev Hub
 
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) features in your Salesforce org so you can create and manage scratch orgs, create and manage second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+
 1. Navigate to the **Setup** menu
 2. Go to **Development &gt; Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
@@ -76,6 +78,12 @@ sfdx auth:web:login -a DevHub -r https://login.salesforce.com
 ```
 
 ### D. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
+
+The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) adds additional custom fields, validation rule, and workflow to the standard object "**ScratchOrgInfo**" in the the DevHub to enable associated scratch org pool commands to work for the pipeline.
+
+
+
+
 
 ### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
