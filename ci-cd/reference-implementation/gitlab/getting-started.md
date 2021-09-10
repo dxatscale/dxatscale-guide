@@ -229,11 +229,23 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
 | UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
-![Project Variables](../../../.gitbook/assets/image%20%2818%29.png)
+![Project Variables](../../../.gitbook/assets/image%20%2819%29.png)
 
 ## Repository
 
-A. Clone Repository
+### A. Clone Template Repository
+
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) contains the 
+
+![](../../../.gitbook/assets/image%20%2816%29.png)
+
+### B. Clone Project Repository
+
+### C. Copy Template Contents to Project Folder
+
+{% hint style="info" %}
+Copy all hidden files except for .git and .sfdx contents into the folder.
+{% endhint %}
 
 
 
