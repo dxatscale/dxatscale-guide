@@ -49,7 +49,7 @@ npm --version
 
 ## Salesforce
 
-To enable modular package development, there are a few configurations in Salesforce that needs to be enabled.  
+To enable modular package development, there are a few configurations in Salesforce that needs to be enabled to create Scratch Orgs and Unlock Packages.
 
 ### A. Enable Dev Hub
 
