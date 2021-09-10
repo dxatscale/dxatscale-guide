@@ -111,9 +111,19 @@ Assuming that Production is also your Dev Hub, we recommend that you still creat
 
 Additional environments and customization can be made once you are familiar with the scripts.  
 
+{% tabs %}
+{% tab title="Sandbox" %}
 ```bash
 sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 ```
+{% endtab %}
+
+{% tab title="Production" %}
+```
+sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
+```
+{% endtab %}
+{% endtabs %}
 
 ## GitLab: Part I
 
@@ -169,24 +179,7 @@ A. Clone Repository
 
 
 
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-
+Customize Packages for PMD and Package Validations
 
 ## Closing Thoughts
 
