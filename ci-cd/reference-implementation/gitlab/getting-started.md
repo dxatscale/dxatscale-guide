@@ -59,7 +59,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development &gt; Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -69,7 +69,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development &gt; Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
-![](../../../.gitbook/assets/image.png)
+![](../../../.gitbook/assets/image%20%281%29.png)
 
 ### C. Authenticate to DevHub via CLI
 
@@ -167,11 +167,11 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
 7. Click on the **Create project** button
 
-![](../../../.gitbook/assets/image%20%283%29.png)
+![](../../../.gitbook/assets/image%20%285%29.png)
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![](../../../.gitbook/assets/image%20%2813%29.png)
 
-![](../../../.gitbook/assets/image%20%2810%29.png)
+![](../../../.gitbook/assets/image%20%2814%29.png)
 
 ### B. Create Project Access Token
 
@@ -189,23 +189,34 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 6. Click on the **Create project access token** button
 7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%2810%29.png)
 
 ### C. Create Project Variables
 
 [Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template use a number of variables to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
-1. From the **Project Menu**, click on **Settings &gt; Access Tokens**
-2. Enter in **PROJECT\_ACCESS\_TOKEN** for the **Token name**
-3. Set the **Expiration date** to a preferred date
+1. From the **Project Menu**, click on **Settings &gt; CI/CD**
+2. Scroll down to **Variables** and click on the **Expand** button
+3. Click on **Add variable**
+4. Enter **PROJECT\_ACCESS\_TOKEN** for the **Key** field
+5. Enter the key from previous steps in the **Value** field
+6. In the **Flag** section, enable **Mask Variable** only and uncheck **Protect variable**
+7. Leave **Environment Scope** to **All \(default\)**
+8. Click on **Add variable** to save
 
+![](../../../.gitbook/assets/image.png)
 
+![](../../../.gitbook/assets/image%20%2811%29.png)
 
-| asdf |  |
-| :--- | :--- |
-|  |  |
+Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
+
+| Key | Value | Type |  Scope | Protect | Mask |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| NPM Scope |  |  |  |  |  |
+
+![](../../../.gitbook/assets/image%20%287%29.png)
 
 ## Repository
 
