@@ -125,6 +125,28 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 {% endtab %}
 {% endtabs %}
 
+### G. Generate SFDX auth URL for Pipeline Authentication
+
+In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method.  For each environment, execute the following command and save the auth URL for use in future pipeline configuration steps.
+
+```bash
+sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
+cat authFile.json
+> {
+  "status": 0,
+  "result": {
+    "id": "00D8G0000009g7hUXA",
+    "accessToken": "00D8G0000009g7h!uhuRfGKbvPeubTZKztmFWgrykDuuVdxbffzjjVTqjMyRcV{wb+2JtxsevgKfGiGXRz02jY83uNBsD4CuWHwv.b21KZdFxbTi",
+    "instanceUrl": "https://dxatscale--shareddev.my.salesforce.com",
+    "username": "vu.ha@accenture.com.dxatscale.shareddev",
+    "clientId": "PlatformCLI",
+    "connectedStatus": "Connected",
+    "sfdxAuthUrl": "force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@dxatscale--shareddev.my.salesforce.com",
+    "alias": "SharedDev"
+  }
+}
+```
+
 ## GitLab: Part I
 
 ### A. Create New Project
@@ -167,7 +189,11 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ### C. Create Project Variables
 
-[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template uses 
+[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template use a number of variables to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
+
+1. From the **Project Menu**, click on **Settings &gt; Access Tokens**
+2. Enter in **PROJECT\_ACCESS\_TOKEN** for the **Token name**
+3. Set the **Expiration date** to a preferred date
 
 
 
