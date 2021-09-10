@@ -167,7 +167,13 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ### C. Create Project Variables
 
-[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are simila
+[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template uses 
+
+
+
+| asdf |  |
+| :--- | :--- |
+|  |  |
 
 ## Repository
 
@@ -177,11 +183,33 @@ A. Clone Repository
 
 ## GitLab: Part II
 
+{% hint style="info" %}
+\[skip ci\] in the commit message will
+{% endhint %}
 
+### A. Scratch Org Config
+
+### B. Scratch Org Pool Config
+
+### C. SFDX Project JSON Config
+
+### D. Release File
+
+### E. Change Log 
+
+Branch Created on changelog branch, Release Notes Generated
+
+### F. Scheduled Jobs
+
+### G. Manual Job Execution
+
+### H. Merge Requests
+
+### H. Merge to Main
 
 Customize Packages for PMD and Package Validations
 
 ## Closing Thoughts
 
-Good luck on your journey.
+We hope you have successfully configured your pipelines in GitLab and on your way to modular packaging journey. 
 
