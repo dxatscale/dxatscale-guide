@@ -237,6 +237,10 @@ Repeat the steps above and create the following variables below using the sfdxAu
 
 The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) contains the 
 
+```bash
+git clone https://github.com/dxatscale/dxatscale-template.git
+```
+
 ![](../../../.gitbook/assets/image%20%2816%29.png)
 
 ### B. Clone Project Repository
