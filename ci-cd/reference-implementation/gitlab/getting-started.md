@@ -49,7 +49,7 @@ npm --version
 
 ## Salesforce
 
-To enable modular package development, there are a few configurations in Salesforce that needs to be enabled to create Scratch Orgs and Unlock Packages.
+To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be enabled to create Scratch Orgs and Unlock Packages.
 
 ### A. Enable Dev Hub
 
@@ -66,6 +66,20 @@ To enable modular package development, there are a few configurations in Salesfo
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
 ![](../../../.gitbook/assets/image.png)
+
+### C. Authenticate to DevHub via CLI
+
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+
+```bash
+sfdx auth:web:login -a DevHub -r https://login.salesforce.com
+```
+
+### D. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
+
+### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
+
+
 
 ## GitLab: Part I
 
