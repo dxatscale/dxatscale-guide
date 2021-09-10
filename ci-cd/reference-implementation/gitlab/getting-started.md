@@ -1,6 +1,6 @@
 # Getting Started
 
-The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installation, this guide will streamline your setup process for the initial pipeline templates for GitLab and provide you with tips for configurations.
+The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process for the GitLab template and general tips on best practices as you customize it for your implementation.
 
 We welcome all feedback to continuously improve on this user guide so please [contact us](https://docs.dxatscale.io/about-us/contact-us).
 
