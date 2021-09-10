@@ -59,7 +59,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development &gt; Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -97,7 +97,7 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ## GitLab: Part I
 
-## A. Create New Project
+### A. Create New Project
 
 Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working_with_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
 
@@ -109,23 +109,35 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
 7. Click on the **Create project** button
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../.gitbook/assets/image%20%287%29.png)
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%2810%29.png)
 
 ### B. Create Project Access Token
 
-Project access tokens are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository. 
-
-1. From the **GitLab Menu**, click on **Projects &gt; Create new project**
-2. Select **Create blank project**
-3. Enter **dxatscale-poc** for the **Project name**
+[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository. 
 
 {% hint style="info" %}
 Project Access Tokens are only supported on self-managed instances on Free tier and above and GitLab SaaS Premium and above.
 {% endhint %}
+
+1. From the **Project Menu**, click on **Settings &gt; Access Tokens**
+2. Enter in **PROJECT\_ACCESS\_TOKEN** for the **Token name**
+3. Set the **Expiration date** to a preferred date
+4. Leave the default role to **Maintainer**
+5. For the **Select scopes**, check the **api** option
+6. Click on the **Create project access token** button
+7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
+
+![](../../../.gitbook/assets/image%20%281%29.png)
+
+![](../../../.gitbook/assets/image%20%286%29.png)
+
+### C. Create Project Variables
+
+[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are simila
 
 ## Repository
 
