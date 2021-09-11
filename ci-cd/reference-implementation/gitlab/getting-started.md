@@ -305,7 +305,7 @@ rsync -av dxatscale-template dxatscale-poc
 {% endtab %}
 {% endtabs %}
 
-![Template Folder Structure](../../../.gitbook/assets/image%20%2830%29.png)
+![Template Folder Structure](../../../.gitbook/assets/image%20%2831%29.png)
 
 ### D. Commit Changes to Repository
 
@@ -328,12 +328,12 @@ Once the files have been committed, you can verify the files have been pushed th
 1. Navigate to **Repository &gt; Files**
 2. Verify all the files are visible in the repository
 
-![](../../../.gitbook/assets/image%20%2828%29.png)
+![](../../../.gitbook/assets/image%20%2829%29.png)
 
 1. Navigate to **CI/CD &gt; Pipelines**
 2. Verify the pipeline has been skipped
 
-![](../../../.gitbook/assets/image%20%2827%29.png)
+![](../../../.gitbook/assets/image%20%2828%29.png)
 
 ## 5. GitLab: Part II
 
@@ -495,7 +495,7 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-![](../../../.gitbook/assets/image%20%2831%29.png)
+![](../../../.gitbook/assets/image%20%2833%29.png)
 
 ### F. Build Initial Package Artifacts
 
@@ -505,7 +505,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 2. Navigate to **Package & Registries &gt; Package Registry**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-![](../../../.gitbook/assets/image%20%2824%29.png)
+![](../../../.gitbook/assets/image%20%2827%29.png)
 
 ### G. Scheduled Jobs
 
@@ -522,7 +522,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 9. Keep **Activated** checked to **Active**
 10. Click **Save pipeline schedule**
 
-![](../../../.gitbook/assets/image%20%2834%29.png)
+![](../../../.gitbook/assets/image%20%2836%29.png)
 
 Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.  
 
@@ -537,7 +537,7 @@ Repeat the steps above for all the scheduled jobs below. Interval Pattern should
  **schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog.  If not, you can skip this configuration.
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%2829%29.png)
+![](../../../.gitbook/assets/image%20%2830%29.png)
 
 Once all schedule jobs have been configured, you can trigger the **schedule-prepare-ci-pool** and **schedule-prepare-dev-pool** jobs manually by clicking on the **play button** for each job.
 
@@ -570,7 +570,7 @@ status       Assigned
 4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
 5. Click on **Run pipeline**
 
-![](../../../.gitbook/assets/image%20%2833%29.png)
+![](../../../.gitbook/assets/image%20%2834%29.png)
 
 ### H. Merge Requests and Merge to Main
 
