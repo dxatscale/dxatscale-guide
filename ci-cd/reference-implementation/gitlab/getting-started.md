@@ -269,11 +269,61 @@ git clone git@gitlab.com:groupname/dxatscale-poc.git
 
 ### C. Copy Template Contents to Project Folder
 
-{% hint style="info" %}
-Copy all hidden files except for .git and .sfdx contents into the folder.
+There are a number of ways to copy the files over.  Some sample commands with the cp and rsync commands are provided below or alternatively, you can copy the files manually.
+
+{% hint style="success" %}
+Ensure that you copy all hidden files/folders from the template **except** for the following folders **.git**, **.sfdx**, **.azure-pipelines**, **.github.**  These are specific to the template git repository and/or templates for other pipelines that DX@Scale supports. 
+
+The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.forceignores**, and **.forceignore**.  The original .git from your project repository should be there.
 {% endhint %}
 
+**Sample Commands**
 
+{% tabs %}
+{% tab title="CP" %}
+```bash
+cd dxatscale-template
+cp -vR dxatscale-template dxatscale-poc
+```
+{% endtab %}
+
+{% tab title="RSYNC" %}
+```
+cd dxatscale-template
+rsync -av dxatscale-template dxatscale-poc
+```
+{% endtab %}
+{% endtabs %}
+
+![Template Folder Structure](../../../.gitbook/assets/image%20%2828%29.png)
+
+### D. Commit Changes to Repository
+
+Once the template files have been copied and verified, you can now stage, commit, and push your changes to the GitLab Project Remote Repository to baseline your code base.
+
+{% hint style="info" %}
+Add [**\[skip ci\]**](https://docs.gitlab.com/ee/ci/yaml/#skip-pipeline) to the commit message to ensure the pipeline does not trigger for the initial commit. 
+{% endhint %}
+
+```bash
+git add .
+git commit -m "[skip ci] - Initial DX@Scale Template"
+git push
+```
+
+### E. Validate in GitLab
+
+Once the files have been committed, you can verify the files have been pushed the repository and the initial pipeline has skipped being triggered.
+
+1. Navigate to **Repository &gt; Files**
+2. Verify all the files are visible in the repository
+
+![](../../../.gitbook/assets/image%20%2827%29.png)
+
+1. Navigate to **CI/CD &gt; Pipelines**
+2. Verify the pipeline has been skipped
+
+![](../../../.gitbook/assets/image%20%2824%29.png)
 
 ## 5. GitLab: Part II
 
