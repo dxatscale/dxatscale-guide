@@ -499,6 +499,8 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 ### F. Build Initial Package Artifacts
 
+Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
+
 1. Commit changes to trigger pipeline
 
 ### G. Scheduled Jobs
@@ -516,7 +518,7 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 9. Keep **Activated** checked to **Active**
 10. Click **Save pipeline schedule**
 
-![](../../../.gitbook/assets/image%20%2831%29.png)
+![](../../../.gitbook/assets/image%20%2833%29.png)
 
 Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.  
 
@@ -556,11 +558,25 @@ sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZ
 status       Assigned
 ```
 
-### G. Manual Job Execution
+### G. Manually Delete Fetched Scratch Org
 
-### H. Merge Requests
+1. Navigate to **CI/CD &gt; Pipelines**
+2. Click on **Run Pipeline**
+3. 
+![](../../../.gitbook/assets/image%20%2831%29.png)
 
-### H. Merge to Main
+### H. Merge Requests and Merge to Main
+
+1. Make changes
+2. Commit
+3. Raise a Merge Request
+4. Confirm validation pipeline passes
+
+### I. Add New Packages
+
+1. Update project configuration files
+2. Update .gitlab-ci.yml configuration file for the analyze-pmd and validate-package jobs for new packages
+3. Save and validate
 
 ## Dashboard Integration
 
