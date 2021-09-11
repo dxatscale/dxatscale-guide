@@ -497,7 +497,11 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
-### F. Scheduled Jobs
+### F. Build Initial Package Artifacts
+
+1. Commit changes to trigger pipeline
+
+### G. Scheduled Jobs
 
 [Pipeline schedules](https://docs.gitlab.com/ee/ci/pipelines/schedules.html#pipeline-schedules) are used to schedule pipelines at specific intervals. For the dxatscale-template, we leverage scheduled jobs in GitLab to prepare CI and developer scratch org pools, clean pools daily, publish scratch org and DevOps metrics to dashboards, and manually delete fetched developer scratch orgs.
 
@@ -529,12 +533,27 @@ Repeat the steps above for all the scheduled jobs below. Interval Pattern should
 
 ![](../../../.gitbook/assets/image%20%2828%29.png)
 
+Once all schedule jobs have been configured, you can trigger the **schedule-prepare-ci-pool** and **schedule-prepare-dev-pool** jobs manually by clicking on the **play button** for each job.
+
+The default tags for the pools are **ci** and **dev** and these can be referenced in future steps to retrieve developer sandboxes. 
+
 ### G. Fetch Provisioned Developer Scratch Org from Pool
 
-
+Once the **schedule-prepare-dev-pool** has completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
 ```bash
 sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
+> ======== Scratch org details ========
+KEY          VALUE
+───────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Id           2SR4t00000001QeGAI
+orgId        00D0i0000009VO4
+loginURL     https://force-data-6074.cs98.my.salesforce.com/
+username     test-uaojizr8cqxi@example.com
+password     oy)Lnjphoq7tj
+expiryDate   2021-09-11
+sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZDesdiVBHjZQjoCukBJUauxagGJgQUng6?gyYwkRmz@force-data-6074.cs98.my.salesforce.com/
+status       Assigned
 ```
 
 ### G. Manual Job Execution
