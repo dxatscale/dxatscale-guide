@@ -284,7 +284,7 @@ There are a number of ways to copy the files over.  Some sample commands with th
 {% hint style="success" %}
 Ensure that you copy all hidden files/folders from the template **except** for the following folders **.git**, **.sfdx**, **.azure-pipelines**, **.github.**  These are specific to the template git repository and/or templates for other pipelines that DX@Scale supports. 
 
-The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.forceignores**, and **.forceignore**.  The original .git from your project repository should be there.
+The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.forceignores**, and **.forceignore**.  The original **.git** from your project repository should be there.
 {% endhint %}
 
 **Sample Commands**
