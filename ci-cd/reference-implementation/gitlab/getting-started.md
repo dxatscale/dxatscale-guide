@@ -155,6 +155,8 @@ Save only the following part of the **sfdxAuthUrl** for each environment
 
 ## 3. GitLab: Part I
 
+The following steps will guide you through setting up the initial project, project access tokens, project variables and configuring your SSH keys.
+
 ### A. Configure SSH Keys in User Settings
 
 [SSH keys](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys) allow you to establish a secure connection between your computer and GitLab. To stream line future git interactions with the repository in the GitLab, it recommended to add your SSH Key to the GitLab User Settings
@@ -327,9 +329,7 @@ Once the files have been committed, you can verify the files have been pushed th
 
 ## 5. GitLab: Part II
 
-{% hint style="info" %}
-\[skip ci\] in the commit message will
-{% endhint %}
+
 
 ### A. Scratch Org Config
 
