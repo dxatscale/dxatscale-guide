@@ -237,9 +237,18 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
+| Type | Stage | Job | Command | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| Scheduled | Prepare | prepare-ci-pool |  |  |
+
 ## Additional Configurations
 
-
+* split clean pools to separate stages
+* approvals
+* protected branches
+* squash commits
+* environment configurations
+* not using the release option in GitLab
 
 ## Design Considerations
 
