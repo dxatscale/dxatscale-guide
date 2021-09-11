@@ -133,7 +133,7 @@ The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) tem
 
 In the template file provided, the structure of the [YAML](https://yaml.org/) file follows the following structure:
 
-![Template Code Structure](../../../.gitbook/assets/image%20%2835%29.png)
+![Template Code Structure](../../../.gitbook/assets/image%20%2836%29.png)
 
 <table>
   <thead>
@@ -227,7 +227,19 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
   </tbody>
 </table>
 
-## Pipeline 
+## Pipeline Design
+
+### Triggered Jobs
+
+![](../../../.gitbook/assets/image%20%2839%29.png)
+
+### Scheduled Jobs
+
+![](../../../.gitbook/assets/image%20%2830%29.png)
+
+## Additional Configurations
+
+
 
 ## Design Considerations
 
@@ -249,8 +261,6 @@ The following are additional design configurations to consider when using this t
 14. Security Design - Roles Assignment to Users
 15. Organization Setup, Groups, Sub-Groups
 16. Naming Conventions for Repositories, Environments
-
-## Additional Configurations
 
 ## References
 
