@@ -155,7 +155,19 @@ Save only the following part of the **sfdxAuthUrl** for each environment
 
 ## GitLab: Part I
 
-### A. Create New Project
+### A. Configure SSH Keys in User Settings
+
+[SSH keys](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys) allow you to establish a secure connection between your computer and GitLab. To stream line future git interactions with the repository in the GitLab, it recommended to add your SSH Key to the GitLab User Settings
+
+1. Navigate to **User Settings &gt; SSH Keys**
+2. In the **Key** section, paste in the value of your public SSH key
+3. **Title** will self-populate
+4. Select a date value for **Expires at**
+5. Click on the **Add key**
+
+![](../../../.gitbook/assets/image%20%285%29.png)
+
+### B. Create New Project
 
 Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/project/working_with_projects.html). Files and code are saved in projects, and most features are in the scope of projects.
 
@@ -167,13 +179,13 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
 7. Click on the **Create project** button
 
-![](../../../.gitbook/assets/image%20%285%29.png)
-
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../.gitbook/assets/image%20%286%29.png)
 
 ![](../../../.gitbook/assets/image%20%2816%29.png)
 
-### B. Create Project Access Token
+![](../../../.gitbook/assets/image%20%2818%29.png)
+
+### C. Create Project Access Token
 
 [Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository. 
 
@@ -191,9 +203,9 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ![](../../../.gitbook/assets/image%20%282%29.png)
 
-![](../../../.gitbook/assets/image%20%2810%29.png)
+![](../../../.gitbook/assets/image%20%2811%29.png)
 
-### C. Create Project Variables
+### D. Create Project Variables
 
 [Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
@@ -208,7 +220,7 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ![](../../../.gitbook/assets/image.png)
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](../../../.gitbook/assets/image%20%2813%29.png)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -229,7 +241,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
 | UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
-![Project Variables](../../../.gitbook/assets/image%20%2821%29.png)
+![Project Variables](../../../.gitbook/assets/image%20%2822%29.png)
 
 ## Repository
 
@@ -241,7 +253,7 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](../../../.gitbook/assets/image%20%2818%29.png)
+![](../../../.gitbook/assets/image%20%2819%29.png)
 
 ### B. Clone Project Repository
 
@@ -253,7 +265,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](../../../.gitbook/assets/image%20%2813%29.png)
+![](../../../.gitbook/assets/image%20%2814%29.png)
 
 ### C. Copy Template Contents to Project Folder
 
