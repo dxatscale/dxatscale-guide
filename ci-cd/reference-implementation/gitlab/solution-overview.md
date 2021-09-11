@@ -94,7 +94,9 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
       <td style="text-align:left"><b>User</b>
       </td>
       <td style="text-align:left">Each GitLab account has a user profile, which contains information about
-        you and your GitLab activity.</td>
+        you and your GitLab activity. Set up of Personal Access Tokens and SSH
+        Keys will enable users to to securely access the GitLab API from their
+        computers.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Roles</b>
