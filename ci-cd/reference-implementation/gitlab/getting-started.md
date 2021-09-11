@@ -466,11 +466,28 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example. 
 {% endhint %}
 
-### D. Release File
+### D. Release Definition File
 
-Before triggering a release across environments for DX@Scale, you need to define a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release). A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
+Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
 
+The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments.  As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.   
 
+```bash
+release: "Release-1.0"
+skipIfAlreadyInstalled: true
+artifacts:
+  #src-env-specific-alias-pre: main
+  core: main
+  #src-ui: main
+  #src-access-management: main
+  #src-env-specific-alias-post: main
+changelog:
+  workItemFilter: "issues/[0-9]+"
+```
+
+{% hint style="info" %}
+The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+{% endhint %}
 
 ### E. Change Log 
 
