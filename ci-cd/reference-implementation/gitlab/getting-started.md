@@ -6,7 +6,7 @@ As always, we welcome any feedback from the community to continuously improve th
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system and shell system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
 
 ###  Git
 
@@ -376,7 +376,7 @@ Customize the provided scratch org definition file for your use case and save an
 
 ```
 
-### B. Scratch Org Pool Configuration
+### B. Scratch Org Pool Configuration Files
 
 The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts.  The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.  
 
@@ -446,11 +446,31 @@ There are two configuration files defined in the template:
 Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section.  \(eg. **@dxatscale-poc**\)
 {% endhint %}
 
-### C. SFDX Project JSON Config
+### C. Project Configuration File
 
+The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
+The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization. 
+
+| Package | Description |
+| :--- | :--- |
+| **src-env-specific-pre** | Installed first across all release environments. |
+| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
+| **core** | A folder to house all the core model of your org which is shared with all other domains. |
+| **src-ui** | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
+| **src-access-management** | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org. |
+| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
+| **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
+
+{% hint style="info" %}
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example. 
+{% endhint %}
 
 ### D. Release File
+
+Before triggering a release across environments for DX@Scale, you need to define a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release). A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
+
+
 
 ### E. Change Log 
 
