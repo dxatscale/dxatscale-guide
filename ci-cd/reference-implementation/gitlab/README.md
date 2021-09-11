@@ -4,7 +4,7 @@ description: A Reference Implementation of DX@Scale on GitLab
 
 # GitLab
 
-![](../../../.gitbook/assets/image%20%2820%29.png)
+![GitLab](../../../.gitbook/assets/image%20%2820%29.png)
 
 ![A Reference Implementation of DX@Scale on GitLab](../../../.gitbook/assets/image%20%287%29.png)
 
