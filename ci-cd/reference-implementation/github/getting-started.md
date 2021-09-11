@@ -1,8 +1,161 @@
 # Getting Started
 
+The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
+As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
 
-## Clone Repo
+## 1. Developer Workstation
+
+In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
+
+###  Git
+
+```bash
+git version
+> git version 2.32.0
+```
+
+### SFDX CLI
+
+```bash
+sfdx version
+> sfdx-cli/7.110.0 darwin-x64 node-v16.6.0
+```
+
+### SFDX Plugins
+
+```bash
+sfdx plugins
+> @dxatscale/sfpowerscripts 8.2.1
+  sfdmu 4.4.5
+  sfpowerkit 3.2.2
+```
+
+### Visual Studio Code
+
+```bash
+code --version
+> 1.60.0
+e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff
+x64
+```
+
+### NPM
+
+```bash
+npm --version
+> 7.19.1
+```
+
+## 2. Salesforce
+
+To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be turned on to be able to create Scratch Orgs and Unlock Packages.
+
+### A. Enable Dev Hub
+
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+
+1. Navigate to the **Setup** menu
+2. Go to **Development &gt; Dev Hub**
+3. Toggle the button to on for **Enable Dev Hub**
+
+![](../../../.gitbook/assets/image%20%283%29.png)
+
+### B. Enable Unlocked Packages and Second-Generation Managed Packages
+
+[Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
+
+1. Navigate to the **Setup** menu
+2. Go to **Development &gt; Dev Hub**
+3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
+
+![](../../../.gitbook/assets/image%20%281%29.png)
+
+### C. Authenticate to DevHub via CLI
+
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+
+```bash
+sfdx auth:web:login -a DevHub -r https://login.salesforce.com
+```
+
+### D. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
+
+The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) adds additional custom fields, validation rule, and workflow to the standard object "**ScratchOrgInfo**" in the the DevHub to enable associated scratch org pool commands to work for the pipeline.
+
+```bash
+sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s AdminsOnly -w 30
+```
+
+### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
+
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+
+```bash
+sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
+```
+
+### F. Authenticate to Lower Sandbox Environments via CLI
+
+The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.  
+
+* SHAREDDEV \(Shared Development\)
+* ST \(System Test\)
+* SIT \(System Integration Test\)
+* UAT \(User Acceptance Test\)
+* PROD \(Production\)
+
+{% hint style="info" %}
+Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
+{% endhint %}
+
+Additional environments and customization can be made once you are familiar with the scripts.  
+
+{% tabs %}
+{% tab title="Sandbox" %}
+```bash
+sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
+```
+{% endtab %}
+
+{% tab title="Production" %}
+```
+sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
+```
+{% endtab %}
+{% endtabs %}
+
+### G. Generate SFDX auth URL for Pipeline Authentication
+
+In order for the GitHub pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm).  For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
+
+```bash
+sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
+cat authFile.json
+> {
+  "status": 0,
+  "result": {
+    "id": "XXXXYYY",
+    "accessToken": "00D8G0000009g7h!uhuRfGKbvPeubTZKztmFWgrykDuuVdxbffzjjVTqjMyRcV{wb+2JtxsevgKfGiGXRz02jY83uNBsD4CuWHwv.b21KZdFxbTi",
+    "instanceUrl": "https://your.salesforce.com",
+    "username": "vu.ha@accenture.com.dxatscale.shareddev",
+    "clientId": "PlatformCLI",
+    "connectedStatus": "Connected",
+    "sfdxAuthUrl": "force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com",
+    "alias": "SharedDev"
+  }
+}
+```
+
+{% hint style="info" %}
+Save only the following part of the **sfdxAuthUrl** for each environment  
+  
+`force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com`
+{% endhint %}
+
+## 3. GitHub
+
+### A. Clone Repo
 
 Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github.com/dxatscale/dxatscale-template)
 
@@ -14,11 +167,9 @@ Enter in a **Repository name**, set your repo to **Private** and click **Create 
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.25-am.png)
 
-## Setup your Secrets
+### B. Setup your Secrets
 
-Before setting up your secrets you will need to create a [`sfdx authURL`](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) to your devhub.
-
-Once you have created your `authfile.json` go back to GitHub and create your secret:
+Follow instructions in[ 2.F](getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment.
 
 1. On GitHub, navigate to the main page of the repository.
 2. Under your repository name, click on the "Settings" tab.
@@ -35,141 +186,13 @@ Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and past
 Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL
 {% endhint %}
 
-## Pipeline Overview
-
-Once you have set up all your Secret Variables make your way to **Actions** 
+## 4. Test your pipelines
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
 
-As you can see there are 8 pipelines, we will be going through each one in sequence as you would expect for a typical workflow.
+It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages.  If this stage is successful, you can proceed to step 5
 
-All GitHub actions pipelines are located `YOUR_REPO/.github/workflows/`
-
-### Environment Operations Pipelines
-
-#### Replenish CI Pools - Auto Triggered \| `env-operations-prepare-ci-pool.yml`
-
-This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your CI pipelines, which include managed packages as well as packages in your repository. 
-
-Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.dxatscale.io/commands/prepare).
-
-```text
-sfdx sfpowerscripts:orchestrator:prepare --help
-```
-
-#### Replenish DEV Pools - Auto Triggered \| `env-operations-prepare-dev-pool.yml`
-
-This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your developers to work on their own scratch org, which include managed packages as well as packages in your repository. 
-
-Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.dxatscale.io/commands/prepare).
-
-{% hint style="info" %}
-In order to fetch a scratch org to work on using the sfpowerscripts pool command [fetch](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-pool-fetch)
-
-`sfdx sfpowerkit:pool:fetch --help`
-{% endhint %}
-
-```text
-sfdx sfpowerscripts:orchestrator:prepare --help
-```
-
-#### Scratch Org Pool Cleaner - Auto Scheduled \| `env-operations-pool-cleaner.yml`
-
-The pool cleaner pipelines trigger on a daily schedule at 11.00 pm; clean out unused scratch orgs from both CI and Dev Pools, allowing a fresh pool of prebuilt scratch orgs to be created for the following day.
-
-Utilizing sfpowerscripts pool command [delete](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-pool-delete).
-
-```text
-sfdx sfpowerscripts:pool:delete --help
-```
-
-#### Scratch Org Recycler - User Triggered \| `env-operations-delete-scratchorg-pool.yml`
-
-This pipeline is manually triggered by the user where you are wanting to delete a particular scratch org pool. A typical use case would be when a developer can't access the scratch org.
-
-```text
-sfdx sfpowerscripts:pool:org:delete --help
-```
-
-#### Publish Metrics for Scratch Org Pools \| `env-operations-publish-pool-metrics.yml`
-
-This pipeline publishes metrics about the scratch orgs to a Monitoring tool every 30 minutes.
-
-```text
-sfdx sfpowerscripts:pool:metrics:publish --help
-```
-
-### Check/Validate Pipeline
-
-#### PR Validation - Auto Triggered \| `validate.yml`
-
-Pull request validation, as the name suggests. The validation pipeline will trigger in the main branch. helps you to validate a change made to your configuration or code. within this YAML file, we have three commands running:
-
-Validating package changes using sfpowerscripts orchestrator command [validate](https://sfpowerscripts.dxatscale.io/commands/validate).
-
-```text
-sfdx sfpowerscripts:orchestrator:validate --help
-```
-
-Performing a static analysis of Apex classes using the sfpowerscripts analyze command pmd.
-
-```text
-sfdx sfpowerscripts:analyze:pmd --help
-```
-
-Validating metadata coverage for unlocked packages using sfpowerkit package command valid.
-
-```text
-sfdx sfpowerkit:package:valid --help
-```
-
-### Continuous Integration Pipeline
-
-#### CI Pipeline - Auto Triggered \| `quickbuild-build-deploy.yml`
-
-As developers work through their user stories and committing to their short-lived feature branches, they will be raising pull requests against the main branch; their feature branches will be reviewed and approved, triggering the CI Pipelines:
-
-Within this stage, this YAML file the following sfpowerscripts orchestrator commands in sequence:
-
-* The [quickbuild](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command will be the packages without triggering dependency validation or code coverage checks.
-
-```text
-sfdx sfpowerscripts:orchestrator:quickbuild --help
-```
-
-* The [deploy](https://sfpowerscripts.dxatscale.io/commands/deploy) command removes the overhead of scripting individual package deployments. This will deploy the artifacts to Dev environment. however its dependent on **quickbuild** being successful.
-
-```text
-sfdx sfpowerscripts:orchestrator:deploy --help
-```
-
-* The [Build](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command generates fully validated packages that can be deployed to production. Once packages have been created we can publish build artifacts for publish.
-
-```text
-sfdx sfpowerscripts:orchestrator:build --help
-```
-
-* The [Publish](https://sfpowerscripts.dxatscale.io/commands/publish) command publishes the artifacts that were created in build pushing to artifact registry for further utilization by a release pipeline and publishes into an NPM Registry.
-
-```text
-sfdx sfpowerscripts:orchestrator:publish --help
-```
-
-### Continuous Delivery Pipeline
-
-#### CD Pipeline - User Triggered \| `release.yml`
-
-This CD pipeline, Release Packages, must be manually triggered by the user. It triggers the pipeline for release, orchestrating fetching artifacts from an artifact repository, deploying to an environment including external dependencies, and generating a changelog driven by a release definition file.  
-
-Within release.yml this must be manually triggered: 
-
-Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published. 
-
-```bash
-sfdx sfpowerscripts:orchestrator:release --help
-```
-
-## Configure Scratch Org Pools
+## 5. Configure Scratch Org Pools
 
 In your repo, there is a folder called config, in that folder, you can see there are two JSON files
 

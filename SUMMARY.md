@@ -37,6 +37,7 @@
   * [GitHub](ci-cd/reference-implementation/github/README.md)
     * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/github/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/github/solution-overview.md)
   * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
     * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
