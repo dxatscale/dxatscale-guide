@@ -329,9 +329,46 @@ Once the files have been committed, you can verify the files have been pushed th
 
 ## 5. GitLab: Part II
 
-In this section, we will customize the configuration files in the default template, setup schedule jobs for Scratch Org Pool Creation, and test the pipelines to deploy across your environments using the Package Registry.  
+In this section, we will review and optionally customize the configuration files in the default template, setup schedule jobs for Scratch Org Pool Creation, and test the pipelines to deploy across your environments using the Package Registry.  
 
-### A. Scratch Org Config
+### A. Scratch Org Definition File
+
+The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
+
+Customize the provided scratch org definition file for your use case and save and commit the file to repository.
+
+```bash
+{
+    "orgName": "DX@Scale Demo Org",
+    "edition": "Developer",
+    "hasSampleData": false,
+    "features": ["Communities", "Walkthroughs", "EnableSetPasswordInApi"],
+    "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
+        "experienceBundleSettings": {
+            "enableExperienceBundleMetadata": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
+        }
+    }
+}
+
+```
+
+
 
 ### B. Scratch Org Pool Config
 
