@@ -227,9 +227,45 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
   </tbody>
 </table>
 
+## Pipeline 
+
+## Design Considerations
+
+The following are additional design configurations to consider when using this template:
+
+1. Public Docker Registry vs. Project Container Registry
+2. Public DX@Scale Unlocked Package vs. DevHub Unlocked Package for Scratch Org Pool and sfpowerscripts-artifact
+3. On Premise vs. Cloud GitLab
+4. Project NPM Package Registry vs. External NPM Package Registry
+5. Project CI/CD Variables vs. External Secrets Provider
+6. Multi-Repository Checkout Support 
+7. Release Gates Process
+8. Operational Dashboard Tooling
+9. ALM Integration vs. GitLab Issue Management Tool
+10. Protected Branches
+11. Merge Request Rules \(eg. Squash commits when merging\)
+12. Merge request \(MR\) approvals
+13. Requirements for Access Tokens and SSH Keys
+14. Security Design - Roles Assignment to Users
+15. Organization Setup, Groups, Sub-Groups
+16. Naming Conventions for Repositories, Environments
+
 ## Additional Configurations
 
+## References
 
+* [GitLab Official Documentation](https://docs.gitlab.com/ee/topics/use_gitlab.html)
+* [GitLab CLI Tool](https://glab.readthedocs.io/en/latest/)
+* [Keyword reference for the .gitlab-ci.yml file \(FREE\)](https://microfluidics.utoronto.ca/gitlab/help/ci/yaml/index.md)
+* [Using external secrets in CI](https://docs.gitlab.com/ee/ci/secrets/)
+* [Bash scripting cheatsheet](https://devhints.io/bash)
+* [Semantic Versioning](https://semver.org/)
+* [NPM Packages and Modules](https://docs.npmjs.com/about-packages-and-modules)
+* [YAML: YAML Ain't Markup Language](https://yaml.org/) 
 
+## Tutorials
 
+* [Scheduled and On Demand Jobs with Run Pipeline Form](https://gitlab.com/guided-explorations/gitlab-ci-yml-tips-tricks-and-hacks/scheduled-and-on-demand-tasks/-/tree/master)
+* [GitLab environment variables demystified](https://about.gitlab.com/blog/2021/04/09/demystifying-ci-cd-variables/)
+* [First time GitLab & CI/CD workshop with Michael Friedrich](https://www.youtube.com/watch?v=kTNfi5z6Uvk&t=553s)
 
