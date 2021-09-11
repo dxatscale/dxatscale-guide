@@ -108,6 +108,12 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
   </tbody>
 </table>
 
+## Configuration Files
+
+The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used to executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, and manual triggering of the pipeline.
+
+
+
 ## Additional Configurations
 
 
