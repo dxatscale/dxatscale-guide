@@ -335,7 +335,7 @@ In this section, we will review and optionally customize the configuration files
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
-Customize the provided scratch org definition file for your use case and save and commit the file to repository.
+Customize the provided scratch org definition file for your use case and save and commit the file to repository.  If you want to use the file as is to test, **no action** is required.
 
 ```bash
 {
@@ -368,9 +368,75 @@ Customize the provided scratch org definition file for your use case and save an
 
 ```
 
+### B. Scratch Org Pool Configuration
 
+The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts.  The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.  
 
-### B. Scratch Org Pool Config
+Your Dev Hub org edition determines your scratch org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_editions_and_allocations.htm). These allocations determine how many scratch orgs you can create daily, and how many can be active at a given point.
+
+| Edition | Active Scratch Org Allocation | Daily Scratch Org Allocation |
+| :--- | :--- | :--- |
+| Developer Edition or Trial | 3 | 6 |
+| Enterprise Edition | 40 | 80 |
+| Unlimited Edition | 100 | 200 |
+| Performance Edition | 100 | 200 |
+
+{% hint style="info" %}
+Depending on your Dev Hub licensing, there are limits on the number of active and daily scratch orgs you can create daily.  sfpowerscripts will take this in account if you specify the **maxAllocation** property to a number more than you are allocated by Salesforce.
+{% endhint %}
+
+There are two configuration files defined in the template:
+
+**Continuous Integration \(CI\) Pool** - [project-ci-pool-def.json](https://github.com/dxatscale/dxatscale-template/blob/main/config/project-ci-pool-def.json)
+
+```bash
+{
+  "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+  "tag": "ci",
+   "maxAllocation": 5,
+   "expiry": 2,
+   "batchSize": 5,
+   "configFilePath": "config/project-scratch-def.json",
+   "enableSourceTracking": false,
+   "installAll": true,
+    "fetchArtifacts": {
+      "npm": {
+        "scope": "@dxatscale-poc",
+        "npmtag": "main"
+      }
+    }
+ 
+ }
+```
+
+**Developer Pool** - [project-dev-pool-def.json](https://github.com/dxatscale/dxatscale-template/blob/main/config/project-dev-pool-def.json)
+
+```bash
+{
+    "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+    "tag": "dev",
+    "maxAllocation": 5,
+    "expiry": 10,
+    "batchSize": 5,
+    "configFilePath": "config/project-scratch-def.json",
+    "relaxAllIPRanges": true,
+    "enableSourceTracking": true,
+    "retryOnFailure": true,
+    "succeedOnDeploymentErrors": true,
+    "installAll": true,
+    "fetchArtifacts": {
+        "npm": {
+          "scope": "@dxatscale-poc",
+          "npmtag": "main"
+        }
+      }
+   
+}
+```
+
+{% hint style="info" %}
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section.  \(eg. **@dxatscale-poc**\)
+{% endhint %}
 
 ### C. SFDX Project JSON Config
 
