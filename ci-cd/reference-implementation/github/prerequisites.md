@@ -37,6 +37,6 @@ The following lists of items are required to setup your end-to-end pipeline usin
 #### Dashboard Platform <a id="dashboard-platform"></a>
 
 * ​[New Relic Account](https://newrelic.com/signup) _\(Optional\)_
-* D[ata Dog Account](https://www.datadoghq.com/) \(Optional\)
+* [Data Dog Account](https://www.datadoghq.com/) \(Optional\)
 * Other [StatsD](https://github.com/statsd/statsd) Compatible Monitoring Platform _\(Optional\)_
 
