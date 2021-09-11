@@ -6,7 +6,7 @@ As always, we welcome any feedback from the community to continuously improve th
 
 ## Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your workstation operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
 
 ###  Git
 
@@ -49,11 +49,11 @@ npm --version
 
 ## Salesforce
 
-To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be enabled to create Scratch Orgs and Unlock Packages.
+To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be turned on to be able to create Scratch Orgs and Unlock Packages.
 
 ### A. Enable Dev Hub
 
-[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) features in your Salesforce org so you can create and manage scratch orgs, create and manage second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
+[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
 
 1. Navigate to the **Setup** menu
 2. Go to **Development &gt; Dev Hub**
@@ -89,7 +89,7 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
-The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting SfpowerscriptsArtifact2\_\_c that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
 ```bash
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
@@ -106,7 +106,7 @@ The template assumes you are following the environment strategy defined in our D
 * PROD \(Production\)
 
 {% hint style="info" %}
-Assuming that Production is also your Dev Hub, we recommend that you still create multiple CLI connections to segregate the environments.
+Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
 {% endhint %}
 
 Additional environments and customization can be made once you are familiar with the scripts.  
@@ -127,7 +127,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### G. Generate SFDX auth URL for Pipeline Authentication
 
-In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method.  For each environment, execute the following command and save the sfdxAuthUrl for use in future pipeline configuration steps.
+In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm).  For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
