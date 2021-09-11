@@ -305,7 +305,7 @@ rsync -av dxatscale-template dxatscale-poc
 {% endtab %}
 {% endtabs %}
 
-![Template Folder Structure](../../../.gitbook/assets/image%20%2828%29.png)
+![Template Folder Structure](../../../.gitbook/assets/image%20%2829%29.png)
 
 ### D. Commit Changes to Repository
 
@@ -495,13 +495,39 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-![](../../../.gitbook/assets/image%20%2829%29.png)
+![](../../../.gitbook/assets/image%20%2830%29.png)
 
 ### F. Scheduled Jobs
 
-[Pipeline schedules](https://docs.gitlab.com/ee/ci/pipelines/schedules.html#pipeline-schedules) can be used to also run pipelines at specific intervals. For the dxatscale-template, we leverage scheduled jobs to prepare CI and Developer Scratch Org Pools, Clean Pools
+[Pipeline schedules](https://docs.gitlab.com/ee/ci/pipelines/schedules.html#pipeline-schedules) are used to schedule pipelines at specific intervals. For the dxatscale-template, we leverage scheduled jobs in GitLab to prepare CI and developer scratch org pools, clean pools daily, publish scratch org and DevOps metrics to dashboards, and manually delete fetched developer scratch orgs.
 
+1. Navigate to **CI/CD &gt; Schedules**
+2. Click on **New schedule**
+3. Enter **schedule-prepare-ci-pool** for **Description**
+4. Click on **Custom** for **Interval Pattern** and enter value of **0 23 \* \* \***
+5. Update **Cron Timezone** based on your region
+6. Leave **Target Branch** to **main**
+7. Add **TARGETTASKNAME** for the **Variable Key**.
+8. Add **schedule-prepare-ci-pool** for the **Variable Value**
+9. Keep **Activated** checked to **Active**
+10. Click **Save pipeline schedule**
 
+![](../../../.gitbook/assets/image%20%2831%29.png)
+
+Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.  
+
+| Description | Interval Pattern | Variable Key | Variable Value |
+| :--- | :--- | :--- | :--- |
+| **schedule-prepare-ci-pool** | 0 23 \* \* \* | TARGETTASKNAME | schedule-prepare-ci-pool |
+| **schedule-prepare-dev-pool** | 0 22 \* \* \* | TARGETTASKNAME | schedule-prepare-dev-pool |
+| **schedule-clean-pool** | 0 19 \* \* \* | TARGETTASKNAME | schedule-clean-pool |
+| **schedule-report-so-pool** | 0 \* \* \* \* | TARGETTASKNAME | schedule-report-so-pool |
+
+{% hint style="info" %}
+ **schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog.  If not, you can skip this configuration.
+{% endhint %}
+
+![](../../../.gitbook/assets/image%20%2828%29.png)
 
 ### G. Fetch Provisioned Developer Scratch Org from Pool
 
