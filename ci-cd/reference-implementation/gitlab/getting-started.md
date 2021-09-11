@@ -234,7 +234,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | DEVHUB\_ALIAS | devhub | Variable | All \(default\) | No | No |
 | DEVHUB\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
-| NPM Scope | @dxatscale-poc | Variable | All \(default\) | No | No |
+| NPM\_SCOPE | @dxatscale-poc | Variable | All \(default\) | No | No |
 | PROD\_ALIAS | prod | Variable | All \(default\) | No | No |
 | PROD\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 | PROJECT\_ACCESS\_TOKEN | &lt;token&gt; | Variable | All \(default\) | No | Yes |
@@ -248,6 +248,10 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
 ![Project Variables](../../../.gitbook/assets/image%20%2822%29.png)
+
+{% hint style="info" %}
+The NPM\_SCOPE variable should start with the @ character.  Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
+{% endhint %}
 
 ## 4. Repository
 
@@ -443,6 +447,8 @@ Update the "**scope**" value for "**npm**" from the default "**@org-name**" to y
 {% endhint %}
 
 ### C. SFDX Project JSON Config
+
+
 
 ### D. Release File
 
