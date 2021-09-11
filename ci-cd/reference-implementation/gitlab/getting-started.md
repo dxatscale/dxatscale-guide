@@ -299,7 +299,7 @@ rsync -av dxatscale-template dxatscale-poc
 
 ### D. Commit Changes to Repository
 
-Once the template files have been copied and verified, you can now stage, commit, and push your changes to the GitLab Project Remote Repository to baseline your code base.
+Once the template files have been copied and verified, you can now stage, commit, and push your changes to the main branch.  This will baseline your code in the GitLab Project Remote Repository to get started.
 
 {% hint style="info" %}
 Add [**\[skip ci\]**](https://docs.gitlab.com/ee/ci/yaml/#skip-pipeline) to the commit message to ensure the pipeline does not trigger for the initial commit. 
