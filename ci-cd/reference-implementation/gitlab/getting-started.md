@@ -161,6 +161,10 @@ The following steps will guide you through setting up the initial project, proje
 
 [SSH keys](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys) allow you to establish a secure connection between your computer and GitLab. To stream line future git interactions with the repository in the GitLab, it recommended to add your SSH Key to the GitLab User Settings
 
+{% hint style="info" %}
+To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/ee/ssh/#generate-an-ssh-key-pair) from the GitLab docs.
+{% endhint %}
+
 1. Navigate to **User Settings &gt; SSH Keys**
 2. In the **Key** section, paste in the value of your public SSH key
 3. **Title** will self-populate
