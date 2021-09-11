@@ -329,7 +329,7 @@ Once the files have been committed, you can verify the files have been pushed th
 
 ## 5. GitLab: Part II
 
-
+In this section, we will customize the configuration files in the default template, setup schedule jobs for Scratch Org Pool Creation, and test the pipelines to deploy across your environments using the Package Registry.  
 
 ### A. Scratch Org Config
 
