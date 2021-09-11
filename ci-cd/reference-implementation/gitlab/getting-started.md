@@ -562,7 +562,10 @@ status       Assigned
 
 1. Navigate to **CI/CD &gt; Pipelines**
 2. Click on **Run Pipeline**
-3. 
+3. Enter in the username for the developer scratch org \(eg. **test-uaojizr8cqxi@example.com**\) for the value of **SCRATCH\_ORG\_USERNAME** variable key
+4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
+5. Click on **Run pipeline**
+
 ![](../../../.gitbook/assets/image%20%2831%29.png)
 
 ### H. Merge Requests and Merge to Main
