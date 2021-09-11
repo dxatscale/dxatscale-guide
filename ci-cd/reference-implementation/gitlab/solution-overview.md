@@ -108,6 +108,23 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
   </tbody>
 </table>
 
+## GitLab Terminology
+
+| Area | Description |
+| :--- | :--- |
+| Access Tokens |  |
+| Anchors |  |
+| Artifacts |  |
+| before\_script |  |
+| Environments |  |
+| Needs |  |
+| Resource Groups | concurrency control |
+| Roles |  |
+| Rules |  |
+| Runners and Agents |  |
+| Script |  |
+| Variables |  |
+
 ## Configuration File
 
 The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used to executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, and manual triggering of the pipeline.
@@ -152,7 +169,20 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
     <tr>
       <td style="text-align:left"><b>Variables</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">
+        <p>Custom variable used in the .gitlab-ci.yml during pipeline execution.</p>
+        <p>
+          <br />Custom</p>
+        <ul>
+          <li></li>
+        </ul>
+        <p></p>
+        <p>Predefined Variables</p>
+        <ul>
+          <li></li>
+        </ul>
+        <p></p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><b>DevHub Authentication</b>
