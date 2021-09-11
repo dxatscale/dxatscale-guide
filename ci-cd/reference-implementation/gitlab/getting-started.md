@@ -491,15 +491,37 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 ### E. Change Log 
 
-Branch Created on changelog branch, Release Notes Generated
+[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful.  This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
+
+**No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
+
+![](../../../.gitbook/assets/image%20%2829%29.png)
 
 ### F. Scheduled Jobs
+
+[Pipeline schedules](https://docs.gitlab.com/ee/ci/pipelines/schedules.html#pipeline-schedules) can be used to also run pipelines at specific intervals. For the dxatscale-template, we leverage scheduled jobs to prepare CI and Developer Scratch Org Pools, Clean Pools
+
+
+
+### G. Fetch Provisioned Developer Scratch Org from Pool
+
+
+
+```bash
+sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
+```
 
 ### G. Manual Job Execution
 
 ### H. Merge Requests
 
 ### H. Merge to Main
+
+## Dashboard Integration
+
+### A. New Relic Configurations
+
+### B. Data Dog Configurations
 
 Customize Packages for PMD and Package Validations
 
