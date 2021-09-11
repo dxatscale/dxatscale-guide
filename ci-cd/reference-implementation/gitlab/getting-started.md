@@ -169,9 +169,9 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ![](../../../.gitbook/assets/image%20%285%29.png)
 
-![](../../../.gitbook/assets/image%20%2813%29.png)
-
 ![](../../../.gitbook/assets/image%20%2814%29.png)
+
+![](../../../.gitbook/assets/image%20%2816%29.png)
 
 ### B. Create Project Access Token
 
@@ -229,21 +229,31 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS | uat | Variable | All \(default\) | No | No |
 | UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
 
-![Project Variables](../../../.gitbook/assets/image%20%2819%29.png)
+![Project Variables](../../../.gitbook/assets/image%20%2821%29.png)
 
 ## Repository
 
 ### A. Clone Template Repository
 
-The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) contains the 
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) repository contains the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) configuration file for CI/CD jobs for DX@Scale.  It exists in the root of of the directory which is the default configuration for GitLab.  To start, clone the repository to your computer.  
 
 ```bash
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../.gitbook/assets/image%20%2818%29.png)
 
 ### B. Clone Project Repository
+
+1. Navigate to **Repository &gt; Files**
+2. Click on the **Clone** button to the right and copy the contents in **Clone with SSH** or **HTTPS**
+3. Clone the repository to a folder on your computer
+
+```bash
+git clone git@gitlab.com:groupname/dxatscale-poc.git
+```
+
+![](../../../.gitbook/assets/image%20%2813%29.png)
 
 ### C. Copy Template Contents to Project Folder
 
