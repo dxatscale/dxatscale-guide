@@ -4,7 +4,7 @@ The following getting started guide will enable you to configure and setup CI/CD
 
 As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
 
-## Developer Workstation
+## 1. Developer Workstation
 
 In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
 
@@ -47,7 +47,7 @@ npm --version
 > 7.19.1
 ```
 
-## Salesforce
+## 2. Salesforce
 
 To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be turned on to be able to create Scratch Orgs and Unlock Packages.
 
@@ -153,7 +153,7 @@ Save only the following part of the **sfdxAuthUrl** for each environment
 `force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@dxatscale--shareddev.my.salesforce.com`
 {% endhint %}
 
-## GitLab: Part I
+## 3. GitLab: Part I
 
 ### A. Configure SSH Keys in User Settings
 
@@ -243,7 +243,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 
 ![Project Variables](../../../.gitbook/assets/image%20%2822%29.png)
 
-## Repository
+## 4. Repository
 
 ### A. Clone Template Repository
 
@@ -275,7 +275,7 @@ Copy all hidden files except for .git and .sfdx contents into the folder.
 
 
 
-## GitLab: Part II
+## 5. GitLab: Part II
 
 {% hint style="info" %}
 \[skip ci\] in the commit message will
