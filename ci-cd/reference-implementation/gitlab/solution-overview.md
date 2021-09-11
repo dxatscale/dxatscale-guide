@@ -116,7 +116,86 @@ The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) tem
 
 In the template file provided, the structure of the [YAML](https://yaml.org/) file follows the following structure:
 
-![.gitlab-ci.yml Logical Structure](../../../.gitbook/assets/image%20%2835%29.png)
+![Template Code Structure](../../../.gitbook/assets/image%20%2835%29.png)
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Section</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>Comments</b>
+      </td>
+      <td style="text-align:left">General header for DX@Scale Template for GitLab and reference links to
+        review.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Project CI/CD Variables</b>
+      </td>
+      <td style="text-align:left">
+        <p>Initial project Project CI/CD Variables required to be created in the
+          project to authenticate and setup DevHub and Sandbox Environment alias,
+          NPM Variables Scope for artifacts, and optional dashboard connection details
+          for</p>
+        <p>DataDog or New Relic.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Image</b>
+      </td>
+      <td style="text-align:left">Docker image to use for the job, defaulted to the <a href="https://hub.docker.com/r/dxatscale/sfpowerscripts">docker-sfpowerscripts</a> image
+        running on Ubuntu.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Variables</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>DevHub Authentication</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>NPM Configuration</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Git Repo Configuration</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Stages</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Anchors</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Trigger Job(s)</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Schedule Jobs(s)</b>
+      </td>
+      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Manual Jobs(s)</b>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Additional Configurations
 
