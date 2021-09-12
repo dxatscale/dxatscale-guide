@@ -298,6 +298,8 @@ The following are additional design configurations to consider when using this t
 14. Security Design - Roles Assignment to Users
 15. Organization Setup, Groups, Sub-Groups
 16. Naming Conventions for Repositories, Environments
+17. Automated Testing Enhancements
+18. Dynamic Code Testing
 
 ## FAQs
 
