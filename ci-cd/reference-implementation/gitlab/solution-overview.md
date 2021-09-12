@@ -318,7 +318,9 @@ The following are additional design configurations to consider when using this t
 * [Bash scripting cheatsheet](https://devhints.io/bash)
 * [Semantic Versioning](https://semver.org/)
 * [NPM Packages and Modules](https://docs.npmjs.com/about-packages-and-modules)
-* [YAML: YAML Ain't Markup Language](https://yaml.org/) 
+* [YAML: YAML Ain't Markup Language](https://yaml.org/)
+* [DX@Scale GitBook](https://docs.dxatscale.io/)
+* [SFPowerscripts GitBook](https://sfpowerscripts.dxatscale.io/)
 
 ## Tutorials
 
