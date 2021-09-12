@@ -116,8 +116,12 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | Anchors |  |
 | Artifacts |  |
 | before\_script |  |
+| Custom Variables |  |
 | Environments |  |
 | Needs |  |
+|  |  |
+| Pipeline |  |
+| Predefined Variables |  |
 | Resource Groups | concurrency control |
 | Roles |  |
 | Rules |  |
