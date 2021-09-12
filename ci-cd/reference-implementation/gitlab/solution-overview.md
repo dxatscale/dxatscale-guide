@@ -117,9 +117,12 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | Artifacts |  |
 | before\_script |  |
 | Custom Variables |  |
+| Dependencies |  |
 | Environments |  |
+| Extends |  |
+| Jobs |  |
 | Needs |  |
-|  |  |
+| .npmrc |  |
 | Pipeline |  |
 | Predefined Variables |  |
 | Resource Groups | concurrency control |
@@ -127,7 +130,20 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | Rules |  |
 | Runners and Agents |  |
 | Script |  |
+| Stage |  |
 | Variables |  |
+
+## Security
+
+### Authentication
+
+### Variable Files
+
+To keep a CI/CD variable secret, put it in the project settings, not in the .gitlab-ci.yml file.
+
+
+
+
 
 ## Configuration File
 
@@ -174,16 +190,50 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
       <td style="text-align:left"><b>Variables</b>
       </td>
       <td style="text-align:left">
-        <p>Custom variable used in the .gitlab-ci.yml during pipeline execution.</p>
+        <p>Custom and Predefined variables are used in the .gitlab-ci.yml during
+          pipeline execution.</p>
         <p>
-          <br />Custom</p>
+          <br />Custom Project Variables
+          <br />
+        </p>
         <ul>
-          <li></li>
+          <li>DEVHUB_ALIAS</li>
+          <li>DEVHUB_SFDX_AUTH_URL</li>
+          <li>SHAREDDEV_ALIAS</li>
+          <li>SHAREDDEV_SFDX_AUTH_URL</li>
+          <li>ST_ALIAS</li>
+          <li>ST_SFDX_AUTH_URL</li>
+          <li>UAT_ALIAS</li>
+          <li>UAT_SFDX_AUTH_URL</li>
+          <li>PROD_ALIAS</li>
+          <li>PROD_SFDX_AUTH_URL</li>
+          <li>NPM_SCOPE</li>
+          <li>PROJECT_ACCESS_TOKEN</li>
+          <li>SFPOWERSCRIPTS_DATADOG_HOST <em>(Optional)</em>
+          </li>
+          <li>SFPOWERSCRIPTS_DATADOG_API_KEY <em>(Optional)</em>
+          </li>
+          <li>SFPOWERSCRIPTS_NEWRELIC <em>(Optional)</em>
+          </li>
+          <li>SFPOWERSCRIPTS_NEWRELIC_API_KEY <em>(Optional)</em>
+          </li>
         </ul>
-        <p></p>
         <p>Predefined Variables</p>
         <ul>
+          <li>CI_PROJECT_ID</li>
+          <li>CI_SERVER_HOST</li>
+          <li>CI_JOB_TOKEN</li>
+          <li>CI_PROJECT_PATH</li>
+          <li>CI_PIPELINE_SOURCE</li>
+          <li>CI_COMMIT_BRANCH</li>
+          <li>CI_PIPELINE_ID</li>
           <li></li>
+        </ul>
+        <p>.gitlab-ci.yml Variables</p>
+        <ul>
+          <li>BUILD_BRANCH</li>
+          <li>SCRATCH_ORG_USERNAME</li>
+          <li>TARGETTASKNAME</li>
         </ul>
         <p></p>
       </td>
