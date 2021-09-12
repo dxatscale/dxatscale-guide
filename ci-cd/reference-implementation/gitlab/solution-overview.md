@@ -1,6 +1,6 @@
 # Solution Overview
 
-In order to configure DX@Scale with GitLab, there are a number of key features that need to be setup on the platform before executing the pipeline. Whether you are new to GitLab or have prior experience developing CI/CD for other software stacks on GitLab, this guide is meant to summarize the key configuration steps on the platform and use the templates provided in our sample repository.
+In order to configure DX@Scale with **GitLab**, there are a number of key features that need to be setup on the platform before executing the pipeline. Whether you are new to GitLab or have prior experience developing CI/CD for other software stacks on GitLab, this guide is meant to summarize the key configuration steps on the platform and use the templates provided in our sample repository.
 
 For a deeper dive on the platform, documentation is available on [GitLab Docs](https://docs.gitlab.com/).
 
@@ -242,7 +242,7 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
 | Merge Request | Analyze | analyze-pmd |  | PMD Code Validation |
 | Merge |  |  |  |  |
 
-### Scheduled Jobs
+### Scheduled and Manual Jobs
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
@@ -251,7 +251,9 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
 | Scheduled | Prepare | prepare-ci-pool | `orchestrator:prepare` |  |
 | Scheduled |  |  |  |  |
 
-## Additional Configurations
+## Dashboard Metrics and Analytics
+
+## Project Configuration Options
 
 * split clean pools to separate stages
 * approvals
@@ -280,6 +282,10 @@ The following are additional design configurations to consider when using this t
 14. Security Design - Roles Assignment to Users
 15. Organization Setup, Groups, Sub-Groups
 16. Naming Conventions for Repositories, Environments
+
+## FAQs
+
+
 
 ## References
 
