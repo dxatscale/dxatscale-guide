@@ -251,9 +251,25 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
 | Scheduled | Prepare | prepare-ci-pool | `orchestrator:prepare` |  |
 | Scheduled |  |  |  |  |
 
-## Dashboard Metrics and Analytics
+Target Task Name is .... 
 
-## Project Configuration Options
+| TARGETTASKNAME | Description |
+| :--- | :--- |
+| schedule-prepare-ci-pool |  |
+| schedule-prepare-dev-pool |  |
+| schedule-clean-pool |  |
+| schedule-report-so-pool |  |
+| manual-delete-fetched-so |  |
+
+Cleaning CI tagged pools daily.  
+
+## Dashboard Metrics
+
+Publish StatsD Metrics.
+
+
+
+## Configuration Options
 
 * split clean pools to separate stages
 * approvals
