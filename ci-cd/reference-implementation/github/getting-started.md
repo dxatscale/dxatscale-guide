@@ -389,3 +389,15 @@ status       Assigned
 2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
 3. Save and validate
 
+## Final words
+
+Congratulations! you have gone through the Github Actions pipeline journey and made it to the end. 
+
+I hope you have learned a great deal through this. as for where you go from here this is not the end but just the beginning:
+
+Want to ask more about any of these practices, ask the team directly on Slack, Click the below link to get an invite.
+
+And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions)
+
+
+
