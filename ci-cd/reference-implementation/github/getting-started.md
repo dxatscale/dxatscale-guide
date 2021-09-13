@@ -186,13 +186,13 @@ Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and past
 Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL
 {% endhint %}
 
-## 4. Test your pipelines
+### C. Test your pipelines
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
 
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages.  If this stage is successful, you can proceed to step 5
 
-## 5. Configure Scratch Org Pools
+### D. Configure Scratch Org Pools
 
 In your repo, there is a folder called config, in that folder, you can see there are two JSON files
 
@@ -256,6 +256,136 @@ Let's look at DEV Pool Definition now:
 ```
 
 {% hint style="info" %}
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section.  \(eg. **@dxatscale-poc**\)
+{% endhint %}
+
+{% hint style="info" %}
 To get an in-depth understanding of the options available to you for configuration refer to this link [here](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration).
 {% endhint %}
+
+### E. Scratch Org Definition File
+
+The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
+
+Customize the provided scratch org definition file for your use case and save and commit the file to the repository.  If you want to use the file as is to test, **no action** is required.
+
+```bash
+{
+    "orgName": "DX@Scale Demo Org",
+    "edition": "Developer",
+    "hasSampleData": false,
+    "features": ["Communities", "Walkthroughs", "EnableSetPasswordInApi"],
+    "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
+        "experienceBundleSettings": {
+            "enableExperienceBundleMetadata": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
+        }
+    }
+}
+
+```
+
+### F. Project Configuration File
+
+The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
+
+The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization. 
+
+| Package | Description |
+| :--- | :--- |
+| **src-env-specific-pre** | Installed first across all release environments. |
+| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
+| **core** | A folder to house all the core model of your org which is shared with all other domains. |
+| **src-ui** | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
+| **src-access-management** | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org. |
+| **src-env-specific-alias-post** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
+| **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
+
+{% hint style="info" %}
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example. 
+{% endhint %}
+
+### G. Release Definition File
+
+Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
+
+The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments.  As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.   
+
+```bash
+release: "Release-1.0"
+skipIfAlreadyInstalled: true
+artifacts:
+  #src-env-specific-alias-pre: main
+  core: main
+  #src-ui: main
+  #src-access-management: main
+  #src-env-specific-alias-post: main
+changelog:
+  workItemFilter: "issues/[0-9]+"
+```
+
+{% hint style="info" %}
+The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+{% endhint %}
+
+### H. Change Log 
+
+[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful.  This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
+
+**No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
+
+### I. Build Initial Package Artifacts
+
+Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
+
+1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
+2. Navigate to **Package & Registries &gt; Package Registry**
+3. Verify that the latest **core** artifact has been created and tagged with **main** label.
+
+### J. Fetch Provisioned Developer Scratch Org from Pool
+
+Once the **schedule-prepare-dev-pool** has completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
+
+```bash
+sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
+> ======== Scratch org details ========
+KEY          VALUE
+───────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Id           2SR4t00000001QeGAI
+orgId        00D0i0000009VO4
+loginURL     https://force-data-6074.cs98.my.salesforce.com/
+username     test-uaojizr8cqxi@example.com
+password     oy)Lnjphoq7tj
+expiryDate   2021-09-11
+sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZDesdiVBHjZQjoCukBJUauxagGJgQUng6?gyYwkRmz@force-data-6074.cs98.my.salesforce.com/
+status       Assigned
+```
+
+### K. Pull Requests and Merge to Main
+
+1. Make changes
+2. Commit
+3. Raise a Merge Request
+4. Confirm validation pipeline passes
+
+### L. Add New Packages
+
+1. Update project configuration files
+2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
+3. Save and validate
 
