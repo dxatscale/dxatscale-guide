@@ -445,7 +445,7 @@ Congratulations! you have gone through the Github Actions pipeline journey and m
 
 I hope you have learned a great deal through this. as for where you go from here this is not the end but just the beginning:
 
-Want to ask more about any of these practices, ask the team directly on Slack, Click the below link to get an invite.
+Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com), Click [here](https://launchpass.com/dxatscale) to get an invite.
 
 And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions)
 
