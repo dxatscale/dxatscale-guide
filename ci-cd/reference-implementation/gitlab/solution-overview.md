@@ -121,7 +121,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | \*\*\*\*[**before\_script**](https://docs.gitlab.com/ee/ci/yaml/#before_script)\*\*\*\* | Override a set of commands that are executed before job scripts.  The before\_script commands are concatenated with any scripts you specify in the main script. The template uses the before\_script to authenticate to the DevHub, configure access to the npm package registry, sets git repository url to allow for pushing git tags and committing change log files. |
 | \*\*\*\*[**Custom Variables**](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file)\*\*\*\* | Custom variable in the .gitlab-ci.yml file can be defined in the top level or the job level. |
 | \*\*\*\*[**Dependencies**](https://docs.gitlab.com/ee/ci/yaml/#dependencies)\*\*\*\* | Restrict which artifacts are passed to a specific job by providing a list of jobs to fetch artifacts from.  Dependencies are used in the template to pass artifacts from the quickbuild stage to the deploy stage to push code to the Shared Developer Sandbox during code merges.  |
-| Environments |  |
+| \*\*\*\*[**Environments**](https://docs.gitlab.com/ee/ci/yaml/#environment)\*\*\*\* | Name of an environment to which the job deploys.  The template defines environments for the deploy-env, build-env, ST, SIT, UAT, and PROD environments. |
 | Extends |  |
 | Jobs |  |
 | Needs |  |
