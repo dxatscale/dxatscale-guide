@@ -129,13 +129,13 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | \*\*\*\*[**Pipeline**](https://docs.gitlab.com/ee/ci/pipelines/)\*\*\*\* | Pipelines are the top-level component of continuous integration, delivery, and deployment.  Pipeline comprise of jobs, which define what to do and stages, which define when to run the jobs.   |
 | [**Predefined Variables**](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)\*\*\*\* | Predefined CI/CD variables are available in every GitLab CI/CD pipeline. |
 | \*\*\*\*[**Project Access Tokens**](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html)\*\*\*\* | Similar to [personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) but are used by projects to authenticate with the GitLab API and are supported on GitLab SaaS Premium and above as well as self-managed instances on Free tier and above.  [API access](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#limiting-scopes-of-a-project-access-token) grants complete read/write access to the scoped project API, including the Package Registry.  This is required for the template to push git tags and changelog to the repository. |
-| Resource Groups | concurrency control |
-| Roles |  |
-| Rules |  |
-| Runners and Agents |  |
-| Script |  |
-| Stage |  |
-| Variables |  |
+| [**Resource Groups**](https://docs.gitlab.com/ee/ci/yaml/#resource_group)\*\*\*\* | Used for concurrency control in the pipeline.  The keyword is added to the deploy, build, and environment release jobs to ensure runners are prevented from executing jobs concurrently during execution.   |
+| \*\*\*\*[**Roles**](https://docs.gitlab.com/ee/user/permissions.html)\*\*\*\* | Users have different abilities depending on the role they have in a particular group or project. If a user is both in a project’s group and the project itself, the highest role is used. |
+| \*\*\*\*[**Rules**](https://docs.gitlab.com/ee/ci/yaml/#rules)\*\*\*\* | List of conditions to evaluate and determine selected attributes of a job, and whether or not it’s created. |
+| \*\*\*\*[**Runners**](https://docs.gitlab.com/runner/)\*\*\*\* | GitLab Runner is an application that works with GitLab CI/CD to run jobs in a pipeline. |
+| \*\*\*\*[**Script**](https://docs.gitlab.com/ee/ci/yaml/#script)\*\*\*\* | Specify commands for the runner to execute.  Most scripts in the template leverage `sfpowerscripts:orchestrator` commands during execution. |
+| \*\*\*\*[**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage)\*\*\*\* | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
+| \*\*\*\*[**Variables**](https://docs.gitlab.com/ee/ci/variables/)\*\*\*\* | CI/CD variables are a type of environment variable |
 
 ## Security
 
