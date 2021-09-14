@@ -317,7 +317,7 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
 
 {% hint style="info" %}
-Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitHub.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
 {% endhint %}
 
 ### G. Release Definition File
@@ -340,7 +340,7 @@ changelog:
 ```
 
 {% hint style="info" %}
-The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
 ### H. Change Log 
@@ -386,7 +386,7 @@ status       Assigned
 ### L. Add New Packages
 
 1. Update project configuration files
-2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
+2. Update **validate.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
 3. Save and validate
 
 ## Dashboard Integration
