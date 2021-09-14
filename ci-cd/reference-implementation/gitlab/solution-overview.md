@@ -140,7 +140,13 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 ## Security Design
 
-Roles
+There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  
+
+### Project Access 
+
+
+
+### Roles
 
 Maintainer
 
