@@ -71,7 +71,26 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ![](../../../.gitbook/assets/image%20%281%29.png)
 
-### C. Authenticate to DevHub via CLI
+### C. Create Service Account for DevOps
+
+For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470&type=1) to manage deployments to your Salesforce instance.  The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.  
+
+1. Navigate to the **Setup** menu
+2. Go to **Users &gt; Users**
+3. Click on **New User** button
+4. Enter **CICD** for **First Name** and **User** for **Last Name**
+5. Enter in a Email address and Username
+6. Set **User License** to **Salesforce**
+7. Set **Profile** to **System Administrator**
+8. Scroll down and click on **Save**
+
+![](../../../.gitbook/assets/image%20%2845%29.png)
+
+{% hint style="info" %}
+Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486&type=1) of Salesforce has API Access.  It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
+{% endhint %}
+
+### D. Authenticate to DevHub via CLI
 
 Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
 
@@ -79,7 +98,7 @@ Authorize your production instance and/or Developer Edition Org using the [web l
 sfdx auth:web:login -a DevHub -r https://login.salesforce.com
 ```
 
-### D. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
+### E. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
 
 The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) adds additional custom fields, validation rule, and workflow to the standard object "**ScratchOrgInfo**" in the the DevHub to enable associated scratch org pool commands to work for the pipeline.
 
