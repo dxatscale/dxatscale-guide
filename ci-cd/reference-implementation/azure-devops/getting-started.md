@@ -192,6 +192,17 @@ Follow instructions in[ 2.F](../github/getting-started.md#f-authenticate-to-lowe
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-14-at-3.08.41-pm.png)
 
+Upload your `authfile.json` for **devhub**, within the pipelines, you will notice on the pipelines there is a script:
+
+```bash
+    - script: |
+          echo $(DEVHUB_SFDX_AUTH_URL) > ./authfile
+          sfdx auth:sfdxurl:store -f authfile -a devhub
+      displayName: 'Authenticate DevHub'
+```
+
+
+
 Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and paste the `sfdxAuthUrl` from `authfile.json`
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.45.34-am.png)
