@@ -1,8 +1,8 @@
 # Getting Started
 
-The following getting started guide will enable you to configure and setup CI/CD using GitLab and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
+The following getting started guide will enable you to configure and setup CI/CD using GitHub and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitHub using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
-As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
+As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) with any questions or concerns.
 
 ## 1. Developer Workstation
 
@@ -73,7 +73,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### C. Authenticate to DevHub via CLI
 
-Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use it to create Unlock Packages and manage Scratch Orgs.
 
 ```bash
 sfdx auth:web:login -a DevHub -r https://login.salesforce.com
@@ -81,7 +81,7 @@ sfdx auth:web:login -a DevHub -r https://login.salesforce.com
 
 ### D. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
 
-The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) adds additional custom fields, validation rule, and workflow to the standard object "**ScratchOrgInfo**" in the the DevHub to enable associated scratch org pool commands to work for the pipeline.
+The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) adds additional custom fields, validation rules, and workflow to the standard object "**ScratchOrgInfo**" in the DevHub to enable associated scratch org pool commands to work for the pipeline.
 
 ```bash
 sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s AdminsOnly -w 30
@@ -89,7 +89,7 @@ sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s Admi
 
 ### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
-The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
+The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep a record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
 ```bash
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
@@ -309,7 +309,7 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | Package | Description |
 | :--- | :--- |
 | **src-env-specific-pre** | Installed first across all release environments. |
-| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment specific metadata has to be aligned with each environments |
+| **src-env-specific-alias-pre** | Installed after src-env-specific-pre and is only used when any environment-specific metadata has to be aligned with each environment |
 | **core** | A folder to house all the core model of your org which is shared with all other domains. |
 | **src-ui** | This folder would include page layouts, FlexiPages and Lightning/Classic apps unless we are sure these will only reference the components of a single domain package and its dependencies. In general custom UI components such as LWC, Aura and VisualForce should be included in a relevant domain package. |
 | **src-access-management** | This package is typically one of the packages that is deployed second to last in the deployment order and used to store profiles, permission sets, and permission set groups that are applied across the org. |
@@ -317,7 +317,7 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
 
 {% hint style="info" %}
-Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example. 
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
 {% endhint %}
 
 ### G. Release Definition File
@@ -359,7 +359,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 
 ### J. Fetch Provisioned Developer Scratch Org from Pool
 
-Once the **schedule-prepare-dev-pool** has completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
+Once the **schedule-prepare-dev-pool** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
 ```bash
 sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
