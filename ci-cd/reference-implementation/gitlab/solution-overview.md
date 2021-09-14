@@ -1,6 +1,6 @@
 # Solution Overview
 
-In order to configure DX@Scale with **GitLab**, there are a number of key features that need to be setup on the platform before executing the pipeline. Whether you are new to GitLab or have prior experience developing CI/CD for other software stacks on GitLab, this guide is meant to summarize the key configuration steps on the platform and use the templates provided in our sample repository.
+In order to configure DX@Scale with **GitLab**, there are a number of key features that need to be setup on the platform before executing the pipeline. Whether you are new to GitLab or have prior experience developing CI/CD for other software stacks on GitLab, this guide is meant to summarize the key configuration steps on the platform and use the templates provided in our [sample repository](https://github.com/dxatscale/dxatscale-template).
 
 For a deeper dive on the platform, documentation is available on [GitLab Docs](https://docs.gitlab.com/).
 
@@ -25,8 +25,9 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
     <tr>
       <td style="text-align:left"><b>Project</b>
       </td>
-      <td style="text-align:left">Used to host your codebase, track issues, plan work, collaborate on code,
-        and continuously build, test, and use built-in CI/CD to deploy your app.</td>
+      <td style="text-align:left"><a href="https://docs.gitlab.com/ee/user/project/">Projects</a> are used
+        to host your codebase, track issues, plan work, collaborate on code, and
+        continuously build, test, and use built-in CI/CD to deploy your app.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Repository</b>
@@ -37,14 +38,14 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
     <tr>
       <td style="text-align:left"><b>Issues</b>
       </td>
-      <td style="text-align:left">Collaborate on ideas, solve problems, and plan work.</td>
+      <td style="text-align:left"><a href="https://docs.gitlab.com/ee/user/project/issues/">Collaborate</a> on
+        ideas, solve problems, and plan work.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>CI/CD</b>
       </td>
       <td style="text-align:left">
-        <p>Tooling built into GitLab for software development through the continuous
-          methodologies:</p>
+        <p>Tooling built into GitLab for software development through the <a href="https://docs.gitlab.com/ee/ci/">continuous methodologies</a>:</p>
         <ul>
           <li>Continuous Integration (CI)</li>
           <li>Continuous Delivery (CD)</li>
@@ -56,7 +57,8 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
       <td style="text-align:left"><b>Package &amp; Repository</b>
       </td>
       <td style="text-align:left">Acts as a private or public registry for a variety of common package managers
-        (eg. npm) and allows you to publish and share packages.</td>
+        and allows publishing and sharing packages. Project Level scoped <a href="https://docs.gitlab.com/ee/user/packages/npm_registry/">npm</a> packages
+        are used for the solution.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Settings</b>
@@ -77,32 +79,34 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
     <tr>
       <td style="text-align:left"><b>Member</b>
       </td>
-      <td style="text-align:left">Users and groups who have access to your project. Each member gets a role,
-        which determines what they can do in the project.</td>
+      <td style="text-align:left">Users and groups who have access to your project. Each <a href="https://docs.gitlab.com/ee/user/project/members/">member</a> gets
+        a role, which determines what they can do in the project.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Group</b>
       </td>
-      <td style="text-align:left">Use to manage one or more related projects at the same time.</td>
+      <td style="text-align:left">A <a href="https://docs.gitlab.com/ee/user/group/">group</a> is used to
+        manage one or more related projects at the same time.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Subgroup</b>
       </td>
-      <td style="text-align:left">Nested groups or hierarchical groups.</td>
+      <td style="text-align:left"><a href="https://docs.gitlab.com/ee/user/group/subgroups/">Nested groups</a> or
+        hierarchical groups.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>User</b>
       </td>
-      <td style="text-align:left">Each GitLab account has a user profile, which contains information about
-        you and your GitLab activity. Set up of Personal Access Tokens and SSH
-        Keys will enable users to to securely access the GitLab API from their
-        computers.</td>
+      <td style="text-align:left">Each GitLab account has a <a href="https://docs.gitlab.com/ee/user/project/members/#add-users-to-a-project">user</a> profile,
+        which contains information about you and your GitLab activity. Set up of
+        Personal Access Tokens and SSH Keys will enable users to to securely access
+        the GitLab API from their computers.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Roles</b>
       </td>
-      <td style="text-align:left">Users have different abilities depending on the role they have in a particular
-        group or project. The roles available in GitLab are <b>Owner, Maintainer, Developer, Reporter and Guest.</b>
+      <td style="text-align:left">Users have different abilities depending on the <a href="https://docs.gitlab.com/ee/user/permissions.html">role</a> they
+        have in a particular group or project. The roles available in GitLab are <b>Owner, Maintainer, Developer, Reporter and Guest.</b>
       </td>
     </tr>
   </tbody>
@@ -125,6 +129,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | .npmrc |  |
 | Pipeline |  |
 | Predefined Variables |  |
+| Project Access Tokens |  |
 | Resource Groups | concurrency control |
 | Roles |  |
 | Rules |  |
