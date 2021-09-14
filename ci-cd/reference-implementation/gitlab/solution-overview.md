@@ -116,7 +116,6 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 | Area | Description |
 | :--- | :--- |
-| Access Tokens |  |
 | Anchors |  |
 | Artifacts |  |
 | before\_script |  |
