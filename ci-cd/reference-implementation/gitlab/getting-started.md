@@ -620,7 +620,7 @@ Congratulations! you have gone through the GitLab pipeline journey and made it t
 
 I hope you have learned a great deal through this.  As for where you go from here, this is not the end but just the beginning:
 
-Want to ask more about any of these practices, ask the team directly on Slack, Click the below link to get an invite.
+Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com).  Click the below link to get an invite.
 
-And to discuss and contribute to our open-source projects here.
+And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions).
 
