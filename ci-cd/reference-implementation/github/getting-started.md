@@ -389,6 +389,56 @@ status       Assigned
 2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
 3. Save and validate
 
+## Dashboard Integration
+
+### A. New Relic Configurations
+
+Within your repo there is a folder called `dashboards/NewRelic`
+
+To set up your NewRelic dashboard you will need to:
+
+* Replace with your NewRelic account id, in your cicd-dashboard.json
+* Goto NewRelic, and Click on Import and import dashboard to NewRelic
+* Set your pipelines environment variables with the following
+
+```text
+   SFPOWERSCRIPTS_NEWRELIC='true'
+   SFPOWERSCRIPTS_NEWRELIC_API_KEY=<NEWRELIC INSIGHTS INSERT KEY>
+```
+
+* Check the templates for further examples
+
+### B. Data Dog Configuration
+
+To set up your Data Dog dashboard simply go to each of the pipelines and you will notice a commented out snippet
+
+```text
+#Set the environment variables for tracking metrics
+#env:
+  #SFPOWERSCRIPTS_DATADOG: 'true'
+  #SFPOWERSCRIPTS_DATADOG_HOST: '${{ secrets.DATADOG_HOST }}'
+  #SFPOWERSCRIPTS_DATADOG_API_KEY: '${{ secrets.DATADOG_API_KEY }}'
+```
+
+Create the following secrets:
+
+* `DATADOG_HOST` __
+* `DATADOG_API_KEY`
+
+{% hint style="info" %}
+If you haven't created an API key from data dog yet refer to this [link](https://docs.datadoghq.com/account_management/api-app-keys/)
+{% endhint %}
+
+Uncomment all env jobs on all pipelines and it should look like this:
+
+```yaml
+#Set the environment variables for tracking metrics
+env:
+  SFPOWERSCRIPTS_DATADOG: 'true'
+  SFPOWERSCRIPTS_DATADOG_HOST: '${{ secrets.DATADOG_HOST }}'
+  SFPOWERSCRIPTS_DATADOG_API_KEY: '${{ secrets.DATADOG_API_KEY }}'
+```
+
 ## Final Words
 
 Congratulations! you have gone through the Github Actions pipeline journey and made it to the end. 
