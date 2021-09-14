@@ -117,8 +117,8 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | Area | Description |
 | :--- | :--- |
 | \*\*\*\*[**Anchors**](https://docs.gitlab.com/ee/ci/yaml/#anchors)\*\*\*\* | Used to duplicate or inherit properties. The template leverages anchors for reusable rules based on triggers in the pipeline from merge requests, merges, and manual triggering of pipelines. |
-| Artifacts | List of files and directories to attach to a job when it succeeds, fails, or always.   |
-| before\_script |  |
+| \*\*\*\*[**Artifacts**](https://docs.gitlab.com/ee/ci/yaml/#artifacts)\*\*\*\* | List of files and directories to attach to a job when it succeeds, fails, or always.  Artifacts are use to output pmd reports, scratch org prepare logs, and quick build artifacts from the runner that are not published to artifact registry.  |
+| \*\*\*\*[**before\_script**](https://docs.gitlab.com/ee/ci/yaml/#before_script)\*\*\*\* | Override a set of commands that are executed before job scripts.  The before\_script commands are concatenated with any scripts you specify in the main script. The template uses the before\_script to authenticate to the DevHub, configure access to the npm package registry, sets git repository url to allow for pushing git tags and committing change log files. |
 | Custom Variables |  |
 | Dependencies |  |
 | Environments |  |
