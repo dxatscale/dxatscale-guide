@@ -389,7 +389,7 @@ status       Assigned
 2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
 3. Save and validate
 
-## Final words
+## Final Words
 
 Congratulations! you have gone through the Github Actions pipeline journey and made it to the end. 
 

@@ -614,7 +614,13 @@ Coming Soon.
 
 Coming Soon.
 
-## Closing Thoughts
+## Final Words
 
-We hope you have successfully configured your pipelines in GitLab and on your way to modular packaging journey. 
+Congratulations! you have gone through the GitLab pipeline journey and made it to the end. 
+
+I hope you have learned a great deal through this.  As for where you go from here, this is not the end but just the beginning:
+
+Want to ask more about any of these practices, ask the team directly on Slack, Click the below link to get an invite.
+
+And to discuss and contribute to our open-source projects here.
 
