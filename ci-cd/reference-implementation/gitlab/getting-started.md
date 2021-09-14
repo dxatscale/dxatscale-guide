@@ -608,7 +608,11 @@ status       Assigned
 
 ### A. New Relic Configurations
 
+Coming Soon.
+
 ### B. Data Dog Configuration
+
+Coming Soon.
 
 ## Closing Thoughts
 
