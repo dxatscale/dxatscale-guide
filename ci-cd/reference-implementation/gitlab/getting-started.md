@@ -106,7 +106,7 @@ The [Scratch Org Pooling Unlocked Package](https://github.com/Accenture/sfpowers
 sfdx force:package:install -p 04t1P000000gOqzQAE -u DevHub -r -a package -s AdminsOnly -w 30
 ```
 
-### E. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
+### F. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
 
 The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
 
@@ -114,7 +114,7 @@ The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscript
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
 ```
 
-### F. Authenticate to Lower Sandbox Environments via CLI
+### G. Authenticate to Lower Sandbox Environments via CLI
 
 The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.  
 
@@ -144,7 +144,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 {% endtab %}
 {% endtabs %}
 
-### G. Generate SFDX auth URL for Pipeline Authentication
+### H. Generate SFDX auth URL for Pipeline Authentication
 
 In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm).  For each environment, execute the following command on a previously authenticated environment and save the **sfdxAuthUrl** for use in future pipeline configuration steps.
 
