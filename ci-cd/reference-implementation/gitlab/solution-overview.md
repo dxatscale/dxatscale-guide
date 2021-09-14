@@ -134,6 +134,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | \*\*\*\*[**Rules**](https://docs.gitlab.com/ee/ci/yaml/#rules)\*\*\*\* | List of conditions to evaluate and determine selected attributes of a job, and whether or not it’s created. |
 | \*\*\*\*[**Runners**](https://docs.gitlab.com/runner/)\*\*\*\* | GitLab Runner is an application that works with GitLab CI/CD to run jobs in a pipeline. |
 | \*\*\*\*[**Script**](https://docs.gitlab.com/ee/ci/yaml/#script)\*\*\*\* | Specify commands for the runner to execute.  Most scripts in the template leverage `sfpowerscripts:orchestrator` commands during execution. |
+| \*\*\*\*[**SSH Keys**](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys)\*\*\*\* | GitLab uses the SSH protocol to securely communicate with Git. When you use SSH keys to authenticate to the GitLab remote server, you don’t need to supply your username and password each time. |
 | \*\*\*\*[**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage)\*\*\*\* | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
 | \*\*\*\*[**Variables**](https://docs.gitlab.com/ee/ci/variables/)\*\*\*\* | CI/CD variables are a type of environment variable |
 
