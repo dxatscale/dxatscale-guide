@@ -128,7 +128,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | .npmrc |  |
 | Pipeline |  |
 | Predefined Variables |  |
-| Project Access Tokens |  |
+| Project Access Tokens | Similar to [personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) but are used by projects to authenticate with the GitLab API and are supported on GitLab SaaS Premium and above as well as self-managed instances on Free tier and above.  [API access](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#limiting-scopes-of-a-project-access-token) grants complete read/write access to the scoped project API, including the Package Registry.  This is required for the template to push git tags and changelog to the repository. |
 | Resource Groups | concurrency control |
 | Roles |  |
 | Rules |  |
