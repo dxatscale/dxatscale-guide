@@ -25,8 +25,8 @@ The following list are prerequisite tools required to setup an end-to-end pipeli
     * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
     * ​[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)​
     * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
-    * ​Prettier - Code formatter​
-    * ​Beautify
+    * [​Prettier - Code formatter​](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+    * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
     * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)​
 * [ ] ​[git](https://git-scm.com/)
 * [ ] [npm​](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
