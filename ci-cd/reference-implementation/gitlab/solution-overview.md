@@ -138,9 +138,21 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | \*\*\*\*[**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage)\*\*\*\* | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
 | \*\*\*\*[**Variables**](https://docs.gitlab.com/ee/ci/variables/)\*\*\*\* | CI/CD variables are a type of environment variable |
 
-## Security
+## Security Design
+
+Roles
+
+Maintainer
+
+Branch Protection
+
+Masking Variables
+
+Groups 
 
 ### Authentication
+
+sfauthurl
 
 ### Variable Files
 
