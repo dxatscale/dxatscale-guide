@@ -123,11 +123,11 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 | \*\*\*\*[**Dependencies**](https://docs.gitlab.com/ee/ci/yaml/#dependencies)\*\*\*\* | Restrict which artifacts are passed to a specific job by providing a list of jobs to fetch artifacts from.  Dependencies are used in the template to pass artifacts from the quickbuild stage to the deploy stage to push code to the Shared Developer Sandbox during code merges.  |
 | \*\*\*\*[**Environments**](https://docs.gitlab.com/ee/ci/yaml/#environment)\*\*\*\* | Name of an environment to which the job deploys.  The template defines environments for the deploy-env, build-env, ST, SIT, UAT, and PROD environments. |
 | \*\*\*\*[**Extends**](https://docs.gitlab.com/ee/ci/yaml/#extends)\*\*\*\* | Used for reuse configuration sections defined above in the Anchors for merge requests, merge, and manual execution rules in the pipeline. |
-| Jobs |  |
-| Needs |  |
-| .npmrc |  |
-| Pipeline |  |
-| Predefined Variables |  |
+| \*\*\*\*[**Jobs**](https://docs.gitlab.com/ee/ci/jobs/)\*\*\*\* | Pipeline configuration begins with jobs.  Jobs are picked up by runners and executed in the environment of the runner.  Jobs defined in the template follow the DX@Scale best practices from validate to release.  |
+| \*\*\*\*[**Needs**](https://docs.gitlab.com/ee/ci/yaml/#needs)\*\*\*\* | Execute jobs earlier than the stage ordering and ensures previous jobs in the pipeline are completed before moving to the next stage and job. |
+| \*\*\*\*[**.npmrc**](https://docs.gitlab.com/ee/user/packages/workflows/project_registry.html#npm)\*\*\*\* | The [npm config file](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) that is configured to allow publishing and sharing packages. |
+| \*\*\*\*[**Pipeline**](https://docs.gitlab.com/ee/ci/pipelines/)\*\*\*\* | Pipelines are the top-level component of continuous integration, delivery, and deployment.  Pipeline comprise of jobs, which define what to do and stages, which define when to run the jobs.   |
+| [**Predefined Variables**](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)\*\*\*\* | Predefined CI/CD variables are available in every GitLab CI/CD pipeline. |
 | \*\*\*\*[**Project Access Tokens**](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html)\*\*\*\* | Similar to [personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) but are used by projects to authenticate with the GitLab API and are supported on GitLab SaaS Premium and above as well as self-managed instances on Free tier and above.  [API access](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#limiting-scopes-of-a-project-access-token) grants complete read/write access to the scoped project API, including the Package Registry.  This is required for the template to push git tags and changelog to the repository. |
 | Resource Groups | concurrency control |
 | Roles |  |
