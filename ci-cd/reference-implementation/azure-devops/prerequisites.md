@@ -27,7 +27,9 @@ The following lists of items are required to setup your end-to-end pipeline usin
     * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
     * ​[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)​
     * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-    * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)​
+    * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)
+    * [Azure Account​](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
+    * [Azure Pipelines](https://marketplace.visualstudio.com/items?itemName=ms-azure-devops.azure-pipelines)
 * [ ] ​[git](https://git-scm.com/)​
 * [ ] ​[Salesforce CLI](https://www.npmjs.com/package/sfdx-cli)​
 * [ ] ​[sfpowerkit Plugin](https://github.com/dxatscale/sfpowerkit)​
