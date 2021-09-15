@@ -354,6 +354,18 @@ Publish StatsD Metrics.
 
 ## Configuration Options
 
+There are additional configurations for the GitLab Project that should be reviewed and configured to ensure it aligns with your internal IT policies.
+
+### General Settings
+
+* **Merge Requests** - Merge method, merge options, merge checks, merge suggestions should be reviewed to determine preferred approaches such as **merge commits**, **deleting source branches** by default option, and allowing **squash commits** when merging. 
+
+{% hint style="info" %}
+DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-model/branching-conventions#commit-message) when merging to provide succinct release notes during change log creation.
+{% endhint %}
+
+ 
+
 * split clean pools to separate stages
 * approvals
 * protected branches
