@@ -403,7 +403,7 @@ To set up your NewRelic dashboard you will need to:
 
 ```text
    SFPOWERSCRIPTS_NEWRELIC='true'
-   SFPOWERSCRIPTS_NEWRELIC_API_KEY=<NEWRELIC INSIGHTS INSERT KEY>
+   SFPOWERSCRIPTS_NEWRELIC_API_KEY='${{ secrets.NEWRELIC_INSIGHT_INSERT_KEYS }}'
 ```
 
 * Check the templates for further examples
