@@ -372,6 +372,16 @@ The following are additional design configurations to consider when using this t
 
 ## FAQs
 
+{% tabs %}
+{% tab title="Questions" %}
+Can 
+{% endtab %}
+
+{% tab title="Answer" %}
+
+{% endtab %}
+{% endtabs %}
+
 
 
 ## References
