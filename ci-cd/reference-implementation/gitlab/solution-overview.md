@@ -351,15 +351,15 @@ DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-mod
 
 The following are additional design configurations to consider when using this template:
 
-1. Public Docker Registry vs. Project Container Registry
-2. Public DX@Scale Unlocked Package vs. DevHub Unlocked Package for Scratch Org Pool and sfpowerscripts-artifact
-3. On Premise vs. Cloud GitLab
-4. Project NPM Package Registry vs. External NPM Package Registry
-5. Project CI/CD Variables vs. External Secrets Provider
-6. Multi-Repository Checkout Support 
-7. Release Gates Process
-8. Operational Dashboard Tooling
-9. ALM Integration vs. GitLab Issue Management Tool
+1. [Public Docker Registry](https://docs.docker.com/registry/) vs. [Project Container Registry](https://docs.gitlab.com/ee/administration/packages/container_registry.html#gitlab-container-registry-administration)
+2. [Public DX@Scale Pre-requisite Unlocked Packages](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites) vs. [DevHub Unlocked Package ](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)for [Scratch Org Pool](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) and [sfpowerscripts-artifact](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact)
+3. [GitLab Self-Managed](https://about.gitlab.com/pricing/self-managed/feature-comparison/)  vs. [GitLab SaaS](https://about.gitlab.com/pricing/gitlab-com/feature-comparison/)
+4. [Project NPM Package Registry](https://docs.gitlab.com/ee/user/packages/npm_registry/index.html) vs. [External NPM Package Registry](https://docs.npmjs.com/cli/v7/using-npm/registry)
+5. [Project CI/CD Variables](https://docs.gitlab.com/ee/ci/variables/) vs. [External Secrets Provider](https://docs.gitlab.com/ee/ci/secrets/)
+6. [Multi-Repository Checkout Support](https://about.gitlab.com/blog/2018/10/31/use-multiproject-pipelines-with-gitlab-cicd/) 
+7. [Release Gates Approval Process](https://docs.gitlab.com/ee/development/approval_rules.html#approval-rules-development-guide)
+8. [Operational Dashboard Tooling](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards)
+9. [ALM Integration](https://docs.gitlab.com/ee/user/project/integrations/overview.html#integrations) vs. [GitLab Issue Management Tool](https://docs.gitlab.com/ee/topics/plan_and_track.html)
 10. Protected Branches
 11. Merge Request Rules \(eg. Squash commits when merging\)
 12. Merge request \(MR\) approvals
