@@ -373,17 +373,9 @@ The following are additional design configurations to consider when using this t
 
 ## FAQs
 
-{% tabs %}
-{% tab title="Questions" %}
-Can 
-{% endtab %}
+#### Why is the Access Tokens menu not available to configure my Project Access Tokens?
 
-{% tab title="Answer" %}
-
-{% endtab %}
-{% endtabs %}
-
-
+For GitLab SaaS hosting, Project Access Tokens are only available for Premium and above licenses and self-managed instances on Free tier and above.  
 
 ## References
 
