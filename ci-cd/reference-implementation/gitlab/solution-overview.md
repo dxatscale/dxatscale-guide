@@ -154,7 +154,7 @@ There are a number of security considerations that need to factored into the set
 
 ## Configuration File
 
-The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used to executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, and manual triggering of the pipeline.
+The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used for executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, or manual execution of the pipeline.
 
 ![](../../../.gitbook/assets/image%20%2824%29.png)
 
@@ -179,13 +179,10 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
     <tr>
       <td style="text-align:left"><b>Project CI/CD Variables</b>
       </td>
-      <td style="text-align:left">
-        <p>Initial project Project CI/CD Variables required to be created in the
-          project to authenticate and setup DevHub and Sandbox Environment alias,
-          NPM Variables Scope for artifacts, and optional dashboard connection details
-          for</p>
-        <p>DataDog or New Relic.</p>
-      </td>
+      <td style="text-align:left">Initial project Project CI/CD Variables required to be created in the
+        project to authenticate and setup DevHub, Production and Sandbox Environment
+        aliases, NPM Scope for artifacts, Project Access Tokens, and optional dashboard
+        connection details for DataDog or New Relic.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Image</b>
