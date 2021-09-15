@@ -82,19 +82,19 @@ For a project that has two packages.
 * **Package A** and **Package B**
 * **Package B** is dependent on **Package A.**
 
-### **Scenario 1:** 
+### **Scenario 1:**
 
 * Remove a component from **Package A**, provided the component has no dependency
 * **Solution:** Create a new version of **Package A** with the metadata component being removed and install the package.
 
-### **Scenario 2:** 
+### **Scenario 2:**
 
 * Move a metadata component from **Package A** to **Package B**
 * **Solution:** This scenario is pretty straight forward, one can remove the metadata component from **Package A** and move that to **Package B**. When a new version of **Package A** gets installed, the following things happen:
   * If the deployment of the unlocked package is set to mixed, and no other metadata component is dependent on the component, the component gets [deleted](https://help.salesforce.com/articleView?id=sf.fields_managing_deleted_fields.htm&type=5). 
   * On the subsequent install of **Package B**, **Package B** restores the field and takes ownership of the component.  
 
-### **Scenario 3:** 
+### **Scenario 3:**
 
 * Move a metadata component from **Package B** to **Package A**, where the component currently has other dependencies in **Package B**
 * **Solution:** In this scenario, one can move the component to **Package A** and get the packages built. However during deployment to an org, **Package A** will fail with an error this component exists in **Package B**. To mitigate this one should do the following:

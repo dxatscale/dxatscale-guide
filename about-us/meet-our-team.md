@@ -28,3 +28,7 @@ Caitlyn is a Software Engineer with a passion for all things IT, but particularl
 
 Henry is a Software Engineer who enjoys finding gaps and inefficiencies in processes and building the optimal way of solving those problems. He has been a part of DX@Scale in engineering since March 2021. He is keen to work with the broader Salesforce community.
 
+![Ramesh Karanji &#x2013; Senior DevOps Engineer](../.gitbook/assets/ramesh.png)
+
+Ramesh is a Senior DevOps Engineer with good knowledge of key DevOps practices – Continuous Integration and Delivery, Strategy, Implementation, Security and Vulnerability Management \(CDP\) and Cloud concepts \(AWS/Azure\) - IaaS, PaaS, SaaS. He has been involved and part of DX@Scale journey since 2019 as an engineer, advocate, contributor, implementer, maintainer, trouble-shooter and successfully implemented CICD solutions for Salesforce on large/small scale projects.
+

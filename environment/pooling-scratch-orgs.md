@@ -1,18 +1,18 @@
 # Pooling Scratch Orgs
 
-Scratch Org pools help development teams to solve the time taken to spin up a scratch org, install all dependencies, load sample data and make it ready for development.  Another use case for Scratch Org Pools is for a just in time CI environment. The following links discuss how DX@Scale's tooling enable scratch org pools.
+Scratch Org pools help development teams to solve the time taken to spin up a scratch org, install all dependencies, load sample data and make it ready for development. Another use case for Scratch Org Pools is for a just in time CI environment. The following links discuss how DX@Scale's tooling enable scratch org pools.
 
 {% page-ref page="../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md" %}
 
 The following sections deal with the typical pool strategies followed by DX@Scale practitioners.
 
-### Number of Pools Required
+## Number of Pools Required
 
 At the minimum, DX@Scale requires 3 pools to be created. These pools serve different purposes:
 
 * **CI pools with all packages installed**
 
-  The CI pools are typically used for validation runs. They are pre-installed with the packages from the latest successful build, which allows optimised validations where only the packages that have changed are validated. 
+  The CI pools are typically used for validation runs. They are pre-installed with the packages from the latest successful build, which allows optimised validations where only the packages that have changed are validated.
 
 * **CI pools with only dependencies installed**
 
@@ -22,7 +22,7 @@ At the minimum, DX@Scale requires 3 pools to be created. These pools serve diffe
 
 The number of scratch orgs in the pool have to be determined depending on the size of the program and adjusted accordingly.
 
-### Replenishing Pools
+## Replenishing Pools
 
 Scratch Org pools need to be replenished in the following manner.
 
@@ -32,19 +32,15 @@ Scratch Org pools need to be replenished in the following manner.
 
 Pipelines should be built and invoked using a scheduler to replenish the scratch orgs in the pool.
 
-### Recreating Pools
+## Recreating Pools
 
 There would be situations when pools need to be killed, such as change in shape of the org or due to any other inconsistencies. This involves a significant downtime, as creating pool with full strength could take anywhere between 1-3 hours depending on the number of scratch orgs involved. This should be communicated to all the developers in the team workspace to let them know this is happening.
 
 It is highly recommended to build a delete pool pipeline that could be triggered manually to delete all the pools.
 
-### Monitoring Pools
+## Monitoring Pools
 
 Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sfpowerscripts documentation to understand the metrics emitted by sfpowerscripts. A sample dashboard is attached below
 
-
-
 ![](../.gitbook/assets/image%20%2855%29.png)
-
-
 

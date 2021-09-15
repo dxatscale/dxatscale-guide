@@ -31,26 +31,25 @@ Examples config file:
 
 ```text
 {
-	    "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
-	    "tag": "dev",
-	    "maxAllocation": 5,
-	    "expiry": 10,
-	    "batchSize": 5,
-	    "configFilePath": "config/project-scratch-def.json",
-	    "relaxAllIPRanges": true,
-	    "enableSourceTracking": true,
-	    "retryOnFailure": true,
-	    "succeedOnDeploymentErrors": true,
-	    "installAll": true,
-	    "fetchArtifacts": {
-	        "npm": {
-	          "scope": "@org-name",
-	          "npmtag": "main"
-	        }
-	      }
-	   
-	}
+        "$schema": "https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+        "tag": "dev",
+        "maxAllocation": 5,
+        "expiry": 10,
+        "batchSize": 5,
+        "configFilePath": "config/project-scratch-def.json",
+        "relaxAllIPRanges": true,
+        "enableSourceTracking": true,
+        "retryOnFailure": true,
+        "succeedOnDeploymentErrors": true,
+        "installAll": true,
+        "fetchArtifacts": {
+            "npm": {
+              "scope": "@org-name",
+              "npmtag": "main"
+            }
+          }
 
+    }
 ```
 
 As you can see all of the arguments you used to supply through the cli are now included in these config files. This enables easier adjustment and tailoring of settings through the files.
@@ -68,6 +67,4 @@ sfpowerscripts and sfpowerkit full release notes can be found at the links below
 [https://github.com/Accenture/sfpowerscripts/releases](https://github.com/Accenture/sfpowerscripts/releases)
 
 [https://github.com/Accenture/sfpowerkit/releases](https://github.com/Accenture/sfpowerkit/releases)
-
-
 

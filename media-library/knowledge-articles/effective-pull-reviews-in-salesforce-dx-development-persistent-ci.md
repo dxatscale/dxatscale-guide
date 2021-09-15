@@ -8,7 +8,7 @@ description: 'Published on November 26, 2018 by Azlam Abdulsalam'
 
 Salesforce DX is a combination of technologies and practices that bring modern development practices such as open and standard developer experience driven by a CLI \(Command Line Interface\), Repeatable deployment using packaging, automated testing and predominantly source driven development
 
- Salesforce DX also provides scratch org which is source driven and disposable deployment of Salesforce code and configuration \(metadata\). Think more of it as similar to spinning a docker container, effectively providing a developer environment for every developer to configure / code. This is a pretty amazing, considering the effort usually a 'DevOps' team spends in creating a docker image for their developer environments, especially when trying to have closed source enterprise grade software. This is Salesforce bringing the power of SaaS and adopting modern tooling.. Kudos to the DX team!
+Salesforce DX also provides scratch org which is source driven and disposable deployment of Salesforce code and configuration \(metadata\). Think more of it as similar to spinning a docker container, effectively providing a developer environment for every developer to configure / code. This is a pretty amazing, considering the effort usually a 'DevOps' team spends in creating a docker image for their developer environments, especially when trying to have closed source enterprise grade software. This is Salesforce bringing the power of SaaS and adopting modern tooling.. Kudos to the DX team!
 
 Salesforce development is predominantly UI based configuration, such as defining layouts, custom objects, fields etc known as Metadata along with scripting utilizing a language called Apex. The major factor in success of Salesforce is how much of the development is usually configuration and very little 'custom code'. As Salesforce DX introduces a source driven development, this configuration\(metadata\) which is described in XML is stored in a Source code repository such as GIT.
 
@@ -24,11 +24,11 @@ To improve the quality of the review before the branch is being merged to main l
 
 The Scratch org created for the pull request is kept only for a period of 2 days, after which is deleted, unless a new commit arrives before its killed.
 
- 2.   **To delete any scratch org that is still active based on a previous commit on the pull request, a SOQL query is triggered on the Scratch info object to fetch details of an existing scratch org available on the pull request**    
+1. **To delete any scratch org that is still active based on a previous commit on the pull request, a SOQL query is triggered on the Scratch info object to fetch details of an existing scratch org available on the pull request**    
 
 ![](../../.gitbook/assets/1543198140998.png)
 
-3. **Submit the URL to as a Github status, we used the Github status API and  a python script for doing it.**
+1. **Submit the URL to as a Github status, we used the Github status API and  a python script for doing it.**
 
 ![](../../.gitbook/assets/1543198292613.png)
 
