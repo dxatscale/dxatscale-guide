@@ -328,9 +328,12 @@ Cleaning CI tagged pools daily.
 
 Metrics should be a key part of your DevOps process. It is through these metrics, one can drive continuous improvement of your delivery process.
 
-The dxatscale-template includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics.  Integration and setup of this is available in the Getting Started section. 
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics.  Integration and setup of this is available in the Getting Started section. 
 
-The following variables 
+The following variables are required to be setup in your project variables to push the metrics to New Relic. 
+
+* SFPOWERSCRIPTS\_NEWRELIC _\(Optional\)_
+* SFPOWERSCRIPTS\_NEWRELIC\_API\_KEY _\(Optional\)_
 
 Read more about Dashboards and Metrics [here](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards).
 
