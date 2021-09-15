@@ -8,7 +8,7 @@ All GitHub actions pipelines are located `YOUR_REPO/.azure-pipelines/`
 
 ### Environment Operations Pipelines
 
-#### Replenish CI Pools - Auto Triggered \| `env-operations-prepare-ci-pool.yml`
+#### Replenish CI Pools - Auto Triggered \| `env-operations/prepare-ci-pool.yml`
 
 This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your CI pipelines, which include managed packages as well as packages in your repository. 
 
@@ -18,7 +18,7 @@ Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.d
 sfdx sfpowerscripts:orchestrator:prepare --help
 ```
 
-#### Replenish DEV Pools - Auto Triggered \| `env-operations-prepare-dev-pool.yml`
+#### Replenish DEV Pools - Auto Triggered \| `env-operations/prepare-dev-pool.yml`
 
 This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your developers to work on their own scratch org, which include managed packages as well as packages in your repository. 
 
@@ -34,7 +34,7 @@ In order to fetch a scratch org to work on using the sfpowerscripts pool command
 sfdx sfpowerscripts:orchestrator:prepare --help
 ```
 
-#### Scratch Org Pool Cleaner - Auto Scheduled \| `env-operations-pool-cleaner.yml`
+#### Scratch Org Pool Cleaner - Auto Scheduled \| `env-operations/pool-cleaner.yml`
 
 The pool cleaner pipelines trigger on a daily schedule at 11.00 pm; clean out unused scratch orgs from both CI and Dev Pools, allowing a fresh pool of prebuilt scratch orgs to be created for the following day.
 
@@ -44,7 +44,7 @@ Utilizing sfpowerscripts pool command [delete](https://sfpowerscripts.dxatscale.
 sfdx sfpowerscripts:pool:delete --help
 ```
 
-#### Scratch Org Recycler - User Triggered \| `env-operations-delete-scratchorg-pool.yml`
+#### Scratch Org Recycler - User Triggered \| `env-operations/delete-scratchorg-pool.yml`
 
 This pipeline is manually triggered by the user where you are wanting to delete a particular scratch org pool. A typical use case would be when a developer can't access the scratch org.
 
@@ -52,7 +52,7 @@ This pipeline is manually triggered by the user where you are wanting to delete 
 sfdx sfpowerscripts:pool:org:delete --help
 ```
 
-#### Publish Metrics for Scratch Org Pools \| `env-operations-publish-pool-metrics.yml`
+#### Publish Metrics for Scratch Org Pools \| `env-operations/publish-pool-metrics.yml`
 
 This pipeline publishes metrics about the scratch orgs to a Monitoring tool every 30 minutes.
 
