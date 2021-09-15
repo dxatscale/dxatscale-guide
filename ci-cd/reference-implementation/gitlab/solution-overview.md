@@ -311,7 +311,7 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
 
 Development and Release
 
-The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the sfpowerscripts orchestrator and sfpowerkit package commands in the script to structure your CI/CD process.
+The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the sfpowerscripts orchestrator and sfpowerkit package commands to structure your CI/CD process.
 
 ![](../../../.gitbook/assets/image%20%2839%29.png)
 
