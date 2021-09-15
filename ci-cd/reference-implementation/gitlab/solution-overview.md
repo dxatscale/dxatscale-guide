@@ -140,9 +140,15 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 ## Security Design
 
-There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  
+There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  The following section will walk you through some considerations as you use the template and customize your pipelines for deployments.
 
-### Project Access 
+### General Settings
+
+* [Project and group visibility](https://docs.gitlab.com/ee/public_access/public_access.html#project-and-group-visibility)
+  * GitLab allows **Owners** to set a project’s or group’s visibility as **Public**, **Internal**, **Private.**  For most implementations, **Private** should be the preferred option.
+* \*\*\*\*
+
+
 
 
 
