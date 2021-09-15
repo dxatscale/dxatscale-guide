@@ -179,8 +179,6 @@ Once you have cloned your ADO repo to your local machine. copy all the files fro
 
 Once you have done so commit your changes and it should reflect on ADO
 
-
-
 ### B. Setup your Secure files
 
 Follow instructions in[ 2.F](../github/getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment.
@@ -201,23 +199,41 @@ Upload your `authfile.json` for **devhub**, within the pipelines, you will notic
       displayName: 'Authenticate DevHub'
 ```
 
-
-
-Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and paste the `sfdxAuthUrl` from `authfile.json`
-
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.45.34-am.png)
-
 {% hint style="info" %}
 Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL
 {% endhint %}
 
-### C. Test your pipelines
+### C. Import your pipelines
 
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
+Make your way to **Pipelines** and click on **Pipelines**
+
+![](../../../.gitbook/assets/screen-shot-2021-09-15-at-9.44.36-am.png)
+
+Click on **Create Pipeline** and select **Azure Repos Git**
+
+![](../../../.gitbook/assets/screen-shot-2021-09-15-at-9.59.43-am.png)
+
+Click on **Existing Azure Pipelines YAML file**
+
+![](../../../.gitbook/assets/screen-shot-2021-09-15-at-10.08.54-am.png)
+
+On the right side of the screen, you will see **Select an existing YAML file** on Path select the `/.azure-pipelines/env-operations/prepare-ci-pool.yml`
+
+![](../../../.gitbook/assets/screen-shot-2021-09-15-at-10.09.51-am.png)
+
+Click on the Dropdown button on **Run** and click **Save**
+
+![](../../../.gitbook/assets/screen-shot-2021-09-15-at-10.12.52-am.png)
+
+{% hint style="info" %}
+Repeat this step for all pipelines in the `.azure-pipelines` folder.
+{% endhint %}
+
+### D. Test your pipelines
 
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages.  If this stage is successful, you can proceed to step 5
 
-### D. Configure Scratch Org Pools
+### E. Configure Scratch Org Pools
 
 In your repo, there is a folder called config, in that folder, you can see there are two JSON files
 
@@ -288,7 +304,7 @@ Update the "**scope**" value for "**npm**" from the default "**@org-name**" to y
 To get an in-depth understanding of the options available to you for configuration refer to this link [here](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration).
 {% endhint %}
 
-### E. Scratch Org Definition File
+### F. Scratch Org Definition File
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
@@ -325,7 +341,7 @@ Customize the provided scratch org definition file for your use case and save an
 
 ```
 
-### F. Project Configuration File
+### G. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
@@ -342,10 +358,10 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
 
 {% hint style="info" %}
-Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in ADO.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
 {% endhint %}
 
-### G. Release Definition File
+### H. Release Definition File
 
 Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
 
@@ -365,16 +381,16 @@ changelog:
 ```
 
 {% hint style="info" %}
-The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
-### H. Change Log 
+### I. Change Log 
 
 [Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful.  This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-### I. Build Initial Package Artifacts
+### J. Build Initial Package Artifacts
 
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
 
@@ -382,7 +398,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 2. Navigate to **Package & Registries &gt; Package Registry**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-### J. Fetch Provisioned Developer Scratch Org from Pool
+### K. Fetch Provisioned Developer Scratch Org from Pool
 
 Once the **schedule-prepare-dev-pool** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
@@ -401,16 +417,16 @@ sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZ
 status       Assigned
 ```
 
-### K. Pull Requests and Merge to Main
+### L. Pull Requests and Merge to Main
 
 1. Make changes
 2. Commit
 3. Raise a Merge Request
 4. Confirm validation pipeline passes
 
-### L. Add New Packages
+### M. Add New Packages
 
 1. Update project configuration files
-2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
+2. Update **validate.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
 3. Save and validate
 
