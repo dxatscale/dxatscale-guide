@@ -340,9 +340,9 @@ There are additional configurations for the GitLab Project that should be review
 DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-model/branching-conventions#commit-message) when merging to provide succinct release notes during change log creation.
 {% endhint %}
 
-* [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) ****- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the number of approvals required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
-* Protected Branches
-
+* [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) ****- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the **number of approvals** required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
+* [Protected Branches](https://docs.gitlab.com/ee/user/project/protected_branches.html#protected-branches) -  At a minimum, the **main** branch should be protected and certain releases branches created from main should be candidates for protection.
+* 
 
 
 * split clean pools to separate stages
