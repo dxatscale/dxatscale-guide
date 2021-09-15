@@ -332,8 +332,6 @@ Publish StatsD Metrics.
 
 There are additional configurations for the GitLab Project that should be reviewed and configured to ensure it aligns with your internal IT policies.
 
-### General Settings
-
 * [Merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/) - Merge method, merge options, merge checks, merge suggestions should be reviewed to determine preferred approaches such as **merge commits**, **deleting source branches** by default option, and allowing **squash commits** when merging. 
 
 {% hint style="info" %}
