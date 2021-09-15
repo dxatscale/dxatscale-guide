@@ -395,7 +395,7 @@ The release stage in the **release.yml** file across the defined environments is
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
 
 1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
-2. Navigate to **Package & Registries &gt; Package Registry**
+2. Navigate to **Artifacts**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
 ### K. Fetch Provisioned Developer Scratch Org from Pool
