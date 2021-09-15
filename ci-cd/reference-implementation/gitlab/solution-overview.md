@@ -395,12 +395,18 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
 
 ### Scheduled and Manual Jobs
 
+The diagram below highlights the [dxatscale-template](https://github.com/dxatscale/dxatscale-template) recommended scheduled jobs and manual job for Scratch Org Pool Management.  The stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml uses the sfpowerscripts prepare commands to build scratch org pools for Developer and CI Scratch Orgs.  Additional schedule job for publishing metrics to your dashboard platform is provided as well.  
+
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
 | Type | Stage | Job | Command | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| Scheduled | Prepare | prepare-ci-pool | `orchestrator:prepare` |  |
-| Scheduled |  |  |  |  |
+| Scheduled | Prepare | prepare-ci-pool | [orchestrator:prepare](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorprepare) | Prepares pool of CI Scratch Orgs |
+| Scheduled | Prepare | prepare-dev-pool | [orchestrator:prepare](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorprepare) | Prepares pool of Developer Scratch Orgs |
+| Scheduled | Clean | clean-ci-pool | [pool:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified tagged CI Scratch Org Pool |
+| Scheduled | Clean | clean-dev-pool | [pool:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified tagged Developer Scratch Org Pool |
+| Scheduled | Report | report-so-count | pool:metrics:publish | Publish metrics to Dashboard |
+| Manual | Delete | delete-fetched-so | [pool:org:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified scratch org from provided user name |
 
 Target Task Name is .... 
 
