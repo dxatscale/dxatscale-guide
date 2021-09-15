@@ -328,11 +328,11 @@ Cleaning CI tagged pools daily.
 
 Publish StatsD Metrics.
 
-
-
 ## Configuration Options
 
 There are additional configurations for the GitLab Project that should be reviewed and configured to ensure it aligns with your internal IT policies.
+
+### General Settings
 
 * [Merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/) - Merge method, merge options, merge checks, merge suggestions should be reviewed to determine preferred approaches such as **merge commits**, **deleting source branches** by default option, and allowing **squash commits** when merging. 
 
@@ -341,16 +341,17 @@ DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-mod
 {% endhint %}
 
 * [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) ****- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the **number of approvals** required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
-* [Protected Branches](https://docs.gitlab.com/ee/user/project/protected_branches.html#protected-branches) -  At a minimum, the **main** branch should be protected and certain releases branches created from main should be candidates for protection.
-* 
+* [Repository Settings](https://docs.gitlab.com/ee/user/project/repository/#repository) - A number of configurations for the repository can be reviewed and change such as default branches, [push rules](https://docs.gitlab.com/ee/push_rules/push_rules.html), [protected branches](https://docs.gitlab.com/ee/user/project/protected_branches.html) and [protected tags](https://docs.gitlab.com/ee/user/project/protected_tags.html).  Limit the restrictions where possible to not create bottlenecks for the pipeline and developers.  
+* [CI/CD Settings](https://docs.gitlab.com/ee/ci/) - [Runners](https://docs.gitlab.com/runner/) can be configured to be shared or specified.  [Environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html) can be setup for  protection in the CI/CD.  
 
+{% hint style="info" %}
+[Releases](https://docs.gitlab.com/ee/user/project/releases/#releases) in GitLab are not used by the dxatscale-template as we leverage our own release management process through the sfpowerscripts orchestrator and package registry.  We will revisit the potential use of this feature in GitLab in the future if there is a need.
+{% endhint %}
+
+### 
 
 * split clean pools to separate stages
-* approvals
-* protected branches
-* squash commits
-* environment configurations
-* not using the release option in GitLab
+* * not using the release option in GitLab
 
 ## Design Considerations
 
