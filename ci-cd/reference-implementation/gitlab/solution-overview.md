@@ -309,16 +309,89 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
 
 ### Triggered Jobs
 
-Development and Release
-
-The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the sfpowerscripts orchestrator and sfpowerkit package commands to structure your CI/CD process.
+The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process.  The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
 
 ![](../../../.gitbook/assets/image%20%2839%29.png)
 
-| Type | Stage | Job | Command | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Merge Request | Analyze | analyze-pmd |  | PMD Code Validation |
-| Merge |  |  |  |  |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Stage</th>
+      <th style="text-align:left">Job</th>
+      <th style="text-align:left">Command</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Analyze</td>
+      <td style="text-align:left">analyze-pmd</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsanalyzepmd">analyze:pmd</a> 
+      </td>
+      <td style="text-align:left">Static code analysis <a href="https://pmd.github.io/latest/pmd_rules_apex.html">PMD</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Validate</td>
+      <td style="text-align:left">validate-package</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid">package:valid</a>
+      </td>
+      <td style="text-align:left">Validates against <a href="https://developer.salesforce.com/docs/metadata-coverage/">metadata coverage</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Validate</td>
+      <td style="text-align:left">validate-source</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorvalidate">orchestrator:validate</a>
+      </td>
+      <td style="text-align:left">Validate deployment against scratch org</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Quickbuild</td>
+      <td style="text-align:left">quickbuild</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorquickbuild">orchestrator:quickbuild</a>
+      </td>
+      <td style="text-align:left">Parallel build of packages without dependencies and code coverage</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Deploy</td>
+      <td style="text-align:left">deploy</td>
+      <td style="text-align:left">
+        <p><a href="https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagedependenciesinstall">package:dependencies:install</a>
+        </p>
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratordeploy">orchestrator:deploy</a>
+        </p>
+      </td>
+      <td style="text-align:left">Install package dependencies and deploy packages</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Build</td>
+      <td style="text-align:left">build</td>
+      <td style="text-align:left">
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorbuild">orchestrator:build</a>
+        </p>
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorpublish">orchestrator:publish</a>
+        </p>
+      </td>
+      <td style="text-align:left">Build all packages and publish to artifact registry</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Manual</td>
+      <td style="text-align:left">Release</td>
+      <td style="text-align:left">ST, SIT, UAT, PROD</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorrelease">orchestrator:release</a>
+      </td>
+      <td style="text-align:left">Release to Salesforce Org based on YAML file</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Scheduled and Manual Jobs
 
