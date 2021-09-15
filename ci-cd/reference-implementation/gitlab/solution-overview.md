@@ -408,18 +408,6 @@ The diagram below highlights the [dxatscale-template](https://github.com/dxatsca
 | Scheduled | Report | report-so-count | pool:metrics:publish | Publish metrics to Dashboard |
 | Manual | Delete | delete-fetched-so | [pool:org:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified scratch org from provided user name |
 
-Target Task Name is .... 
-
-| TARGETTASKNAME | Description |
-| :--- | :--- |
-| schedule-prepare-ci-pool |  |
-| schedule-prepare-dev-pool |  |
-| schedule-clean-pool |  |
-| schedule-report-so-pool |  |
-| manual-delete-fetched-so |  |
-
-Cleaning CI tagged pools daily.  
-
 ## Dashboard Metrics
 
 Metrics should be a key part of your DevOps process. It is through these metrics, one can drive continuous improvement of your delivery process.
