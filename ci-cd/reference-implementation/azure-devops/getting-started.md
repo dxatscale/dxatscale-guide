@@ -400,7 +400,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 
 ### K. Fetch Provisioned Developer Scratch Org from Pool
 
-Once the **schedule-prepare-dev-pool** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
+Once the **prepare-dev-pool.yml** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
 ```bash
 sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
