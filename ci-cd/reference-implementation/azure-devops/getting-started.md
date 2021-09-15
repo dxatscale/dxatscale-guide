@@ -200,7 +200,7 @@ Upload your `authfile.json` for **devhub**, within the pipelines, you will notic
 ```
 
 {% hint style="info" %}
-Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL
+Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL and prod-authfile.json for your authURL file
 {% endhint %}
 
 ### C. Import your pipelines
