@@ -197,8 +197,9 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
         <p>Custom and Predefined variables are used in the .gitlab-ci.yml during
           pipeline execution.</p>
         <p>
-          <br />Custom Project Variables
-          <br />
+          <br /><a href="https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project">Custom Project Variables</a>
+          <br
+          />
         </p>
         <ul>
           <li>DEVHUB_ALIAS</li>
@@ -222,7 +223,9 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
           <li>SFPOWERSCRIPTS_NEWRELIC_API_KEY <em>(Optional)</em>
           </li>
         </ul>
-        <p>Predefined Variables</p>
+        <p><a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html">Predefined Variables</a>
+        </p>
+        <p></p>
         <ul>
           <li>CI_PROJECT_ID</li>
           <li>CI_SERVER_HOST</li>
@@ -233,7 +236,9 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
           <li>CI_PIPELINE_ID</li>
           <li></li>
         </ul>
-        <p>.gitlab-ci.yml Variables</p>
+        <p><a href="https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file">.gitlab-ci.yml Variables</a>
+        </p>
+        <p></p>
         <ul>
           <li>BUILD_BRANCH</li>
           <li>SCRATCH_ORG_USERNAME</li>
