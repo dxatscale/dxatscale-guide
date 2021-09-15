@@ -326,7 +326,13 @@ Cleaning CI tagged pools daily.
 
 ## Dashboard Metrics
 
-Publish StatsD Metrics.
+Metrics should be a key part of your DevOps process. It is through these metrics, one can drive continuous improvement of your delivery process.
+
+The dxatscale-template includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics.  Integration and setup of this is available in the Getting Started section. 
+
+The following variables 
+
+Read more about Dashboards and Metrics [here](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards).
 
 ## Configuration Options
 
@@ -390,6 +396,7 @@ For GitLab SaaS hosting, Project Access Tokens are only available for Premium an
 * [DX@Scale GitBook](https://docs.dxatscale.io/)
 * [SFPowerscripts GitBook](https://sfpowerscripts.dxatscale.io/)
 * [Using external secrets in CI](https://docs.gitlab.com/ee/ci/secrets/)
+* [StatsD](https://github.com/statsd/statsd)
 
 ## Tutorials
 
