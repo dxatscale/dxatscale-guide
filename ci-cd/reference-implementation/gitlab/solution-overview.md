@@ -140,39 +140,14 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 ## Security Design
 
-There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  The following section will walk you through some considerations as you use the template and customize your pipelines for deployments.
+There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  The following list will walk you through some considerations as you use the template and customize your pipelines for deployments.
 
-### General Settings
-
-* [Project and group visibility](https://docs.gitlab.com/ee/public_access/public_access.html#project-and-group-visibility)
-  * GitLab allows **Owners** to set a project’s or group’s visibility as **Public**, **Internal**, **Private.**  For most implementations, **Private** should be the preferred option.
-* \*\*\*\*
-
-
-
-
-
-### Roles
-
-Maintainer
-
-Branch Protection
-
-Masking Variables
-
-Groups 
-
-### Authentication
-
-sfauthurl
-
-### Variable Files
-
-To keep a CI/CD variable secret, put it in the project settings, not in the .gitlab-ci.yml file.
-
-
-
-
+* [Project and group visibility](https://docs.gitlab.com/ee/public_access/public_access.html#project-and-group-visibility) - GitLab allows **Owners** to set a project’s or group’s visibility as **Public**, **Internal**, **Private.**  For most implementations, **Private** should be the preferred option.
+* [Merge Request Approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) - Approval rules can be defined for merge requests to limit who can merge to certain branches
+* [Protected Branches](https://docs.gitlab.com/ee/user/project/protected_branches.html#protected-branches) - Permissions are fundamentally defined around the idea of having read or write permission to the repository and branches. To impose further restrictions on certain branches, they can be protected.  At a minimum, the **main branch** should be protected and certain **releases branches** created from main should be candidates for protection.
+* [Permission and Roles](https://docs.gitlab.com/ee/user/permissions.html) - Users have different abilities depending on the role they have in a particular group or project.  Review the structure of your team and confirm who to designate as **Maintainers** and who are primary **Developers**.
+* [CI/CD Variable Types](https://docs.gitlab.com/ee/ci/variables/#cicd-variable-types) - Project, group and instance CI/CD variables can be **Variable** or **File** type. File type CI/CD variables are used in the template for storing [sfdxurl](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) file as input for authentication to Salesforce instances.  **Protect variable** and **Mask variable** should be reviewed for each variable defined in the project to ensure that variables masked in job logs and can only run on protected branches or tags.
+* [Using external secrets in CI](https://docs.gitlab.com/ee/ci/secrets/) - Secrets represent sensitive information your CI job needs to complete work. This sensitive information can be items like API tokens, database credentials, or private keys. Secrets are sourced from your secrets provider.
 
 ## Configuration File
 
@@ -358,13 +333,16 @@ There are additional configurations for the GitLab Project that should be review
 
 ### General Settings
 
-* **Merge Requests** - Merge method, merge options, merge checks, merge suggestions should be reviewed to determine preferred approaches such as **merge commits**, **deleting source branches** by default option, and allowing **squash commits** when merging. 
+* [Merge requests](https://docs.gitlab.com/ee/user/project/merge_requests/) - Merge method, merge options, merge checks, merge suggestions should be reviewed to determine preferred approaches such as **merge commits**, **deleting source branches** by default option, and allowing **squash commits** when merging. 
 
 {% hint style="info" %}
 DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-model/branching-conventions#commit-message) when merging to provide succinct release notes during change log creation.
 {% endhint %}
 
- 
+* [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) ****- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the number of approvals required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
+* Protected Branches
+
+
 
 * split clean pools to separate stages
 * approvals
@@ -412,6 +390,7 @@ The following are additional design configurations to consider when using this t
 * [YAML: YAML Ain't Markup Language](https://yaml.org/)
 * [DX@Scale GitBook](https://docs.dxatscale.io/)
 * [SFPowerscripts GitBook](https://sfpowerscripts.dxatscale.io/)
+* [Using external secrets in CI](https://docs.gitlab.com/ee/ci/secrets/)
 
 ## Tutorials
 
