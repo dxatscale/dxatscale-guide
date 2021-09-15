@@ -360,15 +360,16 @@ The following are additional design configurations to consider when using this t
 7. [Release Gates Approval Process](https://docs.gitlab.com/ee/development/approval_rules.html#approval-rules-development-guide)
 8. [Operational Dashboard Tooling](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards)
 9. [ALM Integration](https://docs.gitlab.com/ee/user/project/integrations/overview.html#integrations) vs. [GitLab Issue Management Tool](https://docs.gitlab.com/ee/topics/plan_and_track.html)
-10. Protected Branches
-11. Merge Request Rules \(eg. Squash commits when merging\)
-12. Merge request \(MR\) approvals
-13. Requirements for Access Tokens and SSH Keys
-14. Security Design - Roles Assignment to Users
-15. Organization Setup, Groups, Sub-Groups
-16. Naming Conventions for Repositories, Environments
-17. Automated Testing Enhancements
-18. Dynamic Code Testing
+10. [Protected Branches](https://docs.gitlab.com/ee/user/project/protected_branches.html)
+11. [Merge Request Rules](https://docs.gitlab.com/ee/user/project/merge_requests/) \(eg. Squash commits when merging\)
+12. [Merge request \(MR\) approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules)
+13. Security Requirements - [Access Tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#personal-access-tokens) and [SSH Keys](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys)
+14. Security Design - [Permissions and Roles](https://docs.gitlab.com/ee/user/permissions.html) Assignment to Users
+15. [Organization Setup, Groups, Sub-Groups](https://docs.gitlab.com/ee/topics/set_up_organization.html)
+16. Naming Conventions for [Repositories](https://docs.gitlab.com/ee/user/project/repository/) and [Environments](https://docs.gitlab.com/ee/ci/environments/)
+17. Automated Testing Integration
+18. Static Code Analysis Integration
+19. Dynamic Code Testing Integration
 
 ## FAQs
 
