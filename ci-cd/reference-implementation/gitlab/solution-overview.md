@@ -234,7 +234,6 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
           <li>CI_PIPELINE_SOURCE</li>
           <li>CI_COMMIT_BRANCH</li>
           <li>CI_PIPELINE_ID</li>
-          <li></li>
         </ul>
         <p><a href="https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file">.gitlab-ci.yml Variables</a>
         </p>
