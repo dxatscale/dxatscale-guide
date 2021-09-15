@@ -250,42 +250,57 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
     <tr>
       <td style="text-align:left"><b>DevHub Authentication</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left"><a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm">SFDX auth URL</a> is
+        used to authorize the DevHub. Subsequent scripts in the pipeline jobs will
+        use the DevHub alias during the deployment lifecycle. The account used
+        in this authentication should be a dedicated CI/CD service account.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>NPM Configuration</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Setup of the <a href="https://docs.npmjs.com/cli/v7/configuring-npm/npmrc">npm config file</a> used
+        to allow publishing and sharing packages in the Project Package Registry
+        is generated here using the NPM Scope defined in the Project Variables
+        and predefined variables.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Git Repo Configuration</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">In order to push git tags and change logs to the remote repository for
+        the project from the Runners, the project access token is used here to
+        initialize the remote url.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Stages</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Predefined stages for the deployment lifecycle for DX@Scale is baseline
+        here from validate to release and preparing and cleaning scratch org pools.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Anchors</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Reusable rules are created here based on merge requests, merges, and manual
+        executions of the pipeline to be later referenced in jobs for execution.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Trigger Job(s)</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Each job in the pipeline is controlled by rules defined earlier by anchors
+        to be executed in each stage and leveraging sfpowerscripts orchestrator
+        commands.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Schedule Jobs(s)</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Scheduled jobs are filtered in the configuration file using the TARGETTASKNAME
+        variable and only executed during their defined interval pattern.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Manual Jobs(s)</b>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Manually triggered jobs from the pipeline will be filtered. Deployments
+        to environments once the artifacts have been successfully published are
+        controlled by manual triggers by the user.</td>
     </tr>
   </tbody>
 </table>
