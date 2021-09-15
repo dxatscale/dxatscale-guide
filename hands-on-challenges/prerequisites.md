@@ -40,6 +40,10 @@ Follow Instructions on installing GIT
 * Please note this hands on will not cover GIT and GIT experience is a pre-requisite
 * Ensure you have setup and configured your SSH keys as well
 
+## Install NodeJS
+
+Follow instructions on installing NodeJS LTS [https://nodejs.org/en/](https://nodejs.org/en/)
+
 ## Install sfpowerkit <a id="user-content-4.-install-sfpowerkit"></a>
 
 Follow Instructions on installing sfpowerkit  
