@@ -12,7 +12,7 @@ All GitHub actions pipelines are located `YOUR_REPO/.github/workflows/`
 
 #### Replenish CI Pools - Auto Triggered \| `env-operations-prepare-ci-pool.yml`
 
-This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your CI pipelines, which include managed packages as well as packages in your repository. 
+This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your CI pipelines, which include managed packages as well as packages in your repository.
 
 Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.dxatscale.io/commands/prepare).
 
@@ -22,7 +22,7 @@ sfdx sfpowerscripts:orchestrator:prepare --help
 
 #### Replenish DEV Pools - Auto Triggered \| `env-operations-prepare-dev-pool.yml`
 
-This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your developers to work on their own scratch org, which include managed packages as well as packages in your repository. 
+This pipeline triggers on a daily schedule at midnight, and it will build a pool of prebuilt scratch orgs for your developers to work on their own scratch org, which include managed packages as well as packages in your repository.
 
 Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.dxatscale.io/commands/prepare).
 
@@ -122,11 +122,11 @@ sfdx sfpowerscripts:orchestrator:publish --help
 
 #### CD Pipeline - User Triggered \| `release.yml`
 
-This CD pipeline, Release Packages, must be manually triggered by the user. It triggers the pipeline for release, orchestrating fetching artifacts from an artifact repository, deploying to an environment including external dependencies, and generating a changelog driven by a release definition file.  
+This CD pipeline, Release Packages, must be manually triggered by the user. It triggers the pipeline for release, orchestrating fetching artifacts from an artifact repository, deploying to an environment including external dependencies, and generating a changelog driven by a release definition file.
 
-Within release.yml this must be manually triggered: 
+Within release.yml this must be manually triggered:
 
-Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published. 
+Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published.
 
 ```bash
 sfdx sfpowerscripts:orchestrator:release --help

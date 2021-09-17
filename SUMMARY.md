@@ -41,7 +41,6 @@
     * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
 
-
 ## Environment Management <a id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
