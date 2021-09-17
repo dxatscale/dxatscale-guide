@@ -17,6 +17,6 @@ The type of org specific metadata include
 * [WebLinks](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_weblink.htm)
 
 {% hint style="info" %}
-**sfpowerscripts** provide a concept of an [aliasified](https://dxatscale.gitbook.io/sfpowerscripts/faq/source-packages#what-are-my-options-with-source-packages) package, where a source package will have folders that match the alias of the target org where the metadata is getting deployed. The components _\*\*_have to be duplicated across each of the environments with settings
+**sfpowerscripts** provide a concept of an [aliasified](https://dxatscale.gitbook.io/sfpowerscripts/faq/source-packages#what-are-my-options-with-source-packages) package, where a source package will have folders that match the alias of the target org where the metadata is getting deployed. The components \_\*\*\_have to be duplicated across each of the environments with settings
 {% endhint %}
 

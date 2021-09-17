@@ -1,16 +1,14 @@
 # Getting Started
 
-
-
-The following getting started guide will enable you to configure and setup CI/CD using Azure DevOps and DX@Scale for Salesforce.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and Azure DevOps using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
+The following getting started guide will enable you to configure and setup CI/CD using Azure DevOps and DX@Scale for Salesforce. Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and Azure DevOps using the [template](https://github.com/dxatscale/dxatscale-template) provided. Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
 As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system \(eg. **Mac OS, Windows, Linux**\), there may be some variation in the commands and outputs below on your terminal window.
 
-###  Git
+### Git
 
 ```bash
 git version
@@ -75,7 +73,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### C. Authenticate to DevHub via CLI
 
-Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
 
 ```bash
 sfdx auth:web:login -a DevHub -r https://login.salesforce.com
@@ -99,7 +97,7 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ### F. Authenticate to Lower Sandbox Environments via CLI
 
-The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.  
+The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
 
 * SHAREDDEV \(Shared Development\)
 * ST \(System Test\)
@@ -111,7 +109,7 @@ The template assumes you are following the environment strategy defined in our D
 Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
 {% endhint %}
 
-Additional environments and customization can be made once you are familiar with the scripts.  
+Additional environments and customization can be made once you are familiar with the scripts.
 
 {% tabs %}
 {% tab title="Sandbox" %}
@@ -121,7 +119,7 @@ sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 {% endtab %}
 
 {% tab title="Production" %}
-```
+```text
 sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 ```
 {% endtab %}
@@ -129,7 +127,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### G. Generate SFDX auth URL for Pipeline Authentication
 
-In order for the GitHub pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm).  For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
+In order for the Azure DevOps pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
@@ -150,12 +148,10 @@ cat authFile.json
 ```
 
 {% hint style="info" %}
-Save only the following part of the **sfdxAuthUrl** for each environment  
-  
+Save only the following part of the **sfdxAuthUrl** for each environment
+
 `force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com`
 {% endhint %}
-
-
 
 ## 3. Azure DevOps
 
@@ -167,7 +163,7 @@ Click on **Code** &gt;&gt; **Download ZIP**
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.06-am.png)
 
-Back to your ADO account click on **New organization**; ****once you have created your organisation create a project to get started. ****
+Back to your ADO account click on **New organization**; **once you have created your organisation create a project to get started.** 
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-14-at-2.43.40-pm.png)
 
@@ -200,7 +196,7 @@ Upload your `authfile.json` for **devhub**, within the pipelines, you will notic
 ```
 
 {% hint style="info" %}
-Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX_\__AUTH\_URL and prod-authfile.json for your authURL file
+Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_\_\_AUTH\_URL and prod-authfile.json for your authURL file
 {% endhint %}
 
 ### C. Import your pipelines
@@ -231,7 +227,7 @@ Repeat this step for all pipelines in the `.azure-pipelines` folder.
 
 ### D. Test your pipelines
 
-It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages.  If this stage is successful, you can proceed to step 5
+It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages. If this stage is successful, you can proceed to step 5
 
 ### E. Configure Scratch Org Pools
 
@@ -267,7 +263,7 @@ Let's get started by looking at CI Pool Definition:
         "npmtag": "main"
       }
     }
- 
+
  }
 ```
 
@@ -292,12 +288,12 @@ Let's look at DEV Pool Definition now:
           "npmtag": "main"
         }
       }
-   
+
 }
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section.  \(eg. **@dxatscale-poc**\)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. \(eg. **@dxatscale-poc**\)
 {% endhint %}
 
 {% hint style="info" %}
@@ -308,7 +304,7 @@ To get an in-depth understanding of the options available to you for configurati
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
-Customize the provided scratch org definition file for your use case and save and commit the file to the repository.  If you want to use the file as is to test, **no action** is required.
+Customize the provided scratch org definition file for your use case and save and commit the file to the repository. If you want to use the file as is to test, **no action** is required.
 
 ```bash
 {
@@ -338,14 +334,13 @@ Customize the provided scratch org definition file for your use case and save an
         }
     }
 }
-
 ```
 
 ### G. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
-The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization. 
+The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization.
 
 | Package | Description |
 | :--- | :--- |
@@ -358,14 +353,14 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
 
 {% hint style="info" %}
-Updates and additions to the project configuration file can be done gradually as you test your pipeline in ADO.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example. 
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in ADO. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example.
 {% endhint %}
 
 ### H. Release Definition File
 
-Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
+Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file.
 
-The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments.  As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.   
+The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments. As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.
 
 ```bash
 release: "Release-1.0"
@@ -381,18 +376,18 @@ changelog:
 ```
 
 {% hint style="info" %}
-The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced. As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
-### I. Change Log 
+### I. Change Log
 
-[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful.  This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
+[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful. This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
 ### J. Build Initial Package Artifacts
 
-Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
+Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
 1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
 2. Navigate to **Artifacts**

@@ -22,12 +22,12 @@ The following list are prerequisite tools required to setup an end-to-end pipeli
 * [ ] ​[Visual Studio Code IDE](https://code.visualstudio.com/download)​
   * [ ] ​[Salesforce Extension Pack](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)​
   * [ ] _Optional Extensions_​
-    * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
-    * ​[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)​
-    * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
-    * [​Prettier - Code formatter​](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-    * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-    * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)​
+  * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow)
+  * ​[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)​
+  * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
+  * [​Prettier - Code formatter​](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+  * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)​
 * [ ] ​[git](https://git-scm.com/)
 * [ ] [npm​](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [ ] ​[Salesforce CLI](https://www.npmjs.com/package/sfdx-cli)​
@@ -40,8 +40,4 @@ The following list are prerequisite tools required to setup an end-to-end pipeli
 * ​[New Relic Account](https://newrelic.com/signup) _\(Optional\)_
 * [Data Dog Account](https://www.datadoghq.com/) \(Optional\)
 * [Other StatsD](https://github.com/statsd/statsd) Compatible Monitoring Platform _\(Optional\)_
-
-
-
-
 

@@ -1,14 +1,12 @@
 # Prerequisites
 
-
-
 The following lists of items are required to setup your end-to-end pipeline using [AzureDevOps](https://azure.microsoft.com/en-au/services/devops/#overview) and [Salesforce](https://www.salesforce.com/).‌
 
-#### DevOps Platform <a id="devops-platform"></a>
+## DevOps Platform <a id="devops-platform"></a>
 
 * [ ] ​[AzureDevOps Account](https://azure.microsoft.com/en-au/services/devops/#overview)
 
-#### Salesforce <a id="salesforce"></a>
+## Salesforce <a id="salesforce"></a>
 
 * [ ] ​[System Administrator Account](https://help.salesforce.com/s/articleView?id=How-to-change-Administrators-1327365222554&language=en_US&r=https%3A%2F%2Fwww.google.com%2F&type=1)​
 * [ ] ​[Enable DevHub](https://help.salesforce.com/s/articleView?id=sf.sfdx_setup_enable_devhub.htm&type=5)​
@@ -18,25 +16,25 @@ The following lists of items are required to setup your end-to-end pipeline usin
 * [ ] Install sfpowerscripts [Scratch Org Pooling](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) unlocked package in DevHub
 * [ ] Install [sfpowerscripts-artifact](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact) unlocked package in DevHub and existing lower existing sandboxes
 
-#### Developer Tools <a id="developer-tools"></a>
+## Developer Tools <a id="developer-tools"></a>
 
 * [ ] ​[Visual Studio Code IDE](https://code.visualstudio.com/download)​
   * [ ] ​[Salesforce Extension Pack](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)​
   * [ ] _Optional Extensions_​
-    * ​[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)​
-    * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
-    * ​[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)​
-    * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-    * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)
-    * [Azure Account​](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
-    * [Azure Pipelines](https://marketplace.visualstudio.com/items?itemName=ms-azure-devops.azure-pipelines)
+  * ​[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)​
+  * ​[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)​
+  * ​[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)​
+  * ​[Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+  * [Salesforce Package.xml Generator Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=VignaeshRamA.sfdx-package-xml-generator)
+  * [Azure Account​](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
+  * [Azure Pipelines](https://marketplace.visualstudio.com/items?itemName=ms-azure-devops.azure-pipelines)
 * [ ] ​[git](https://git-scm.com/)​
 * [ ] ​[Salesforce CLI](https://www.npmjs.com/package/sfdx-cli)​
 * [ ] ​[sfpowerkit Plugin](https://github.com/dxatscale/sfpowerkit)​
 * [ ] ​[sfpowerscripts Plugin](https://github.com/Accenture/sfpowerscripts)​
 * [ ] ​[SFDX-Data-Move-Utility \(SFDMU\) Plugin](https://github.com/forcedotcom/SFDX-Data-Move-Utility)​
 
-#### Dashboard Platform <a id="dashboard-platform"></a>
+## Dashboard Platform <a id="dashboard-platform"></a>
 
 * ​[New Relic Account](https://newrelic.com/signup) _\(Optional\)_
 * [Data Dog Account](https://www.datadoghq.com/) \(Optional\)

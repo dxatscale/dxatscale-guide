@@ -1,7 +1,5 @@
 # Azure DevOps
 
-
-
 ## Audience
 
 This guide is written to provide a top-down as well as bottom approach to how DX@Scale and Azure DevOps can be setup to enable CI/CD for your Salesforce Program. Depending on your role, you may choose to focus on some sections more than others.

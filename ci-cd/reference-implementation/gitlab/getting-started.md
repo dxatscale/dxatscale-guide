@@ -1,14 +1,14 @@
 # Getting Started
 
-The following getting started guide will enable you to configure and setup CI/CD using **GitLab** and **DX@Scale** for **Salesforce**.  Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab using the [template](https://github.com/dxatscale/dxatscale-template) provided.  Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
+The following getting started guide will enable you to configure and setup CI/CD using **GitLab** and **DX@Scale** for **Salesforce**. Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and GitLab using the [template](https://github.com/dxatscale/dxatscale-template) provided. Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
 As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
 
 ## 1. Developer Workstation
 
-In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly.  Depending on your operating system and shell system \(eg. **Mac OS, Windows, Linux**\), there may be some variations in the commands and outputs below on your terminal window.
+In order to successfully troubleshoot and interact with GitLab and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system and shell system \(eg. **Mac OS, Windows, Linux**\), there may be some variations in the commands and outputs below on your terminal window.
 
-###  Git
+### Git
 
 ```bash
 git version
@@ -73,7 +73,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ### C. Create Service Account for DevOps
 
-For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470&type=1) to manage deployments to your Salesforce instance.  The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.  
+For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470&type=1) to manage deployments to your Salesforce instance. The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.
 
 1. Navigate to the **Setup** menu
 2. Go to **Users &gt; Users**
@@ -87,12 +87,12 @@ For auditing purposes, it is best practice to create a separate [service account
 ![](../../../.gitbook/assets/image%20%2845%29.png)
 
 {% hint style="info" %}
-Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486&type=1) of Salesforce has API Access.  It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
+Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
 {% endhint %}
 
 ### D. Authenticate to DevHub via CLI
 
-Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm).  The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
+Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use to create Unlock Packages and manage Scratch Orgs.
 
 ```bash
 sfdx auth:web:login -a DevHub -r https://login.salesforce.com
@@ -116,7 +116,7 @@ sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --security
 
 ### G. Authenticate to Lower Sandbox Environments via CLI
 
-The template assumes you are following the environment strategy defined in our DX@Scale Guide.  The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.  
+The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
 
 * SHAREDDEV \(Shared Development\)
 * ST \(System Test\)
@@ -128,7 +128,7 @@ The template assumes you are following the environment strategy defined in our D
 Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
 {% endhint %}
 
-Additional environments and customization can be made once you are familiar with the scripts.  
+Additional environments and customization can be made once you are familiar with the scripts.
 
 {% tabs %}
 {% tab title="Sandbox" %}
@@ -138,7 +138,7 @@ sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
 {% endtab %}
 
 {% tab title="Production" %}
-```
+```text
 sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 ```
 {% endtab %}
@@ -146,7 +146,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### H. Generate SFDX auth URL for Pipeline Authentication
 
-In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm).  For each environment, execute the following command on a previously authenticated environment and save the **sfdxAuthUrl** for use in future pipeline configuration steps.
+In order for the GitLab pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the **sfdxAuthUrl** for use in future pipeline configuration steps.
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
@@ -167,8 +167,8 @@ cat authFile.json
 ```
 
 {% hint style="info" %}
-Save only the following part of the **sfdxAuthUrl** for each environment  
-  
+Save only the following part of the **sfdxAuthUrl** for each environment
+
 `force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@dxatscale--shareddev.my.salesforce.com`
 {% endhint %}
 
@@ -212,7 +212,7 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ### C. Create Project Access Token
 
-[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository. 
+[Project access tokens](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) are similar to personal access tokens except they are attached to a project rather than a user. For the template, the Project Access Token is used to enable pushing git tags and change logs to the repository.
 
 {% hint style="info" %}
 Project Access Tokens are only supported on self-managed instances on Free tier and above and GitLab SaaS Premium and above.
@@ -232,7 +232,7 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 ### D. Create Project Variables
 
-[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines.  The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
+[Project Variables](https://docs.gitlab.com/ee/ci/variables/) are a type of environment variable that will be used to control the behaviour of jobs and pipelines. The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
 1. From the **Project Menu**, click on **Settings &gt; CI/CD**
 2. Scroll down to **Variables** and click on the **Expand** button
@@ -249,7 +249,7 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
-| Key | Value | Type |  Scope | Protect | Mask |
+| Key | Value | Type | Scope | Protect | Mask |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | DEVHUB\_ALIAS | devhub | Variable | All \(default\) | No | No |
 | DEVHUB\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | File | All \(default\) | No | Yes |
@@ -269,14 +269,14 @@ Repeat the steps above and create the following variables below using the sfdxAu
 ![Project Variables](../../../.gitbook/assets/image%20%2822%29.png)
 
 {% hint style="info" %}
-The NPM\_SCOPE variable should start with the @ character.  Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
+The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
 {% endhint %}
 
 ## 4. Repository
 
 ### A. Clone Template Repository
 
-The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) repository contains the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) configuration file for CI/CD jobs for DX@Scale.  It exists in the root of of the directory which is the default configuration for GitLab.  To start, clone the repository to your computer.  
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) repository contains the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) configuration file for CI/CD jobs for DX@Scale. It exists in the root of of the directory which is the default configuration for GitLab. To start, clone the repository to your computer.
 
 ```bash
 git clone https://github.com/dxatscale/dxatscale-template.git
@@ -298,12 +298,12 @@ git clone git@gitlab.com:groupname/dxatscale-poc.git
 
 ### C. Copy Template Contents to Project Folder
 
-There are a number of ways to copy the files over.  Some sample commands with the cp and rsync commands are provided below or alternatively, you can copy the files manually.
+There are a number of ways to copy the files over. Some sample commands with the cp and rsync commands are provided below or alternatively, you can copy the files manually.
 
 {% hint style="success" %}
-Ensure that you copy all hidden files/folders from the template **except** for the following folders **.git**, **.sfdx**, **.azure-pipelines**, **.github.**  These are specific to the template git repository and/or templates for other pipelines that DX@Scale supports. 
+Ensure that you copy all hidden files/folders from the template **except** for the following folders **.git**, **.sfdx**, **.azure-pipelines**, **.github.** These are specific to the template git repository and/or templates for other pipelines that DX@Scale supports.
 
-The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.forceignores**, and **.forceignore**.  The original **.git** from your project repository should be there.
+The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.forceignores**, and **.forceignore**. The original **.git** from your project repository should be there.
 {% endhint %}
 
 **Sample Commands**
@@ -317,7 +317,7 @@ cp -vR dxatscale-template dxatscale-poc
 {% endtab %}
 
 {% tab title="RSYNC" %}
-```
+```text
 cd dxatscale-template
 rsync -av dxatscale-template dxatscale-poc
 ```
@@ -328,10 +328,10 @@ rsync -av dxatscale-template dxatscale-poc
 
 ### D. Commit Changes to Repository
 
-Once the template files have been copied and verified, you can now stage, commit, and push your changes to the main branch.  This will baseline your code in the GitLab Project Remote Repository to get started.
+Once the template files have been copied and verified, you can now stage, commit, and push your changes to the main branch. This will baseline your code in the GitLab Project Remote Repository to get started.
 
 {% hint style="info" %}
-Add [**\[skip ci\]**](https://docs.gitlab.com/ee/ci/yaml/#skip-pipeline) to the commit message to ensure the pipeline does not trigger for the initial commit. 
+Add [**\[skip ci\]**](https://docs.gitlab.com/ee/ci/yaml/#skip-pipeline) to the commit message to ensure the pipeline does not trigger for the initial commit.
 {% endhint %}
 
 ```bash
@@ -356,13 +356,13 @@ Once the files have been committed, you can verify the files have been pushed th
 
 ## 5. GitLab: Part II
 
-In this section, we will review and optionally customize the configuration files in the default template, setup schedule jobs for Scratch Org Pool Creation, and test the pipelines to deploy across your environments using the Package Registry.  
+In this section, we will review and optionally customize the configuration files in the default template, setup schedule jobs for Scratch Org Pool Creation, and test the pipelines to deploy across your environments using the Package Registry.
 
 ### A. Scratch Org Definition File
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
-Customize the provided scratch org definition file for your use case and save and commit the file to repository.  If you want to use the file as is to test, **no action** is required.
+Customize the provided scratch org definition file for your use case and save and commit the file to repository. If you want to use the file as is to test, **no action** is required.
 
 ```bash
 {
@@ -392,12 +392,11 @@ Customize the provided scratch org definition file for your use case and save an
         }
     }
 }
-
 ```
 
 ### B. Scratch Org Pool Configuration Files
 
-The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts.  The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.  
+The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts. The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.
 
 Your Dev Hub org edition determines your scratch org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_editions_and_allocations.htm). These allocations determine how many scratch orgs you can create daily, and how many can be active at a given point.
 
@@ -409,7 +408,7 @@ Your Dev Hub org edition determines your scratch org [allocations](https://devel
 | Performance Edition | 100 | 200 |
 
 {% hint style="info" %}
-Depending on your Dev Hub licensing, there are limits on the number of active and daily scratch orgs you can create daily.  sfpowerscripts will take this in account if you specify the **maxAllocation** property to a number more than you are allocated by Salesforce.
+Depending on your Dev Hub licensing, there are limits on the number of active and daily scratch orgs you can create daily. sfpowerscripts will take this in account if you specify the **maxAllocation** property to a number more than you are allocated by Salesforce.
 {% endhint %}
 
 There are two configuration files defined in the template:
@@ -432,7 +431,7 @@ There are two configuration files defined in the template:
         "npmtag": "main"
       }
     }
- 
+
  }
 ```
 
@@ -457,19 +456,19 @@ There are two configuration files defined in the template:
           "npmtag": "main"
         }
       }
-   
+
 }
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section.  \(eg. **@dxatscale-poc**\)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. \(eg. **@dxatscale-poc**\)
 {% endhint %}
 
 ### C. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
-The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization. 
+The dxatscale-template [project configuration file](https://github.com/dxatscale/dxatscale-template/blob/main/sfdx-project.json) contains initial, pre-defined package directories based on our best practices for [repository structure](https://docs.dxatscale.io/scm/repository-structure) and modularization.
 
 | Package | Description |
 | :--- | :--- |
@@ -482,14 +481,14 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 | **src-temp** | This folder is marked as the default folder in sfdx-project.json. This is the landing folder for all metadata and this particular folder doesn't get deployed anywhere other than a developers scratch org. This place is utilized to decide where the new metadata should be placed into. |
 
 {% hint style="info" %}
-Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab.  **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example. 
+Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitLab. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing a AccountNumber field on the Account object as an example.
 {% endhint %}
 
 ### D. Release Definition File
 
-Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file. 
+Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file.
 
-The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments.  As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.   
+The dxatscale-template [release-1.0.yml](https://github.com/dxatscale/dxatscale-template/blob/main/releasedefinitions/release-1.0.yml) file defines the initial core package artifact to be deployed across environments. As you test out and add/modify existing packages, this file can be modified or a new release definition file can be created.
 
 ```bash
 release: "Release-1.0"
@@ -505,12 +504,12 @@ changelog:
 ```
 
 {% hint style="info" %}
-The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced.  As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
+The release stage in the **.gitlab-ci.yml** file across the defined environments is where the release definition file is referenced. As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
-### E. Change Log 
+### E. Change Log
 
-[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful.  This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
+[Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful. This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
@@ -518,7 +517,7 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 ### F. Build Initial Package Artifacts
 
-Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file.  In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry. 
+Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
 1. Commit changes to trigger pipeline \(eg. Edit **AccountNumber\_\_c** field description\)
 2. Navigate to **Package & Registries &gt; Package Registry**
@@ -543,7 +542,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 
 ![](../../../.gitbook/assets/image%20%2840%29.png)
 
-Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.  
+Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.
 
 | Description | Interval Pattern | Variable Key | Variable Value |
 | :--- | :--- | :--- | :--- |
@@ -553,14 +552,14 @@ Repeat the steps above for all the scheduled jobs below. Interval Pattern should
 | **schedule-report-so-pool** | 0 \* \* \* \* | TARGETTASKNAME | schedule-report-so-pool |
 
 {% hint style="info" %}
- **schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog.  If not, you can skip this configuration.
+**schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog. If not, you can skip this configuration.
 {% endhint %}
 
 ![](../../../.gitbook/assets/image%20%2831%29.png)
 
 Once all schedule jobs have been configured, you can trigger the **schedule-prepare-ci-pool** and **schedule-prepare-dev-pool** jobs manually by clicking on the **play button** for each job.
 
-The default tags for the pools are **ci** and **dev** and these can be referenced in future steps to retrieve developer sandboxes. 
+The default tags for the pools are **ci** and **dev** and these can be referenced in future steps to retrieve developer sandboxes.
 
 ### H. Fetch Provisioned Developer Scratch Org from Pool
 
@@ -616,11 +615,11 @@ Coming Soon.
 
 ## Final Words
 
-Congratulations! you have gone through the GitLab pipeline journey and made it to the end. 
+Congratulations! you have gone through the GitLab pipeline journey and made it to the end.
 
-I hope you have learned a great deal through this.  As for where you go from here, this is not the end but just the beginning:
+I hope you have learned a great deal through this. As for where you go from here, this is not the end but just the beginning:
 
-Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com).  Click [here](https://launchpass.com/dxatscale) to get an invite.
+Want to ask more about any of these practices, ask the team directly on [Slack](https://dxatscale.slack.com). Click [here](https://launchpass.com/dxatscale) to get an invite.
 
 And to discuss and contribute to our open-source projects [here](https://docs.dxatscale.io/about-us/contact-us#discussions).
 
