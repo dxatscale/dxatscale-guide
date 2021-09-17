@@ -421,7 +421,7 @@ To set up your Data Dog dashboard simply go to each of the pipelines and you wil
 
 Create the following secrets:
 
-* `DATADOG_HOST` \_\_
+* `DATADOG_HOST` 
 * `DATADOG_API_KEY`
 
 {% hint style="info" %}
