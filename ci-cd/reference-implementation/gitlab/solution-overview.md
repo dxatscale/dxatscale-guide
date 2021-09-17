@@ -154,7 +154,7 @@ There are a number of security considerations that need to factored into the set
 
 ## Configuration File
 
-The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used to executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, and manual triggering of the pipeline.
+The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html) template file is the primary configuration file used for executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, or manual execution of the pipeline.
 
 ![](../../../.gitbook/assets/image%20%2824%29.png)
 
@@ -179,13 +179,10 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
     <tr>
       <td style="text-align:left"><b>Project CI/CD Variables</b>
       </td>
-      <td style="text-align:left">
-        <p>Initial project Project CI/CD Variables required to be created in the
-          project to authenticate and setup DevHub and Sandbox Environment alias,
-          NPM Variables Scope for artifacts, and optional dashboard connection details
-          for</p>
-        <p>DataDog or New Relic.</p>
-      </td>
+      <td style="text-align:left">Initial project Project CI/CD Variables required to be created in the
+        project to authenticate and setup DevHub, Production and Sandbox Environment
+        aliases, NPM Scope for artifacts, Project Access Tokens, and optional dashboard
+        connection details for DataDog or New Relic.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Image</b>
@@ -200,8 +197,9 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
         <p>Custom and Predefined variables are used in the .gitlab-ci.yml during
           pipeline execution.</p>
         <p>
-          <br />Custom Project Variables
-          <br />
+          <br /><a href="https://docs.gitlab.com/ee/ci/variables/#add-a-cicd-variable-to-a-project">Custom Project Variables</a>
+          <br
+          />
         </p>
         <ul>
           <li>DEVHUB_ALIAS</li>
@@ -225,7 +223,9 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
           <li>SFPOWERSCRIPTS_NEWRELIC_API_KEY <em>(Optional)</em>
           </li>
         </ul>
-        <p>Predefined Variables</p>
+        <p><a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html">Predefined Variables</a>
+        </p>
+        <p></p>
         <ul>
           <li>CI_PROJECT_ID</li>
           <li>CI_SERVER_HOST</li>
@@ -234,9 +234,10 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
           <li>CI_PIPELINE_SOURCE</li>
           <li>CI_COMMIT_BRANCH</li>
           <li>CI_PIPELINE_ID</li>
-          <li></li>
         </ul>
-        <p>.gitlab-ci.yml Variables</p>
+        <p><a href="https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file">.gitlab-ci.yml Variables</a>
+        </p>
+        <p></p>
         <ul>
           <li>BUILD_BRANCH</li>
           <li>SCRATCH_ORG_USERNAME</li>
@@ -248,42 +249,57 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
     <tr>
       <td style="text-align:left"><b>DevHub Authentication</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left"><a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm">SFDX auth URL</a> is
+        used to authorize the DevHub. Subsequent scripts in the pipeline jobs will
+        use the DevHub alias during the deployment lifecycle. The account used
+        in this authentication should be a dedicated CI/CD service account.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>NPM Configuration</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Setup of the <a href="https://docs.npmjs.com/cli/v7/configuring-npm/npmrc">npm config file</a> used
+        to allow publishing and sharing packages in the Project Package Registry
+        is generated here using the NPM Scope defined in the Project Variables
+        and predefined variables.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Git Repo Configuration</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">In order to push git tags and change logs to the remote repository for
+        the project from the Runners, the project access token is used here to
+        initialize the remote url.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Stages</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Predefined stages for the deployment lifecycle for DX@Scale is baseline
+        here from validate to release and preparing and cleaning scratch org pools.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Anchors</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Reusable rules are created here based on merge requests, merges, and manual
+        executions of the pipeline to be later referenced in jobs for execution.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Trigger Job(s)</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Each job in the pipeline is controlled by rules defined earlier by anchors
+        to be executed in each stage and leveraging sfpowerscripts orchestrator
+        commands.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Schedule Jobs(s)</b>
       </td>
-      <td style="text-align:left">&lt;b&gt;&lt;/b&gt;</td>
+      <td style="text-align:left">Scheduled jobs are filtered in the configuration file using the TARGETTASKNAME
+        variable and only executed during their defined interval pattern.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Manual Jobs(s)</b>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Manually triggered jobs from the pipeline will be filtered. Deployments
+        to environments once the artifacts have been successfully published are
+        controlled by manual triggers by the user.</td>
     </tr>
   </tbody>
 </table>
@@ -292,41 +308,117 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
 
 ### Triggered Jobs
 
-Development and Release
-
-The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the sfpowerscripts orchestrator and sfpowerkit package commands in the script to structure your CI/CD process.
+The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process.  The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
 
 ![](../../../.gitbook/assets/image%20%2839%29.png)
 
-| Type | Stage | Job | Command | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Merge Request | Analyze | analyze-pmd |  | PMD Code Validation |
-| Merge |  |  |  |  |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Stage</th>
+      <th style="text-align:left">Job</th>
+      <th style="text-align:left">Command</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Analyze</td>
+      <td style="text-align:left">analyze-pmd</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsanalyzepmd">analyze:pmd</a> 
+      </td>
+      <td style="text-align:left">Static code analysis <a href="https://pmd.github.io/latest/pmd_rules_apex.html">PMD</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Validate</td>
+      <td style="text-align:left">validate-package</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid">package:valid</a>
+      </td>
+      <td style="text-align:left">Validates against <a href="https://developer.salesforce.com/docs/metadata-coverage/">metadata coverage</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge Request</td>
+      <td style="text-align:left">Validate</td>
+      <td style="text-align:left">validate-source</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorvalidate">orchestrator:validate</a>
+      </td>
+      <td style="text-align:left">Validate deployment against scratch org</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Quickbuild</td>
+      <td style="text-align:left">quickbuild</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorquickbuild">orchestrator:quickbuild</a>
+      </td>
+      <td style="text-align:left">Parallel build of packages without dependencies and code coverage</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Deploy</td>
+      <td style="text-align:left">deploy</td>
+      <td style="text-align:left">
+        <p><a href="https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagedependenciesinstall">package:dependencies:install</a>
+        </p>
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratordeploy">orchestrator:deploy</a>
+        </p>
+      </td>
+      <td style="text-align:left">Install package dependencies and deploy packages</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Merge</td>
+      <td style="text-align:left">Build</td>
+      <td style="text-align:left">build</td>
+      <td style="text-align:left">
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorbuild">orchestrator:build</a>
+        </p>
+        <p><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorpublish">orchestrator:publish</a>
+        </p>
+      </td>
+      <td style="text-align:left">Build all packages and publish to artifact registry</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Manual</td>
+      <td style="text-align:left">Release</td>
+      <td style="text-align:left">ST, SIT, UAT, PROD</td>
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorrelease">orchestrator:release</a>
+      </td>
+      <td style="text-align:left">Release to Salesforce Org based on YAML file</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Scheduled and Manual Jobs
+
+The diagram below highlights the [dxatscale-template](https://github.com/dxatscale/dxatscale-template) recommended scheduled jobs and manual job for Scratch Org Pool Management.  The stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml uses the sfpowerscripts prepare commands to build scratch org pools for Developer and CI Scratch Orgs.  Additional schedule job for publishing metrics to your dashboard platform is provided as well.  
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
 | Type | Stage | Job | Command | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| Scheduled | Prepare | prepare-ci-pool | `orchestrator:prepare` |  |
-| Scheduled |  |  |  |  |
-
-Target Task Name is .... 
-
-| TARGETTASKNAME | Description |
-| :--- | :--- |
-| schedule-prepare-ci-pool |  |
-| schedule-prepare-dev-pool |  |
-| schedule-clean-pool |  |
-| schedule-report-so-pool |  |
-| manual-delete-fetched-so |  |
-
-Cleaning CI tagged pools daily.  
+| Scheduled | Prepare | prepare-ci-pool | [orchestrator:prepare](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorprepare) | Prepares pool of CI Scratch Orgs |
+| Scheduled | Prepare | prepare-dev-pool | [orchestrator:prepare](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsorchestratorprepare) | Prepares pool of Developer Scratch Orgs |
+| Scheduled | Clean | clean-ci-pool | [pool:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified tagged CI Scratch Org Pool |
+| Scheduled | Clean | clean-dev-pool | [pool:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified tagged Developer Scratch Org Pool |
+| Scheduled | Report | report-so-count | pool:metrics:publish | Publish metrics to Dashboard |
+| Manual | Delete | delete-fetched-so | [pool:org:delete](https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptspooldelete) | Deletes specified scratch org from provided user name |
 
 ## Dashboard Metrics
 
-Publish StatsD Metrics.
+Metrics should be a key part of your DevOps process. It is through these metrics, one can drive continuous improvement of your delivery process.
+
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics.  Integration and setup of this is available in the Getting Started section. 
+
+The following variables are required to be setup in your project variables to push the metrics to New Relic. 
+
+* SFPOWERSCRIPTS\_NEWRELIC _\(Optional\)_
+* SFPOWERSCRIPTS\_NEWRELIC\_API\_KEY _\(Optional\)_
+
+Read more about Dashboards and Metrics [here](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards).
 
 ## Configuration Options
 
@@ -351,38 +443,31 @@ DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-mod
 
 The following are additional design configurations to consider when using this template:
 
-1. Public Docker Registry vs. Project Container Registry
-2. Public DX@Scale Unlocked Package vs. DevHub Unlocked Package for Scratch Org Pool and sfpowerscripts-artifact
-3. On Premise vs. Cloud GitLab
-4. Project NPM Package Registry vs. External NPM Package Registry
-5. Project CI/CD Variables vs. External Secrets Provider
-6. Multi-Repository Checkout Support 
-7. Release Gates Process
-8. Operational Dashboard Tooling
-9. ALM Integration vs. GitLab Issue Management Tool
-10. Protected Branches
-11. Merge Request Rules \(eg. Squash commits when merging\)
-12. Merge request \(MR\) approvals
-13. Requirements for Access Tokens and SSH Keys
-14. Security Design - Roles Assignment to Users
-15. Organization Setup, Groups, Sub-Groups
-16. Naming Conventions for Repositories, Environments
-17. Automated Testing Enhancements
-18. Dynamic Code Testing
+1. [Public Docker Registry](https://docs.docker.com/registry/) vs. [Project Container Registry](https://docs.gitlab.com/ee/administration/packages/container_registry.html#gitlab-container-registry-administration)
+2. [Public DX@Scale Pre-requisite Unlocked Packages](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites) vs. [DevHub Unlocked Package ](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_unlocked_pkg_intro.htm)for [Scratch Org Pool](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/scratchorgpool) and [sfpowerscripts-artifact](https://github.com/Accenture/sfpowerscripts/tree/develop/prerequisites/sfpowerscripts-artifact)
+3. [GitLab Self-Managed](https://about.gitlab.com/pricing/self-managed/feature-comparison/)  vs. [GitLab SaaS](https://about.gitlab.com/pricing/gitlab-com/feature-comparison/)
+4. [Project NPM Package Registry](https://docs.gitlab.com/ee/user/packages/npm_registry/index.html) vs. [External NPM Package Registry](https://docs.npmjs.com/cli/v7/using-npm/registry)
+5. [Project CI/CD Variables](https://docs.gitlab.com/ee/ci/variables/) vs. [External Secrets Provider](https://docs.gitlab.com/ee/ci/secrets/)
+6. [Multi-Repository Checkout Support](https://about.gitlab.com/blog/2018/10/31/use-multiproject-pipelines-with-gitlab-cicd/) 
+7. [Release Gates Approval Process](https://docs.gitlab.com/ee/development/approval_rules.html#approval-rules-development-guide)
+8. [Operational Dashboard Tooling](https://sfpowerscripts.dxatscale.io/faq/metrics-and-dashboards)
+9. [ALM Integration](https://docs.gitlab.com/ee/user/project/integrations/overview.html#integrations) vs. [GitLab Issue Management Tool](https://docs.gitlab.com/ee/topics/plan_and_track.html)
+10. [Protected Branches](https://docs.gitlab.com/ee/user/project/protected_branches.html)
+11. [Merge Request Rules](https://docs.gitlab.com/ee/user/project/merge_requests/) \(eg. Squash commits when merging\)
+12. [Merge request \(MR\) approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules)
+13. Security Requirements - [Access Tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#personal-access-tokens) and [SSH Keys](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys)
+14. Security Design - [Permissions and Roles](https://docs.gitlab.com/ee/user/permissions.html) Assignment to Users
+15. [Organization Setup, Groups, Sub-Groups](https://docs.gitlab.com/ee/topics/set_up_organization.html)
+16. Naming Conventions for [Repositories](https://docs.gitlab.com/ee/user/project/repository/) and [Environments](https://docs.gitlab.com/ee/ci/environments/)
+17. Automated Testing Integration
+18. Static Code Analysis Integration
+19. Dynamic Code Testing Integration
 
 ## FAQs
 
-{% tabs %}
-{% tab title="Questions" %}
-Can 
-{% endtab %}
+#### Why is the Access Tokens menu not available to configure my Project Access Tokens?
 
-{% tab title="Answer" %}
-
-{% endtab %}
-{% endtabs %}
-
-
+For GitLab SaaS hosting, Project Access Tokens are only available for Premium and above licenses and self-managed instances on Free tier and above.  
 
 ## References
 
@@ -397,6 +482,7 @@ Can
 * [DX@Scale GitBook](https://docs.dxatscale.io/)
 * [SFPowerscripts GitBook](https://sfpowerscripts.dxatscale.io/)
 * [Using external secrets in CI](https://docs.gitlab.com/ee/ci/secrets/)
+* [StatsD](https://github.com/statsd/statsd)
 
 ## Tutorials
 

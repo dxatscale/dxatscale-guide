@@ -562,7 +562,7 @@ Once all schedule jobs have been configured, you can trigger the **schedule-prep
 
 The default tags for the pools are **ci** and **dev** and these can be referenced in future steps to retrieve developer sandboxes. 
 
-### G. Fetch Provisioned Developer Scratch Org from Pool
+### H. Fetch Provisioned Developer Scratch Org from Pool
 
 Once the **schedule-prepare-dev-pool** has completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
@@ -581,7 +581,7 @@ sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZ
 status       Assigned
 ```
 
-### G. Manually Delete Fetched Scratch Org
+### I. Manually Delete Fetched Scratch Org
 
 1. Navigate to **CI/CD &gt; Pipelines**
 2. Click on **Run Pipeline**
@@ -591,14 +591,14 @@ status       Assigned
 
 ![](../../../.gitbook/assets/image%20%2835%29.png)
 
-### H. Merge Requests and Merge to Main
+### J. Merge Requests and Merge to Main
 
 1. Make changes
 2. Commit
 3. Raise a Merge Request
 4. Confirm validation pipeline passes
 
-### I. Add New Packages
+### K. Add New Packages
 
 1. Update project configuration files
 2. Update **.gitlab-ci.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
