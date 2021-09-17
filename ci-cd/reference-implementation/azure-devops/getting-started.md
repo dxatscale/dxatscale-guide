@@ -127,9 +127,7 @@ sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
 
 ### G. Generate SFDX auth URL for Pipeline Authentication
 
-
 In order for the Azure DevOps pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
-
 
 ```bash
 sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
@@ -165,7 +163,7 @@ Click on **Code** &gt;&gt; **Download ZIP**
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.06-am.png)
 
-Back to your ADO account click on **New organization**; **once you have created your organisation create a project to get started.** 
+Back to your ADO account click on **New organization**; **once you have created your organisation create a project to get started.**
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-14-at-2.43.40-pm.png)
 
@@ -229,9 +227,7 @@ Repeat this step for all pipelines in the `.azure-pipelines` folder.
 
 ### D. Test your pipelines
 
-
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to Azure Artifacts. If this stage is successful, you can proceed to step 5
-
 
 ### E. Configure Scratch Org Pools
 
