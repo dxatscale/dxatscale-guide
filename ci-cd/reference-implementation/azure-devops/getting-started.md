@@ -1,5 +1,9 @@
 # Getting Started
 
+{% hint style="danger" %}
+Azure DevOps Getting Started guide is Work in Progress. Some essential steps required for the templates are missing. Please proceeded with caution.
+{% endhint %}
+
 The following getting started guide will enable you to configure and setup CI/CD using Azure DevOps and DX@Scale for Salesforce. Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and Azure DevOps using the [template](https://github.com/dxatscale/dxatscale-template) provided. Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
 
 As always, we welcome any feedback from the community to continuously improve this user guide. Please [contact us](https://docs.dxatscale.io/about-us/contact-us) for any questions or concerns.
@@ -157,23 +161,15 @@ Save only the following part of the **sfdxAuthUrl** for each environment
 
 ### A. Download Repo & Set Up
 
-Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github.com/dxatscale/dxatscale-template)
-
-Click on **Code** &gt;&gt; **Download ZIP**
-
-![](../../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.06-am.png)
-
-Back to your ADO account click on **New organization**; **once you have created your organisation create a project to get started.**
+Open your Azure DevOps account click on **New organization**; **once you have created your organisation create a project to get started.**
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-14-at-2.43.40-pm.png)
 
-Make your way to **Repos** and click on **files**
+Make your way to **Repos** and click on Import. Provide the Clone URL [https://github.com/dxatscale/dxatscale-template](https://github.com/dxatscale/dxatscale-template)
 
-![](../../../.gitbook/assets/screen-shot-2021-09-14-at-2.54.31-pm.png)
+![](../../../.gitbook/assets/azuredevops_import.png)
 
-Once you have cloned your ADO repo to your local machine. copy all the files from the GitHub repo that you downloaded earlier and paste them to your local repo.
-
-Once you have done so commit your changes and it should reflect on ADO
+After a few minutes, your repository will be set up in Azure DevOps.
 
 ### B. Setup your Secure files
 
