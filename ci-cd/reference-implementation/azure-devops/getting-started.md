@@ -171,31 +171,53 @@ Make your way to **Repos** and click on Import. Provide the Clone URL [https://g
 
 After a few minutes, your repository will be set up in Azure DevOps.
 
-### B. Setup your Secure files
+### B. Create Variable Groups
 
-Follow instructions in[ 2.F](../github/getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment.
+[Variable Groups](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml) store values and secrets that Azure DevOps pipeline uses to authenticate to protected resources etc. The template uses both variables and files in the CI/CD to setup the environment connections, NPM Registry Scope, Project Access Tokens, and optionally metrics dashboard connection details.
 
-1. On ADO, navigate to the main page of the organisation.
-2. Under your organisation name, click on the "Pipelines" then "Library".
-3. In the top tab bar, click Secure files.
-4. Click on "+ Secure file"
+![Azure DevOps Variable Group](../../../.gitbook/assets/azuredevops_variable_group.png)
+
+1. From the **Pipelines** click on **Library** and add a new variable group
+2. Click on **+ Variable Group**
+3. Name the variable group as CICD and provide some description
+4. In the Variables, section, click on **+ Add** and add the following variables
+5. Follow instructions in[ 2.F](../github/getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment and add this to the variable group
+
+| Name | Value | Protect |
+| :--- | :--- | :--- |
+| DEVHUB\_ALIAS | devhub | No |
+| DEVHUB\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| PROD\_ALIAS | prod | No |
+| PROD\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| SHAREDDEV\_ALIAS | shareddev | No |
+| SHAREDDEV\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| SIT\_ALIAS | sit | No |
+| SIT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| ST\_ALIAS | st | No |
+| ST\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| UAT\_ALIAS | uat | No |
+| UAT\_SFDX\_AUTH\_URL | &lt;sfdxAuthUrl&gt; | Yes |
+| scope | &lt;scope&gt; | No |
+
+### C. Create New Azure Artifact Feed
+
+1. On ADO, navigate to Artifacts section
+2.  Create a new feed with a name and choose the right settings depending on your preference
+
+![](../../../.gitbook/assets/azuredevops_feed.png)
+
+3. Click on **Connect to Feed** and navigate to **npm** section.  
+****
+
+![Connect to feed](../../../.gitbook/assets/azuredevops_connect-to-feed.png)
+
+4. Create a .npmrc file in your system and copy the contents from the 'Connect To Feed'
+
+5.  Upload this file as secure files in your library
 
 ![](../../../.gitbook/assets/screen-shot-2021-09-14-at-3.08.41-pm.png)
 
-Upload your `authfile.json` for **devhub**, within the pipelines, you will notice on the pipelines there is a script:
-
-```bash
-    - script: |
-          echo $(DEVHUB_SFDX_AUTH_URL) > ./authfile
-          sfdx auth:sfdxurl:store -f authfile -a devhub
-      displayName: 'Authenticate DevHub'
-```
-
-{% hint style="info" %}
-Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_\_\_AUTH\_URL and prod-authfile.json for your authURL file
-{% endhint %}
-
-### C. Import your pipelines
+### D. Import your pipelines
 
 Make your way to **Pipelines** and click on **Pipelines**
 
@@ -221,11 +243,11 @@ Click on the Dropdown button on **Run** and click **Save**
 Repeat this step for all pipelines in the `.azure-pipelines` folder.
 {% endhint %}
 
-### D. Test your pipelines
+### E. Test your pipelines
 
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to Azure Artifacts. If this stage is successful, you can proceed to step 5
 
-### E. Configure Scratch Org Pools
+### F. Configure Scratch Org Pools
 
 In your repo, there is a folder called config, in that folder, you can see there are two JSON files
 
@@ -289,14 +311,14 @@ Let's look at DEV Pool Definition now:
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous project variables section. \(eg. **@dxatscale-poc**\)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous variables section. \(eg. **@dxatscale-poc**\)
 {% endhint %}
 
 {% hint style="info" %}
 To get an in-depth understanding of the options available to you for configuration refer to this link [here](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration).
 {% endhint %}
 
-### F. Scratch Org Definition File
+### G. Scratch Org Definition File
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
@@ -332,7 +354,7 @@ Customize the provided scratch org definition file for your use case and save an
 }
 ```
 
-### G. Project Configuration File
+### H. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
@@ -352,7 +374,7 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 Updates and additions to the project configuration file can be done gradually as you test your pipeline in ADO. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example.
 {% endhint %}
 
-### H. Release Definition File
+### I. Release Definition File
 
 Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file.
 
@@ -375,13 +397,13 @@ changelog:
 The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced. As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
-### I. Change Log
+### J. Change Log
 
 [Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful. This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-### J. Build Initial Package Artifacts
+### K. Build Initial Package Artifacts
 
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
@@ -389,7 +411,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 2. Navigate to **Artifacts**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-### K. Fetch Provisioned Developer Scratch Org from Pool
+### L. Fetch Provisioned Developer Scratch Org from Pool
 
 Once the **prepare-dev-pool.yml** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
@@ -408,14 +430,14 @@ sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZ
 status       Assigned
 ```
 
-### L. Pull Requests and Merge to Main
+### M. Pull Requests and Merge to Main
 
 1. Make changes
 2. Commit
 3. Raise a Merge Request
 4. Confirm validation pipeline passes
 
-### M. Add New Packages
+### N. Add New Packages
 
 1. Update project configuration files
 2. Update **validate.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
