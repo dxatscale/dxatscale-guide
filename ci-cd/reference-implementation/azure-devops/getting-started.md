@@ -1,7 +1,7 @@
 # Getting Started
 
-{% hint style="danger" %}
-Azure DevOps Getting Started guide is Work in Progress. Some essential steps required for the templates are missing. Please proceeded with caution. Please combine getting started guide along with templates.
+{% hint style="info" %}
+Azure DevOps Getting Started guide is a Work in Progress. 
 {% endhint %}
 
 The following getting started guide will enable you to configure and setup CI/CD using Azure DevOps and DX@Scale for Salesforce. Assuming you have reviewed and completed the prerequisite account setup and software tool installations, this guide will walk you through the initial setup process in Salesforce and Azure DevOps using the [template](https://github.com/dxatscale/dxatscale-template) provided. Along the way, additional general tips and best practices will be highlighted to help you understand the template provided and enable you to customize as needed.
