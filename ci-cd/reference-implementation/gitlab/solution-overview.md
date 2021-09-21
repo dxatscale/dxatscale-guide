@@ -116,31 +116,31 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 | Area | Description |
 | :--- | :--- |
-| \*\*\*\*[**Anchors**](https://docs.gitlab.com/ee/ci/yaml/#anchors)\*\*\*\* | Used to duplicate or inherit properties. The template leverages anchors for reusable rules based on merge requests, merges, and manual executions of the pipeline. |
-| \*\*\*\*[**Artifacts**](https://docs.gitlab.com/ee/ci/yaml/#artifacts)\*\*\*\* | List of files and directories to attach to a job when it succeeds, fails, or always.  Artifacts are use to output [pmd](https://pmd.github.io/latest/pmd_rules_apex.html) reports, scratch org prepare logs, and quick build artifacts from the runner that are not published to artifact registry.  |
-| \*\*\*\*[**before\_script**](https://docs.gitlab.com/ee/ci/yaml/#before_script)\*\*\*\* | Override a set of commands that are executed before job scripts.  The before\_script commands are concatenated with any scripts you specify in the main script. The template uses the before\_script to authenticate to the DevHub, configure access to the npm package registry, sets git repository url to allow for pushing git tags and committing change log files. |
-| \*\*\*\*[**Custom Variables**](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file)\*\*\*\* | Custom variable in the .gitlab-ci.yml file can be defined in the top level or the job level. |
-| \*\*\*\*[**Dependencies**](https://docs.gitlab.com/ee/ci/yaml/#dependencies)\*\*\*\* | Restrict which artifacts are passed to a specific job by providing a list of jobs to fetch artifacts from.  Dependencies are used in the template to pass artifacts from the quickbuild stage to the deploy stage to push code to the Shared Developer Sandbox during code merges.  |
-| \*\*\*\*[**Environments**](https://docs.gitlab.com/ee/ci/yaml/#environment)\*\*\*\* | Name of an environment to which the job deploys.  The template defines environments for the deploy-env, build-env, ST, SIT, UAT, and PROD environments. |
-| \*\*\*\*[**Extends**](https://docs.gitlab.com/ee/ci/yaml/#extends)\*\*\*\* | Used for reuse configuration sections defined above in the Anchors for merge requests, merge, and manual execution rules in the pipeline. |
-| \*\*\*\*[**Jobs**](https://docs.gitlab.com/ee/ci/jobs/)\*\*\*\* | Pipeline configuration begins with jobs.  Jobs are picked up by runners and executed in the environment of the runner.  Jobs defined in the template follow the DX@Scale best practices from validate to release.  |
-| \*\*\*\*[**Needs**](https://docs.gitlab.com/ee/ci/yaml/#needs)\*\*\*\* | Execute jobs earlier than the stage ordering and ensures previous jobs in the pipeline are completed before moving to the next stage and job. |
-| \*\*\*\*[**.npmrc**](https://docs.gitlab.com/ee/user/packages/workflows/project_registry.html#npm)\*\*\*\* | The [npm config file](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) that is configured to allow publishing and sharing packages. |
-| \*\*\*\*[**Pipeline**](https://docs.gitlab.com/ee/ci/pipelines/)\*\*\*\* | Pipelines are the top-level component of continuous integration, delivery, and deployment.  Pipeline comprise of jobs, which define what to do and stages, which define when to run the jobs.   |
-| [**Predefined Variables**](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)\*\*\*\* | Predefined CI/CD variables are available in every GitLab CI/CD pipeline. |
-| \*\*\*\*[**Project Access Tokens**](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html)\*\*\*\* | Similar to [personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) but are used by projects to authenticate with the GitLab API and are supported on GitLab SaaS Premium and above as well as self-managed instances on Free tier and above.  [API access](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#limiting-scopes-of-a-project-access-token) grants complete read/write access to the scoped project API, including the Package Registry.  This is required for the template to push git tags and changelog to the repository. |
-| [**Resource Groups**](https://docs.gitlab.com/ee/ci/yaml/#resource_group)\*\*\*\* | Used for concurrency control in the pipeline.  The keyword is added to the deploy, build, and environment release jobs to ensure runners are prevented from executing jobs concurrently during execution.   |
-| \*\*\*\*[**Roles**](https://docs.gitlab.com/ee/user/permissions.html)\*\*\*\* | Users have different abilities depending on the role they have in a particular group or project. If a user is both in a project’s group and the project itself, the highest role is used. |
-| \*\*\*\*[**Rules**](https://docs.gitlab.com/ee/ci/yaml/#rules)\*\*\*\* | List of conditions to evaluate and determine selected attributes of a job, and whether or not it’s created. |
-| \*\*\*\*[**Runners**](https://docs.gitlab.com/runner/)\*\*\*\* | GitLab Runner is an application that works with GitLab CI/CD to run jobs in a pipeline. |
-| \*\*\*\*[**Script**](https://docs.gitlab.com/ee/ci/yaml/#script)\*\*\*\* | Specify commands for the runner to execute.  Most scripts in the template leverage `sfpowerscripts:orchestrator` commands during execution. |
-| \*\*\*\*[**SSH Keys**](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys)\*\*\*\* | GitLab uses the SSH protocol to securely communicate with Git. When you use SSH keys to authenticate to the GitLab remote server, you don’t need to supply your username and password each time. |
-| \*\*\*\*[**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage)\*\*\*\* | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
-| \*\*\*\*[**Variables**](https://docs.gitlab.com/ee/ci/variables/)\*\*\*\* | CI/CD variables are a type of environment variable |
+| [**Anchors**](https://docs.gitlab.com/ee/ci/yaml/#anchors) | Used to duplicate or inherit properties. The template leverages anchors for reusable rules based on merge requests, merges, and manual executions of the pipeline. |
+| [**Artifacts**](https://docs.gitlab.com/ee/ci/yaml/#artifacts) | List of files and directories to attach to a job when it succeeds, fails, or always.  Artifacts are use to output [pmd](https://pmd.github.io/latest/pmd_rules_apex.html) reports, scratch org prepare logs, and quick build artifacts from the runner that are not published to artifact registry. |
+| [**before\_script**](https://docs.gitlab.com/ee/ci/yaml/#before_script) | Override a set of commands that are executed before job scripts.  The before\_script commands are concatenated with any scripts you specify in the main script. The template uses the before\_script to authenticate to the DevHub, configure access to the npm package registry, sets git repository url to allow for pushing git tags and committing change log files. |
+| [**Custom Variables**](https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file) | Custom variable in the .gitlab-ci.yml file can be defined in the top level or the job level. |
+| [**Dependencies**](https://docs.gitlab.com/ee/ci/yaml/#dependencies) | Restrict which artifacts are passed to a specific job by providing a list of jobs to fetch artifacts from.  Dependencies are used in the template to pass artifacts from the quickbuild stage to the deploy stage to push code to the Shared Developer Sandbox during code merges. |
+| [**Environments**](https://docs.gitlab.com/ee/ci/yaml/#environment) | Name of an environment to which the job deploys.  The template defines environments for the deploy-env, build-env, ST, SIT, UAT, and PROD environments. |
+| [**Extends**](https://docs.gitlab.com/ee/ci/yaml/#extends) | Used for reuse configuration sections defined above in the Anchors for merge requests, merge, and manual execution rules in the pipeline. |
+| [**Jobs**](https://docs.gitlab.com/ee/ci/jobs/) | Pipeline configuration begins with jobs.  Jobs are picked up by runners and executed in the environment of the runner.  Jobs defined in the template follow the DX@Scale best practices from validate to release. |
+| [**Needs**](https://docs.gitlab.com/ee/ci/yaml/#needs) | Execute jobs earlier than the stage ordering and ensures previous jobs in the pipeline are completed before moving to the next stage and job. |
+| [**.npmrc**](https://docs.gitlab.com/ee/user/packages/workflows/project_registry.html#npm) | The [npm config file](https://docs.npmjs.com/cli/v7/configuring-npm/npmrc) that is configured to allow publishing and sharing packages. |
+| [**Pipeline**](https://docs.gitlab.com/ee/ci/pipelines/) | Pipelines are the top-level component of continuous integration, delivery, and deployment.  Pipeline comprise of jobs, which define what to do and stages, which define when to run the jobs. |
+| [**Predefined Variables**](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html) | Predefined CI/CD variables are available in every GitLab CI/CD pipeline. |
+| [**Project Access Tokens**](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html) | Similar to [personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) but are used by projects to authenticate with the GitLab API and are supported on GitLab SaaS Premium and above as well as self-managed instances on Free tier and above.  [API access](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#limiting-scopes-of-a-project-access-token) grants complete read/write access to the scoped project API, including the Package Registry.  This is required for the template to push git tags and changelog to the repository. |
+| [**Resource Groups**](https://docs.gitlab.com/ee/ci/yaml/#resource_group) | Used for concurrency control in the pipeline.  The keyword is added to the deploy, build, and environment release jobs to ensure runners are prevented from executing jobs concurrently during execution. |
+| [**Roles**](https://docs.gitlab.com/ee/user/permissions.html) | Users have different abilities depending on the role they have in a particular group or project. If a user is both in a project’s group and the project itself, the highest role is used. |
+| [**Rules**](https://docs.gitlab.com/ee/ci/yaml/#rules) | List of conditions to evaluate and determine selected attributes of a job, and whether or not it’s created. |
+| [**Runners**](https://docs.gitlab.com/runner/) | GitLab Runner is an application that works with GitLab CI/CD to run jobs in a pipeline. |
+| [**Script**](https://docs.gitlab.com/ee/ci/yaml/#script) | Specify commands for the runner to execute.  Most scripts in the template leverage `sfpowerscripts:orchestrator` commands during execution. |
+| [**SSH Keys**](https://docs.gitlab.com/ee/ssh/index.html#gitlab-and-ssh-keys) | GitLab uses the SSH protocol to securely communicate with Git. When you use SSH keys to authenticate to the GitLab remote server, you don’t need to supply your username and password each time. |
+| [**Stage**](https://docs.gitlab.com/ee/ci/yaml/#stage) | Define which stage a job runs in. Jobs in the same stage can execute in parallel. |
+| [**Variables**](https://docs.gitlab.com/ee/ci/variables/) | CI/CD variables are a type of environment variable |
 
 ## Security Design
 
-There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline.  The following list will walk you through some considerations as you use the template and customize your pipelines for deployments.
+There are a number of security considerations that need to factored into the setup of your GitLab project and pipeline. The following list will walk you through some considerations as you use the template and customize your pipelines for deployments.
 
 * [Project and group visibility](https://docs.gitlab.com/ee/public_access/public_access.html#project-and-group-visibility) - GitLab allows **Owners** to set a project’s or group’s visibility as **Public**, **Internal**, **Private.**  For most implementations, **Private** should be the preferred option.
 * [Merge Request Approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) - Approval rules can be defined for merge requests to limit who can merge to certain branches
@@ -225,7 +225,6 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
         </ul>
         <p><a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html">Predefined Variables</a>
         </p>
-        <p></p>
         <ul>
           <li>CI_PROJECT_ID</li>
           <li>CI_SERVER_HOST</li>
@@ -237,13 +236,11 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
         </ul>
         <p><a href="https://docs.gitlab.com/ee/ci/variables/#create-a-custom-cicd-variable-in-the-gitlab-ciyml-file">.gitlab-ci.yml Variables</a>
         </p>
-        <p></p>
         <ul>
           <li>BUILD_BRANCH</li>
           <li>SCRATCH_ORG_USERNAME</li>
           <li>TARGETTASKNAME</li>
         </ul>
-        <p></p>
       </td>
     </tr>
     <tr>
@@ -308,7 +305,7 @@ In the template file provided, the structure of the [YAML](https://yaml.org/) fi
 
 ### Triggered Jobs
 
-The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process.  The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
+The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process. The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
 
 ![](../../../.gitbook/assets/image%20%2839%29.png)
 
@@ -327,7 +324,7 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
       <td style="text-align:left">Merge Request</td>
       <td style="text-align:left">Analyze</td>
       <td style="text-align:left">analyze-pmd</td>
-      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsanalyzepmd">analyze:pmd</a> 
+      <td style="text-align:left"><a href="https://www.npmjs.com/package/@dxatscale/sfpowerscripts#sfdx-sfpowerscriptsanalyzepmd">analyze:pmd</a>
       </td>
       <td style="text-align:left">Static code analysis <a href="https://pmd.github.io/latest/pmd_rules_apex.html">PMD</a>
       </td>
@@ -394,7 +391,7 @@ The diagram below depicts the various stages and jobs configured in the GitLab C
 
 ### Scheduled and Manual Jobs
 
-The diagram below highlights the [dxatscale-template](https://github.com/dxatscale/dxatscale-template) recommended scheduled jobs and manual job for Scratch Org Pool Management.  The stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml uses the sfpowerscripts prepare commands to build scratch org pools for Developer and CI Scratch Orgs.  Additional schedule job for publishing metrics to your dashboard platform is provided as well.  
+The diagram below highlights the [dxatscale-template](https://github.com/dxatscale/dxatscale-template) recommended scheduled jobs and manual job for Scratch Org Pool Management. The stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml uses the sfpowerscripts prepare commands to build scratch org pools for Developer and CI Scratch Orgs. Additional schedule job for publishing metrics to your dashboard platform is provided as well.
 
 ![](../../../.gitbook/assets/image%20%2830%29.png)
 
@@ -411,9 +408,9 @@ The diagram below highlights the [dxatscale-template](https://github.com/dxatsca
 
 Metrics should be a key part of your DevOps process. It is through these metrics, one can drive continuous improvement of your delivery process.
 
-The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics.  Integration and setup of this is available in the Getting Started section. 
+The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) includes sample [cicd-dashboard.json](https://github.com/dxatscale/dxatscale-template/tree/main/dashboards/NewRelic) file for NewRelic enables you to push StatsD metrics to the platform and monitor key metrics. Integration and setup of this is available in the Getting Started section.
 
-The following variables are required to be setup in your project variables to push the metrics to New Relic. 
+The following variables are required to be setup in your project variables to push the metrics to New Relic.
 
 * SFPOWERSCRIPTS\_NEWRELIC _\(Optional\)_
 * SFPOWERSCRIPTS\_NEWRELIC\_API\_KEY _\(Optional\)_
@@ -430,13 +427,13 @@ There are additional configurations for the GitLab Project that should be review
 DX@Scale recommends [squash commits](https://docs.dxatscale.io/scm/branching-model/branching-conventions#commit-message) when merging to provide succinct release notes during change log creation.
 {% endhint %}
 
-* [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) ****- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the **number of approvals** required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
+* [Merge request approvals](https://docs.gitlab.com/ee/user/admin_area/merge_requests_approvals.html#merge-request-approval-rules) **\*\*- Merge request approval rules prevent users from overriding certain settings on the project level.  Define the** number of approvals\*\* required for merging into specific branches and specify users or groups that are allowed to approve them in the approval rules.
 * [Repository Settings](https://docs.gitlab.com/ee/user/project/repository/#repository) - A number of configurations for the repository can be reviewed and change such as default branches, [push rules](https://docs.gitlab.com/ee/push_rules/push_rules.html), [protected branches](https://docs.gitlab.com/ee/user/project/protected_branches.html) and [protected tags](https://docs.gitlab.com/ee/user/project/protected_tags.html).  Limit the restrictions where possible to not create bottlenecks for the pipeline and developers.  
 * [CI/CD Settings](https://docs.gitlab.com/ee/ci/) - [Runners](https://docs.gitlab.com/runner/) can be configured to be shared or specified.  [Environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html) can be setup for  protection in the CI/CD.  
 * [Clean Scratch Org Pools](https://docs.dxatscale.io/environment/pooling-scratch-orgs) - The clean-pool stage in the [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/) file can be split into separate stages to hand the deletion of unused developer scratch orgs and CI scratch orgs.  
 
 {% hint style="info" %}
-[Releases](https://docs.gitlab.com/ee/user/project/releases/#releases) in GitLab are not used by the dxatscale-template as we leverage our own release management process through the sfpowerscripts orchestrator and package registry.  We will revisit the potential use of this feature in GitLab in the future if there is a need.
+[Releases](https://docs.gitlab.com/ee/user/project/releases/#releases) in GitLab are not used by the dxatscale-template as we leverage our own release management process through the sfpowerscripts orchestrator and package registry. We will revisit the potential use of this feature in GitLab in the future if there is a need.
 {% endhint %}
 
 ## Design Considerations
@@ -467,7 +464,7 @@ The following are additional design configurations to consider when using this t
 
 #### Why is the Access Tokens menu not available to configure my Project Access Tokens?
 
-For GitLab SaaS hosting, Project Access Tokens are only available for Premium and above licenses and self-managed instances on Free tier and above.  
+For GitLab SaaS hosting, Project Access Tokens are only available for Premium and above licenses and self-managed instances on Free tier and above.
 
 ## References
 
