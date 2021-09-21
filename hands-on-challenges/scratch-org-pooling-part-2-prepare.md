@@ -115,7 +115,7 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 ![](../.gitbook/assets/image%20%2837%29.png)
 
-![](../.gitbook/assets/image%20%2834%29%20%282%29%20%281%29.png)
+![](../.gitbook/assets/image%20%2834%29%20%282%29%20%281%29%20%283%29%20%282%29%20%283%29.png)
 
 * Now open the '**authFile.json**' file you created when setting up the _sfdx authURL_ and add the **sfdxAuthUrl** contents of the file as a 'secret' value with the name **DEVHUB\_SERVER\_KEY** 
 

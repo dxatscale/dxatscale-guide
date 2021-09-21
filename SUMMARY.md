@@ -40,6 +40,7 @@
   * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
     * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
 ## Environment Management <a id="environment"></a>
 
