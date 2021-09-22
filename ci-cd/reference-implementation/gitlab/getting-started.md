@@ -311,13 +311,13 @@ The root directory should contain a **.gitlab-ci.yml**, **.gitignore**, **.force
 {% tabs %}
 {% tab title="CP" %}
 ```bash
-cp -vR dxatscale-template dxatscale-poc
+cp -vR dxatscale-template/* dxatscale-poc
 ```
 {% endtab %}
 
 {% tab title="RSYNC" %}
 ```text
-rsync -av dxatscale-template dxatscale-poc
+rsync -av dxatscale-template/* dxatscale-poc
 ```
 {% endtab %}
 {% endtabs %}
