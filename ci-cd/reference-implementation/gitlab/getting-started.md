@@ -114,6 +114,10 @@ The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscript
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
 ```
 
+{% hint style="info" %}
+If during installation, you face **Apex compile failure** errors, use the `--apexcompile=package` flag for the `sfdx force:package:install` command to only compile package related classes as a workaround.  
+{% endhint %}
+
 ### G. Authenticate to Lower Sandbox Environments via CLI
 
 The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_web.htm) first prior to running the pipeline.
