@@ -114,7 +114,7 @@ The [sfpowerscripts-artifact package](https://github.com/Accenture/sfpowerscript
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
 ```
 
-{% hint style="info" %}
+{% hint style="danger" %}
 If during installation, you face **Apex compile failure** errors, use the `--apexcompile=package` flag for the `sfdx force:package:install` command to only compile package related classes as a workaround.  
 {% endhint %}
 
