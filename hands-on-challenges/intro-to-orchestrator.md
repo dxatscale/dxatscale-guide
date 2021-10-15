@@ -13,7 +13,7 @@ Orchestrator was introduced as part of the December 2020 sfpowerscripts [Release
 
 The orchestrator commands are built to be used through a CICD platform, but can also be used locally through the command line.
 
-{% embed url="https://youtu.be/-3\_DHysV7os" caption="" %}
+{% embed url="https://youtu.be/-3_DHysV7os" caption="" %}
 
 ## **Steps**
 
