@@ -93,6 +93,12 @@ $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
 > Password: TOKEN
 > Email: PUBLIC-EMAIL-ADDRESS
 ```
+Create your ```.npmrc``` file and change @ORG_NAME and YOUR_AUTH_TOKEN
+
+```text
+@ORG_NAME:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=YOUR_AUTH_TOKEN
+```
 
 ### Publish your packages to Github Package Registry
 
