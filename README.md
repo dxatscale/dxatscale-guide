@@ -20,3 +20,4 @@ An optimized Developer Experience is paramount for us while building DX@Scale. W
 
 {% embed url="https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-paris-france-presents-dxscale-optimizing-salesforce-development-and-deployment-for-large-scale-projects/" caption="" %}
 
+{% embed url="https://miro.com/app/embed/o9J_lp7sjtQ=/?pres=1&frameId=3074457365946799458" caption="" %}
