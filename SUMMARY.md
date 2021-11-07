@@ -9,7 +9,7 @@
 * [sfpowerkit](https://github.com/Accenture/sfpowerkit)
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 
-## Source Code Management <a id="scm"></a>
+## Source Code Management <a href="scm" id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
 * [Branching Model](scm/branching-model/README.md)
@@ -18,17 +18,19 @@
 
 ## Development Practices
 
-* [Organizing your code / config](development-practices/modularizing-your-code-config/README.md)
-  * [Unlocked Packages](development-practices/modularizing-your-code-config/unlocked-packages.md)
-  * [Source Packages](development-practices/modularizing-your-code-config/source-packages.md)
-  * [Data Packages](development-practices/modularizing-your-code-config/data-packages.md)
+* [Organizing your code / config](development-practices/modularizing-your-code-config.md)
+* [Defining the boundaries of a package](development-practices/defining-the-boundaries-of-a-package.md)
+* [Types of Packaging](development-practices/types-of-packaging/README.md)
+  * [Unlocked Packages](development-practices/types-of-packaging/unlocked-packages.md)
+  * [Source Packages](development-practices/types-of-packaging/source-packages.md)
+  * [Data Packages](development-practices/types-of-packaging/data-packages.md)
 * [Dealing with Org Specific Metadata](development-practices/dealing-with-sensitive-metadata.md)
 * [Managing Profiles](development-practices/managing-profiles.md)
 * [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
 ## CI/CD
 
-* [A Typical  CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)
   * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
     * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
@@ -42,23 +44,23 @@
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
     * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
-## Environment Management <a id="environment"></a>
+## Environment Management <a href="environment" id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
 * [Connecting Environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
-## Release Management <a id="release"></a>
+## Release Management <a href="release" id="release"></a>
 
 * [Releasing to an Environment](release/untitled.md)
 * [Monitoring Releases](release/monrel.md)
 
-## Team Topology <a id="roles-and-responsibilites"></a>
+## Team Topology <a href="roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
-## Developer Onboarding <a id="hands-on-challenges"></a>
+## Developer Onboarding <a href="hands-on-challenges" id="hands-on-challenges"></a>
 
 * [Intro](hands-on-challenges/intro.md)
 * [Prerequisites](hands-on-challenges/prerequisites.md)
@@ -95,7 +97,7 @@
   * [Effective Pull Reviews in Salesforce DX Development - Persistent CI](media-library/knowledge-articles/effective-pull-reviews-in-salesforce-dx-development-persistent-ci.md)
 * [DX@Scale in the media](media-library/notable-mentions.md)
 
----
+***
 
 * [Tools & Assets Registry](assets-registry.md)
 
@@ -104,4 +106,3 @@
 * [Meet Our Team](about-us/meet-our-team.md)
 * [Contributors](about-us/contributors.md)
 * [Contact Us](about-us/contact-us.md)
-
