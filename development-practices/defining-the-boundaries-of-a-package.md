@@ -95,7 +95,7 @@ Consider the “_Copy_” program above. The “_Reader_” and “_Writer_” c
 
 Thus, if a package is to be stable, it should also consist of abstract classes so that it can be extended. Stable packages that are extensible are flexible and do not constrain the design.
 
-The **SAP** and the **SDP** combined amount to the Dependency Inversion Principle for Packages. This is true because the **SDP** says that dependencies should run in the direction of stability, and the **SAP** says that stability implies abstraction. Thus, dependencies run in the direction of abstraction.
+The **SAP** and the **SDP** combined amount to the Dependency Inversion technique for Packages. This is true because the **SDP** says that dependencies should run in the direction of stability, and the **SAP** says that stability implies abstraction. Thus, dependencies run in the direction of abstraction.
 
 However, the **DIP** is a principle that deals with _classes_. And with classes there are no shades of grey. Either a class is abstract, or it is not. The combination of the **SDP** and **SAP** deal with packages and allow that a package can be partially abstract and partially stable.
 
