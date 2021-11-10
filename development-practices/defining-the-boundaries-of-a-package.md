@@ -81,7 +81,7 @@ Designs cannot be completely static. Some volatility is necessary if the design 
 
 Any package that we expect to be volatile should not be depended upon by a package that is difficult to change! Otherwise the volatile package will also be difficult to change.
 
-By conforming to the **SDP**, we ensure that modules that are designed to be instable (i.e. easy to change) are not depended upon by modules that are more stable (i.e. harder to change) than they are.
+By conforming to the **SDP**, we ensure that modules that are designed to be unstable (i.e. easy to change) are not depended upon by modules that are more stable (i.e. harder to change) than they are.
 
 #### The Stable Abstractions Principle (SAP) \[Code-Related]
 
