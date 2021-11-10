@@ -35,7 +35,7 @@ Reusability is one of the most oft claimed goals of OOD. But what is reuse? &#x2
 Reuse can come in different flavours
 
 * Textually inserting a bunch of code/components from one source to another
-* Utilizing an existing module from someone else and brining into the current source
+* Utilizing an existing module from someone else and bringing into the current source
 
 The above examples of Reuse are of code/component copying; and it comes with a serious disadvantage, one must own the code/component that we copied. If the code/component doesn't work in the target environment, it must be changed. If there are bugs, it might be fixed. Fixes from the original author must be manually merged into the source.  Eventually the code/component copied diverges from the original that it can be hardly. While code/component copying can make it easier to do some initial development; it does not help very much with the most expensive phase of the software lifecycle, _**maintenance**_.
 
