@@ -67,7 +67,7 @@ This principle is strongly associated with the _Open Closed Principle_ (**OCP**)
 
 > **The dependency structure between packages must be a directed acyclic graph (DAG). That is there must be no cycles in the dependency structure**
 
-Cyclical dependencies are not allowed in packages for a reason, it makes deploying packages impossible, imagine the following scenario where one has three packages, A, B and C, with the following dependency order, where B is dependent on A, C is dependent on B and A, and A itself which depends on Package C
+Cyclical dependencies are not allowed in packages for a reason, it makes deploying packages impossible, imagine the following scenario where one has three packages A, B and C. These packages have the following dependency order, where B is dependent on A, C is dependent on B and A, and A itself which depends on Package C.
 
 ![Package C with a dependency cycle](../.gitbook/assets/package-dependency.png)
 
