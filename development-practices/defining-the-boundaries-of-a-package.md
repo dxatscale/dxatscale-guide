@@ -51,7 +51,7 @@ A simple example might be a trigger handler interface and its associated base cl
 
 #### The Common Reuse Principle (CRP)
 
-> **The components in a package should be closed together against the same kind of changes., A change that affects a package affects all components in that package**
+> **The components in a package should be closed together against the same kind of changes. A change that affects a package affects all components in that package**
 
 More important than reusability, is maintainability. When a change to components of an application is required, it would be beneficial if the changes were focused on a single package rather than across multiple packages. This ensures that a release for this change only contains the one package, other packages that don't depend upon the changed package do not need to be revalidated or rereleased.
 
