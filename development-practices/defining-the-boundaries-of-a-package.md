@@ -39,7 +39,7 @@ Reuse can come in different flavours
 
 The above examples of Reuse are of code/component copying; and it comes with a serious disadvantage, one must own the code/component that we copied. If the code/component doesn't work in the target environment, it must be changed. If there are bugs, it might be fixed. Fixes from the original author must be manually merged into the source.  Eventually the code/component copied diverges from the original that it can be hardly. While code/component copying can make it easier to do some initial development; it does not help very much with the most expensive phase of the software lifecycle, _**maintenance**_.
 
-REP states that the granule of reuse can be no smaller than the granule of release. Anything that we reuse must also be released. Packages are a candidate for a releasable entity. It might be possible to release and track classes or components, but there are so many components in a typical salesforce org, that this would certainly overwhelm the release tracking system. We need some larger scale entity to act as the granule of release; and the package fits this need well.
+REP states that the granule of reuse can be no smaller than the granule of release. Anything that we reuse must also be released. Packages are a candidate for a releasable entity. It might be possible to release and track classes or components, but there are so many components in a typical Salesforce org, that this would certainly overwhelm the release tracking system. We need some larger scale entity to act as the granule of release; and the package fits this need well.
 
 #### The Common Closure Principle (CCP)
 
