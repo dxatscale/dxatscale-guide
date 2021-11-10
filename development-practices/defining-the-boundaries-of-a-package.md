@@ -85,7 +85,7 @@ By conforming to the **SDP**, we ensure that modules that are designed to be uns
 
 #### The Stable Abstractions Principle (SAP) \[Code-Related]
 
-> **Packages that are maximally stable should be maximally abstract. Instable packages should be concrete. The abstraction of a package should be in proportion to its stability.**
+> **Packages that are maximally stable should be maximally abstract. Unstable packages should be concrete. The abstraction of a package should be in proportion to its stability.**
 
 This principle sets up a relationship between stability and abstractness. It says that a stable package should also be abstract so that its stability does not prevent it from being extended. On the other hand, it says that an instable package should be concrete since its instability allows the concrete code within it to be easily changed.
 
