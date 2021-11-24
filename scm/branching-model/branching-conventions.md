@@ -6,7 +6,7 @@ DX@Scale practitioners will follow the below branching conventions when they are
 | :--- | :--- | :--- |
 | main | The key that is actively used for development and should be always in a deployable state | No direct merges to this branch is allowed. Please read more information on branching model. |
 | release/X | A release branch which is cut few day before a particular release is going to be moved into UAT. | No direct merges to this branch is allowed. Please read more information on branching model. |
-| feature/XYZ | A feature branch that a developer is working on . The XYZ denotes the issue id in your issue registry or User Story in your ALM tool. | Long lived feature branches are discouraged.  As soon as a unit of a work \(if its a large feature, as soon as a meaningful part is completed, a pull request is to be raised for merging into main\) . Feature branch merges are typically not allowed to be merged into release branches. Check branching model for exceptions. |
+| item/XYZ | A workitem branch that a developer is working on . The XYZ denotes the issue id in your issue registry or User Story in your ALM tool. | Long lived workitem branches are discouraged.  As soon as a unit of a work \(if its a large feature, as soon as a meaningful part is completed, a pull request is to be raised for merging into main\) .Merges from these branches are typically not allowed to be merged into release branches. Check branching model for exceptions. |
 | bugfix/XYZ | A bug fix branch that a developer is working on. The XYZ denotes the issue id in your issue registry or User Story in your ALM tool. |  |
 | chore/XYZ | Updates to pipelines and other scripts, not necessarily related to the functionality delivered to the platform. |  |
 
