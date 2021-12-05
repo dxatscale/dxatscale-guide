@@ -8,14 +8,10 @@ Traversing the concept of DX Packaging can be a daunting task. In our exuberance
 
 There exist three pillars of a Package which include _Encapsulation_, _High Cohesion_ and _Reusability_. These pillars define a package as an entity not reliant on the environment/Org it exists in; except for standard Salesforce components
 
-| Encapsulation      | Defines the bundling of data with the methods that operate on said data. Encapsulation is used to hide the values or state of a structured data object inside a package                         |   |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| ** **High Cohesion | Defines how closely all the components in a package support a common purpose                                                                                                                    |   |
-| Reusable           | The package can be reused without consequences of the environment; morphing to each environment. Please note, if a package has a dependency, then one need to adhere to the guiding principles. |   |
-
-
-
-
+| Encapsulation | Defines the bundling of data with the methods that operate on said data. Encapsulation is used to hide the values or state of a structured data object inside a package                         |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| High Cohesion | Defines how closely all the components in a package support a common purpose                                                                                                                    |
+| Reusable      | The package can be reused without consequences of the environment; morphing to each environment. Please note, if a package has a dependency, then one need to adhere to the guiding principles. |
 
 ###
 
