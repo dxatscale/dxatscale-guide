@@ -13,7 +13,7 @@ There exist three pillars of a Package which include _Encapsulation_, _High Cohe
 | ** **High Cohesion | Defines how closely all the components in a package support a common purpose                                                                                                                    |   |
 | Reusable           | The package can be reused without consequences of the environment; morphing to each environment. Please note, if a package has a dependency, then one need to adhere to the guiding principles. |   |
 
-### Categories of Packages
+
 
 
 
