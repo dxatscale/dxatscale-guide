@@ -3,19 +3,6 @@
 * [DX@Scale](README.md)
 * [Principles](principles.md)
 
-## TOOLS
-
-* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
-* [sfpowerkit](https://github.com/Accenture/sfpowerkit)
-* [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
-
-## Source Code Management <a href="scm" id="scm"></a>
-
-* [Repository Structure](scm/repository-structure.md)
-* [Branching Model](scm/branching-model/README.md)
-  * [Feature Toggling](scm/branching-model/feature-toggling.md)
-  * [Branching Conventions](scm/branching-model/branching-conventions.md)
-
 ## Development Practices
 
 * [Organizing your code / config](development-practices/modularizing-your-code-config.md)
@@ -27,6 +14,13 @@
 * [Dealing with Org Specific Metadata](development-practices/dealing-with-sensitive-metadata.md)
 * [Managing Profiles](development-practices/managing-profiles.md)
 * [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
+
+## Source Code Management <a href="#scm" id="scm"></a>
+
+* [Repository Structure](scm/repository-structure.md)
+* [Branching Model](scm/branching-model/README.md)
+  * [Feature Toggling](scm/branching-model/feature-toggling.md)
+  * [Branching Conventions](scm/branching-model/branching-conventions.md)
 
 ## CI/CD
 
@@ -44,23 +38,29 @@
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
     * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
 
-## Environment Management <a href="environment" id="environment"></a>
+## Environment Management <a href="#environment" id="environment"></a>
 
 * [Environment Strategy](environment/env-strategy.md)
 * [Connecting Environments](environment/connecting-environments.md)
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
-## Release Management <a href="release" id="release"></a>
-
-* [Releasing to an Environment](release/untitled.md)
-* [Monitoring Releases](release/monrel.md)
-
-## Team Topology <a href="roles-and-responsibilites" id="roles-and-responsibilites"></a>
+## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
 * [Team Structure and Roles](roles-and-responsibilites/team.md)
 
-## Developer Onboarding <a href="hands-on-challenges" id="hands-on-challenges"></a>
+## Release Management <a href="#release" id="release"></a>
+
+* [Monitoring Releases](release/monrel.md)
+* [Releasing to an Environment](release/untitled.md)
+
+## TOOLS
+
+* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+* [sfpowerkit](https://github.com/Accenture/sfpowerkit)
+* [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
+
+## Developer Onboarding <a href="#hands-on-challenges" id="hands-on-challenges"></a>
 
 * [Intro](hands-on-challenges/intro.md)
 * [Prerequisites](hands-on-challenges/prerequisites.md)
