@@ -277,7 +277,7 @@ Let's get started by looking at CI Pool Definition:
    "installAll": true,
     "fetchArtifacts": {
       "npm": {
-        "scope": "MY_PROJECT_NAME"
+        "scope": "org-name"
       }
     }
 
@@ -301,7 +301,7 @@ Let's look at DEV Pool Definition now:
     "installAll": true,
     "fetchArtifacts": {
         "npm": {
-          "scope": "MY_PROJECT_NAME"
+          "scope": "org-name"
         }
       }
 
@@ -309,7 +309,7 @@ Let's look at DEV Pool Definition now:
 ```
 
 {% hint style="info" %}
-Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous variables section. (eg. **@dxatscale-poc**)
+Update the "**scope**" value for "**npm**" from the default "**@org-name**" to your defined scope in the previous variables section. (eg. **@dxatscale-poc**). Please ensure your org-name matches the name of your org and it is in 'LOWERCASE'
 {% endhint %}
 
 {% hint style="info" %}
