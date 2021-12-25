@@ -4,4 +4,6 @@ Data packages are a sfpowerscripts construct that utilise the [SFDMU plugin](htt
 
 The Data Package offers a seamless method of integrating Salesforce data into your CI/CD pipelines, and is primarily intended for record-based configuration of managed package such as CPQ, Vlocity (Salesforce Industries), and nCino.
 
-Read more about using data package in the section [here](https://dxatscale.gitbook.io/sfpowerscripts/faq/package-types/data-packages).
+Read more about using data package using the below link
+
+{% embed url="https://sfpowerscripts.dxatscale.io/faq/package-types/data-packages" %}

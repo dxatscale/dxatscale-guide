@@ -2,7 +2,9 @@
 
 Scratch Org pools help development teams to solve the time taken to spin up a scratch org, install all dependencies, load sample data and make it ready for development. Another use case for Scratch Org Pools is for a just in time CI environment. The following links discuss how DX@Scale's tooling enable scratch org pools.
 
-{% page-ref page="../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md" %}
+{% content-ref url="../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md" %}
+[streamlined-scratch-orgs-are-here.md](../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md)
+{% endcontent-ref %}
 
 The following sections deal with the typical pool strategies followed by DX@Scale practitioners.
 
@@ -10,14 +12,12 @@ The following sections deal with the typical pool strategies followed by DX@Scal
 
 At the minimum, DX@Scale requires 3 pools to be created. These pools serve different purposes:
 
-* **CI pools with all packages installed**
+*   **CI pools with all packages installed**
 
-  The CI pools are typically used for validation runs. They are pre-installed with the packages from the latest successful build, which allows optimised validations where only the packages that have changed are validated.
+    The CI pools are typically used for validation runs. They are pre-installed with the packages from the latest successful build, which allows optimised validations where only the packages that have changed are validated.
+*   **CI pools with only dependencies installed**
 
-* **CI pools with only dependencies installed**
-
-  Scratch orgs in this pool only have managed packages installed. They are used in special cases where a clean install of all the packages is needed, such as for failures involving picklist value updates. Switching to this pool is handled by pipeline runtime variable or a specific commit message.
-
+    Scratch orgs in this pool only have managed packages installed. They are used in special cases where a clean install of all the packages is needed, such as for failures involving picklist value updates. Switching to this pool is handled by pipeline runtime variable or a specific commit message.
 * **Developer Pool** These are the scratch orgs that will be used by developers to do their development work. They can either have all of the packages installed or just the dependencies.
 
 The number of scratch orgs in the pool have to be determined depending on the size of the program and adjusted accordingly.
@@ -42,5 +42,8 @@ It is highly recommended to build a delete pool pipeline that could be triggered
 
 Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sfpowerscripts documentation to understand the metrics emitted by sfpowerscripts. A sample dashboard is attached below
 
-![](../.gitbook/assets/image%20%2855%29.png)
+![](<../.gitbook/assets/image (55).png>)
 
+To learn more about how to build a pool of scratch orgs using sfpowerscripts, click on the link below
+
+{% embed url="https://sfpowerscripts.dxatscale.io/commands/prepare" %}

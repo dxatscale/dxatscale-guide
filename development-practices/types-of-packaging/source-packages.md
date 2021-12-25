@@ -10,7 +10,7 @@ We always recommend using unlocked packages over source packages whenever you ca
 2. [Unlocked Packages (Org-Dependent)](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_org\_dependent.htm)
 3. Source Packages
 
-Source Packages are typically used for application-config (configuring an application delivered by a managed package such as changes to   help text/description of fileds  ) or when you come across these constraints
+Source Packages are typically used for application-config (configuring an application delivered by a managed package such as changes to help text/description of fileds ) or when you come across these constraints
 
 * [Metadata not supported by Unlocked Packages](https://developer.salesforce.com/docs/metadata-coverage)
 * Facing bugs while deploying the metadata using unlocked packages
@@ -18,4 +18,6 @@ Source Packages are typically used for application-config (configuring an applic
 * Dealing with metadata that is global or org-specific in nature (such as queues, profiles, etc or composite UI layouts, which doesn't make sense to be packaged using unlocked package)
 * Development teams who are starting to adopt package-based development and want to organize their metadata
 
-Read more about how you can use source packages at this [link](https://dxatscale.gitbook.io/sfpowerscripts/faq/package-types/source-packages).
+Read more about how you can use source packages at the below link
+
+{% embed url="https://sfpowerscripts.dxatscale.io/faq/package-types/source-packages" %}

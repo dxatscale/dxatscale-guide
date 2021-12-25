@@ -22,6 +22,15 @@
   * [Feature Toggling](scm/branching-model/feature-toggling.md)
   * [Branching Conventions](scm/branching-model/branching-conventions.md)
 
+## Environment Management <a href="#environment" id="environment"></a>
+
+* [Environment Strategy](environment/env-strategy.md)
+* [Connecting Environments](environment/connecting-environments.md)
+* [Developer Environments](environment/developer-environments.md)
+* [CI Environments](environment/ci-environments.md)
+* [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
+* [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
+
 ## CI/CD
 
 * [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
@@ -37,13 +46,6 @@
     * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
     * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
     * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
-
-## Environment Management <a href="#environment" id="environment"></a>
-
-* [Environment Strategy](environment/env-strategy.md)
-* [Connecting Environments](environment/connecting-environments.md)
-* [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
-* [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
 ## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
