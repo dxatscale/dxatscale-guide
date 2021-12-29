@@ -8,7 +8,7 @@ description: >-
 
 ## Learning Pre-requisites
 
-{% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting:force:com" %}
+{% embed url="https://trailhead.salesforce.com/en/content/learn/modules/starting_force_com" %}
 
 {% embed url="https://trailhead.salesforce.com/en/users/vuha-acn/trailmixes/sfdx-dev-ops-starter-pack" %}
 
