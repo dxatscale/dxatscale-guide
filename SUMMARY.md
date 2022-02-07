@@ -31,6 +31,10 @@
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
+## How To
+
+* [Packaging](how-to/packaging.md)
+
 ## CI/CD
 
 * [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
