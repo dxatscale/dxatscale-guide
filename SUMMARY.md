@@ -31,9 +31,9 @@
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
-## How To
+## faq
 
-* [Packaging](how-to/packaging.md)
+* [Packaging](faq/packaging.md)
 
 ## CI/CD
 

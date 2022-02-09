@@ -25,3 +25,12 @@ Apply the following steps
 * &#x20;Reinstall the version of packages across whole orgs
 * &#x20;Delete all the version of unlocked package from DevHub
 * &#x20;Delete the package from DevHub
+
+### Can I add an unlocked or managed package as a dependency to source package?
+
+Yes, an unlocked package or managed package can be added as a dependency to source package.  If these packages are not part of your repository, sfpowerscripts will automatically install it during prepare/validate.  Other than that, source packages are not validated during build stage and assumed to meet all its dependencies during installation to an org.
+
+### Can I add a source package as a dependency to unlocked package?
+
+No, source package is a sfpowerscripts only construct.  From a salesforce perspective, it's nothing more than metadata deployment, hence salesforce is unaware of such a package. Unlocked packages only allow any other unlocked (excluding org dependent unlocked) and managed package to be added as a dependency. All the dependency is validated during the build stage any incorrect dependency will result in error
+
