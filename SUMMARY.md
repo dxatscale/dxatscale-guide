@@ -5,6 +5,7 @@
 
 ## Development Practices
 
+* [Modular Deployment](development-practices/modular-deployment.md)
 * [Organizing your code / config](development-practices/modularizing-your-code-config.md)
 * [Defining the boundaries of a package](development-practices/defining-the-boundaries-of-a-package.md)
 * [Types of Packaging](development-practices/types-of-packaging/README.md)
