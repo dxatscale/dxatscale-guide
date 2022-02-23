@@ -3,6 +3,39 @@
 * [DX@Scale](README.md)
 * [Principles](principles.md)
 
+## Get Started
+
+* [Intro](get-started/intro.md)
+* [Prerequisites](get-started/prerequisites.md)
+* [Deploy to a Sandbox](get-started/1.-deploy-to-a-sandbox.md)
+* [Using Source Format](get-started/2.-using-source-format.md)
+* [Using a Package](get-started/3.-using-a-package.md)
+* [Introduction to Scratch Orgs](get-started/4.-scratch-org-introduction.md)
+* [Scratch Org Shape](get-started/5.-scratch-org-shape.md)
+* [Create your own package](get-started/7.-create-your-own-package.md)
+* [Intro to sfpowerscripts orchestrator](get-started/intro-to-orchestrator.md)
+* [Building your packages](get-started/build-your-package.md)
+* [Publish and Release your artifacts](get-started/publish-and-fetch-your-artifacts.md)
+* [Scratch Org Pooling Part 1](get-started/scratch-org-pooling.md)
+* [Scratch Org Pooling Part 2](get-started/scratch-org-pooling-part-2-prepare.md)
+* [Validating your changes](get-started/validating-your-changes.md)
+
+## Build your CI/CD Pipelines <a href="#ci-cd" id="ci-cd"></a>
+
+* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [Reference Implementation](ci-cd/reference-implementation/README.md)
+  * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/azure-devops/getting-started.md)
+  * [GitHub](ci-cd/reference-implementation/github/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/github/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/github/solution-overview.md)
+  * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
+    * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
+    * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
+    * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
+
 ## Development Practices
 
 * [Modular Deployment](development-practices/modular-deployment.md)
@@ -32,57 +65,50 @@
 * [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
 * [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
-## faq
-
-* [Packaging](faq/packaging.md)
-
-## CI/CD
-
-* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
-* [Reference Implementation](ci-cd/reference-implementation/README.md)
-  * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/azure-devops/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/azure-devops/getting-started.md)
-  * [GitHub](ci-cd/reference-implementation/github/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/github/getting-started.md)
-    * [Solution Overview](ci-cd/reference-implementation/github/solution-overview.md)
-  * [GitLab](ci-cd/reference-implementation/gitlab/README.md)
-    * [Prerequisites](ci-cd/reference-implementation/gitlab/prerequisites.md)
-    * [Getting Started](ci-cd/reference-implementation/gitlab/getting-started.md)
-    * [Solution Overview](ci-cd/reference-implementation/gitlab/solution-overview.md)
-
-## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
-
-* [Team Structure and Roles](roles-and-responsibilites/team.md)
-
 ## Release Management <a href="#release" id="release"></a>
 
 * [Monitoring Releases](release/monrel.md)
 * [Releasing to an Environment](release/release-environment.md)
 
-## TOOLS
+## Team Topology <a href="#roles-and-responsibilites" id="roles-and-responsibilites"></a>
 
-* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
-* [sfpowerkit](https://github.com/Accenture/sfpowerkit)
+* [Team Structure and Roles](roles-and-responsibilites/team.md)
+
+## sfpowerscripts
+
+* [Overview](sfpowerscripts/overview.md)
+* [Features](sfpowerscripts/features.md)
+* [Docker Images](sfpowerscripts/docker-images.md)
+* [Artifacts](sfpowerscripts/artifacts.md)
+* [Metrics and Dashboards](sfpowerscripts/metrics-and-dashboards.md)
+* [Orchestrator](sfpowerscripts/orchestrator/README.md)
+  * [Build & Quick Build](sfpowerscripts/orchestrator/build-and-quick-build.md)
+  * [Publish](sfpowerscripts/orchestrator/publish.md)
+  * [Deploy](sfpowerscripts/orchestrator/deploy.md)
+  * [Release](sfpowerscripts/orchestrator/release.md)
+  * [Prepare](sfpowerscripts/orchestrator/prepare/README.md)
+    * [Scratch Org Pool Configuration](sfpowerscripts/orchestrator/prepare/scratch-org-pool-configuration.md)
+  * [Validate](sfpowerscripts/orchestrator/validate.md)
+* [Command Glossary](sfpowerscripts/command-glossary.md)
+
+## sfpowerkit
+
+* [Overview](sfpowerkit/overview.md)
+* [Command Glossary](sfpowerkit/command-glossary.md)
+
+## sfp cli
+
+* [Overview](sfp-cli/overview.md)
+* [Command Glossary](sfp-cli/command-glossary.md)
+
+## OTHER TOOLS
+
 * [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
 
-## Developer Onboarding <a href="#hands-on-challenges" id="hands-on-challenges"></a>
+## faq
 
-* [Intro](hands-on-challenges/intro.md)
-* [Prerequisites](hands-on-challenges/prerequisites.md)
-* [Deploy to a Sandbox](hands-on-challenges/1.-deploy-to-a-sandbox.md)
-* [Using Source Format](hands-on-challenges/2.-using-source-format.md)
-* [Using a Package](hands-on-challenges/3.-using-a-package.md)
-* [Scratch Org Introduction](hands-on-challenges/4.-scratch-org-introduction.md)
-* [Scratch Org Shape](hands-on-challenges/5.-scratch-org-shape.md)
-* [Create your own package](hands-on-challenges/7.-create-your-own-package.md)
-* [Intro to sfpowerscripts orchestrator](hands-on-challenges/intro-to-orchestrator.md)
-* [Building your packages](hands-on-challenges/build-your-package.md)
-* [Publish and Release your artifacts](hands-on-challenges/publish-and-fetch-your-artifacts.md)
-* [Scratch Org Pooling Part 1](hands-on-challenges/scratch-org-pooling.md)
-* [Scratch Org Pooling Part 2](hands-on-challenges/scratch-org-pooling-part-2-prepare.md)
-* [Validating your changes](hands-on-challenges/validating-your-changes.md)
+* [Packaging](faq/packaging.md)
+* [sfpowerscripts](faq/sfpowerscripts.md)
 
 ## Media Library
 
@@ -111,5 +137,6 @@
 ## About Us
 
 * [Meet Our Team](about-us/meet-our-team.md)
-* [Contributors](about-us/contributors.md)
+* [Key Contributors](about-us/contributors.md)
+* [Contributing to DX@Scale](about-us/contributing-to-dx-scale.md)
 * [Contact Us](about-us/contact-us.md)

@@ -12,6 +12,8 @@ description: >-
 
 {% embed url="https://trailhead.salesforce.com/en/users/vuha-acn/trailmixes/sfdx-dev-ops-starter-pack" %}
 
+{% embed url="https://missing.csail.mit.edu" %}
+
 {% embed url="https://www.pluralsight.com/courses/master-git" %}
 
 If you do not have access to Pluralsight, here are some free resources to get you started with Git
@@ -21,8 +23,6 @@ If you do not have access to Pluralsight, here are some free resources to get yo
 {% embed url="https://www.atlassian.com/git" %}
 
 {% embed url="https://lab.github.com/githubtraining/first-day-on-github" %}
-
-{% embed url="https://lab.github.com/githubtraining/first-week-on-github" %}
 
 ## Install SFDX CLI <a href="#user-content-1.-sfdx-cli" id="user-content-1.-sfdx-cli"></a>
 
