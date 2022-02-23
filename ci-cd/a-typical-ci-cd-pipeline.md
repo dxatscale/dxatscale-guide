@@ -21,9 +21,10 @@ There are two key pipelines demonstrated in the above diagram
   * If the packages are successful in all the testing, the packages are marked for promotion
   * The promoted packages are then deployed to production.
 
-Take a note of each stage in the pipeline above and the key functionality required, such as build, deploy, fetch etc, this is typically done by inserting the equivalent sfdx commands into your CI/CD pipeline definition. As your number of packages grow, it not only is hard to maintain but is error prone. This is where [sfpowerscripts](https://sfpowerscripts.dxatscale.io) [orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) simplifies the pipeline to a one-time setup. All the stages are driven by sfdx-project.json, which ensures zero maintenance to the pipelines. Each stage of the above pipeline could be modelled by using equivalent sfpowerscripts orchestrator commands
+Take a note of each stage in the pipeline above and the key functionality required, such as build, deploy, fetch etc, this is typically done by inserting the equivalent sfdx commands into your CI/CD pipeline definition. As your number of packages grow, it not only is hard to maintain but is error prone. This is where [sfpowerscripts orchestrator](../sfpowerscripts/orchestrator/) simplifies the pipeline to a one-time setup. All the stages are driven by sfdx-project.json, which ensures zero maintenance to the pipelines. Each stage of the above pipeline could be modelled by using equivalent sfpowerscripts orchestrator commands
 
 Read more about sfpowerscripts orchestrator and the various orchestrator commands using the below link
 
-{% embed url="https://sfpowerscripts.dxatscale.io/faq/orchestrator" %}
-
+{% content-ref url="../sfpowerscripts/orchestrator/" %}
+[orchestrator](../sfpowerscripts/orchestrator/)
+{% endcontent-ref %}
