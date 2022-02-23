@@ -26,7 +26,7 @@ Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md)
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](<../.gitbook/assets/image (43).png>)
+![](<../../.gitbook/assets/image (43).png>)
 
 * Create a new workflow and name it 'prepare'
 * Replace the contents of the file with the file below
@@ -109,17 +109,17 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 * Go to your GitHub repository and select 'Settings'
 
-![](<../.gitbook/assets/image (38) (1).png>)
+![](<../../.gitbook/assets/image (38) (1).png>)
 
 * Now select 'Secrets'
 
-![](<../.gitbook/assets/image (37) (1).png>)
+![](<../../.gitbook/assets/image (37) (1).png>)
 
-![](<../.gitbook/assets/image (34) (2) (1) (3) (2) (3) (3).png>)
+![](<../../.gitbook/assets/image (34) (2) (1) (3) (2) (3) (3).png>)
 
 * Now open the '**authFile.json**' file you created when setting up the _sfdx authURL_ and add the **sfdxAuthUrl** contents of the file as a 'secret' value with the name **DEVHUB\_SERVER\_KEY**
 
-![](../.gitbook/assets/screen-shot-2021-08-25-at-9.48.16-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-25-at-9.48.16-am.png)
 
 Select 'New repository secret'
 
@@ -127,11 +127,11 @@ Select 'New repository secret'
 
 * Go back to actions and select the workflow
 
-![](<../.gitbook/assets/image (41).png>)
+![](<../../.gitbook/assets/image (41).png>)
 
 * Run the workflow by selecting 'run workflow'
 
-![](<../.gitbook/assets/image (42).png>)
+![](<../../.gitbook/assets/image (42).png>)
 
 * Select the job to watch it running through the tasks and create the scratch orgs required
 

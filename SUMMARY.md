@@ -3,24 +3,25 @@
 * [DX@Scale](README.md)
 * [Principles](principles.md)
 
-## Get Started
+## Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
 
-* [Intro](get-started/intro.md)
-* [Prerequisites](get-started/prerequisites.md)
-* [Deploy to a Sandbox](get-started/1.-deploy-to-a-sandbox.md)
-* [Using Source Format](get-started/2.-using-source-format.md)
-* [Using a Package](get-started/3.-using-a-package.md)
-* [Introduction to Scratch Orgs](get-started/4.-scratch-org-introduction.md)
-* [Scratch Org Shape](get-started/5.-scratch-org-shape.md)
-* [Create your own package](get-started/7.-create-your-own-package.md)
-* [Intro to sfpowerscripts orchestrator](get-started/intro-to-orchestrator.md)
-* [Building your packages](get-started/build-your-package.md)
-* [Publish and Release your artifacts](get-started/publish-and-fetch-your-artifacts.md)
-* [Scratch Org Pooling Part 1](get-started/scratch-org-pooling.md)
-* [Scratch Org Pooling Part 2](get-started/scratch-org-pooling-part-2-prepare.md)
-* [Validating your changes](get-started/validating-your-changes.md)
+* [Intro](challenges/intro.md)
+* [Prerequisites](challenges/prerequisites.md)
+* [Challenges](challenges/challenges/README.md)
+  * [Deploy to a Sandbox](challenges/challenges/1.-deploy-to-a-sandbox.md)
+  * [Using Source Format](challenges/challenges/2.-using-source-format.md)
+  * [Introduction to Scratch Orgs](challenges/challenges/4.-scratch-org-introduction.md)
+  * [Scratch Org Shape](challenges/challenges/5.-scratch-org-shape.md)
+  * [Using a Package](challenges/challenges/3.-using-a-package.md)
+  * [Create your own package](challenges/challenges/7.-create-your-own-package.md)
+  * [Intro to sfpowerscripts orchestrator](challenges/challenges/intro-to-orchestrator.md)
+  * [Building your packages](challenges/challenges/build-your-package.md)
+  * [Publish and Release your artifacts](challenges/challenges/publish-and-fetch-your-artifacts.md)
+  * [Scratch Org Pooling Part 1](challenges/challenges/scratch-org-pooling.md)
+  * [Scratch Org Pooling Part 2](challenges/challenges/scratch-org-pooling-part-2-prepare.md)
+  * [Validating your changes](challenges/challenges/validating-your-changes.md)
 
-## Build your CI/CD Pipelines <a href="#ci-cd" id="ci-cd"></a>
+## Get Started <a href="#ci-cd" id="ci-cd"></a>
 
 * [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)

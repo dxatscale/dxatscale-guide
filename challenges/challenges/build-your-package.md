@@ -2,7 +2,7 @@
 
 ## **Learning Objectives**
 
-* What does it mean to 'build' a package 
+* What does it mean to 'build' a package
 * What are the differences between the 'build' and 'quickbuild' orchestrator commands
 * How do we deploy packages
 * How to use the build and deploy commands correctly
@@ -23,23 +23,23 @@ The Orchestrator provides two types of build commands. **build** and **quickbuil
 
 The **build** command builds all packages in order of dependencies and generates the artifacts to a supplied directory.
 
-![](../.gitbook/assets/screen-shot-2021-08-30-at-10.20.02-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.20.02-am.png)
 
 The **quickbuild** command does almost the same thing as the build command, but it ignores the validation of any dependencies and code coverage. You would use this command before deploying to a developer sandbox to validate code before attempting a build.
 
-![](../.gitbook/assets/screen-shot-2021-08-30-at-10.14.50-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.14.50-am.png)
 
 ## Deploy command
 
-The deploy command deploys the package to the given alias \(this can be a scratch org, sandbox or devhub org\)
+The deploy command deploys the package to the given alias (this can be a scratch org, sandbox or devhub org)
 
-![](../.gitbook/assets/screen-shot-2021-08-30-at-10.16.27-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.16.27-am.png)
 
 ## Steps
 
 ### Utilize build command to build all packages in the repository
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:build -v <devhub> --branch <your branch>
 ```
 
@@ -50,13 +50,13 @@ Notice how the packages are being built and placed into the artifacts directory.
 1. Create a new scratch org
 2. Install sfpowerscripts pre-requisite package into the new scratch org
 
-```text
+```
 sfdx force:package:install --package 04t1P000000ka9mQAA -u <so_alias> -w 10
 ```
 
 1. Use sfpowerscripts deploy command to deploy into the new scratch org
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:deploy -u <so_alias>
 ```
 
@@ -67,4 +67,3 @@ sfdx sfpowerscripts:orchestrator:deploy -u <so_alias>
 ## Recap
 
 Hopefully we've learnt a lot in this module! You should now have the basic steps together for how to build and deploy your unlocked packages.
-

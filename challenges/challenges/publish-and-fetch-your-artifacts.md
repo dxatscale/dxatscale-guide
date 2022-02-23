@@ -14,11 +14,11 @@ The **Publish** command pushes artifacts created when you previously ran the **b
 
 ### Options available for the publish command are here:
 
-![](../.gitbook/assets/screen-shot-2021-08-31-at-10.23.37-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-31-at-10.23.37-am.png)
 
 You can also use the command below in the terminal to get more information
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:publish --help
 ```
 
@@ -36,11 +36,11 @@ The **Release** command provides a simplified method of fetching artifacts from 
 
 **Options available for the release command are here:**
 
-![](../.gitbook/assets/screen-shot-2021-08-31-at-10.31.25-am.png)
+![](../../.gitbook/assets/screen-shot-2021-08-31-at-10.31.25-am.png)
 
 You can also use the command below in the terminal to get more information
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:release --help
 ```
 
@@ -60,49 +60,50 @@ sfdx sfpowerscripts:orchestrator:release --help
 
 * In the left sidebar, click **Personal access tokens**.
 
-![Personal access tokens](https://docs.github.com/assets/images/help/settings/personal_access_tokens_tab.png)
+![Personal access tokens](https://docs.github.com/assets/images/help/settings/personal\_access\_tokens\_tab.png)
 
 * Click **Generate new token**.
 
-![Generate new token button](https://docs.github.com/assets/images/help/settings/generate_new_token.png)
+![Generate new token button](https://docs.github.com/assets/images/help/settings/generate\_new\_token.png)
 
 * Give your token a descriptive name.
 
-![Token description field](https://docs.github.com/assets/images/help/settings/token_description.png)
+![Token description field](https://docs.github.com/assets/images/help/settings/token\_description.png)
 
 * To give your token an expiration, select the **Expiration** drop-down menu, then click a default or use the calendar picker.
 
-![Token expiration field](https://docs.github.com/assets/images/help/settings/token_expiration.png)
+![Token expiration field](https://docs.github.com/assets/images/help/settings/token\_expiration.png)
 
 * Select the scopes, or permissions, you'd like to grant this token. To use your token to access repositories from the command line, select **repo**.
 
-![Selecting token scopes](https://docs.github.com/assets/images/help/settings/token_scopes.gif)
+![Selecting token scopes](https://docs.github.com/assets/images/help/settings/token\_scopes.gif)
 
 * Click **Generate token**.
 
-![Generate token button](https://docs.github.com/assets/images/help/settings/generate_token.png)
+![Generate token button](https://docs.github.com/assets/images/help/settings/generate\_token.png)
 
-![Newly created token](https://docs.github.com/assets/images/help/settings/personal_access_tokens.png)
+![Newly created token](https://docs.github.com/assets/images/help/settings/personal\_access\_tokens.png)
 
 Authenticate to GitHub package registry using the following command
 
-```text
+```
 $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
 
 > Username: USERNAME
 > Password: TOKEN
 > Email: PUBLIC-EMAIL-ADDRESS
 ```
-Create your ```.npmrc``` file and change @ORG_NAME and YOUR_AUTH_TOKEN
 
-```text
+Create your `.npmrc` file and change @ORG\_NAME and YOUR\_AUTH\_TOKEN
+
+```
 @ORG_NAME:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=YOUR_AUTH_TOKEN
 ```
 
 ### Publish your packages to Github Package Registry
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:publish -d artifacts --npm --scope <your_github_org_name> --npmrcpath <path_to_your_npmrc> --gittag --pushgittag
 ```
 
@@ -118,7 +119,7 @@ Create a new scratch org and run the release command
 
 Ensure the sfpowerscripts prerequisite package is installed into your org
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:release -u <SO_ALIAS> -p .releaseDefinition.yml --npm --scope <GITHUB_ORG_NAME> --generatechangelog
 ```
 
@@ -129,4 +130,3 @@ Notice how the release command install all the dependencies, deploy all the pack
 ## Recap
 
 This module helps you understand how sfpowerscripts can be utilized to orchestrate releases across multiple orgs
-

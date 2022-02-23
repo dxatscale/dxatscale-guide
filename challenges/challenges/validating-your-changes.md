@@ -2,8 +2,8 @@
 
 ## **Learning Objectives**
 
-* How DX@Scale has combined SFDX and Continuous Integration 
-* How to validate changes using the 'validate' command 
+* How DX@Scale has combined SFDX and Continuous Integration
+* How to validate changes using the 'validate' command
 
 **Time to complete:** 20 minutes
 
@@ -19,11 +19,11 @@
 
 Options available for the validate command are here:
 
-![](../.gitbook/assets/screen-shot-2021-08-30-at-4.50.24-pm.png)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-4.50.24-pm.png)
 
 You can also use the command below in the terminal to get more information
 
-```text
+```
 sfdx sfpowerscripts:orchestrator:validate --help
 ```
 
@@ -33,12 +33,12 @@ sfdx sfpowerscripts:orchestrator:validate --help
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](<../../.gitbook/assets/image (43).png>)
 
 * Create a new workflow and name it 'validate'
-* Replace the contents of the file with the file below 
+* Replace the contents of the file with the file below
 
-```text
+```
 name: 'PR Validation - Auto Triggered'
 
 on:
@@ -81,14 +81,13 @@ What is this file doing? Let's have a look.
 **Thirdly** it is given a list of steps to execute in a specific order. These steps are:
 
 1. Check out the source code of your project, on branch 'master'. If you would prefer a different branch checked out, supply this branch in the 'ref' section
-2. Authenticate the DevHub using sfdx authURL, [more information on sfdx authURL](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_auth_sfdxurl.htm)
-3. Execute the 'validate' command 
+2. Authenticate the DevHub using sfdx authURL, [more information on sfdx authURL](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm)
+3. Execute the 'validate' command
 
-_\(Hint: Make sure you align the validate command with the prepare command from the previous module\)_
+_(Hint: Make sure you align the validate command with the prepare command from the previous module)_
 
-* Run your new workflow 
+* Run your new workflow
 
 ## Recap
 
 This is a short module, as it reuses the concepts learned in prepare. Well done, you now know how to simply validate your changes. You can now see how you can have this set up to be triggered on every pull request to your main or develop branches.
-
