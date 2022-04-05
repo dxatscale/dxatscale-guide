@@ -53,7 +53,7 @@
 ## ♾ CI/CD
 
 * [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
-* [Artifacts](ci-cd/artifacts.md)
+* [Artifacts](projects/sfpowerscripts/artifacts.md)
 * [sfpowerscripts](ci-cd/sfpowerscripts.md)
 * [Reference Implementation](ci-cd/reference-implementation/README.md)
   * [Azure DevOps](ci-cd/reference-implementation/azure-devops/README.md)

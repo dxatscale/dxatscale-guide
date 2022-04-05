@@ -38,7 +38,7 @@ The following package creation commands shows this in action
 * Create Unlocked Package (inluding Org dependent unlocked packages)
 * Create Data Package, for Records Based Configuration, such as vlocity datapacks
 
-![](<../.gitbook/assets/image (41).png>)
+![](<../.gitbook/assets/image (50).png>)
 
 These commands create an artifact named`<package_name>_sfpowerscripts_artifact_<ver>.zip`. This zip file contains the following items
 

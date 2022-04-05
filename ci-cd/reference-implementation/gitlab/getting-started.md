@@ -59,7 +59,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](<../../../.gitbook/assets/image (10).png>)
+![](<../../../.gitbook/assets/image (3).png>)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -69,7 +69,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
-![](<../../../.gitbook/assets/image (1) (1).png>)
+![](<../../../.gitbook/assets/image (1).png>)
 
 ### C. Create Service Account for DevOps
 
@@ -84,7 +84,7 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](<../../../.gitbook/assets/image (18).png>)
+![](<../../../.gitbook/assets/image (45).png>)
 
 {% hint style="info" %}
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
@@ -194,7 +194,7 @@ To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/e
 4. Select a date value for **Expires at**
 5. Click on the **Add key**
 
-![](<../../../.gitbook/assets/image (5) (1).png>)
+![](<../../../.gitbook/assets/image (5).png>)
 
 ### B. Create New Project
 
@@ -208,11 +208,11 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 6. Leave **Visibility Level** to default **Private** with **README** to be initialized into the repository
 7. Click on the **Create project** button
 
-![](<../../../.gitbook/assets/image (6) (1).png>)
+![](<../../../.gitbook/assets/image (6).png>)
 
-![](<../../../.gitbook/assets/image (16) (1).png>)
+![](<../../../.gitbook/assets/image (16).png>)
 
-![](<../../../.gitbook/assets/image (18) (1).png>)
+![](<../../../.gitbook/assets/image (18).png>)
 
 ### C. Create Project Access Token
 
@@ -230,9 +230,9 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 6. Click on the **Create project access token** button
 7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
 
-![](<../../../.gitbook/assets/image (2) (1).png>)
+![](<../../../.gitbook/assets/image (2).png>)
 
-![](<../../../.gitbook/assets/image (11) (1).png>)
+![](<../../../.gitbook/assets/image (11).png>)
 
 ### D. Create Project Variables
 
@@ -247,9 +247,9 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](<../../../.gitbook/assets/image (8).png>)
+![](../../../.gitbook/assets/image.png)
 
-![](<../../../.gitbook/assets/image (25).png>)
+![](<../../../.gitbook/assets/image (13).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -270,7 +270,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS                 | uat            | Variable | All (default) | No      | No   |
 | UAT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
-![Project Variables](<../../../.gitbook/assets/image (3).png>)
+![Project Variables](<../../../.gitbook/assets/image (19).png>)
 
 {% hint style="info" %}
 The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
@@ -286,7 +286,7 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](<../../../.gitbook/assets/image (3).png>)
+![](<../../../.gitbook/assets/image (19).png>)
 
 ### B. Clone Project Repository
 
@@ -298,7 +298,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](<../../../.gitbook/assets/image (6).png>)
+![](<../../../.gitbook/assets/image (14).png>)
 
 ### C. Copy Template Contents to Project Folder
 

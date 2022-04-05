@@ -23,17 +23,17 @@ The Orchestrator provides two types of build commands. **build** and **quickbuil
 
 The **build** command builds all packages in order of dependencies and generates the artifacts to a supplied directory.
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-30 at 10.20.02 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.20.02-am.png)
 
 The **quickbuild** command does almost the same thing as the build command, but it ignores the validation of any dependencies and code coverage. You would use this command before deploying to a developer sandbox to validate code before attempting a build.
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-30 at 10.14.50 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.14.50-am.png)
 
 ## Deploy command
 
 The deploy command deploys the package to the given alias (this can be a scratch org, sandbox or devhub org)
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-30 at 10.16.27 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-10.16.27-am.png)
 
 ## Steps
 

@@ -63,7 +63,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](<../../../.gitbook/assets/image (10).png>)
+![](<../../../.gitbook/assets/image (3).png>)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -73,7 +73,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
 
-![](<../../../.gitbook/assets/image (1) (1).png>)
+![](<../../../.gitbook/assets/image (1).png>)
 
 ### C. Authenticate to DevHub via CLI
 

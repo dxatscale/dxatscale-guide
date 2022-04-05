@@ -6,7 +6,7 @@ To understand it further, let's understand the original scaled trunk based devel
 
 ## Scaled Trunk Based Development
 
-![Scaled Trunk Based Development (c) trunkbaseddevelopment.com](<../../.gitbook/assets/image (7) (1) (1) (1).png>)
+![Scaled Trunk Based Development (c) trunkbaseddevelopment.com](<../../.gitbook/assets/image (7) (1) (1).png>)
 
 In [Scaled Trunk Based Development](https://trunkbaseddevelopment.com), developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **("main")** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk.
 
@@ -14,7 +14,7 @@ Release branches are cut from trunk at a point in time, some days ahead before t
 
 ### DX@Scale Branching Model
 
-![DX@Scale branching model](<../../.gitbook/assets/brannchingmodel (1).png>)
+![DX@Scale branching model](../../.gitbook/assets/brannchingmodel-1-.png)
 
 DX@Scale follows the **scaled trunk based** branching model, with only caveat being we allow developers to commit changes to a release branch. This is based on our experience working with a large number of Salesforce programs in certain scenarios.
 

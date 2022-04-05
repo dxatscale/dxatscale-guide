@@ -14,7 +14,7 @@ The **Publish** command pushes artifacts created when you previously ran the **b
 
 ### Options available for the publish command are here:
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-31 at 10.23.37 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-31-at-10.23.37-am.png)
 
 You can also use the command below in the terminal to get more information
 
@@ -28,7 +28,7 @@ sfdx sfpowerscripts:orchestrator:publish --help
 
 Artifacts are a key concept in sfpowerscripts. Artifacts are traceable, versioned, immutable entities that get generated during the build or promote command. sfpowerscripts artifacts contain the source code of the package, metadata information, changelog and much more. Artifacts help sfpowerscripts to orchestrate deployment without being tied to the notion of branches.
 
-**Read more about artifacts and how it is being used in the**[ **link**](../../ci-cd/artifacts.md)****
+**Read more about artifacts and how it is being used in the**[ **link**](../../projects/sfpowerscripts/artifacts.md)****
 
 ## Release Command
 
@@ -36,7 +36,7 @@ The **Release** command provides a simplified method of fetching artifacts from 
 
 **Options available for the release command are here:**
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-31 at 10.31.25 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-31-at-10.31.25-am.png)
 
 You can also use the command below in the terminal to get more information
 

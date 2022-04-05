@@ -16,7 +16,7 @@ Why do you need an artifact registry?
 
 Let's have a look at the below example, here a CI pipeline creates a bunch of artifacts/packages, then the publish command is used to publish these artifacts into an Artifact Registry. This stage often gets repeated multiple times during a day.
 
-![](<../.gitbook/assets/image (43).png>)
+![](<../../.gitbook/assets/image (52).png>)
 
 An important thing to note here is especially when a CI pipeline is enabled with '[diffcheck](broken-reference)**'** functionality, it only builds packages for the particular build run. Unless you are immediately deploying these packages to production, there is no way to deploy an entire set of packages other than going through each of the build runs and immediately pushing them into production. You will need to aggregate packages before you proceed to the next stage.
 
@@ -49,4 +49,4 @@ Please refer to your artifact registry provider's documentation on how to set it
 
 ### Publishing/Fetching Packages to or from Artifact Registry
 
-sfpowerscripts provides with functionality to help you fetch or [publish](../projects/sfpowerscripts/orchestrator/publish.md) artifacts. Some orchestrator commands like [prepare](../projects/sfpowerscripts/orchestrator/prepare/) also fetches artifacts from the artifact registry.
+sfpowerscripts provides with functionality to help you fetch or [publish](orchestrator/publish.md) artifacts. Some orchestrator commands like [prepare](orchestrator/prepare/) also fetches artifacts from the artifact registry.

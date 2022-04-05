@@ -6,7 +6,7 @@ For a deeper dive on the platform, documentation is available on [GitLab Docs](h
 
 ## GitLab Overview
 
-![GitLab Architecture](<../../../.gitbook/assets/image (23) (1).png>)
+![GitLab Architecture](<../../../.gitbook/assets/image (23).png>)
 
 | Feature                  | Summary                                                                                                                                                                                                                                                                                                      |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,7 +68,7 @@ There are a number of security considerations that need to factored into the set
 
 The [.gitlab-ci.yml](https://docs.gitlab.com/ee/ci/yaml/gitlab\_ci\_yaml.html) template file is the primary configuration file used for executing continuous integration, delivery and deployment on the platform. This CI/CD configuration file exists by default in the root directory of your repository and controls pipeline execution of stages and jobs triggered from updates to the repository via merge requests/merges, scheduled executions, or manual execution of the pipeline.
 
-![](<../../../.gitbook/assets/image (24) (1).png>)
+![](<../../../.gitbook/assets/image (24).png>)
 
 In the template file provided, the structure of the [YAML](https://yaml.org) file follows the following structure:
 
@@ -95,7 +95,7 @@ In the template file provided, the structure of the [YAML](https://yaml.org) fil
 
 The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process. The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
 
-![](<../../../.gitbook/assets/image (14).png>)
+![](<../../../.gitbook/assets/image (39).png>)
 
 | Type          | Stage      | Job                | Command                                                                                                                                                                                                                                                                      | Description                                                                                     |
 | ------------- | ---------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |

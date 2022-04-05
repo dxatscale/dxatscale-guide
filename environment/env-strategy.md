@@ -29,7 +29,7 @@ The below table details each environment and the role of each environment in a t
 
 If you have sufficient licenses and availability of other systems, you can remove the dual role of staging environment in the above strategy to one mentioned below, where you have a dedicated integration environment both in the develop and release channels.
 
-![](<../.gitbook/assets/environment-strategy-optional (1).png>)
+![](../.gitbook/assets/environment-strategy-optional-1-.png)
 
 | Environment                     | Type    | License Type          | Integrated | Role                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------------------------- | ------- | --------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

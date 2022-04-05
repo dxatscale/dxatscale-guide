@@ -19,7 +19,7 @@
 
 Options available for the validate command are here:
 
-![](<../../.gitbook/assets/Screen Shot 2021-08-30 at 4.50.24 pm.png>)
+![](../../.gitbook/assets/screen-shot-2021-08-30-at-4.50.24-pm.png)
 
 You can also use the command below in the terminal to get more information
 
@@ -33,7 +33,7 @@ sfdx sfpowerscripts:orchestrator:validate --help
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](<../../.gitbook/assets/image (15).png>)
+![](<../../.gitbook/assets/image (43).png>)
 
 * Create a new workflow and name it 'validate'
 * Replace the contents of the file with the file below

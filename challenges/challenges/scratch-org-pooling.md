@@ -32,7 +32,7 @@ Prepare command helps you to build a pool of prebuilt scratch orgs which include
 
 #### Options available for the prepare command are here:
 
-![](<../../.gitbook/assets/Screen Shot 2021-09-01 at 10.58.06 am.png>)
+![](../../.gitbook/assets/screen-shot-2021-09-01-at-10.58.06-am.png)
 
 You can also use the command below in the terminal to get more information
 

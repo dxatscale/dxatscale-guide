@@ -42,7 +42,7 @@ It is highly recommended to build a delete pool pipeline that could be triggered
 
 Scratch Org Pools can be monitored using an analytic tool like DataDog. Check sfpowerscripts documentation to understand the metrics emitted by sfpowerscripts. A sample dashboard is attached below
 
-![](<../.gitbook/assets/image (23).png>)
+![](<../.gitbook/assets/image (55).png>)
 
 To learn more about how to build a pool of scratch orgs using sfpowerscripts, click on the link below
 
