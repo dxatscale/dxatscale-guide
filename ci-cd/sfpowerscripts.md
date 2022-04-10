@@ -4,7 +4,7 @@ description: The DX@Scale CI/CD Orchestrator
 
 # sfpowerscripts
 
-An end-to-end build and deployment orchestrator for modular development on Salesforce that can be implemented in any CI/CD platform of choice. sfpowerscripts is part of the [**DX@Scale**](https://dxatscale.io) initiative, productivity boosters for engineering teams on Salesforce.
+sfpowerscripts is an end-to-end build and deployment orchestrator for modular development on Salesforce that can be implemented in any CI/CD platform of choice.&#x20;
 
 ## **Key Features**
 
@@ -13,14 +13,14 @@ An end-to-end build and deployment orchestrator for modular development on Sales
 * Ability to selectively build changed packages in a [mono repo](https://en.wikipedia.org/wiki/Monorepo)
 * Ability to deploy only packages that are changed in repo
 * Pooling commands to prepare a pool of scratch orgs with packages pre-installed for optimized Pull/Merge Request Validation
-* Artifacts Driven, all create commands produce an artifact or operate on an [artifact](broken-reference)
+* Artifacts Driven, all create commands produce an artifact or operate on an [artifact](broken-reference/)
 * Integrate with any CI/CD system of choice
-* Generate changelogs for each release&#x20;
-* All commands are instrumented providing [metrics](broken-reference) about various aspects of your CI/CD
+* Generate changelogs for each release
+* All commands are instrumented providing [metrics](broken-reference/) about various aspects of your CI/CD
 
-sfpowerscripts is built with these key principles to align with the vision of DX@Scale\
-\
-Ease of use
+sfpowerscripts is built with these key principles to align with the vision of DX@Scale
+
+## Ease of use
 
 The tasks or commands should be easy to use. You don't need to resort to complex scripts to build a pipeline. A knowledge of what you need to achieve from a pipeline and Salesforce development (such as [Salesforce DX](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_intro.htm), [Unlocked Package](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm)/[Org Based Deployment Model](https://trailhead.salesforce.com/content/learn/modules/org-development-model) or a Hybrid where you combine both\*) should be enough to get you going.
 
@@ -58,13 +58,11 @@ As packages are always deployed in its entirety, this is an understood fact, rea
 
 Features currently enabling this principle include
 
-* All sfpowerscripts package creation commands feature a diff check, which builds the package only if it detects a change&#x20;
+* All sfpowerscripts package creation commands feature a diff check, which builds the package only if it detects a change
 * Packages will only be installed in the org, if the given package is not installed in the org
 * Support for mono repository, while working with multiple packages reduces overhead and overall complexity
 
 Of course, the onus is on developers to granulize packages, so that this could be achieved, but be assured the tooling is available.
-
-
 
 Learn more about sfpowerscripts here
 
