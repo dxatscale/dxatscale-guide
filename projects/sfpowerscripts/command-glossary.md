@@ -7,35 +7,35 @@ description: Commands in sfpowessdercripts
 ## Commands
 
 * Orchestrator Commands
-  * [`sfdx sfpowerscripts:orchestrator:prepare`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:validate`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:validateAgainstOrg`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:quickbuild`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:build`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:deploy`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:promote`](broken-reference)
-  * [`sfdx sfpowerscripts:orchestrator:publish`](broken-reference)
+  * [`sfdx sfpowerscripts:orchestrator:prepare`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsorchestratorprepare)``
+  * [`sfdx sfpowerscripts:orchestrator:validate`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:validateAgainstOrg`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:quickbuild`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:build`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:deploy`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:promote`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:publish`](broken-reference/)
 * Changelog (Track Releases)
-  * [`sfdx sfpowerscripts:changelog:generate`](broken-reference)
+  * [`sfdx sfpowerscripts:changelog:generate`](broken-reference/)
 * Package Commands ( Build your own workflow)
-  * [`sfdx sfpowerscripts:package:data:create`](broken-reference)
-  * [`sfdx sfpowerscripts:package:data:install`](broken-reference)
-  * [`sfdx sfpowerscripts:package:source:create`](broken-reference)
-  * [`sfdx sfpowerscripts:package:source:install`](broken-reference)
-  * [`sfdx sfpowerscripts:package:unlocked:create`](broken-reference)
-  * [`sfdx sfpowerscripts:package:unlocked:install`](broken-reference)
-  * [`sfdx sfpowerscripts:package:version:increment`](broken-reference)
+  * [`sfdx sfpowerscripts:package:data:create`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:data:install`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:source:create`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:source:install`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:unlocked:create`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:unlocked:install`](broken-reference/)
+  * [`sfdx sfpowerscripts:package:version:increment`](broken-reference/)
 * Pool Management
-  * [`sfdx sfpowerscripts:pool:delete`](broken-reference)
-  * [`sfdx sfpowerscripts:pool:fetch`](broken-reference)
-  * [`sfdx sfpowerscripts:pool:list`](broken-reference)
+  * [`sfdx sfpowerscripts:pool:delete`](broken-reference/)
+  * [`sfdx sfpowerscripts:pool:fetch`](broken-reference/)
+  * [`sfdx sfpowerscripts:pool:list`](broken-reference/)
 * Static Analysis
-  * [`sfdx sfpowerscripts:analyze:pmd`](broken-reference)
+  * [`sfdx sfpowerscripts:analyze:pmd`](broken-reference/)
 * Apex tests
-  * [`sfdx sfpowerscripts:apextests:trigger`](broken-reference)
-  * [`sfdx sfpowerscripts:apextests:validate`](broken-reference)
+  * [`sfdx sfpowerscripts:apextests:trigger`](broken-reference/)
+  * [`sfdx sfpowerscripts:apextests:validate`](broken-reference/)
 * Artifacts
-  * \`\`[`sfdx sfpowerscripts:artifacts:fetch`](broken-reference)\`\`
+  * \`\`[`sfdx sfpowerscripts:artifacts:fetch`](broken-reference/)\`\`
 
 ## `sfdx sfpowerscripts:orchestrator:prepare`
 
