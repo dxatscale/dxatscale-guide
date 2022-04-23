@@ -27,16 +27,16 @@ description: Commands in sfpowessdercripts
   * [`sfdx sfpowerscripts:package:unlocked:install`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptspackageunlockedinstall)
   * [`sfdx sfpowerscripts:package:version:increment`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptspackageversionincrement)
 * Pool Management
-  * [`sfdx sfpowerscripts:pool:delete`](broken-reference/)
-  * [`sfdx sfpowerscripts:pool:fetch`](broken-reference/)
-  * [`sfdx sfpowerscripts:pool:list`](broken-reference/)
+  * [`sfdx sfpowerscripts:pool:delete`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptspooldelete)
+  * [`sfdx sfpowerscripts:pool:fetch`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptspoolfetch)
+  * [`sfdx sfpowerscripts:pool:list`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptspoollist)
 * Static Analysis
-  * [`sfdx sfpowerscripts:analyze:pmd`](broken-reference/)
+  * [`sfdx sfpowerscripts:analyze:pmd`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsanalyzepmd)
 * Apex tests
-  * [`sfdx sfpowerscripts:apextests:trigger`](broken-reference/)
-  * [`sfdx sfpowerscripts:apextests:validate`](broken-reference/)
+  * [`sfdx sfpowerscripts:apextests:trigger`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsapexteststrigger)
+  * [`sfdx sfpowerscripts:apextests:validate`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsapextestsvalidate)
 * Artifacts
-  * \`\`[`sfdx sfpowerscripts:artifacts:fetch`](broken-reference/)\`\`
+  * \`\`[`sfdx sfpowerscripts:artifacts:fetch`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsartifactsfetch)
 
 ## `sfdx sfpowerscripts:orchestrator:prepare`
 
