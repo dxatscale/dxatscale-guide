@@ -8,9 +8,9 @@ description: Commands in sfpowessdercripts
 
 * Orchestrator Commands
   * [`sfdx sfpowerscripts:orchestrator:prepare`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsorchestratorprepare)``
-  * [`sfdx sfpowerscripts:orchestrator:validate`](broken-reference/)
-  * [`sfdx sfpowerscripts:orchestrator:validateAgainstOrg`](broken-reference/)
-  * [`sfdx sfpowerscripts:orchestrator:quickbuild`](broken-reference/)
+  * [`sfdx sfpowerscripts:orchestrator:validate`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsorchestratorvalidate)
+  * [`sfdx sfpowerscripts:orchestrator:validateAgainstOrg`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsorchestratorvalidateagainstorg)
+  * [`sfdx sfpowerscripts:orchestrator:quickbuild`](https://github.com/Accenture/sfpowerscripts/tree/main/packages/sfpowerscripts-cli#sfdx-sfpowerscriptsorchestratorquickbuild)
   * [`sfdx sfpowerscripts:orchestrator:build`](broken-reference/)
   * [`sfdx sfpowerscripts:orchestrator:deploy`](broken-reference/)
   * [`sfdx sfpowerscripts:orchestrator:promote`](broken-reference/)
