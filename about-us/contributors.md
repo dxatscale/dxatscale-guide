@@ -42,3 +42,9 @@ Eric is a Salesforce Technical Architect who has been using sfpower\* tools acro
 ![Diéffrei Quadros](../.gitbook/assets/diffrei.png)
 
 Diefffrei is a salesforce architect at Expereo, He has been working on salesforce platform since 2007. and is entusiastic about DDD, TDD, writing clean code and DevOps including developer tooling that enables development teams to reach a higher level of productivity
+
+
+
+![Kevin Jones](<../.gitbook/assets/image (58).png>)
+
+Kevin is a principal architect at FinancialForce where he focuses on product performance & scalability alongside developer tooling. He develops a set of open-source libraries and VSCode extensions for analysing Salesforce metadata and debug logs. Working for a large ISV has given him plenty of first hand experience of the difficulties of managing, analysing and refactoring metadata. He sees great value in the way DX@Scale is optimising the developer experience for everyone working on the platform.
