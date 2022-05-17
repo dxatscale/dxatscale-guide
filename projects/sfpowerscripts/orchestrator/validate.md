@@ -1,26 +1,26 @@
 # Validate
 
-**validate** command helps you to validate a change made to your configuration / code. This command is triggered as part of your pull request process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using [prepare ](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md)command.
+**validate** command helps you to validate a change made to your configuration / code. This command is triggered as part of your pull request (PR) or merge process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using [prepare](prepare/)[ ](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md)command.
 
-**validate** command at the moment runs the following checks
+**validate** command at the moment runs the following checks:
 
-* Checks accuracy of metadata by deploying the metadata to a Just-in-time CI org
+* Checks accuracy of metadata by deploying the metadata to a Just-in-Time CI org
 * Triggers Apex Tests
-* Validate Apex Test coverage of each package
+* Validate Apex Test Coverage of each package
 
 ## Sequence of Activities
 
 The following are the list of steps that are orchestrated by the **validate** command
 
 1. Fetch a scratch org from the provided pools in a sequential manner
-2. Authenticate to the Scratch org using the auth url fetched from the Scratch Org Info Object
+2. Authenticate to the Scratch org using the [auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) fetched from the [Scratch Org Info Object](https://developer.salesforce.com/docs/atlas.en-us.object\_reference.meta/object\_reference/sforce\_api\_objects\_scratchorginfo.htm)
 3. Build packages that are changed by comparing the tags in your repo against the packages installed in scratch org
 4. For each of the packages (internally calls the Deploy Command)
-   * Deploy all the built packages as [source packages](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md) / [data package](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md) (unlocked packages are installed as source package)
+   * Deploy all the built packages as [source packages](../../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../../development-practices/types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
    * Trigger Apex Tests if there are any apex test in the package
-   * Validate test coverage of the package depending on the type of the package ( source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more)
+   * Validate test coverage of the package depending on the type of the package (source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more)
 
-## Shapefile of a scratch org
+## Shape File of a Scratch Org
 
 The shape file is a zip containing scratch org definition in MDAPI format. It can be deployed to a scratch org to configure its available features and settings.
 
@@ -43,11 +43,11 @@ Start > Run > %TEMP%
 
 ## Validate against an existing org
 
-While validate command works against a scratch org fetched from the Scratch Org pool (created by prepare command), there might be instances where you need to validate against an Org where you have more data or control over (as in to write more scripts). This is where a variant of the command **validateAgainstOrg** come into play. You could provide a target org and sfpowerscripts will try to validate the incoming changes against that org. To make a diff based validation work, please ensure the org has '[sfpowerscripts\_artifact](https://dxatscale.gitbook.io/sfpowerscripts/cli/prerequisites#on-each-org-sandbox-production-that-you-intend-to-deploy)' installed and the records populated with packages that it already has.\
+While validate command works against a scratch org fetched from the Scratch Org Pool (created by [prepare](prepare/) command), there might be instances where you need to validate against an Org where you have more data or control over (as in to write more scripts). This is where a variant of the command **validateAgainstOrg** come into play. You could provide a target org and sfpowerscripts will try to validate the incoming changes against that org. To make a diff based validation work, please ensure the org has '[sfpowerscripts\_artifact](https://github.com/Accenture/sfpowerscripts/tree/main/prerequisites/sfpowerscripts-artifact)' installed and the records populated with packages that it already has.\
 \
 **validateAgainstOrg** has a default behaviour for ignoring diffCheck, which means all the packages in the repository will be deployed for validation. To achieve similar behaviour of validate, one could use `diffCheck` flag to ensure only changed packages (compared against what is in the org) need to be built and validated
 
-When **validateAgainstOrg** is used in long running CI environments (such as sandboxes, for refactoring purposes) are utilized with Pull Request/Merge Request based approach for validating can result in packages built on the tip of the temporary PR/MR branch to be installed in the org and then recorded to the org. This will then impact other PRs as these packages will become unreachable. There is an additional parameters `disableArtifactUpdateFlag` which can be used to let sfpowerscripts know that information about packages should not be written to sfpowerscripts artifact records
+When **validateAgainstOrg** is used in long running CI environments such as sandboxes, for refactoring purposes, using a Pull Request/Merge Request based approach for validating can result in packages being built on the tip of the temporary PR/MR branch to be installed in the org and then recorded to the org. This will then impact other PRs as these packages will become unreachable since they may never been approved and merged. There is an additional parameters `disableArtifactUpdateFlag` which can be used to let sfpowerscripts know that information about packages should not be written to sfpowerscripts artifact records.
 
 ## Common Queries
 
