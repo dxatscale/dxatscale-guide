@@ -4,7 +4,7 @@ description: Huh! These folks must really hate branches!
 
 # Artifacts
 
-Artifacts are a key concept in DX@Scale. Artifacts are traceable, versioned, immutable entities that get generated during the build or promote command. DX@Scale's CI/CD orchestrator generates artifacts that contain source code of the package, metadata information, changelog and much more. Artifacts help sfpowerscripts to orchestrate deployment without being tied to the notion of branches.
+Artifacts are a key concept in DX@Scale. Artifacts are traceable, versioned, immutable entities that get generated during the build or promote command. DX@Scale's CI/CD orchestrator generates artifacts that contain source code of the package, metadata information, change log and much more. Artifacts help sfpowerscripts to orchestrate deployment without being tied to the notion of branches.
 
 ### Artifact Registries in the context of sfpowerscripts
 
@@ -18,13 +18,13 @@ Let's have a look at the below example, here a CI pipeline creates a bunch of ar
 
 ![](<../.gitbook/assets/image (43).png>)
 
-An important thing to note here is especially when a CI pipeline is enabled with '[diffcheck](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/broken-reference/README.md)**'** functionality, it only builds packages for the particular build run. Unless you are immediately deploying these packages to production, there is no way to deploy an entire set of packages other than going through each of the build runs and immediately pushing them into production. You will need to aggregate packages before you proceed to the next stage.
+An important thing to note here is especially when a CI pipeline is enabled with 'diffcheck' functionality, it only builds packages for the particular build run. Unless you are immediately deploying these packages to production, there is no way to deploy an entire set of packages other than going through each of the build runs and immediately pushing them into production. You will need to aggregate packages before you proceed to the next stage.
 
 One approach to solve is to use branches, where a branch per environment is used to stage changes, and new builds are generated from this branch to deploy to the environment. We believe this practice is incorrect as they break the traceability chain and errors could be introduced, moreover it complicates your version control strategy. Our premise is rather to use the same set of artifacts that were built at one stage all the way to production.
 
-This is where an artifact registry comes into play, it stores all the artifacts produced by the build stage into a repository, which allows you to consolidate all versions of your artifacts and then allowing you to decide which all packages/artifacts should be aggregated and released into production.
+This is where an artifact registry comes into play. It stores all the artifacts produced by the build stage into a repository, which allows you to consolidate all versions of your artifacts and then allowing you to decide which all packages/artifacts should be aggregated and released into production.
 
-The CD pipeline (or called as 'Release' pipelines in some CI/CD systems) can be triggered manually or automatically, with artifacts and its version number/tag as the input, such as by using a release definition used by the [release](https://github.com/Accenture/sfpowerscripts/tree/ba4858e1388945e7d672d31315886da8b16fb408/faq/release.md) command.
+The CD pipeline (or called as 'Release' pipelines in some CI/CD systems) can be triggered manually or automatically, with artifacts and its version number/tag as the input, such as by using a release definition used by the [release](../projects/sfpowerscripts/orchestrator/release.md) command.
 
 ### **Type of Artifact Registries supported**
 
@@ -47,6 +47,6 @@ Please refer to your artifact registry provider's documentation on how to set it
 * [JFrog Artifactory](https://www.jfrog.com/confluence/display/JFROG/npm+Registry)
 * [MyGet](https://docs.myget.org/docs/reference/myget-npm-support)
 
-### Publishing/Fetching Packages to or from Artifact Registry
+### Publishing / Fetching Packages to or from Artifact Registry
 
 sfpowerscripts provides with functionality to help you fetch or [publish](../projects/sfpowerscripts/orchestrator/publish.md) artifacts. Some orchestrator commands like [prepare](../projects/sfpowerscripts/orchestrator/prepare/) also fetches artifacts from the artifact registry.
