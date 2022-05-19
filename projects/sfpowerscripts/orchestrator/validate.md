@@ -53,7 +53,7 @@ When **validateAgainstOrg** is used in long running CI environments such as sand
 
 ### My metadata looks intact, but validate is failing on deployment of some packages? Why is that and what should be done?
 
-We have noticed specific instances where a change is not compatible with a scratch org fetched with the pool. Most notorious are changes to picklists, causing checks to fail. We recommend you always create a pool, with out **installall** flag, and design your pipelines in a way (through an environment variable / or through a commit message hook) to switch to a pool which only has the dependent packages for your repo to validate your changes.
+We have noticed specific instances where a change is not compatible with a scratch org fetched with the pool. Most notorious are changes to picklists, causing checks to fail. We recommend you always create a pool, without **installall** flag, and design your pipelines in a way (through an environment variable / or through a commit message hook) to switch to a pool which only has the dependent packages for your repo to validate your changes.
 
 ### I have some issues with some apex test on a particular package and I need to disable it temporarily. What are my options?
 
