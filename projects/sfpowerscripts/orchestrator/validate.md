@@ -1,12 +1,21 @@
 # Validate
 
-**validate** command helps you to validate a change made to your configuration / code. This command is triggered as part of your pull request (PR) or merge process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using [prepare](prepare/)[ ](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md)command.
+**validate** command helps you to validate a change made to your configuration / code against a scratch org . This command is triggered as part of your pull request (PR) or merge process, to ensure the correctness of configuration/code, before being merged into your **main** branch. validate simplifies setting up and speeding up the process by using a scratch org prepared earlier using [prepare](prepare/)[ ](https://github.com/dxatscale/dxatscale-guide/blob/april-22/projects/sfpowerscripts/orchestrator/broken-reference/README.md)command.
 
-**validate** command at the moment runs the following checks:
+**validate** command runs the following checks with the options to enable additional features such as dependency and impact analysis:
 
 * Checks accuracy of metadata by deploying the metadata to a Just-in-Time CI org
 * Triggers Apex Tests
 * Validate Apex Test Coverage of each package
+* Toggle between standard mode and fast feedback mode for validations
+* \[optional] - Validate dependencies between packages for changed components
+* \[optional] - Visualize components impacted by changes in pull request
+
+{% hint style="success" %}
+**May 2022 Release** \
+\
+validate command introduces a new feature to enable '**fast feedback**' mode for the validate command which will only do selective deployment of changed metadata in packages and selective tests. Benefits for existing teams is a reduction in time required for PR (pull request) validations.  For more information on this feature, you can review the [decision record](https://github.com/Accenture/sfpowerscripts/blob/develop/decision%20records/validate/002-fast-feedback.md) for the feature.
+{% endhint %}
 
 ## Sequence of Activities
 
@@ -15,10 +24,28 @@ The following are the list of steps that are orchestrated by the **validate** co
 1. Fetch a scratch org from the provided pools in a sequential manner
 2. Authenticate to the Scratch org using the [auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) fetched from the [Scratch Org Info Object](https://developer.salesforce.com/docs/atlas.en-us.object\_reference.meta/object\_reference/sforce\_api\_objects\_scratchorginfo.htm)
 3. Build packages that are changed by comparing the tags in your repo against the packages installed in scratch org
-4. For each of the packages (internally calls the Deploy Command)
-   * Deploy all the built packages as [source packages](../../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../../development-practices/types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
-   * Trigger Apex Tests if there are any apex test in the package
-   * Validate test coverage of the package depending on the type of the package (source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more)
+4.  For each of the packages (internally calls the Deploy Command)\
+    \
+    **Standard Mode**\
+    ****
+
+    * Deploy all the built packages as [source packages](../../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../../development-practices/types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
+    * Trigger Apex Tests if there are any apex test in the package
+    * Validate test coverage of the package depending on the type of the package (source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more)
+
+    \
+    **Fast Feedback Mode**\
+    ****
+
+    * Deploy only changed metadata components for built packages as [source packages](../../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../../development-practices/types-of-packaging/data-packages.md)
+    * Trigger selective Apex Tests based on impact analysis of the changes in the package
+    * Skip coverage calculations
+    * Skip deployment of package if the descriptor is changed
+    * Skip deployment of top level packages direct dependency on the package containing changed components
+
+{% hint style="info" %}
+Use of standard mode is still recommended in the pipeline with fast feedback to ensure coverage computation and scripts added to the descriptor files are correctly working and deployable in an empty org.
+{% endhint %}
 
 ## Shape File of a Scratch Org
 
