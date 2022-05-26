@@ -1,6 +1,7 @@
 # Table of contents
 
 * [DX@Scale](README.md)
+* [Talks on DX@Scale](talks-on-dx-scale.md)
 * [Principles](principles.md)
 
 ## 🤸 Learn with hands-on exercises <a href="#challenges" id="challenges"></a>

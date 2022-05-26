@@ -25,10 +25,15 @@ DX@Scale extends the existing Salesforce DX ecosystem by providing:
 
 An optimized Developer Experience is paramount for us while building DX@Scale. We are constantly focusing on improving our tools ensuring these practices are easy to adopt in your organization.
 
-## Talks on DX@Scale
+## When not to use DX@Scale?
 
-{% embed url="https://trailhead.salesforce.com/live/videos/a2r3k000001vDOJ/adopting-package-based-development-at-scale" %}
+{% hint style="danger" %}
+DX@Scale is not fit for purpose for all use cases. Please proceed with caution when you are applying this methodology and any of the underlying scenarios are met
+{% endhint %}
 
-{% embed url="https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-paris-france-presents-dxscale-optimizing-salesforce-development-and-deployment-for-large-scale-projects/" %}
+1. **There is a need to batch your changes over a period**, resulting in many packages to be installed in one transaction. As we are unable to install all packages currently in a single transaction, the time to deploy in production will be extremely high.
+2. **Your team is new to using version control and has no prior experience with ci/cd**
+3. **You are only looking for devops tools, not an overall approach to modular development**
+4. **No end-to-end ownership or visibility**, You or your team's responsibility ends with development, but some other team or personnel is responsible for deployment
+5. You or your team is not convinced of the **benefits of modular development in Salesforce**
 
-{% embed url="https://miro.com/app/embed/o9J_lp7sjtQ=/?pres=1&frameId=3074457365946799458" %}
