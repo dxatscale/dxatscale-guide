@@ -32,7 +32,7 @@ DX@Scale is not fit for purpose for all use cases. Please proceed with caution w
 {% endhint %}
 
 1. You or your team is not convinced of the **benefits of modular development in Salesforce**
-2. **Your release model is predicated on infrequent deployments with large batches**.  As we are unable to install all packages currently in a single transaction, the time to deploy in production will be extremely high.
+2. **Your release model is predicated on infrequent deployments with large batches**.  As we are unable to install all packages currently in a single transaction, the time to deploy in production will be extremely high when you batch your changes across a large number of packages
 3. **Your team is new to using version control and has no prior experience with ci/cd**
 4. **You are only looking for devops tools, not an overall approach to modular development**
 5. **No end-to-end ownership or visibility**, You or your team's responsibility ends with development, but some other team or personnel is responsible for deployment
