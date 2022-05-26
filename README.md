@@ -28,7 +28,7 @@ An optimized Developer Experience is paramount for us while building DX@Scale. W
 ## When not to use DX@Scale?
 
 {% hint style="danger" %}
-DX@Scale is not fit for purpose for all use cases. Please proceed with caution when you are applying this methodology and any of the underlying scenarios are met
+DX@Scale is not fit for purpose for all use cases. Please proceed with caution when you are applying this tools/techniques and any of the underlying scenarios are met
 {% endhint %}
 
 1. **There is a need to batch your changes over a period**, resulting in many packages to be installed in one transaction. As we are unable to install all packages currently in a single transaction, the time to deploy in production will be extremely high.
