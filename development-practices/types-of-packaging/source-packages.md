@@ -57,9 +57,9 @@ sfpowerscripts source packages support the following exclusive options in additi
 All these currently available options that can be enabled for source packaging by adding to the package descriptor in the sfdx-project.json file.
 
 * **Optimized Deployment (`isOptimizedDeployment:<boolean>)`:** Control the behaviour of testing of source packages during deployment, utilize the org's coverage or better have apex unit tests that have 75% or more coverage for each class carried in the source package. Any source packages that do not have apex classes/triggers will be deployed without triggering tests
-* **Aliasify (`aliasfy:<boolean>`)** : Aliasify enables deployment of a subfolder in a source package that matches the target org. For example, you have a source package as listed below. During Installation, only the metadata contents of the folder that matches the alias gets deployed
+* **Aliasify (`aliasfy:<boolean>`)** : Aliasify enables deployment of a subfolder in a source package that matches the target org. For example, you have a source package as listed below. During Installation, only the metadata contents of the folder that matches the alias gets deployed.  If the alias is not found, sfpowerscripts will fallback to the '**default**' folder.  If the default folder is not found, an error will be displayed saying default folder or alias is missing.
 
-![source Packages with env-specific-folders](<../../.gitbook/assets/image (47).png>)
+![source Packages with env-specific-folders](<../../.gitbook/assets/2022-05-26\_10-53-34 (1).png>)
 
 * **Skip Testing ( `skipTesting:<boolean>`)** : Allows you to deploy a source package without triggering test to an Org. Please note, this is only applicable during deployments to sandboxes. Apex tests are mandatory (if your package contains apex classes/triggers) during deployment to production.
 * **Reconcile Profiles ( `reconcileProfiles:<boolean>`) :** By default, true, automatically reconcile a profile existing in the source package against the target org. Read more about reconcile option [here](https://github.com/Accenture/sfpowerkit/discussions/410).

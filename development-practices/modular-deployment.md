@@ -2,7 +2,7 @@
 
 Typically, version control repository for Salesforce is organized by components classified by each metadata type. For example, the following image shows all the apex classes in the org are placed under the 'classes' directory.
 
-![All classes in the org placed in a single 'classes' folder](<../.gitbook/assets/image (50) (1).png>)
+![All classes in the org placed in a single 'classes' folder](<../.gitbook/assets/image (39).png>)
 
 Propagating a change from a repository organized by components can either done by deploying all the components in the repository or by doing a selective deployment of the changed components. A full deployment of repository is not feasible once the size of the repository grows beyond 10,000 files as Salesforce has a limit on the number of files that can be deployed in one deployment, and this will result in considerable waste of time as your entire repository is deployed.
 
