@@ -67,7 +67,7 @@ sfdx plugins:install @dxatscale/sfpowerscripts
 ## Install sfp-cli
 
 ```
-sfdx plugins:install @dxatscale/sfpowerscripts
+sfdx plugins:install @dxatscale/sfp-cli
 ```
 
 ## Create 2 Trailhead Playgrounds <a href="#user-content-5.--create-2-trailhead-playgrounds" id="user-content-5.--create-2-trailhead-playgrounds"></a>
