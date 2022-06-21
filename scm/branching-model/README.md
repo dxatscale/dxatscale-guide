@@ -6,7 +6,7 @@ To understand it further, let's understand the original scaled trunk based devel
 
 ## Scaled Trunk Based Development
 
-![Scaled Trunk Based Development (c) trunkbaseddevelopment.com](<../../.gitbook/assets/image (7) (1) (1).png>)
+![Scaled Trunk Based Development (c) trunkbaseddevelopment.com](<../../.gitbook/assets/image (7) (1) (1) (1).png>)
 
 In [Scaled Trunk Based Development](https://trunkbaseddevelopment.com), developers utilize short-lived feature branches, where an individual developer work on a very small piece of functionality. Once it is tested properly, the developer would raise a Pull Request to be integrated into the trunk **("main")** branch. If the pull request validation is completed successfully and the reviewers are happy with the change, it is immediately merged into the trunk.
 

@@ -37,7 +37,7 @@
 ## 💞 Implementing your CI-CD
 
 * [GitHub](implementing-your-ci-cd/github/README.md)
-  * [Prerequisites](implementing-your-ci-cd/github/prerequisites.md)
+  * [Prerequisites](ci-cd/reference-implementation/github/prerequisites.md)
   * [Getting Started](implementing-your-ci-cd/github/getting-started.md)
   * [Solution Overview](implementing-your-ci-cd/github/solution-overview.md)
 * [GitLab](implementing-your-ci-cd/gitlab/README.md)

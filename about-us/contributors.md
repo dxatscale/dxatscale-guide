@@ -31,11 +31,11 @@ Jothy Sivanand - is Accenture Certified Senior Technology Architect and an inven
 
 Ramesh is a Senior DevOps Engineer with good knowledge of key DevOps practices – Continuous Integration and Delivery, Strategy, Implementation, Security and Vulnerability Management (CDP) and Cloud concepts (AWS/Azure) - IaaS, PaaS, SaaS. He has been involved and part of DX@Scale journey since 2019 as an engineer, advocate, contributor, implementer, maintainer, trouble-shooter and successfully implemented CICD solutions for Salesforce on large/small scale projects.
 
-![Hung Dinh](<../.gitbook/assets/image (24).png>)
+![Hung Dinh](../.gitbook/assets/hung-dinh.png)
 
 Hung set out the mission to tackle Salesforce DevOps practices head-on after he had been involved in delivering a large Salesforce transformation program and appalled at how far behind the DevOps capabilities were. Hung acts as an advisor to DX@Scale core team on tooling and practices.​
 
-![Eric Shen](<../.gitbook/assets/image (26).png>)
+![Eric Shen](../.gitbook/assets/eric-shen.png)
 
 Eric is a Salesforce Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
 
@@ -45,6 +45,6 @@ Diefffrei is a salesforce architect at Expereo, He has been working on salesforc
 
 
 
-![Kevin Jones](<../.gitbook/assets/image (51).png>)
+![Kevin Jones](<../.gitbook/assets/image (50).png>)
 
 Kevin is a principal architect at FinancialForce where he focuses on product performance & scalability alongside developer tooling. He develops a set of open-source libraries and VSCode extensions for analysing Salesforce metadata and debug logs. Working for a large ISV has given him plenty of first hand experience of the difficulties of managing, analysing and refactoring metadata. He sees great value in the way DX@Scale is optimising the developer experience for everyone working on the platform.
