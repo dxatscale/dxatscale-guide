@@ -75,6 +75,7 @@ sfdx sfpowerscripts:orchestrator:release --help
 ![Token expiration field](https://docs.github.com/assets/images/help/settings/token\_expiration.png)
 
 * Select the scopes, or permissions, you'd like to grant this token. To use your token to access repositories from the command line, select **repo**.
+* Github has updated their token options, you need to check the "read and write packages" to be able to use it.
 
 ![Selecting token scopes](https://docs.github.com/assets/images/help/settings/token\_scopes.gif)
 
