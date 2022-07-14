@@ -29,7 +29,7 @@ The following are the list of steps that are orchestrated by the **validate** co
     **Standard Mode**\
     ****
 
-    * Deploy all the built packages as [source packages](../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../development-practices/types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
+    * Deploy all the built packages as [source packages](../types-of-packaging/source-packages.md) / [data packages](../types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
     * Trigger Apex Tests if there are any apex test in the package
     * Validate test coverage of the package depending on the type of the package (source packages: each class needs to have 75% or more, unlocked packages: packages as whole need to have 75% or more)
 
@@ -37,7 +37,7 @@ The following are the list of steps that are orchestrated by the **validate** co
     **Fast Feedback Mode**\
     ****
 
-    * Deploy only changed metadata components for built packages as [source packages](../../development-practices/types-of-packaging/source-packages.md) / [data packages](../../development-practices/types-of-packaging/data-packages.md)
+    * Deploy only changed metadata components for built packages as [source packages](../types-of-packaging/source-packages.md) / [data packages](../types-of-packaging/data-packages.md)
     * Trigger selective Apex Tests based on impact analysis of the changes in the package
     * Skip coverage calculations
     * Skip deployment of package if the descriptor is changed

@@ -107,10 +107,3 @@ By utilizing a destructive manifest file, one could delete metadata components d
 
 **Short answer no**, source packages assume that dependent metadata is already there in your org before the metadata in the source package is being deployed. That being said, for purposes of development in scratch org, you could add '**unlocked package'** dependencies to a source package, so commands like prepare and validate (in sfpowerscritpts:orchestrator) will install the dependencies to the scratch org.
 
-## Why is the version number for source packages have to end with zero? Doesn't it support .next?
-
-At the moment, it is not supported. So ensure that all your source packages in your repository has '0' as placeholder for the build number which can be replaced by a build number passed as a flag by the build command Make sure to use the right variable name according to your CI/CD system, the sample below describes how to pass the build number using GITLAB CI/CD.
-
-```
-sfdx sfpowerscripts:orchestrator:quickbuild --buildnumber ${CI_JOB_ID} --configfilepath config/scratch-org-def.json --diffcheck --branch develop
-```

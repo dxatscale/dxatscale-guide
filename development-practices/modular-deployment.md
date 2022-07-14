@@ -22,7 +22,7 @@ This model has the following issues on a large repository:
 
 #### 2. Deployment of Modules
 
-A module, be it second generation [unlocked package](types-of-packaging/unlocked-packages.md),[ org dependent unlocked package](types-of-packaging/unlocked-packages.md) or [source package](types-of-packaging/source-packages.md) is an alternate approach for selective deployment. A module is a collection of metadata types that are grouped together in terms of the functionality provided. For example, a logging framework as a module will consist of the apex classes, objects, or any other automation that pertains to logging. A module is deployed in its entirety and the lifecycle of a module is maintained as opposed to individual components.
+A module, be it second generation [unlocked package](../sfpowerscripts/types-of-packaging/unlocked-packages.md),[ org dependent unlocked package](../sfpowerscripts/types-of-packaging/unlocked-packages.md) or [source package](../sfpowerscripts/types-of-packaging/source-packages.md) is an alternate approach for selective deployment. A module is a collection of metadata types that are grouped together in terms of the functionality provided. For example, a logging framework as a module will consist of the apex classes, objects, or any other automation that pertains to logging. A module is deployed in its entirety and the lifecycle of a module is maintained as opposed to individual components.
 
 A modular deployment provides the following benefits:
 
