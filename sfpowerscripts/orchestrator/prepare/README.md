@@ -146,6 +146,24 @@ For changes to the features and settings in pooled scratch orgs, check out the [
 
 The `sfpowerscripts:pool` topic contains commands that can be used to manage (list, fetch and delete) the scratch org pools created by prepare command.
 
+## Executing a custom script
+
+User can execute the custom script before dependencies install into a particular org when `preDependencyInstallationScriptPath` configuration is specified or after all the artifacts are deployed into a particular org when `postDeploymentScriptPath` configuration is specified in the pool config file.&#x20;
+
+```
+"preDependencyInstallationScriptPath": "scripts\\prepare\\pre.bat" //Windows 
+"preDependencyInstallationScriptPath": "scripts/prepare/pre.sh" //Linux or Mac
+```
+
+following argurements will be passed into the script for use in the custom logic.
+
+```
+$0: custom script path
+$1: scratch org username 
+$2: devhub username
+$3 deployment status (only applicable for post-deployment script)
+```
+
 ## Package Checkpoints
 
 Package checkpoints allow precise control over which scratch orgs are committed to a pool when there are deployment failures and the `succeedOnDeploymentErrors` configuration is specified. To designate a package as a checkpoint, add the property `checkpointForPrepare: true` to the package in the sfdx-project.json. Only scratch orgs that satisfy at least one checkpoint will be committed to the pool. This provides more consistency in what you can expect from your scratch orgs.
