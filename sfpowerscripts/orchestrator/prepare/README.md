@@ -151,17 +151,17 @@ The `sfpowerscripts:pool` topic contains commands that can be used to manage (li
 User can execute the custom script before dependencies install into a particular org when `preDependencyInstallationScriptPath` configuration is specified or after all the artifacts are deployed into a particular org when `postDeploymentScriptPath` configuration is specified in the pool config file.&#x20;
 
 ```
-"preDependencyInstallationScriptPath": "scripts\\prepare\\pre.bat" //Windows 
 "preDependencyInstallationScriptPath": "scripts/prepare/pre.sh" //Linux or Mac
 ```
 
-following argurements will be passed into the script for use in the custom logic.
+Following arguments will be passed into the script for use in the custom logic.
 
 ```
 $0: custom script path
 $1: scratch org username 
 $2: devhub username
-$3 deployment status (only applicable for post-deployment script)
+#Only applicable for post-deployment script, 
+$3 deployment status ("failed" or "succeed")
 ```
 
 ## Package Checkpoints
