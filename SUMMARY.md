@@ -115,6 +115,7 @@
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
+  * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
   * [sfpowerscripts orchestrator pool breaking changes](media-library/knowledge-articles/sfpowerscripts-orchestrator-pool-breaking-changes.md)
   * [Streamlined Scratch Orgs are here!](media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md)
   * [Building packages for deployment](media-library/knowledge-articles/building-packages-for-deployment.md)
