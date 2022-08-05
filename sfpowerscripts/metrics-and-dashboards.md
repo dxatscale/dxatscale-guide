@@ -122,4 +122,4 @@ The following are the list of metrics that are captured.
 
 ![](../.gitbook/assets/dashboard\_edited.png)
 
-![](<../.gitbook/assets/image (52) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (52) (1) (1).png>)

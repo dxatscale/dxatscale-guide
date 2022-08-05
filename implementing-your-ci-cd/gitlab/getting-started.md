@@ -59,7 +59,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (16).png>)
 
 ### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -84,7 +84,7 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](<../../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (29).png>)
 
 {% hint style="info" %}
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
@@ -260,9 +260,9 @@ Project Access Tokens are only supported on self-managed instances on Free tier 
 7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](<../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (9).png>)
 
-![](<../../.gitbook/assets/image (25).png>)
+![](<../../.gitbook/assets/image (15).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -283,7 +283,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS                 | uat            | Variable | All (default) | No      | No   |
 | UAT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
-![Project Variables](<../../.gitbook/assets/image (3).png>)
+![Project Variables](<../../.gitbook/assets/image (48).png>)
 
 {% hint style="info" %}
 The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
@@ -299,7 +299,7 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (48).png>)
 
 ### B. Clone Project Repository
 
@@ -311,7 +311,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 ### C. Copy Template Contents to Project Folder
 
@@ -362,7 +362,7 @@ Once the files have been committed, you can verify the files have been pushed th
 1. Navigate to **Repository > Files**
 2. Verify all the files are visible in the repository
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../.gitbook/assets/image (29) (1).png>)
 
 1. Navigate to **CI/CD > Pipelines**
 2. Verify the pipeline has been skipped
@@ -540,7 +540,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 2. Navigate to **Package & Registries > Package Registry**
 3. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-![](<../../.gitbook/assets/image (27).png>)
+![](<../../.gitbook/assets/image (27) (1).png>)
 
 ### G. Scheduled Jobs
 

@@ -26,7 +26,7 @@ Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md)
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](<../../.gitbook/assets/image (15).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 * Create a new workflow and name it 'prepare'
 * Replace the contents of the file with the file below
@@ -127,11 +127,11 @@ Select 'New repository secret'
 
 * Go back to actions and select the workflow
 
-![](<../../.gitbook/assets/image (16).png>)
+![](<../../.gitbook/assets/image (52).png>)
 
 * Run the workflow by selecting 'run workflow'
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (45).png>)
 
 * Select the job to watch it running through the tasks and create the scratch orgs required
 
