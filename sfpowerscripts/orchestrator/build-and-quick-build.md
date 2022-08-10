@@ -54,3 +54,20 @@ Utilize the .NEXT and .LATEST for versioning the build number of unlocked packag
 ## **Ignoring Packages from being built**
 
 Using the `ignoreOnStage:[ "build" ]` property on a package, causes the particular package to be skipped by the **build** command. Similarly you can use `ignoreOnStage:[ "quickbuild" ]` to skip packages in the quickbuild stage.
+
+## **Using multiple scratch org config files**
+
+Allow user to specify a set of different scratch org config files for different packages. when the feature is enabled and the package name can be found, the build command will use specified config file for that package.
+
+```
+"plugins": {
+    "sfpowerscripts":{
+      "scratchOrgDefFilePaths":{
+        "enableMultiDefinitionFiles": true,
+        "packages": {
+          "crm-core":"scratchOrgDef/crm-core-def.json"
+        }
+      }
+    }
+  }
+```
