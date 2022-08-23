@@ -409,6 +409,47 @@ Customize the provided scratch org definition file for your use case and save an
 }
 ```
 
+# Using Scratch Orgs with Org Shape
+To take all advantages from DX@Scale and be compliant with your current org, you can use the Org Shape feature, but when you do it you need to add an extra parameter on your scratch-def.json which is the Security Settings > Password Policies > Minimum Password Lifetime = FALSE.
+
+The reason behind this need, is because when you spin a Scratch Org with Org Shape that feature will be TRUE (no matter how your source org is configured or not), and it will break your pipeline during the password reset process which DX@Scale uses. This issue is affected only with Org Shape feature.
+
+```bash
+{
+    "orgName": "DX@Scale Demo Org",
+    "edition": "Developer",
+    "hasSampleData": false,
+    "features": ["Communities", "Walkthroughs", "EnableSetPasswordInApi"],
+    "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
+        "experienceBundleSettings": {
+            "enableExperienceBundleMetadata": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
+        },
+        "securitySettings": {
+            "passwordPolicies": {
+                "minimumPasswordLifetime": false
+            }
+        }
+    }
+}
+
+```
+
 ### B. Scratch Org Pool Configuration Files
 
 The [Scratch Org Pool configuration](https://sfpowerscripts.dxatscale.io/commands/prepare/scratch-org-pool-configuration) defines the pool of scratch orgs in sfpowerscripts. The [JSON Schema definition file](https://raw.githubusercontent.com/Accenture/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json) describes in detail which properties are accepted by the configuration file.
