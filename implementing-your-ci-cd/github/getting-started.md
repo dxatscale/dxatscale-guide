@@ -333,6 +333,47 @@ Customize the provided scratch org definition file for your use case and save an
 }
 ```
 
+# Using Scratch Orgs with Org Shape
+To take all advantages from DX@Scale and be compliant with your current org, you can use the Org Shape feature, but when you do it you need to add an extra parameter on your scratch-def.json which is the Security Settings > Password Policies > Minimum Password Lifetime = FALSE.
+
+The reason behind this need, is because when you spin a Scratch Org with Org Shape that feature will be TRUE (no matter how your source org is configured or not), and it will break your pipeline during the password reset process which DX@Scale uses. This issue is affected only with Org Shape feature.
+
+```bash
+{
+    "orgName": "DX@Scale Demo Org",
+    "edition": "Developer",
+    "hasSampleData": false,
+    "features": ["Communities", "Walkthroughs", "EnableSetPasswordInApi"],
+    "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
+        "experienceBundleSettings": {
+            "enableExperienceBundleMetadata": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
+        },
+        "securitySettings": {
+            "passwordPolicies": {
+                "minimumPasswordLifetime": false
+            }
+        }
+    }
+}
+
+```
+
 ### F. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_ws\_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
