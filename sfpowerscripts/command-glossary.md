@@ -4,35 +4,35 @@ description: Commands in sfpowercripts
 
 # Command Glossary
 
-* [`sfdx sfpowerscripts:analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsanalyzepmd---sourcedir-string---ruleset-string---rulesetpath-string---format-string--o-string---version-string---threshold-integer--b---refname-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsapexteststrigger--l-string--n-string--c---validatepackagecoverage--s---specifiedtests-string---apextestsuite-string--p-integer--w-number--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:apextests:validate -t <string> [-u <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsapextestsvalidate--t-string--u-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsartifactsfetch--d-directory--p-filepath---scope-string---npm---f-filepath---npmrcpath-filepath----json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsartifactsquery--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl <string>] [--showallartifacts] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptschangeloggenerate--d-directory--n-string--w-string--b-string---limit-integer---workitemurl-string---showallartifacts---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorbuild---branch-string---diffcheck--r-string--f-filepath---artifactdir-directory---waittime-number---buildnumber-number---executorcount-number---tag-string--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b <string> --skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratordeploy--u-string---artifactdir-directory---waittime-number--g-array--t-string--b-string---skipifalreadyinstalled---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorprepare--f-filepath---npmrcpath-filepath---keys-string--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorpromote--d-directory--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string> [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorpublish--d-directory--p--v-string--t-string---gittag---pushgittag---scope-string---npm---f-filepath---npmtag-string----npmrcpath-filepath----json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorquickbuild---branch-string---diffcheck--r-string--f-filepath---artifactdir-directory---waittime-number---buildnumber-number---executorcount-number---tag-string--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorrelease--u-string--p-filepath---scope-string---npm---f-filepath---npmrcpath-filepath---g-array--t-string---waittime-number---keys-string--b-string---generatechangelog--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:validate -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorvalidate--p-array---shapefile-string---coveragepercent-integer--g-array--x---keys-string--c-string---enableimpactanalysis---basebranch-string---enabledependencyvalidation----tag-string---disablediffcheck---disableartifactupdate---fastfeedback--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorvalidateagainstorg--u-string---coveragepercent-integer---diffcheck---disableartifactupdate--g-array---basebranch-string---fastfeedback---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsorchestratorvalidateagainstpool--p-array---shapefile-string---coveragepercent-integer--g-array--x---keys-string--c-string---enableimpactanalysis---basebranch-string---enabledependencyvalidation----tag-string---disablediffcheck---disableartifactupdate---fastfeedback--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackagedatacreate--n-string--v-string---artifactdir-directory---diffcheck---branch-string---gittag--r-string---refname-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackagedatainstall--n-string--u-string---artifactdir-directory--s---skipifalreadyinstalled---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackagesourcecreate--n-string--v-string---artifactdir-directory---diffcheck---branch-string---gittag--r-string---refname-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o] [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackagesourceinstall--n-string--u-string---artifactdir-directory---skipifalreadyinstalled--s--o--t---waittime-string---refname-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>] [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackageunlockedcreate--n-string--b--k-string---x---diffcheck---gittag--r-string---versionnumber-string--f-filepath---artifactdir-directory---enablecoverage--s---branch-string---tag-string---waittime-string---refname-string--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackageunlockedinstall--n-string--u-string--k-string--a---artifactdir-directory---securitytype-string--f--s----upgradetype-string---waittime-string---publishwaittime-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspackageversionincrement---segment-string--a--r-string--n-string--d-string--c---refname-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspooldelete--t-string--m--i---a--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspoolfetch--t-string--a-string--s-string--d--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspoollist--t-string--m--a--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspoolmetricspublish--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptspoolorgdelete--u-string--v-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx sfpowerscripts:releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](command-glossary.md#sfdx-sfpowerscriptsreleasedefinitiongenerate--n-string---n-string--b-string---push---forcepush---u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* `sfdx sfpowerscripts:analyze:pmd`
+* `sfdx sfpowerscripts:apextests:trigger`
+* `sfdx sfpowerscripts:apextests:validate`
+* `sfdx sfpowerscripts:artifacts:fetch`
+* `sfdx sfpowerscripts:artifacts:query`
+* `sfdx sfpowerscripts:changelog:generate`
+* `sfdx sfpowerscripts:orchestrator:build`
+* `sfdx sfpowerscripts:orchestrator:deploy`
+* `sfdx sfpowerscripts:orchestrator:prepare`
+* `sfdx sfpowerscripts:orchestrator:promote`&#x20;
+* `sfdx sfpowerscripts:orchestrator:publish`
+* `sfdx sfpowerscripts:orchestrator:quickbuild`
+* `sfdx sfpowerscripts:orchestrator:release`
+* `sfdx sfpowerscripts:orchestrator:validate`
+* `sfdx sfpowerscripts:orchestrator:validateAgainstOrg`
+* `sfdx sfpowerscripts:orchestrator:validateAgainstPool`&#x20;
+* `sfdx sfpowerscripts:package:data:create`
+* `sfdx sfpowerscripts:package:data:install`
+* `sfdx sfpowerscripts:package:source:create`
+* `sfdx sfpowerscripts:package:source:install`
+* `sfdx sfpowerscripts:package:unlocked:create`
+* `sfdx sfpowerscripts:package:unlocked:install`&#x20;
+* `sfdx sfpowerscripts:package:version:increment`&#x20;
+* `sfdx sfpowerscripts:pool:delete`
+* `sfdx sfpowerscripts:pool:fetch`
+* `sfdx sfpowerscripts:pool:list`
+* `sfdx sfpowerscripts:pool:metrics:publish`
+* `sfdx sfpowerscripts:pool:org:delete`&#x20;
+* `sfdx sfpowerscripts:releasedefinition:generate`
 
 ## `sfdx sfpowerscripts:analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -665,74 +665,38 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/release.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/release.ts)
 
-## `sfdx sfpowerscripts:orchestrator:validate -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## sfdx sfpowerscripts:orchestrator:validate
 
 Validate the incoming change against an earlier prepared scratchorg
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:validate -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys
-    <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag
-    <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>]
-    [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx sfpowerscripts:orchestrator:validate -p <array> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--releaseconfig <string>] [--coveragepercent <integer>] [-x]
+    [--keys <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [-g <array>] [-v
+    <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -c, --visualizechangesagainst=<value>
-      Branch to conduct change analysis against. Enables visualization of changes and the components affected
-
-  -g, --logsgroupsymbol=<value>
-      Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional
-      closing group symbol.
-
-  -p, --pools=<value>
-      (required) Fetch scratch-org validation environment from one of listed pools, sequentially
-
-  -v, --targetdevhubusername=<value>
-      username or alias for the dev hub org; overrides default dev hub org
-
-  -x, --deletescratchorg
-      Delete scratch-org validation environment, after the command has finished running
-
-  --apiversion=<value>
-      override the api version used for api requests made by this command
-
-  --basebranch=<value>
-      The pull request base branch
-
-  --coveragepercent=<value>
-      [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex classes
-
-  --disableartifactupdate
-      Do not update information about deployed artifacts to the org
-
-  --disablediffcheck
-      Disables diff check while validating, this will validate all the packages in the repository
-
-  --enabledependencyvalidation
-      Validate dependencies between packages for changed components
-
-  --enableimpactanalysis
-      Visualize components impacted by changes in pull request
-
-  --fastfeedback
-      Enable validation in fast feedback mode, In fast feedback mode, validation will only do selective deployment of and
-      selective tests
-
-  --json
-      format output as json
-
-  --keys=<value>
-      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs
-      separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --shapefile=<value>
-      Path to .zip file of scratch org shape / metadata to deploy
-
-  --tag=<value>
-      Tag the build with a label, useful to identify in metrics
+  -g, --logsgroupsymbol=<value>                                                        Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an
+                                                                                       optional closing group symbol.
+  -p, --pools=<value>                                                                  (required) Fetch scratch-org validation environment from one of listed pools, sequentially
+  -v, --targetdevhubusername=<value>                                                   username or alias for the dev hub org; overrides default dev hub org
+  -x, --deletescratchorg                                                               Delete scratch-org validation environment, after the command has finished running
+  --apiversion=<value>                                                                 override the api version used for api requests made by this command
+  --basebranch=<value>                                                                 The pull request base branch
+  --coveragepercent=<value>                                                            [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex
+                                                                                       classes
+  --disableartifactupdate                                                              Do not update information about deployed artifacts to the org
+  --disablediffcheck                                                                   Disables diff check while validating, this will validate all the packages in the repository
+  --enabledependencyvalidation                                                         Validate dependencies between packages for changed components
+  --enableimpactanalysis                                                               Visualize components impacted by changes in pull request
+  --json                                                                               format output as json
+  --keys=<value>                                                                       Keys to be used while installing any managed package dependencies. Required format is a string of
+                                                                                       key-value pairs separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)     [default: info] logging level for this command invocation
+  --mode=(individual|fastfeedback|thorough|ff-release-config|thorough-release-config)  (required) [default: thorough] validation mode
+  --releaseconfig=<value>                                                              (Required if the release modes are ff-relese-config or thorough-release-config), Path to the config
+                                                                                       file which determines how the release defintion should be generated
+  --tag=<value>                                                                        Tag the build with a label, useful to identify in metrics
 
 DESCRIPTION
   Validate the incoming change against an earlier prepared scratchorg
@@ -741,7 +705,7 @@ ALIASES
   $ sfdx sfpowerscripts:orchestrator:validateAgainstPool
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" -v <devHubUsername>
+  $ sfdx sfpowerscripts:orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" --mode=fastfeedback -v <devHubUsername>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/validate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/validate.ts)

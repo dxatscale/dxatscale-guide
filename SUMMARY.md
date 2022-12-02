@@ -36,15 +36,23 @@
 
 ## 💞 Implementing your CI-CD
 
+* [Audience](implementing-your-ci-cd/github.md)
 * [Prerequisites](implementing-your-ci-cd/prerequisites.md)
-* [GitHub](implementing-your-ci-cd/github/README.md)
-  * [Getting Started](implementing-your-ci-cd/github/getting-started.md)
-  * [Solution Overview](implementing-your-ci-cd/github/solution-overview.md)
+* [Getting Started](implementing-your-ci-cd/getting-started/README.md)
+  * [Developer Workstation](implementing-your-ci-cd/getting-started/getting-started.md)
+  * [Salesforce Setup](implementing-your-ci-cd/getting-started/getting-started-1.md)
+* [GitHub](implementing-your-ci-cd/github-1/README.md)
+  * [GitHub Setup](implementing-your-ci-cd/github-1/getting-started.md)
+  * [Solution Overview](implementing-your-ci-cd/github-1/solution-overview.md)
 * [GitLab](implementing-your-ci-cd/gitlab/README.md)
-  * [Getting Started](implementing-your-ci-cd/gitlab/getting-started.md)
+  * [GitLab Setup](implementing-your-ci-cd/gitlab/getting-started.md)
   * [Solution Overview](implementing-your-ci-cd/gitlab/solution-overview.md)
 * [Azure DevOps](implementing-your-ci-cd/azure-devops/README.md)
-  * [Getting Started](implementing-your-ci-cd/azure-devops/getting-started.md)
+  * [Azure DevOps Setup](implementing-your-ci-cd/azure-devops/getting-started.md)
+  * [Solution Overview](implementing-your-ci-cd/azure-devops/solution-overview.md)
+* [Dashboard Setup](implementing-your-ci-cd/dashboard-setup/README.md)
+  * [New Relic](implementing-your-ci-cd/dashboard-setup/new-relic.md)
+  * [Data Dog](implementing-your-ci-cd/dashboard-setup/data-dog.md)
 
 ## sfpowerscripts
 

@@ -29,7 +29,7 @@ These commands follow the order of the the packages as ordered in your sfdx-proj
 
 **Scenario 1 : Build All**
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 1. Trigger creation of package A
 2. Once A is completed, trigger creation of package B & C \*\*,\*\*using the version of A, created in step 1

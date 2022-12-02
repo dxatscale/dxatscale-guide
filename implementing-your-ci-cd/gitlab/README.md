@@ -4,9 +4,9 @@ description: A Reference Implementation of DX@Scale on GitLab
 
 # GitLab
 
-![GitLab](<../../.gitbook/assets/image (20).png>)
+![GitLab](<../../.gitbook/assets/image (20) (1).png>)
 
-![A Reference Implementation of DX@Scale on GitLab](<../../.gitbook/assets/image (7).png>)
+![A Reference Implementation of DX@Scale on GitLab](<../../.gitbook/assets/image (7) (1).png>)
 
 ## Audience
 

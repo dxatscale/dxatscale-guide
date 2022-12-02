@@ -1,4 +1,4 @@
-# Getting Started
+# Azure DevOps Setup
 
 ## Getting Started
 
@@ -91,7 +91,7 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (17) (1).png>)
 
 {% hint style="info" %}
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
@@ -216,7 +216,7 @@ After a few minutes, your repository will be set up in Azure DevOps.
 2. Click on **+ Variable Group**
 3. Name the variable group as CICD and provide some description
 4. In the Variables, section, click on **+ Add** and add the following variables
-5. Follow instructions in[ 2.F](../github/getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment and add this to the variable group
+5. Follow instructions in[ 2.F](../github-1/getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment and add this to the variable group
 
 | Name                       | Value          | Protect |
 | -------------------------- | -------------- | ------- |

@@ -26,7 +26,7 @@ description: Learn about all the features in sfpowerscripts
 
 ## **Shift Left... We got it Right!**
 
-* Ability to validate only changed packages against a pool of pre prepared scratch org, saves time!
+* Ability to validate only changed packages against a pool of pre-prepared scratch org, saves time!
 * Ability to validate only changed components from a changed package ensuring quick deployability check
 * Detect and trigger tests that are only impacted by the change
 * Validate metadata coverage for packaging, only package components what you should\* (sfpowerkit).
@@ -48,14 +48,14 @@ description: Learn about all the features in sfpowerscripts
 * Always deploy a package if required
 * Skip deployment of a package on a particular org
 * Reconcile profiles automatically for source packages
-* Assign Permsets before or after deployment of a package
+* Assign PermSets before or after deployment of a package
 * Run pre/post scripts for each package
 
-## **Track like a boss!**
+## **Track like a Boss!**
 
-* Automated Release note generator
+* Automated Release Notes Generator
 * Track Linked Work Items along with commits made to each package
-* Automated Release definition generator&#x20;
+* Automated Release Refinition Generator&#x20;
 
 ## **Observability at its Best**
 

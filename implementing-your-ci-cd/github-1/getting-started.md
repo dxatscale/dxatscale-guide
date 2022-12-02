@@ -1,4 +1,4 @@
-# Getting Started
+# GitHub Setup
 
 ## Getting Started
 
@@ -8,255 +8,7 @@ As always, we welcome any feedback from the community to continuously improve th
 
 {% embed url="https://www.youtube.com/watch?v=TH73diX57w8" %}
 
-
-
-### 1. Developer Workstation
-
-In order to successfully troubleshoot and interact with GitHub and Salesforce using the CLI, the following commands should be executed on your computer to validate you have the tools configured correctly. Depending on your operating system (eg. **Mac OS, Windows, Linux**), there may be some variation in the commands and outputs below on your terminal window.
-
-#### Git
-
-```bash
-git version
-> git version 2.33.1
-```
-
-#### SFDX CLI
-
-```bash
-sfdx version
-> sfdx-cli/7.176.1 darwin-x64 node-v18.7.0
-```
-
-#### SFDX Plugins
-
-```bash
-sfdx plugins
-> @dxatscale/sfpowerscripts 19.8.2
-  @dxatscale/sfp-cli 3.1.1
-  sfdmu 4.17.6
-  sfpowerkit 6.0.0
-```
-
-#### Visual Studio Code
-
-```bash
-code --version
-> 1.72.2
-d045a5eda657f4d7b676dedbfa7aab8207f8a075
-x64
-```
-
-#### NPM
-
-```bash
-npm --version
-> 8.15.0
-```
-
-### 2. Salesforce
-
-To enable modular package development, there are a few configurations in Salesforce as a System Administrator that needs to be turned on to be able to create Scratch Orgs and Unlock Packages.
-
-#### A. Enable Dev Hub
-
-[Enable Dev Hub](https://help.salesforce.com/s/articleView?id=sf.sfdx\_setup\_enable\_devhub.htm\&type=5) in your Salesforce org so you can create and manage scratch orgs and second-generation packages. Scratch orgs are disposable Salesforce orgs to support development and testing.
-
-1. Navigate to the **Setup** menu
-2. Go to **Development > Dev Hub**
-3. Toggle the button to on for **Enable Dev Hub**
-
-![](<../../.gitbook/assets/image (21).png>)
-
-#### B. Enable Unlocked Packages and Second-Generation Managed Packages
-
-[Unlocked packages](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_unlocked\_pkg\_intro.htm) help organize your existing metadata, package an app, extend an app that you’ve purchased from AppExchange, or package new metadata.
-
-1. Navigate to the **Setup** menu
-2. Go to **Development > Dev Hub**
-3. Toggle the button to on for **Enable Unlocked Packages and Second-Generation Managed Packages**
-
-![](<../../.gitbook/assets/image (1) (1).png>)
-
-#### C. Create Service Account for DevOps
-
-For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470\&type=1) to manage deployments to your Salesforce instance. The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.
-
-1. Navigate to the **Setup** menu
-2. Go to **Users > Users**
-3. Click on **New User** button
-4. Enter **CICD** for **First Name** and **User** for **Last Name**
-5. Enter in a Email address and Username
-6. Set **User License** to **Salesforce**
-7. Set **Profile** to **System Administrator**
-8. Scroll down and click on **Save**
-
-![](<../../.gitbook/assets/image (17).png>)
-
-{% hint style="info" %}
-Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
-{% endhint %}
-
-#### D. Authenticate to DevHub via CLI
-
-Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use it to create Unlock Packages and manage Scratch Orgs.
-
-```bash
-sfdx auth:web:login -a DevHub -r https://login.salesforce.com
-```
-
-#### E. Install sfpowerscripts Scratch Org Pooling Unlocked Package in DevHub
-
-The [Scratch Org Pooling Unlocked Package](https://github.com/dxatscale/sfpower-scratchorg-pool) adds additional custom fields, validation rules, and workflow to the standard object "**ScratchOrgInfo**" in the DevHub to enable associated scratch org pool commands to work for the pipeline.
-
-```bash
-sfdx force:package:install -p 04t1P000000katQQAQ -u DevHub -r -a package -s AdminsOnly -w 30
-```
-
-#### F. Install sfpowerscripts-artifact Unlocked Package in DevHub and Lower Existing Sandboxes
-
-The [sfpowerscripts-artifact package](https://github.com/dxatscale/sfpowerscripts-artifact) is a lightweight unlocked package consisting of a custom setting **SfpowerscriptsArtifact2\_\_c** that is used to keep a record of the artifacts that have been installed in the org. This enables package installation, using sfpowerscripts, to be skipped if the same artifact version already exists in the org.
-
-```bash
-sfdx force:package:install --package 04t1P000000ka9mQAA -u <OrgAlias> --securitytype=AdminsOnly --wait=120
-```
-
-#### G. Authenticate to Lower Sandbox Environments via CLI
-
-The template assumes you are following the environment strategy defined in our DX@Scale Guide. The following sandboxes are recommended to be created and [authenticated](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_web.htm) first prior to running the pipeline.
-
-* SHAREDDEV (Shared Development)
-* ST (System Test)
-* SIT (System Integration Test)
-* UAT (User Acceptance Test)
-* PROD (Production)
-
-{% hint style="info" %}
-Assuming that Production is also your Dev Hub, we still recommend creating multiple CLI entries to segregate the connections.
-{% endhint %}
-
-Additional environments and customization can be made once you are familiar with the scripts.
-
-{% tabs %}
-{% tab title="Sandbox" %}
-```bash
-sfdx auth:web:login -a <orgAlias> -r https://test.salesforce.com
-```
-{% endtab %}
-
-{% tab title="Production" %}
-```
-sfdx auth:web:login -a <orgAlias> -r https://login.salesforce.com
-```
-{% endtab %}
-{% endtabs %}
-
-#### H. Generate SFDX auth URL for Pipeline Authentication
-
-In order for the GitHub pipeline to authenticate to the DevHub and other environments, [SFDX auth URL](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_sfdxurl.htm) is the preferred method over [JWT Bearer Flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_auth\_jwt\_flow.htm). For each environment, execute the following command on a previously authenticated environment and save the sfdxAuthUrl for use in future pipeline configuration steps.
-
-```bash
-sfdx force:org:display -u <orgAlias> --verbose --json > authFile.json
-cat authFile.json
-> {
-  "status": 0,
-  "result": {
-    "id": "XXXXYYY",
-    "accessToken": "00D8G0000009g7h!uhuRfGKbvPeubTZKztmFWgrykDuuVdxbffzjjVTqjMyRcV{wb+2JtxsevgKfGiGXRz02jY83uNBsD4CuWHwv.b21KZdFxbTi",
-    "instanceUrl": "https://your.salesforce.com",
-    "username": "vu.ha@accenture.com.dxatscale.shareddev",
-    "clientId": "PlatformCLI",
-    "connectedStatus": "Connected",
-    "sfdxAuthUrl": "force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com",
-    "alias": "SharedDev"
-  }
-}
-```
-
-{% hint style="info" %}
-Save only the following part of the **sfdxAuthUrl** for each environment
-
-`force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com`
-{% endhint %}
-
-#### I.  Public Group and Sharing Rules Creation for Developer Access to Scratch Org Pools
-
-For developers (who are on limited access license) to access scratch orgs created by the CI service user, for their local development, a sharing setting needs to be created on the **ScratchOrgInfo** object. The sharing setting should grant read/write access to the ScratchOrgInfo records owned by a public group consisting of the CI service user and a public group consisting of the developer users.
-
-1.  Create Public Groups **(Setup > Users > Public Groups)**
-
-    * CI Users (Admin users/ CI users who creates scratch orgs in pool)
-
-
-
-    <figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption><p>Public Group: CI Users<br></p></figcaption></figure>
-
-    * Developers (developers who are allowed to fetch scratch orgs from pool)\
-
-
-    <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption><p>Public Group: Developers</p></figcaption></figure>
-2.  Create Sharing Rule **"ScratchOrgInfo RW to Developers"** **(Setup > Security > Sharing Settings)**
-
-    * Grant Read/Write access to the ScratchOrgInfos records owned by the CI Users to Developers&#x20;
-
-    <figure><img src="../../.gitbook/assets/image (53).png" alt=""><figcaption><p>Sharing Rule</p></figcaption></figure>
-3.  Assign Users to Public Groups **(Setup > Security > Sharing Settings)**
-
-    * CI Users
-    * Developers
-
-
-
-    <figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption><p>Public Group: User Assignment</p></figcaption></figure>
-
-#### J. Permission Set Creation for Developer Access to ScratchOrgInfo Object
-
-The developers must also have object-level and FLS permissions on the ScratchOrgInfo object. One way to achieve this is to assign a permission set that has Read, Create, Edit and Delete access on ScratchOrgInfos, as well as Read and Edit access to the custom fields used for scratch org pooling: `Allocation_status__c`, `Password__c`, `Pooltag__c` and `SfdxAuthUrl__c`
-
-**Permission Set Name:** "Scratch Org Developer"
-
-**Object:** Scratch Org Info
-
-1. Object Permissions
-   * Read, Create, Edit and Delete
-2. Field Permissions
-   *   Read, Edit for Custom Fields
-
-       * `Allocation_status__c`
-       * `Password__c`
-       * `Pooltag__c`
-       * `SfdxAuthUrl__c`
-
-       ``
-
-       <figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption><p>Permission Set: Object/Field Permissions</p></figcaption></figure>
-
-**System Permissions:**
-
-* API Enabled = True
-* API Only User = False (Applicable to "Limited Access User" Profile)
-* Create and Update Second-Generation Packages = True
-
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption><p>Permission Set: System Permissions</p></figcaption></figure>
-
-#### **J. Profile and Permission Set Assignment for Developers in Production**
-
-To onboard new developers, the following Profiles and Permission Set will need to be assigned to the new Developer User Account in Salesforce.
-
-**Profile** (Choose 1 Only)
-
-1. Minimum Access - Salesforce
-   * Licence Type - Salesforce
-2. Limited Access User
-   * Licence Type - Salesforce Limited Access - Free
-
-**Permission Set**&#x20;
-
-* Scratch Org Developer
-
-### 3. GitHub
-
-#### A. Clone Repo
+## A. Clone Repo
 
 Go to the repo: [https://github.com/dxatscale/dxatscale-template](https://github.com/dxatscale/dxatscale-template)
 
@@ -268,7 +20,7 @@ Enter in a **Repository name**, set your repo to **Private** and click **Create 
 
 ![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.09.25-am.png)
 
-#### B. Setup your Secrets
+## B. Setup your Secrets
 
 Follow instructions in[ 2.F](getting-started.md#f-authenticate-to-lower-sandbox-environments-via-cli) to fetch all the authURL for each environment.
 
@@ -287,13 +39,13 @@ Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and past
 Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_AUTH\_URL
 {% endhint %}
 
-#### C. Test your pipelines
+## C. Test your pipelines
 
 ![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.50.57-am.png)
 
 It is recommended to test your pipelines by triggering the CI Pipeline - Auto triggered by triggering it manually. Monitor the pipeline till it produces a set of packages and publishes to GitHub Packages. If this stage is successful, you can proceed to step 5
 
-#### D. Configure Scratch Org Pools
+## D. Configure Scratch Org Pools
 
 In your repo, there is a folder called config, in that folder, you can see there are two JSON files
 
@@ -364,7 +116,7 @@ Update the "**scope**" value for "**npm**" from the default "**@org-name**" to y
 To get an in-depth understanding of the options available to you for configuration refer to this link [here](https://docs.dxatscale.io/sfpowerscripts/prepare/scratch-org-pool-configuration).
 {% endhint %}
 
-#### E. Scratch Org Definition File
+## E. Scratch Org Definition File
 
 The [project-scratch-def.json](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_scratch\_orgs\_def\_file.htm) is a blueprint for a scratch org. It mimics the shape of an org that you use in the development life cycle, such as sandbox, packaging, or production.
 
@@ -420,7 +172,7 @@ The reason behind this need, is because when you spin a Scratch Org with Org Sha
 }
 ```
 
-#### F. Project Configuration File
+## F. Project Configuration File
 
 The [project configuration file](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_ws\_config.htm) **sfdx-project.json** indicates that the directory is a Salesforce DX project. The configuration file contains project information and facilitates the authentication of scratch orgs and the creation of second-generation packages. It also tells the CLI where to put files when syncing between the project and scratch org.
 
@@ -440,7 +192,7 @@ The dxatscale-template [project configuration file](https://github.com/dxatscale
 Updates and additions to the project configuration file can be done gradually as you test your pipeline in GitHub. **No changes** are needed to perform initial CI/CD tests across your environments as it will install the core package containing an AccountNumber field on the Account object as an example.
 {% endhint %}
 
-#### G. Release Definition File
+## G. Release Definition File
 
 Before triggering a release across environments for DX@Scale, a [release definition file](https://sfpowerscripts.dxatscale.io/commands/release) is required. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file.
 
@@ -463,13 +215,13 @@ changelog:
 The release stage in the **release.yml** file across the defined environments is where the release definition file is referenced. As you create new releases, revisit these sections and update the file to the preferred release definition file to deploy.
 {% endhint %}
 
-#### H. Change Log
+## H. Change Log
 
 [Change Logs](https://sfpowerscripts.dxatscale.io/commands/release#changelog) are created to the **changelog** branch in the repository if the release is successful. This is configured in the template using the `--generatechangelog` and `--branchname changelog` in the [orchestrator release](https://sfpowerscripts.dxatscale.io/commands/release) commands in sfpowerscripts.
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-#### I. Build Initial Package Artifacts
+## I. Build Initial Package Artifacts
 
 Prior to creating the scratch org pools, an initial version of artifacts should be created in the Package Registry by sfpowerscripts based on the project configuration file. In the dxatscale-template, the initial **core package** will be generated once the pipeline is executed for the first time and the build stage is completed and has published to the Package Registry.
 
@@ -496,14 +248,14 @@ sfdxAuthUrl  force://PlatformCLI::cUMRoQtoy)Lnjphoq7tj9PXadNVRdeTvCzyhp[FhUNsQsZ
 status       Assigned
 ```
 
-#### K. Pull Requests and Merge to Main
+## K. Pull Requests and Merge to Main
 
 1. Make changes
 2. Commit
 3. Raise a Merge Request
 4. Confirm validation pipeline passes
 
-#### L. Add New Packages
+## L. Add New Packages
 
 1. Update project configuration files
 2. Update **validate.yml** configuration file for the **analyze-pmd** and **validate-package jobs** for new packages
