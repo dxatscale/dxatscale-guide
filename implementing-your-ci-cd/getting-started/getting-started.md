@@ -18,14 +18,24 @@ sfdx version
 > sfdx-cli/7.176.1 darwin-x64 node-v18.7.0
 ```
 
-### SFDX Plugins
+### sfp-cli
+
+```
+npm i -g @dxatscale/sfp-cli
+```
+
+### sfpowerscripts
+
+```
+sfdx plugins:install @dxatscale/sfpowerscripts
+```
+
+### Other required plugins
 
 ```bash
-sfdx plugins
-> @dxatscale/sfpowerscripts 19.8.2
-  @dxatscale/sfp-cli 3.1.1
-  sfdmu 4.17.6
-  sfpowerkit 6.0.0
+sfdx plugins:install sfpowerkit
+sfdx plugins:install sfdmu
+sfdx plugins:install sfdx-browserforce-plugin
 ```
 
 ### Visual Studio Code
