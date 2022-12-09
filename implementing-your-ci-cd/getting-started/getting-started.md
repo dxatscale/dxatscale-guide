@@ -14,8 +14,10 @@ git version
 ### SFDX CLI
 
 ```bash
+npm install --global sfdx-cli
+
 sfdx version
-> sfdx-cli/7.176.1 darwin-x64 node-v18.7.0
+> sfdx-cli/7.180.0 darwin-x64 node-v18.7.0
 ```
 
 ### sfp-cli
