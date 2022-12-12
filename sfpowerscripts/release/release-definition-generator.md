@@ -38,8 +38,7 @@ Release definition generator expects a config file defined in YAML as in the bel
 // Sample to config file
 
 ---
-​skipIfAlreadyInstalled: true
-skipIfAlreadyInstalled: true
+​
 includeOnlyArtifacts:
   - src-env-specific-pre
   - src-env-specific-alias-pre
