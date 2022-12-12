@@ -30,7 +30,8 @@ DESCRIPTION
   Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:prepare -f config/mypoolconfig.json  -v &#x3C;devhub></code></pre>
+  $ sfdx sfpowerscripts:orchestrator:prepare -f config/mypoolconfig.json  -v &#x3C;devhub>
+</code></pre>
 
 ## Building a Pool of Scratch Orgs
 
@@ -90,7 +91,7 @@ Please check the pre-requisites to learn more about and the steps required to en
 
 ## Managing Package Dependencies
 
-The Prepare command utilizes `sfpowerkit:package:dependencies:install` under the hood to orchestrate installation of package dependencies. Package dependencies are defined in the sfdx-project.json. More information on defining package dependencies can be found in the Salesforce [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev2gp\_config\_file.htm).
+The Prepare command has inbuilt capability to orchestrate installation of external package dependencies. Package dependencies are defined in the sfdx-project.json. More information on defining package dependencies can be found in the Salesforce [docs](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev2gp\_config\_file.htm).
 
 ```javascript
 {
