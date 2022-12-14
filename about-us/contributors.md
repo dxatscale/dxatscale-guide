@@ -42,15 +42,11 @@ Jothy Sivanand - is Accenture Certified Senior Technology Architect and an inven
 
 ​
 
-![Ramesh Karanji – Senior DevOps Engineer](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FMeOLCQVfe5ou1YaEf4so%2Fuploads%2Fgit-blob-757deec900ae0c2204f93c2862a94cb3573b13e0%2Framesh.png?alt=media)
-
-Ramesh is a Senior DevOps Engineer with good knowledge of key DevOps practices – Continuous Integration and Delivery, Strategy, Implementation, Security and Vulnerability Management (CDP) and Cloud concepts (AWS/Azure) - IaaS, PaaS, SaaS. He has been involved and part of DX@Scale journey since 2019 as an engineer, advocate, contributor, implementer, maintainer, trouble-shooter and successfully implemented CICD solutions for Salesforce on large/small scale projects.
-
-![Hung Dinh](<../.gitbook/assets/image (39).png>)
+![Hung Dinh](../.gitbook/assets/hung-dinh.png)
 
 Hung set out the mission to tackle Salesforce DevOps practices head-on after he had been involved in delivering a large Salesforce transformation program and appalled at how far behind the DevOps capabilities were. Hung acts as an advisor to DX@Scale core team on tooling and practices.​
 
-![Eric Shen](<../.gitbook/assets/image (54).png>)
+![Eric Shen](../.gitbook/assets/eric-shen.png)
 
 Eric is a Salesforce Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
 
