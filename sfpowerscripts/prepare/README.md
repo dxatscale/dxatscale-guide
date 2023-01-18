@@ -71,6 +71,48 @@ Building packages from source code during pooling takes a considerable amount of
 If the `installall` configuration is specified without`fetchArtifacts`, then new packages will be built, from the checked-out source code, and installed in the scratch orgs. &#x20;
 {% endhint %}
 
+## Selective Deployment of Packages
+
+In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-definition-generator.md#release-config-file)  Scratch Orgs prepared using this mechanism then could be used in validation with fastfeedback-release-config and thoroug-release config modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
+
+
+
+````
+// Pool Configuration with releaseConfigFile
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/dxatscale/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+  "tag": "cipool-release",
+   "maxAllocation": 4,
+   "expiry": 2,
+   "batchSize": 5,
+   "configFilePath": "config/project-scratch-def.json",
+   "releaseConfigFile":"release-config/cipoolrelease.yml",
+   "enableSourceTracking": false,
+   "installAll": true,
+    "fetchArtifacts": {
+      "npm": {
+        "scope": "dxatscale"
+      }
+    }
+ 
+ }
+
+```
+````
+
+````yaml
+// Sample Release config file
+```yaml
+---
+releaseName: cipoolrelease
+includeOnlyArtifacts:
+  - core2
+
+```
+
+````
+
 ## Fetching Scratch Orgs from Pool
 
 While scratch orgs created by prepare command will be automatically fetched by the validate command, for use as just-in-time environments for validating an incoming change. Developers who need a scratch org from the pool must issue the fetch command on their terminal

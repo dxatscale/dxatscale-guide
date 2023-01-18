@@ -17,6 +17,7 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
 | succeedOnDeploymentErrors           | boolean | Whether to persist scratch org to the pool for a deployment error, default:true                                        |
 | snapshotPool                        | string  | Name of the earlier prepared scratch org pool  that can be utilized by this pool, to prepare pools in multiple stages. |
 | installAll                          | boolean | Install all package artifacts, in addition to the managed package dependencies                                         |
+| releaseConfigFile                   | string  | Path to a release config file to create pools with selected packages. Use in conjunction with installAll               |
 | enableSourceTracking                | boolean | Enable source tracking by deploying packages using source:push and persisting source tracking files                    |
 | relaxAllIPRanges                    | boolean | Relax all IP addresses, allowing all global access to scratch orgs                                                     |
 | ipRangesToBeRelaxed                 | array   | Range of IP addresses that can access the scratch orgs                                                                 |
@@ -71,3 +72,29 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
     }
 }
 ```
+
+#### Selective deployment of artifacts using a release config file
+
+````
+// Pool Configuration with releaseConfigFile
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/dxatscale/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+  "tag": "cipool-release",
+   "maxAllocation": 4,
+   "expiry": 2,
+   "batchSize": 5,
+   "configFilePath": "config/project-scratch-def.json",
+   "releaseConfigFile":"release-config/cipoolrelease.yml",
+   "enableSourceTracking": false,
+   "installAll": true,
+    "fetchArtifacts": {
+      "npm": {
+        "scope": "dxatscale"
+      }
+    }
+ 
+ }
+
+```
+````

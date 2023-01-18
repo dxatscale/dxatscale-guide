@@ -30,7 +30,7 @@ EXAMPLES
    $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName>  -b <branchame> -u <org>
 ```
 
-### Config File
+## Release Config File
 
 Release definition generator expects a config file defined in YAML as in the below example
 
