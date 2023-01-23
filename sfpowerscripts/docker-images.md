@@ -66,3 +66,12 @@ container: ghcr.io/dxatscale/sfpowerscripts:latest
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+To preview latest images for the docker image, visit the [release candidate page](https://github.com/dxatscale/sfpowerscripts/pkgs/container/sfpowerscripts-rc) and update your container image reference.  For example&#x20;
+
+```yaml
+default:
+   image: ghcr.io/dxatscale/sfpowerscripts-rc:20.10.4-3982605392
+```
+{% endhint %}
