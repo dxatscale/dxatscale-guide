@@ -52,13 +52,14 @@ Data packages support the following options, through the sfdx-project.json.
 
 ## Adding Pre/Post Deployment Scripts to Data Packages
 
-In some situations, you might need to execute a pre/post deployment script to do manipulate the data before or after being deployed to the org. **sfpowerscripts** allow you to provide a path to a shell script (Mac/Unix) / batch script (on Windows). The script will be provided with the following parameters which could be utilized to write your logic
-
-For eg: if you want to trigger an anonymous apex script after the installation of the package, you will create a script file similar to below and then add the path to the **postDeploymentScript** property of your data package
+Refer to this [link](../orchestrator.md#executing-pre-post-deployment-scripts) for more details on how to add a pre/post script to data package
 
 ```
 # $1 package name
 # $2 org
+# $3 alias
+# $4 working directory
+# $5 package directory
 
 sfdx force:apex:execute -f scripts/datascript.apex -u $2
 ```

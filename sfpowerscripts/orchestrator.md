@@ -69,7 +69,7 @@ Utilize the `ignoreOnStage` descriptor to mark which packages should be skipped 
 
 ### Executing Pre/Post Deployment Scripts
 
-sfpowerscripts provides the ability to execute pre/post deployment scripts on every package allowing you to run custom automation.
+In some situations, you might need to execute a pre/post deployment script to do manipulate the data before or after being deployed to the org. **sfpowerscripts** allow you to provide a path to a shell script (Mac/Unix) / batch script (on Windows).&#x20;
 
 The scripts are called with the following parameters. In your script you can refer to the parameters using [positional parameters.](https://linuxcommand.org/lc3\_wss0120.php)&#x20;
 
@@ -77,14 +77,24 @@ Please note scripts are copied into the [artifacts](../ci-cd/artifacts.md) and a
 
 
 
-| Position | Value                                                                                    |
-| -------- | ---------------------------------------------------------------------------------------- |
-| 1        | Name of the Package                                                                      |
-| 2        | Username of the target org where the package is being deployed                           |
-| 3        | Alias of the target org where the package is being deployed                              |
-| 4        | Path to the working directory from where sfpowerscripts is currently being executed      |
-| 5        | Path to the directory inside the working directory which contains the access to metadata |
-|          |                                                                                          |
+| Position | Value                                                                                                                               |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 1        | Name of the Package                                                                                                                 |
+| 2        | Username of the target org where the package is being deployed                                                                      |
+| 3        | Alias of the target org where the package is being deployed                                                                         |
+| 4        | Path to the working directory that has the contents of the package                                                                  |
+| 5        | Path to the package directory. One would need to combine parameter 4 and 5 to find the absolute path to the contents of the package |
+
+<pre><code><strong># Sample pre/post script
+</strong><strong>
+</strong><strong># $1 package name
+</strong># $2 org
+# $3 alias
+# $4 working directory
+# $5 package directory
+
+sfdx force:apex:execute -f scripts/datascript.apex -u $2
+</code></pre>
 
 ### Sample Permission Assignment Configuration for Packages
 
