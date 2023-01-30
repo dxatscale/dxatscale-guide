@@ -10,7 +10,11 @@ description: >-
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fz4DIARBK9t37HrKFKKYm%2Fuploads%2F2FJKZmuYDM95fffoKGPG%2FAlan-Ly.png?alt=media" alt=""><figcaption><p>​Alan Ly</p></figcaption></figure>
 
-​Alan is a software engineer who builds automation and delivery tools for Salesforce. He has implemented effective CICD solutions on large-enterprise projects, and is a primary contributor to sfpowerscripts.\
+​Alan is a software engineer who builds automation and delivery tools for Salesforce. He has implemented effective CICD solutions on large-enterprise projects, and is a primary contributor to sfpowerscripts.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
+
+Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.\
 
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fz4DIARBK9t37HrKFKKYm%2Fuploads%2FqQOgdKEUbazFjO8AeCvj%2FHenry_Lay.jpg?alt=media" alt=""><figcaption><p>Henry Lay</p></figcaption></figure>
@@ -21,17 +25,13 @@ Henry is a Software Engineer who enjoys finding gaps and inefficiencies in proce
 
 Ramesh is a Senior DevOps Engineer with good knowledge of key DevOps practices – Continuous Integration and Delivery, Strategy, Implementation, Security and Vulnerability Management (CDP) and Cloud concepts (AWS/Azure) - IaaS, PaaS, SaaS. He has been involved and part of DX@Scale journey since 2019 as an engineer, advocate, contributor, implementer, maintainer, trouble-shooter and successfully implemented CICD solutions for Salesforce on large/small scale projects.
 
-![Lawrence Newcombe](../.gitbook/assets/Lawrence.jpg)
 
-Lawrence is a systems architect and CTA and works for medium and large non-profit organizations on technology and strategy. He's an advocate and believer in the power of the DX@Scale products to help teams deliver better value through resilient DevOps processes
 
 ‌
 
 ![Genoud Magloire aka Profile Man](<../.gitbook/assets/Genoud (1).jpg>)
 
 Genoud Magloire Douanla Djatio is a Senior Salesforce Developer at Astek Canada currently on a mandate at the National Bank of Canada, who builds robust and secure applications on the Salesforce platform. Genoud is passionate about DevOps practices on Salesforce platform and is behind the awesome profile functionality in sfpowerkit/sfpowerscripts
-
-![Manivasaga Murugesan](<../.gitbook/assets/Manivasaga Murugesan.png>)
 
 
 
@@ -48,7 +48,7 @@ Hung set out the mission to tackle Salesforce DevOps practices head-on after he 
 
 ![Eric Shen](<../.gitbook/assets/image (10).png>)
 
-Eric is a Salesforce Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
+Eric Shen is a Certified Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
 
 ![Diéffrei Quadros](../.gitbook/assets/diffrei.png)
 

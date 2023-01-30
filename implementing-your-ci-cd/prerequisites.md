@@ -34,7 +34,7 @@ To setup a proper pipeline, a minimum of 2 orgs will be required to configured i
 
 <figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>Salesforce Limited Access - Free Licence</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Profile: Limited Access User</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Profile: Limited Access User</p></figcaption></figure>
 
 {% hint style="info" %}
 A maximum of 1 user license of "Salesforce Limited Access - Free" for every 2 scratch org licenses will be provided. Scratch Org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_scratch\_orgs\_editions\_and\_allocations.htm) varies depending on your edition.\

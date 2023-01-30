@@ -24,7 +24,7 @@ To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/e
 4. Select a date value for **Expires at**
 5. Click on the **Add key**
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5) (1).png>)
 
 ### B. Create New Project
 
