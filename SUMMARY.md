@@ -71,10 +71,10 @@
 * [Prepare](sfpowerscripts/prepare/README.md)
   * [Scratch Org Pool Configuration](sfpowerscripts/prepare/scratch-org-pool-configuration.md)
 * [Validate](sfpowerscripts/validate.md)
+* [Metadata Specific Support](sfpowerscripts/metadata-specific-support.md)
 * [Docker Images](sfpowerscripts/docker-images.md)
 * [Metrics and Dashboards](sfpowerscripts/metrics-and-dashboards.md)
 * [Environment Variables](sfpowerscripts/environment-variables.md)
-* [Metadata Specific Support](sfpowerscripts/metadata-specific-support.md)
 * [Command Glossary](sfpowerscripts/command-glossary.md)
 
 ## 🏗 Development Practices
