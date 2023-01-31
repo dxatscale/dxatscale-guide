@@ -51,12 +51,12 @@ The prepare command does the following sequence of activities:
 
 1. **Calculate the number of scratch orgs to be allocated** (Based on your requested number of scratch orgs and your org limits, we calculate what is the number of scratch orgs to be allocated at this point in time)
 2. **Fetch the artifacts from registry if "fetchArtifacts" is defined in config, otherwise build all artifacts**
-3. **Create the scratch orgs, and update Allocation\_status\_c of each these orgs to "In Progress"**
+3. **Create the scratch orgs in parallel (respecting the timeout requested in the config), and update Allocation\_status\_c of each these orgs to "In Progress"**
 4. **On each scratch org, in parallel, do the following activities:**
    * Install SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE (04t1P000000ka9mQAA) for keeping track of all the packages which will be installed in the org. You can set an environment variable SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE to override the installation with your own package id (the source code is available [here](https://github.com/dxatscale/sfpowerscripts-artifact))
    * Install all the dependencies of your packages, such as managed packages that are marked as dependencies in your sfdx-project.json
    * Install all the artifacts that is either built/fetched
-   * If `enableSourceTracking` is specified in the configuration, create and deploy "sourceTrackingFiles" using sfpowerscripts artifacts to the scratch org.  To store local source tracking files, we re-create it when fetching a scratch org from a pool, using the [@salesforce/source-tracking](https://github.com/forcedotcom/source-tracking) library. Checkout the commit from which each sfpowerscripts artifact was created, and update the local source tracking using the package directory.  The files are retrieved to the local ".sfdx" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking.  Refer to the [decision log](https://github.com/dxatscale/sfpowerscripts/blob/main/decision%20records/prepare/001-prepare-source-tracking.md) for more details.
+   * If `enableSourceTracking` is specified in the configuration, the command will create and deploy "sourceTrackingFiles" using sfpowerscripts artifacts to the scratch org.  To store local source tracking files, we re-create it when fetching a scratch org from a pool, using the [@salesforce/source-tracking](https://github.com/forcedotcom/source-tracking) library. Checkout the commit from which each sfpowerscripts artifact was created, and update the local source tracking using the package directory.  The files are retrieved to the local ".sfdx" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking.  Refer to the [decision log](https://github.com/dxatscale/sfpowerscripts/blob/main/decision%20records/prepare/001-prepare-source-tracking.md) for more details.
 5. **Mark each completed scratch org as "Available", depending on the pool config \`succeedOnDeploymentErrors\` is true, else scratch orgs are deleted**
 
 {% hint style="warning" %}
@@ -65,15 +65,40 @@ The prepare command does the following sequence of activities:
 
 ## **Using pre-existing artifacts in Scratch Org Pools**
 
-Building packages from source code during pooling takes a considerable amount of time, and there could be situations where the latest head is broken. Hence we recommend using the last-known successful build from the artifact repository. When the `installall` and `fetchArtifacts` configurations are specified, the user can either use **NPM** to fetch artifacts or define the path to a shell script containing the logic for fetching artifacts from a registry.
+Building packages from source code during pooling takes a considerable amount of time, and there could be situations where the latest head is broken. Hence, we recommend using the last-known successful build from the artifact repository. When the `installall` and `fetchArtifacts` configurations are specified, the user can either use **NPM** to fetch artifacts or define the path to a shell script containing the logic for fetching artifacts from a registry.
 
 {% hint style="info" %}
 If the `installall` configuration is specified without`fetchArtifacts`, then new packages will be built, from the checked-out source code, and installed in the scratch orgs. &#x20;
 {% endhint %}
 
+## Using Prepare with Non-NPM Registries
+
+Unlike NPM registries, there is no uniform method for downloading artifacts from a universal registry, so you will need to provide a shell script that calls the relevant API. The path to the shell script should be specified in the pool configuration.
+
+There are multiple parameters available in the shell script. Pass these parameters to the API call, and at runtime they will be substituted with the corresponding values:
+
+1. Artifact name
+2. Artifact version
+3. Directory to download artifacts
+
+**Eg.** **Fetching from Azure Artifacts using the Az CLI on Linux**
+
+```
+#!/bin/bash
+
+# $1 - artifact name
+# $2 - artifact version
+# $3 - artifact directory 
+
+echo "Downloading Artifact $1 Version $2"
+
+az artifacts universal download --feed myfeed --name $1 --version $2 --path $3 \
+    --organization "https://dev.azure.com/myorg/" --project myproject --scope project
+```
+
 ## Selective Deployment of Packages
 
-In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-definition-generator.md#release-config-file)  Scratch Orgs prepared using this mechanism then could be used in validation with fastfeedback-release-config and thoroug-release config modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
+In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-definition-generator.md#release-config-file)  Scratch Orgs prepared using this mechanism then could be used in validation with **fastfeedback-release-config** and **thorough-release-config** modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
 
 
 
@@ -115,7 +140,7 @@ includeOnlyArtifacts:
 
 ## Fetching Scratch Orgs from Pool
 
-While scratch orgs created by prepare command will be automatically fetched by the validate command, for use as just-in-time environments for validating an incoming change. Developers who need a scratch org from the pool must issue the fetch command on their terminal
+While scratch orgs created by prepare command will be automatically fetched by the [**validate**](../validate.md) command, for use as just-in-time environments for validating an incoming change. Developers who need a scratch org from the pool must issue the fetch command on their terminal
 
 ```javascript
 sfdx sfpowerscripts:pool:fetch -t <POOL_NAME> -v <devhub-alias> -a <scratchorg-alias>
@@ -231,33 +256,10 @@ Package checkpoints allow precise control over which scratch orgs are committed 
 
 ## Using Prepare in Multiple Stages
 
-When you are using prepare in larger repositories with multiple managed packages, the process of preparing a scratch org can be extremely slow, often running above 6 hours. If you are preparing using cloud hosted agents of a CI/CD platform, most of the platforms are designed to timeout within a certain time window. This could result in unavailability of scratch orgs in pools, as most scratch orgs will be in 'IN PROGRESS' state and can only reclaimed by deleting the pool as there are no agents to continue the remaining progress or change the stage of the orgs. This is where you could use prepare in multiple stages.
+When you are using prepare in larger repositories with multiple managed packages, the process of preparing a scratch org can be extremely slow, often running above 6 hours. If you are preparing using cloud hosted agents of a CI/CD platform, most of the platforms are designed to timeout within a certain time window. This could result in unavailability of scratch orgs in pools, as most scratch orgs will be in 'IN PROGRESS' state and can only be reclaimed by deleting the pool as there are no agents to continue the remaining progress or change the stage of the orgs. This is where you could use prepare in multiple stages.
 
 ![Daisy chaining scratch org pools ](<../../.gitbook/assets/image (6).png>)
 
-In the above image, CI2 Pool is using CI Snapshot pool prepared in an earlier stage or job. The CI2 Pool definition will be utilizing 'snapshotPool' as a property which points to 'CI Snapshot' pool. Any packages that are installed on CI Snapshot pool are skipped while preparing CI2 Pools.
+In the above image, CI2 Pool is using CI Snapshot pool prepared in an earlier stage or job. The CI2 Pool definition will be utilizing `'snapshotPool'` as a property which points to 'CI Snapshot' pool. Any packages that are installed on CI Snapshot pool are skipped while preparing CI2 Pools.
 
-## Using Prepare with Non-NPM Registries
-
-Unlike NPM registries, there is no uniform method for downloading artifacts from a universal registry, so you will need to provide a shell script that calls the relevant API. The path to the shell script should be specified in the pool configuration.
-
-There are multiple parameters available in the shell script. Pass these parameters to the API call, and at runtime they will be substituted with the corresponding values:
-
-1. Artifact name
-2. Artifact version
-3. Directory to download artifacts
-
-**Eg.** **Fetching from Azure Artifacts using the Az CLI on Linux**
-
-```
-#!/bin/bash
-
-# $1 - artifact name
-# $2 - artifact version
-# $3 - artifact directory 
-
-echo "Downloading Artifact $1 Version $2"
-
-az artifacts universal download --feed myfeed --name $1 --version $2 --path $3 \
-    --organization "https://dev.azure.com/myorg/" --project myproject --scope project
-```
+##
