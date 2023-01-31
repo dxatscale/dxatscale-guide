@@ -117,8 +117,8 @@
 
 ## 🍕 INCUBATION
 
-* [sfp-cli](incubation/sfp-cli/README.md)
-  * [Command Glossary](incubation/sfp-cli/command-glossary.md)
+* [sfp-cli](projects/sfp-cli/README.md)
+  * [Command Glossary](projects/sfp-cli/command-glossary.md)
 
 ## 🎬 Media Library
 

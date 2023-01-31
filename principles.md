@@ -4,9 +4,9 @@ description: Current Principles followed by DX@Scale Practitioners
 
 # Principles
 
-## 1. Version Control is the Source of Truth
+## 1. Version Control is the Eventual Source of Truth
 
-Any aspect of code or config that gets deployed into a Salesforce org should be traceable to an artifact built from a point in time from a source code repository. The artifact should have a name, version number and an associated lifecycle.
+Any aspect of code or config that gets deployed (not applied directly) into a Salesforce org should be traceable to an artifact built from a point in time from a source code repository. The artifact should have a name, version number and an associated lifecycle.
 
 ## 2. Developer Productivity is Paramount
 
