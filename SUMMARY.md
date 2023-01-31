@@ -151,5 +151,6 @@
 
 * [Meet Our Team](about-us/meet-our-team.md)
 * [Key Contributors](about-us/contributors.md)
+* [Code of Conduct](about-us/code-of-conduct.md)
 * [Contributing to DX@Scale](about-us/contributing-to-dx-scale.md)
 * [Contact Us](about-us/contact-us.md)
