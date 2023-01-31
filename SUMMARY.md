@@ -50,7 +50,7 @@
 * [Azure DevOps](implementing-your-ci-cd/azure-devops/README.md)
   * [Azure DevOps Setup](implementing-your-ci-cd/azure-devops/getting-started.md)
   * [Solution Overview](implementing-your-ci-cd/azure-devops/solution-overview.md)
-* [Dashboard Setup](implementing-your-ci-cd/dashboard-setup/README.md)
+* [Setting up Dashboards](implementing-your-ci-cd/dashboard-setup/README.md)
   * [New Relic](implementing-your-ci-cd/dashboard-setup/new-relic.md)
   * [Data Dog](implementing-your-ci-cd/dashboard-setup/data-dog.md)
 
