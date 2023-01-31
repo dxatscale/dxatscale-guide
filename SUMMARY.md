@@ -77,6 +77,10 @@
 * [Environment Variables](sfpowerscripts/environment-variables.md)
 * [Command Glossary](sfpowerscripts/command-glossary.md)
 
+## CraftFirst
+
+* [Overview](craftfirst/overview.md)
+
 ## 🏗 Development Practices
 
 * [Modular Deployment](development-practices/modular-deployment.md)
@@ -111,13 +115,10 @@
   * [Data Package](faq/packaging/data-package.md)
 * [sfpowerscripts](faq/sfpowerscripts.md)
 
-## 🍕 projects
+## 🍕 INCUBATION
 
-* [sfp-cli](projects/sfp-cli/README.md)
-  * [Command Glossary](projects/sfp-cli/command-glossary.md)
-* [sfpowerkit](projects/sfpowerkit/README.md)
-  * [Command Glossary](projects/sfpowerkit/command-glossary.md)
-* [sfmc-devtools](https://github.com/Accenture/sfmc-devtools)
+* [sfp-cli](incubation/sfp-cli/README.md)
+  * [Command Glossary](incubation/sfp-cli/command-glossary.md)
 
 ## 🎬 Media Library
 

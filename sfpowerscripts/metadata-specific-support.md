@@ -2,7 +2,32 @@
 
 sfpowerscripts support handling the following metadata without using any additional plugins. Read on more how to configure these metadata specific behaviours
 
-### Entitlement Handling
+### &#x20;Profile Support
+
+sfpowerscripts support built in support for handling profiles using the dual pass reconcile functionality. You can read more on this section
+
+{% content-ref url="../development-practices/managing-profiles.md" %}
+[managing-profiles.md](../development-practices/managing-profiles.md)
+{% endcontent-ref %}
+
+Profile reconciliation against a target org is enabled by 'default' on all source packages.  To disable this functionality, add the keyword as described in the sample below
+
+<pre class="language-json"><code class="lang-json">```json
+<strong>{
+</strong>    "packageDirectories": [
+        {
+            "path": "./src-access-mgmt",
+            "package": "access-mgmt",
+            "versionName": "Version 1.0.6",
+            "versionNumber": "1.0.6.NEXT",
+            "reconcileProfiles": false // Control Profile Reconcile
+        }
+    ]
+  }
+``` 
+</code></pre>
+
+### &#x20;Entitlement Version Support
 
 sfpowerscripts supports entitlement version handling, where you could have a package with multiple entitlements. Read more on how sfpowerscripts handle entitlement below
 
@@ -65,5 +90,5 @@ This feature can be controlled by specifying the value on the package descriptor
     ]
   }
 ```
-```
+```n
 ````

@@ -12,7 +12,7 @@ description: >-
 
 ​Alan is a software engineer who builds automation and delivery tools for Salesforce. He has implemented effective CICD solutions on large-enterprise projects, and is a primary contributor to sfpowerscripts.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
 
 Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.\
 
