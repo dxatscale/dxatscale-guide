@@ -33,6 +33,8 @@ description: Commands in sfpowercripts
 * `sfdx sfpowerscripts:pool:metrics:publish`
 * `sfdx sfpowerscripts:pool:org:delete`&#x20;
 * `sfdx sfpowerscripts:releasedefinition:generate`
+* `sfdx sfpowerscripts:dependency:expand`
+* `sfdx sfpowerscripts:dependency:shrink`
 
 ## `sfdx sfpowerscripts:analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -1486,4 +1488,48 @@ EXAMPLES
   $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName>  -b <branchName> -u <org>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/releasedefinition/generate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/releasedefinition/generate.ts)
+_See code:_ [_src/commands/sfpowerscripts/releasedefinition/generate._](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/releasedefinition/generate.ts)
+
+## `sfdx sfpowerscripts:dependency:expand -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Expand dependency in sfdx-project.json
+
+```
+USAGE
+  $ sfdx sfpowerscripts:dependency:expand -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -v, --targetdevhubusername=<value>                                                dev hub alias or username
+  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file 
+                                                                                    with expanded file
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Expand package dependencies in sfdx-project.json file
+
+EXAMPLES
+  $ sfdx sfpowerscripts:dependency:expand -v HubOrg  -o
+```
+
+## `sfdx sfpowerscripts:dependency:shrink -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Shrink dependency in sfdx-project.json
+
+```
+USAGE
+  $ sfdx sfpowerscripts:dependency:shrink -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -v, --targetdevhubusername=<value>                                                dev hub alias or username
+  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file 
+                                                                                    with shrank file
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Shrink package dependencies in sfdx-project.json file
+
+EXAMPLES
+  $ sfdx sfpowerscripts:dependency:shrink -v HubOrg  -o
+```

@@ -71,6 +71,7 @@
   * [Scratch Org Pool Configuration](sfpowerscripts/prepare/scratch-org-pool-configuration.md)
 * [Validate](sfpowerscripts/validate.md)
 * [Deploy](sfpowerscripts/deploy.md)
+* [Expand/Shirnk](sfpowerscripts/expand-shirnk.md)
 * [Metadata Specific Support](sfpowerscripts/metadata-specific-support.md)
 * [Docker Images](sfpowerscripts/docker-images.md)
 * [Metrics and Dashboards](sfpowerscripts/metrics-and-dashboards.md)
