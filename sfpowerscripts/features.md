@@ -6,7 +6,7 @@ description: Learn about all the features in sfpowerscripts
 
 ## **Boost your Productivity!**
 
-* Enable Developers to work on org-model utilizing a mono repository, significant gains in productivity removing the need for working across multiple repositories at the same time
+* Enable Developers to create an org the way they want it utilizing a mono repository, significant gains in productivity removing the need for working across multiple repositories at the same time
 * No distinction between package type(s), handle all of them at ease from a single repository
 * Simple to use CLI commands that can be operated from your terminal
 
