@@ -55,15 +55,7 @@ Utilize the .NEXT and .LATEST for versioning the build number of unlocked packag
 
 Using the `ignoreOnStage:[ "build" ]` property on a package, causes the particular package to be skipped by the **build** command. Similarly you can use `ignoreOnStage:[ "quickbuild" ]` to skip packages in the quickbuild stage.
 
-## Resolving transitive dependencies
 
-This feature will automatically resolve the missing package dependencies through the transitive relation from its dependent packages. Users can also define external pacakge dependencies that are not presenting in the sfdx-project.json file.
-
-The feature is controlled by the plugin config:
-
-```
-"disableTransitiveDependencyResolver": false
-```
 
 ## Distinct Scratch Org Definition
 
