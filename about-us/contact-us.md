@@ -2,7 +2,7 @@
 
 ## DX@Scale
 
-To discuss what our DX@Scale practitioners can do for your salesforce implementations contact us at [dxatscale@accenture.com](mailto:dxatscale@accenture.com).
+To discuss what our DX@Scale practitioners can do for your salesforce implementations contact us at [info@dxatscale.io](mailto:info@dxatscale.io).
 
 ## Tools
 
