@@ -6,6 +6,15 @@ description: >-
 
 # Key Contributors
 
+\
+
+
+<figure><img src="../.gitbook/assets/meng.jpg" alt=""><figcaption><p>Meng Qi</p></figcaption></figure>
+
+Meng is a software engineer with a zest for creating and implementing tools and infrastructure to enhance business productivity. She loves exploring different coding languages, platforms, and ways of working. She has been a part of DX@Scale and involved in implementing new features of sfpowerscripts.
+
+
+
 
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fz4DIARBK9t37HrKFKKYm%2Fuploads%2F2FJKZmuYDM95fffoKGPG%2FAlan-Ly.png?alt=media" alt=""><figcaption><p>​Alan Ly</p></figcaption></figure>
@@ -14,8 +23,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
 
-Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.\
-
+Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2Fz4DIARBK9t37HrKFKKYm%2Fuploads%2FqQOgdKEUbazFjO8AeCvj%2FHenry_Lay.jpg?alt=media" alt=""><figcaption><p>Henry Lay</p></figcaption></figure>
 
