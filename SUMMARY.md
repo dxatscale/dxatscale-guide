@@ -74,7 +74,7 @@
 * [Dependency Management](sfpowerscripts/dependency-management/README.md)
   * [Transitive Dependency Resolution](sfpowerscripts/dependency-management/transitive-dependency-resolution.md)
   * [Shrink](sfpowerscripts/dependency-management/shrink.md)
-  * [Expand](sfpowerscripts/dependency-management/expand.md)
+  * [Expand](sfpowerscripts/expand-shirnk.md)
   * [Install](sfpowerscripts/dependency-management/install.md)
 * [Metadata Specific Support](sfpowerscripts/metadata-specific-support.md)
 * [Docker Images](sfpowerscripts/docker-images.md)
