@@ -133,7 +133,7 @@ For developers (who are on limited access license) to access scratch orgs create
 
 
 
-    <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Public Group: CI Users<br></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption><p>Public Group: CI Users<br></p></figcaption></figure>
 
     * Developers (developers who are allowed to fetch scratch orgs from pool)\
 

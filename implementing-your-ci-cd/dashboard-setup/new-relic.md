@@ -10,7 +10,7 @@
     \
 
 
-    <figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption><p>New Relic Home Page </p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption><p>New Relic Home Page </p></figcaption></figure>
 2.  Click on your **Profile** and navigate to "**API keys**".\
 
 

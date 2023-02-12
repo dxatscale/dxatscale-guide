@@ -42,11 +42,11 @@ Jothy Sivanand - is Accenture Certified Senior Technology Architect and an inven
 
 ​
 
-![Hung Dinh](<../.gitbook/assets/image (16).png>)
+![Hung Dinh](../.gitbook/assets/hung-dinh.png)
 
 Hung set out the mission to tackle Salesforce DevOps practices head-on after he had been involved in delivering a large Salesforce transformation program and appalled at how far behind the DevOps capabilities were. Hung acts as an advisor to DX@Scale core team on tooling and practices.​
 
-![Eric Shen](<../.gitbook/assets/image (10).png>)
+![Eric Shen](../.gitbook/assets/eric-shen.png)
 
 Eric Shen is a Certified Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
 

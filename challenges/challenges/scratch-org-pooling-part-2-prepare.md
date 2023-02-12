@@ -109,13 +109,13 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 * Go to your GitHub repository and select 'Settings'
 
-![](<../../.gitbook/assets/image (38).png>)
+![](<../../.gitbook/assets/image (38) (1).png>)
 
 * Now select 'Secrets'
 
-![](<../../.gitbook/assets/image (37) (1).png>)
+![](<../../.gitbook/assets/image (37).png>)
 
-![](<../../.gitbook/assets/image (34) (2) (1) (3) (2) (1) (3).png>)
+![](<../../.gitbook/assets/image (34) (2) (1) (3) (2) (3) (1).png>)
 
 * Now open the '**authFile.json**' file you created when setting up the _sfdx authURL_ and add the **sfdxAuthUrl** contents of the file as a 'secret' value with the name **DEVHUB\_SERVER\_KEY**
 
