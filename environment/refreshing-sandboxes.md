@@ -6,7 +6,7 @@ When refreshing sandboxes from production, care must be taken to address the fol
 A sandbox could be refreshed at any point in time, provided your runbook is accurate and well defined
 {% endhint %}
 
-![Sandbox Refresh Interval](<../.gitbook/assets/image (10).png>)
+![Sandbox Refresh Interval](<../.gitbook/assets/image (44).png>)
 
 Read more about refreshing Partial or Fully Copy Sandboxes [here](https://help.salesforce.com/articleView?id=000313358\&type=1\&mode=1).
 

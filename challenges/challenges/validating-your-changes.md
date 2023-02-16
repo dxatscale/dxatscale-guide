@@ -33,7 +33,7 @@ sfdx sfpowerscripts:orchestrator:validate --help
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](<../../.gitbook/assets/image (39).png>)
+![](<../../.gitbook/assets/image (20).png>)
 
 * Create a new workflow and name it 'validate'
 * Replace the contents of the file with the file below

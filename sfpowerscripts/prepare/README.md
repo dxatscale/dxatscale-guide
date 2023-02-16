@@ -258,7 +258,7 @@ Package checkpoints allow precise control over which scratch orgs are committed 
 
 When you are using prepare in larger repositories with multiple managed packages, the process of preparing a scratch org can be extremely slow, often running above 6 hours. If you are preparing using cloud hosted agents of a CI/CD platform, most of the platforms are designed to timeout within a certain time window. This could result in unavailability of scratch orgs in pools, as most scratch orgs will be in 'IN PROGRESS' state and can only be reclaimed by deleting the pool as there are no agents to continue the remaining progress or change the stage of the orgs. This is where you could use prepare in multiple stages.
 
-![Daisy chaining scratch org pools ](<../../.gitbook/assets/image (15).png>)
+![Daisy chaining scratch org pools ](<../../.gitbook/assets/image (10).png>)
 
 In the above image, CI2 Pool is using CI Snapshot pool prepared in an earlier stage or job. The CI2 Pool definition will be utilizing `'snapshotPool'` as a property which points to 'CI Snapshot' pool. Any packages that are installed on CI Snapshot pool are skipped while preparing CI2 Pools.
 

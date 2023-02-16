@@ -24,7 +24,7 @@ To generate an SSH key pair, follow the [instructions](https://docs.gitlab.com/e
 4. Select a date value for **Expires at**
 5. Click on the **Add key**
 
-![](<../../.gitbook/assets/image (5) (1).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 ### B. Create New Project
 
@@ -40,7 +40,7 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ![](<../../.gitbook/assets/image (6) (1).png>)
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../.gitbook/assets/image (18) (1).png>)
 
@@ -77,9 +77,9 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](<../../.gitbook/assets/image (48).png>)
+![](<../../.gitbook/assets/image (77).png>)
 
-![](<../../.gitbook/assets/image (13).png>)
+![](<../../.gitbook/assets/image (29).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -100,7 +100,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS                 | uat            | Variable | All (default) | No      | No   |
 | UAT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
-![Project Variables](<../../.gitbook/assets/image (64).png>)
+![Project Variables](<../../.gitbook/assets/image (21).png>)
 
 {% hint style="info" %}
 The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
@@ -116,7 +116,7 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](<../../.gitbook/assets/image (64).png>)
+![](<../../.gitbook/assets/image (21).png>)
 
 ### B. Clone Project Repository
 
@@ -128,7 +128,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](<../../.gitbook/assets/image (47).png>)
+![](<../../.gitbook/assets/image (45).png>)
 
 ### C. Copy Template Contents to Project Folder
 
@@ -156,7 +156,7 @@ rsync -av dxatscale-template/* dxatscale-poc
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
 
 ### D. Commit Changes to Repository
 
@@ -179,7 +179,7 @@ Once the files have been committed, you can verify the files have been pushed th
 1. Navigate to **Repository > Files**
 2. Verify all the files are visible in the repository
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../.gitbook/assets/image (29) (1).png>)
 
 1. Navigate to **CI/CD > Pipelines**
 2. Verify the pipeline has been skipped
@@ -458,7 +458,7 @@ status       Assigned
 4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
 5. Click on **Run pipeline**
 
-![](<../../.gitbook/assets/image (35) (1).png>)
+![](<../../.gitbook/assets/image (35).png>)
 
 ### K. Merge Requests and Merge to Main
 

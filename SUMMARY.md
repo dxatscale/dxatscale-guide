@@ -69,6 +69,10 @@
   * [Release Definition Generator](sfpowerscripts/release/release-definition-generator.md)
 * [Prepare](sfpowerscripts/prepare/README.md)
   * [Scratch Org Pool Configuration](sfpowerscripts/prepare/scratch-org-pool-configuration.md)
+  * [Pool Operations](sfpowerscripts/prepare/pool-operations/README.md)
+    * [List Scratch Orgs](sfpowerscripts/prepare/pool-operations/list-scratch-orgs.md)
+    * [Fetch A  Scratch Org](sfpowerscripts/prepare/pool-operations/fetch-a-scratch-org.md)
+    * [Delete Pools](sfpowerscripts/prepare/pool-operations/delete-pools.md)
 * [Validate](sfpowerscripts/validate.md)
 * [Deploy](sfpowerscripts/deploy.md)
 * [Dependency Management](sfpowerscripts/dependency-management/README.md)
@@ -115,6 +119,9 @@
 
 ## ⁉ faq
 
+* [Scratch Orgs](faq/scratch-orgs/README.md)
+  * [Handling Org-Wide Email Addresses](faq/scratch-orgs/handling-org-wide-email-addresses.md)
+  * [Scratch Org Error Codes](faq/scratch-orgs/scratch-org-error-codes.md)
 * [Packaging](faq/packaging/README.md)
   * [Unlocked Package](faq/packaging/unlocked-package.md)
   * [Data Package](faq/packaging/data-package.md)
