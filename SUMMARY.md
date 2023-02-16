@@ -115,6 +115,9 @@
 
 ## ⁉ faq
 
+* [Scratch Orgs](faq/scratch-orgs/README.md)
+  * [Handling Org-Wide Email Addresses](faq/scratch-orgs/handling-org-wide-email-addresses.md)
+  * [Scratch Org Error Codes](faq/scratch-orgs/scratch-org-error-codes.md)
 * [Packaging](faq/packaging/README.md)
   * [Unlocked Package](faq/packaging/unlocked-package.md)
   * [Data Package](faq/packaging/data-package.md)
