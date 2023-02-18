@@ -41,6 +41,10 @@ For auditing purposes, it is best practice to create a separate [service account
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
 {% endhint %}
 
+{% hint style="warning" %}
+Future [requirements](https://help.salesforce.com/s/articleView?id=sf.security\_mfa\_exclude\_exempt\_users.htm\&type=5) to enable MFA across all users will require a special user permissions to be assigned to the Service Account.  Details will be provided in the future and updated in the above steps to implement.&#x20;
+{% endhint %}
+
 ## D. Authenticate to DevHub via CLI
 
 Authorize your production instance and/or Developer Edition Org using the [web login flow](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_auth\_web.htm). The example below uses "**DevHub**" as the alias for the instance where you will use it to create Unlock Packages and manage Scratch Orgs.
