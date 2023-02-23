@@ -44,6 +44,8 @@ Scratch Org Pools can be monitored using an analytic tool like DataDog or New Re
 
 ![](<../.gitbook/assets/image (19).png>)
 
-To learn more about how to build a pool of scratch orgs using sfpowerscripts, click on the link below
+To learn more about how to build a pool of scratch orgs using sfpowerscripts, click on the link below:
 
-{% embed url="https://sfpowerscripts.dxatscale.io/commands/prepare" %}
+{% content-ref url="../sfpowerscripts/prepare/" %}
+[prepare](../sfpowerscripts/prepare/)
+{% endcontent-ref %}
