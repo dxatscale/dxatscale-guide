@@ -2,7 +2,21 @@
 
 ### When to drop a scratch org pool?
 
+In order to keep the pools up to date, a nightly scheduled job can be utilised to delete all unused active scratch orgs with the given pool tag, so the pool will be regenerated with the latest code base from the verified build packages.
+
 ### Deleting All Scratch orgs in a pool
+
+```
+sfdx sfpowerscripts:pool:delete -t dev-pool -v devhub
+
+-------------------------------------------------------------------------------------------
+sfpowerscripts  -- The DX@Scale CI/CD Orchestrator -Version:20.25.6 -Release:February 23
+-------------------------------------------------------------------------------------------
+The command resulted in the following operation
+                                                               
+ Operation   OrgId             Username                      
+ deleted     00D2N000000XXXX   test-ofakal3gxxxx@example.com 
+```
 
 ### Deleting Orphaned Scratch orgs
 
