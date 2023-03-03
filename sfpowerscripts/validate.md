@@ -17,6 +17,7 @@
 * \[optional] - Visualize components impacted by changes in pull request
 * \[optional] - Do not update information about deployed artifacts to the org
 * \[optional] - Disable diff check while validating, this will validate all the packages in the repository
+* \[optional] - Disable parallel testing of apex tests, this will validate apex tests of each package in synchronous mode
 
 ## Validate Modes
 
@@ -81,6 +82,12 @@ The following are the list of steps that are orchestrated by the **validate** co
 {% hint style="info" %}
 Use of default "thorough" mode is still recommended in the pipeline with fast feedback to ensure coverage computation and scripts added to the descriptor files are correctly working and deployable in an empty org.
 {% endhint %}
+
+{% hint style="info" %}
+By default, all the apex tests are triggered in parallel, with an automated retry, where any tests that fail to execute due to SOQL locks etc are retried synchronously. You can override this behaviour using `--disableparalleltesting` which will trigger tests every time in synchronous mode.
+{% endhint %}
+
+
 
 ## &#x20;Using Release Config file for Fast Feedback Release Config Mode / Thorough Release Config Mode&#x20;
 
