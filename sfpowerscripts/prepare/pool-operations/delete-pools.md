@@ -1,22 +1,31 @@
 # Delete Pools
 
-### When to drop a scratch org pool?
-
-In order to keep the pools up to date, a nightly scheduled job can be utilised to delete all unused active scratch orgs with the given pool tag, so the pool will be regenerated with the latest code base from the verified build packages.
-
-### Deleting All Scratch orgs in a pool
+pool: delete allows you to delete scratch orgs associated with a pool.
 
 ```
-sfdx sfpowerscripts:pool:delete -t dev-pool -v devhub
+sfdx sfpowerscripts:pool:delete -h
+Deletes the pooled scratch orgs from the Scratch Org Pool
 
--------------------------------------------------------------------------------------------
-sfpowerscripts  -- The DX@Scale CI/CD Orchestrator -Version:20.25.6 -Release:February 23
--------------------------------------------------------------------------------------------
-The command resulted in the following operation
-                                                               
- Operation   OrgId             Username                      
- deleted     00D2N000000XXXX   test-ofakal3gxxxx@example.com 
+USAGE
+  $ sfdx sfpowerscripts pool delete [-t <string>] [-i | -a] [-o] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -a, --allscratchorgs                                                              Deletes all used and unused Scratch orgs from pool by the tag
+  -i, --inprogressonly                                                              Deletes all In Progress Scratch orgs from pool by the tag
+  -o, --orphans                                                                     Recovers scratch orgs that were created by salesforce but were not tagged to sfpowerscripts due to timeouts etc.
+  -t, --tag=<value>                                                                 tag used to identify the scratch org pool
+  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=<value>                                                              override the api version used for api requests made by this command
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for this command invocation
+
 ```
+
+To keep the pools up to date, a nightly scheduled job can be utilised which can delete all the scratch orgs in each pool.  In the case of developer pools (pools with source tracking and used by developers as opposed to CI pools), care must be taken to delete only the `unassigned` pools by omitting the `--allscratchorgs` flag.
+
+{% hint style="warning" %}
+&#x20;Be careful when running delete command against developer pools with  `-allscratchorg` flag. It will delete the scratch orgs that are used by developer and can result in potential loss of work
+{% endhint %}
 
 ### Deleting Orphaned Scratch orgs
 

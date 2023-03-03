@@ -22,6 +22,7 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
 | relaxAllIPRanges                    | boolean | Relax all IP addresses, allowing all global access to scratch orgs                                                     |
 | ipRangesToBeRelaxed                 | array   | Range of IP addresses that can access the scratch orgs                                                                 |
 | retryOnFailure                      | boolean | Retry installation of a package on a failed deployment                                                                 |
+| maxRetryCount                       | number  | Maximum number of times a package should be retried while deploying to a scratchorg, The default is 2                  |
 | preDependencyInstallationScriptPath | string  | Path to a script file that need to be executed before dependent packages are installed in a scratch org                |
 | postDeploymentScriptPath            | string  | Path to a script file that need to be exectued after all the packages (dependencies+repository) is installed           |
 | enableVlocity                       | boolean | Enable vlocity settings and config deployment. Please note it doesnt install vlocity managed package"                  |

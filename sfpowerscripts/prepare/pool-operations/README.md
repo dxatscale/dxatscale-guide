@@ -4,13 +4,19 @@ sfpowerscripts provide the following commands to help you run your scratch org b
 
 ### Fetching a Scratch Org from pool
 
-pool: fetch command is designed for the developers to fetch a  development  environment from the pre-prepared scratch org pools
-
-
+{% content-ref url="fetch-a-scratch-org.md" %}
+[fetch-a-scratch-org.md](fetch-a-scratch-org.md)
+{% endcontent-ref %}
 
 ### List Scratch Orgs in a pool
 
-Provide an overview of the pool with the given pool tag, to monitor the health of the pool.
+{% content-ref url="list-scratch-orgs.md" %}
+[list-scratch-orgs.md](list-scratch-orgs.md)
+{% endcontent-ref %}
 
+### Delete Scratch Orgs in a pool
 
+{% content-ref url="delete-pools.md" %}
+[delete-pools.md](delete-pools.md)
+{% endcontent-ref %}
 
