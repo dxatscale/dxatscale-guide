@@ -66,6 +66,21 @@ changelog:
   showAllArtifacts: false
 ```
 
+{% hint style="info" %}
+Please note, when using release definition with exact version numbers. The format of the version number would be \<packageName>: X.Y.Z-BuildNumber, where the version number adopts the following semantics\
+X -  Major \
+Y -  Minor \
+Z -  Patch\
+BuildNumber - The build number that produced the package\
+\
+The version exactly follows the semantics used by the artifact registry (such as Github Packages)\
+
+
+**Example**:\
+A package that has the version core\_crm\_v3.0.0.6936, tagged in git should be referenced \
+as core\_crm: 3.0.0-6936
+{% endhint %}
+
 | Parameter                            | Required | Type    | Description                                                                                                                                                    |
 | ------------------------------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | release                              | Yes      | string  | Name of the release                                                                                                                                            |
