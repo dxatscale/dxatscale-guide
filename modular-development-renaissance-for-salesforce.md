@@ -1,7 +1,3 @@
----
-description: Published November 1st, 2022
----
-
 # Modular Development Renaissance for Salesforce
 
 {% embed url="https://www.linkedin.com/pulse/modular-development-renaissance-salesforce-part-1-2-vu-ha/" %}

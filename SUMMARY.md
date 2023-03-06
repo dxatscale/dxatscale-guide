@@ -1,6 +1,7 @@
 # Table of contents
 
 * [DX@Scale](README.md)
+* [Modular Development Renaissance for Salesforce](modular-development-renaissance-for-salesforce.md)
 * [Talks on DX@Scale](talks-on-dx-scale.md)
 * [Principles](principles.md)
 
@@ -136,7 +137,6 @@
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
   * [Declarative Field History Tracking](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
-  * [Modular Development Renaissance for Salesforce](media-library/knowledge-articles/modular-development-renaissance-for-salesforce.md)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
   * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
   * [sfpowerscripts orchestrator pool breaking changes](media-library/knowledge-articles/sfpowerscripts-orchestrator-pool-breaking-changes.md)
