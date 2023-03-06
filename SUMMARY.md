@@ -71,7 +71,7 @@
   * [Scratch Org Pool Configuration](sfpowerscripts/prepare/scratch-org-pool-configuration.md)
   * [Pool Operations](sfpowerscripts/prepare/pool-operations/README.md)
     * [List Scratch Orgs](sfpowerscripts/prepare/pool-operations/list-scratch-orgs.md)
-    * [Fetch A  Scratch Org](sfpowerscripts/prepare/pool-operations/fetch-a-scratch-org.md)
+    * [Fetch A Scratch Org](sfpowerscripts/prepare/pool-operations/fetch-a-scratch-org.md)
     * [Delete Pools](sfpowerscripts/prepare/pool-operations/delete-pools.md)
 * [Validate](sfpowerscripts/validate.md)
 * [Deploy](sfpowerscripts/deploy.md)
@@ -135,6 +135,7 @@
 ## 🎬 Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
+  * [Declarative Field History Tracking](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
   * [Modular Development Renaissance for Salesforce](media-library/knowledge-articles/modular-development-renaissance-for-salesforce.md)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
   * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
