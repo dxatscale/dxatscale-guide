@@ -22,7 +22,7 @@ To enable modular package development, there are a few configurations in Salesfo
 
 ![](<../../.gitbook/assets/image (1) (1).png>)
 
-## C. Create Service Account for DevOps
+## C. Create Service Account for Deployment
 
 For auditing purposes, it is best practice to create a separate [service account](https://help.salesforce.com/s/articleView?id=000331470\&type=1) to manage deployments to your Salesforce instance. The separation of user owned accounts and service accounts ensures traceability to your metadata and configuration changes.
 
