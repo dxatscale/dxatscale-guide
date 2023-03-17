@@ -41,7 +41,7 @@
 * [Prerequisites](implementing-your-ci-cd/prerequisites.md)
 * [Getting Started](implementing-your-ci-cd/getting-started/README.md)
   * [Developer Workstation](implementing-your-ci-cd/getting-started/getting-started.md)
-  * [Salesforce Setup](implementing-your-ci-cd/getting-started/getting-started-1.md)
+  * [On your Salesforce Org](implementing-your-ci-cd/getting-started/getting-started-1.md)
 * [GitHub](implementing-your-ci-cd/github-1/README.md)
   * [GitHub Setup](implementing-your-ci-cd/github-1/getting-started.md)
   * [Solution Overview](implementing-your-ci-cd/github-1/solution-overview.md)
