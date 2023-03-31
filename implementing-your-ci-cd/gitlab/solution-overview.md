@@ -95,7 +95,7 @@ In the template file provided, the structure of the [YAML](https://yaml.org) fil
 
 The diagram below depicts the various stages and jobs configured in the GitLab CI/CD configuration file .gitlab-ci.yml which incorporates the [sfpowerscripts orchestrator](https://sfpowerscripts.dxatscale.io/faq/orchestrator) and [sfpowerkit package](https://www.npmjs.com/package/sfpowerkit#sfpowerkitpackagevalid) commands to manage your CI/CD process. The grouping of stages and jobs are split into merge requests, merges, and manual triggers of the pipeline.
 
-![](<../../.gitbook/assets/image (53).png>)
+![](<../../.gitbook/assets/image (59).png>)
 
 | Type          | Stage      | Job                | Command                                                                                                                                                                                                                                                                      | Description                                                                                     |
 | ------------- | ---------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |

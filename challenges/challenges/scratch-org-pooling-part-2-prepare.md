@@ -26,7 +26,7 @@ Good news! If you completed [Scratch Org Pooling Part 1](scratch-org-pooling.md)
 
 * Click on 'Actions' in your Dreamhouse-App repo
 
-![](<../../.gitbook/assets/image (24).png>)
+![](<../../.gitbook/assets/image (6).png>)
 
 * Create a new workflow and name it 'prepare'
 * Replace the contents of the file with the file below
@@ -109,11 +109,11 @@ It is recommended to set up a new trailhead playground with DevHub and Unlocked 
 
 * Go to your GitHub repository and select 'Settings'
 
-![](<../../.gitbook/assets/image (38) (1).png>)
+![](<../../.gitbook/assets/image (38) (2).png>)
 
 * Now select 'Secrets'
 
-![](<../../.gitbook/assets/image (37).png>)
+![](<../../.gitbook/assets/image (37) (1).png>)
 
 ![](<../../.gitbook/assets/image (34) (2) (1) (3) (2) (1) (3).png>)
 
@@ -131,7 +131,7 @@ Select 'New repository secret'
 
 * Run the workflow by selecting 'run workflow'
 
-![](<../../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (66).png>)
 
 * Select the job to watch it running through the tasks and create the scratch orgs required
 

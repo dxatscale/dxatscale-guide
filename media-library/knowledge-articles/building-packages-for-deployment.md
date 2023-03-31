@@ -12,7 +12,7 @@ sfpowerscripts provides two specific commands that can help use here. These comm
 
 Let’s first discuss **quickbuild**! This command creates your package version and bundles it into an artifact. It does so without validating any dependencies or test coverage.
 
-![](<../../.gitbook/assets/image (25).png>)
+![](<../../.gitbook/assets/image (62).png>)
 
 This command is recommended when wanting to deploy to a ‘developer’ or ST sandbox to validate code before attempting a full build. It has no required flags but must be triggered from within the project directory (if you are using unlocked packages, dev hub becomes mandatory)
 

@@ -1,6 +1,7 @@
 # Table of contents
 
 * [DX@Scale](README.md)
+* [Modular Development Renaissance for Salesforce](modular-development-renaissance-for-salesforce.md)
 * [Talks on DX@Scale](talks-on-dx-scale.md)
 * [Principles](principles.md)
 
@@ -40,7 +41,7 @@
 * [Prerequisites](implementing-your-ci-cd/prerequisites.md)
 * [Getting Started](implementing-your-ci-cd/getting-started/README.md)
   * [Developer Workstation](implementing-your-ci-cd/getting-started/getting-started.md)
-  * [Salesforce Setup](implementing-your-ci-cd/getting-started/getting-started-1.md)
+  * [On your Salesforce Org](implementing-your-ci-cd/getting-started/getting-started-1.md)
 * [GitHub](implementing-your-ci-cd/github-1/README.md)
   * [GitHub Setup](implementing-your-ci-cd/github-1/getting-started.md)
   * [Solution Overview](implementing-your-ci-cd/github-1/solution-overview.md)
@@ -135,7 +136,7 @@
 ## 🎬 Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
-  * [Modular Development Renaissance for Salesforce](media-library/knowledge-articles/modular-development-renaissance-for-salesforce.md)
+  * [Declarative Field History Tracking](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
   * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
   * [sfpowerscripts orchestrator pool breaking changes](media-library/knowledge-articles/sfpowerscripts-orchestrator-pool-breaking-changes.md)
