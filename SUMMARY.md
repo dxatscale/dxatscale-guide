@@ -5,24 +5,6 @@
 * [Talks on DX@Scale](talks-on-dx-scale.md)
 * [Principles](principles.md)
 
-## 🤸 Learn with hands-on exercises <a href="#challenges" id="challenges"></a>
-
-* [Intro](challenges/intro.md)
-* [Prerequisites](challenges/prerequisites.md)
-* [Challenges](challenges/challenges/README.md)
-  * [Deploy to a Sandbox](challenges/challenges/1.-deploy-to-a-sandbox.md)
-  * [Using Source Format](challenges/challenges/2.-using-source-format.md)
-  * [Introduction to Scratch Orgs](challenges/challenges/4.-scratch-org-introduction.md)
-  * [Scratch Org Shape](challenges/challenges/5.-scratch-org-shape.md)
-  * [Using a Package](challenges/challenges/3.-using-a-package.md)
-  * [Create your own package](challenges/challenges/7.-create-your-own-package.md)
-  * [Intro to sfpowerscripts orchestrator](challenges/challenges/intro-to-orchestrator.md)
-  * [Building your packages](challenges/challenges/build-your-package.md)
-  * [Publish and Release your artifacts](challenges/challenges/publish-and-fetch-your-artifacts.md)
-  * [Scratch Org Pooling Part 1](challenges/challenges/scratch-org-pooling.md)
-  * [Scratch Org Pooling Part 2](challenges/challenges/scratch-org-pooling-part-2-prepare.md)
-  * [Validating your changes](challenges/challenges/validating-your-changes.md)
-
 ## 🧬 Source Code Management <a href="#scm" id="scm"></a>
 
 * [Repository Structure](scm/repository-structure.md)
@@ -54,6 +36,15 @@
 * [Setting up Dashboards](implementing-your-ci-cd/dashboard-setup/README.md)
   * [New Relic](implementing-your-ci-cd/dashboard-setup/new-relic.md)
   * [Data Dog](implementing-your-ci-cd/dashboard-setup/data-dog.md)
+
+## 🏗 Development Practices
+
+* [Modular Deployment](development-practices/modular-deployment.md)
+* [Organizing your code / config](development-practices/modularizing-your-code-config.md)
+* [Defining the boundaries of a package](development-practices/defining-the-boundaries-of-a-package.md)
+* [Dealing with Org Specific Metadata](development-practices/dealing-with-sensitive-metadata.md)
+* [Managing Profiles](development-practices/managing-profiles.md)
+* [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
 ## sfpowerscripts
 
@@ -90,15 +81,6 @@
 ## CraftFirst
 
 * [Overview](craftfirst/overview.md)
-
-## 🏗 Development Practices
-
-* [Modular Deployment](development-practices/modular-deployment.md)
-* [Organizing your code / config](development-practices/modularizing-your-code-config.md)
-* [Defining the boundaries of a package](development-practices/defining-the-boundaries-of-a-package.md)
-* [Dealing with Org Specific Metadata](development-practices/dealing-with-sensitive-metadata.md)
-* [Managing Profiles](development-practices/managing-profiles.md)
-* [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
 ## 🌲 Environment Management <a href="#environment" id="environment"></a>
 
