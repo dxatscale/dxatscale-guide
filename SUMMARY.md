@@ -118,6 +118,9 @@
 ## 🎬 Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
+  * [Why  you should use scratch orgs?](https://medium.com/@dieffrei/why-you-should-use-scratch-orgs-a-real-journey-c65bf5829496)
+  * [Introduction to Scratch Org Pools](https://medium.com/@dieffrei/introduction-to-salesforce-scratch-org-pools-e1616772499c)
+  * [Creating Scratch Org Pools at Scale](https://medium.com/@dieffrei/dx-scale-scratch-org-pools-1dbecfcda8f8)
   * [Declarative Field History Tracking](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
   * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
