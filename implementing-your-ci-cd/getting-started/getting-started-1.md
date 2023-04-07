@@ -175,7 +175,7 @@ The developers must also have object-level and FLS permissions on the ScratchOrg
        * `Pooltag__c`
        * `SfdxAuthUrl__c`
 
-       ``
+
 
        <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Permission Set: Object/Field Permissions</p></figcaption></figure>
 
@@ -210,6 +210,8 @@ To onboard new developers, the following Profiles and Permission Set will need t
 
 1. Unable to fetch scratch org from Dev Pool even though there are available scratch orgs in DevHub.\
    \
-   ERROR running sfpowerscripts:pool:fetch: <mark style="color:red;">No scratch org available at the moment for dev, try again in sometime.</mark>\ <mark style="color:red;"></mark>\ <mark style="color:red;"></mark>Possible Solutions:\
+   ERROR running sfpowerscripts:pool:fetch: <mark style="color:red;">No scratch org available at the moment for dev, try again in sometime.</mark>\
+   \
+   Possible Solutions:\
    \- Check that you have added the Developer User to the **Public Group** prior to fetching the scratch org from the pool\
    \- Confirm the **tag** is correct for the scratch org pool that you are fetching from

@@ -21,13 +21,13 @@
 
 ## Validate Modes
 
-| Mode                         | Description                                                                                                                                                                                                    | Flag                                                                                                             |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Individual                   | Ignore packages installed in scratch org, identify list of changed packages from PR/Merge Request, and validate each of the changed packages (respecting any dependencies) using thorough mode.                | `--mode=individual`                                                                                              |
-| Fast Feedback                | Skip package dependencies and code coverage and selective test class executions, install only changed components, and ignore changes in package descriptors                                                    | `--mode=fastfeedback`                                                                                            |
-| Thorough (Default)           | Include package dependencies, code coverage, all test classes during full package deployments                                                                                                                  | `--mode=thorough`                                                                                                |
-| Fast Feedback Release Config | Extension of fast feedback mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org    | <p><code>--mode=ff-release-config</code><br><code></code><br><code>--releaseconfig=&#x3C;value></code></p>       |
-| Thorough Release Config      | Extension of thorough default mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org | <p><code>--mode=thorough-release-config</code><br><code></code><br><code>--releaseconfig=&#x3C;value></code></p> |
+| Mode                         | Description                                                                                                                                                                                                    | Flag                                                                                                |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Individual                   | Ignore packages installed in scratch org, identify list of changed packages from PR/Merge Request, and validate each of the changed packages (respecting any dependencies) using thorough mode.                | `--mode=individual`                                                                                 |
+| Fast Feedback                | Skip package dependencies and code coverage and selective test class executions, install only changed components, and ignore changes in package descriptors                                                    | `--mode=fastfeedback`                                                                               |
+| Thorough (Default)           | Include package dependencies, code coverage, all test classes during full package deployments                                                                                                                  | `--mode=thorough`                                                                                   |
+| Fast Feedback Release Config | Extension of fast feedback mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org    | <p><code>--mode=ff-release-config</code><br><br><code>--releaseconfig=&#x3C;value></code></p>       |
+| Thorough Release Config      | Extension of thorough default mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org | <p><code>--mode=thorough-release-config</code><br><br><code>--releaseconfig=&#x3C;value></code></p> |
 
 ## Sequence of Activities
 
@@ -39,7 +39,7 @@ The following are the list of steps that are orchestrated by the **validate** co
 *   For each of the packages (internally calls the Deploy Command)\
     \
     **Thorough Mode (Default)**\
-    ****
+
 
     * Deploy all the built packages as [source packages](types-of-packaging/source-packages.md) / [data packages](types-of-packaging/data-packages.md) (unlocked packages are installed as source package)
     * Trigger Apex Tests if there are any apex test in the package
@@ -47,7 +47,7 @@ The following are the list of steps that are orchestrated by the **validate** co
 
     \
     **Fast Feedback Mode**\
-    ****
+
 
     * Deploy only changed metadata components for built packages as [source packages](types-of-packaging/source-packages.md) / [data packages](types-of-packaging/data-packages.md)
     * Trigger selective Apex Tests based on impact analysis of the changes in the package
@@ -58,7 +58,7 @@ The following are the list of steps that are orchestrated by the **validate** co
 
 
     **Individual Mode**\
-    ****
+
 
     * Ignore packages that are installed in the scratch org (basically eliminate the requirement of using a pooled org)
     * Compute changed packages by observing the diff of Pull/Merge Request
@@ -66,7 +66,7 @@ The following are the list of steps that are orchestrated by the **validate** co
 
     \
     **Fast Feedback Release Config Mode**\
-    ****
+
 
     * Inherit Fast Feedback Mode Features but filtered using a release configuration file containing list of packages to focus validation on
     * Deploy only change packages in the list by comparing against what is installed in the org
@@ -74,7 +74,7 @@ The following are the list of steps that are orchestrated by the **validate** co
 
 
     **Thorough Release Config Mode**\
-    ****
+
 
     * Inherit Thorough Mode Features but filtered using a release configuration file containing list of packages to focus validation on
     * Deploy only change packages in the list by comparing against what is installed in the org

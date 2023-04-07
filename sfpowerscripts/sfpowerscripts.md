@@ -14,7 +14,7 @@ An end-to-end build and deployment orchestrator for modular development on Sales
 * Ability to deploy only packages that are changed in a mono repo
 * Ability to toggle between package validation modes during pull-requests (PRs) against scratch org prepared earlier in pool.
   * **Individual -** ignore packages installed in scratch org, identify list of changed packages from PR/Merge Request, and validate each of the changed packages (respecting any dependencies) using **thorough** mode.
-  * **Fast Feedback -** skip package dependencies and code coverage and selective test class executions, install only changed components, and ignore changes in package descriptors  **** &#x20;
+  * **Fast Feedback -** skip package dependencies and code coverage and selective test class executions, install only changed components, and ignore changes in package descriptors &#x20;
   * **Thorough (default)** - include package dependencies, code coverage, all test classes during full package deployments
   * **Fast Feedback Release Config** - extension of fast feedback mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org
   * **Thorough Release Config** -  extension of thorough default mode but filtered using release configuration file that defines list of packages to validate with only changed packages ending up being used to validate against the scratch org

@@ -36,7 +36,7 @@
 
     <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p><strong>SFPOWERSCRIPTS_NEWRELIC Variable</strong></p></figcaption></figure>
 8.  Retrieve your "**Account ID**" under **Profile > Administration > Access Management > Accounts**\
-    ****
+
 
     <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 9.  Update the `cicd-dashboard.json` file in `dashboards/NewRelic` folder with the value of the "**Account id**" for all instances of `<your-account-id>`in the file.  Ensure to include the quotation marks for the "Account id". (eg. "1234567")\

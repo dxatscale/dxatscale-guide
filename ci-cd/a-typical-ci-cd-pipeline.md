@@ -2,7 +2,10 @@
 
 Let's look at a typical CI/CD pipeline for a package-based development in a program that has multiple environments. For brevity, validation before integration is not discussed
 
-![](../.gitbook/assets/flowdiagram\_revised.png)
+<figure><img src="../.gitbook/assets/SalesforceDeploymentLandscape.png" alt=""><figcaption><p>Typical CI/CD Pipeline</p></figcaption></figure>
+
+\
+
 
 There are two key pipelines demonstrated in the above diagram
 

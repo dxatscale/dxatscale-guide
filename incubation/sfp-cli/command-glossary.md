@@ -1,10 +1,10 @@
 # Command Glossary
 
-* ``[`sfp init`](https://github.com/dxatscale/sfp-cli#sfp-init)``
-* ``[`sfp org`](https://github.com/dxatscale/sfp-cli#sfp-org)``
-* ``[`sfp package`](https://github.com/dxatscale/sfp-cli#sfp-package)``
-* ``[`sfp sync`](https://github.com/dxatscale/sfp-cli#sfp-sync)``
-* ``[`sfp work`](https://github.com/dxatscale/sfp-cli#sfp-work)``
+* [`sfp init`](https://github.com/dxatscale/sfp-cli#sfp-init)
+* [`sfp org`](https://github.com/dxatscale/sfp-cli#sfp-org)
+* [`sfp package`](https://github.com/dxatscale/sfp-cli#sfp-package)
+* [`sfp sync`](https://github.com/dxatscale/sfp-cli#sfp-sync)
+* [`sfp work`](https://github.com/dxatscale/sfp-cli#sfp-work)
 
 ### `sfp init`
 
@@ -21,7 +21,7 @@ USAGE
   $ sfp init
 ```
 
-_See code:_ [_src/commands/init.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/init.ts)__
+_See code:_ [_src/commands/init.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/init.ts)
 
 ### `sfp org`
 
@@ -32,7 +32,7 @@ USAGE
   $ sfp org
 ```
 
-_See code:_ [_src/commands/org.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/org.ts)__
+_See code:_ [_src/commands/org.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/org.ts)
 
 ### `sfp package`
 
@@ -46,7 +46,7 @@ USAGE
   $ sfp package
 ```
 
-_See code:_ [_src/commands/package.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/package.ts)__
+_See code:_ [_src/commands/package.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/package.ts)
 
 ### `sfp sync`
 
@@ -57,7 +57,7 @@ USAGE
   $ sfp sync
 ```
 
-_See code:_ [_src/commands/sync.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/sync.ts)__
+_See code:_ [_src/commands/sync.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/sync.ts)
 
 ### `sfp work`
 
@@ -73,4 +73,4 @@ USAGE
   $ sfp work
 ```
 
-_See code:_ [_src/commands/work.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/work.ts)__
+_See code:_ [_src/commands/work.ts_](https://github.com/dxatscale/sfp-cli/blob/main/src/commands/work.ts)
