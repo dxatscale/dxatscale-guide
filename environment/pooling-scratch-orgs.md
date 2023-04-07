@@ -2,6 +2,10 @@
 
 Scratch Org pools help development teams to solve the time taken to spin up a scratch org, install all dependencies, load sample data and make it ready for development. Another use case for Scratch Org Pools is for a just in time CI environment. The following links discuss how DX@Scale's tooling enable scratch org pools.
 
+{% embed url="https://medium.com/@dieffrei/introduction-to-salesforce-scratch-org-pools-e1616772499c" %}
+
+{% embed url="https://medium.com/@dieffrei/dx-scale-scratch-org-pools-1dbecfcda8f8" %}
+
 {% content-ref url="../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md" %}
 [streamlined-scratch-orgs-are-here.md](../media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md)
 {% endcontent-ref %}
