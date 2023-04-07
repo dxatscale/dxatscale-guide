@@ -124,8 +124,6 @@
   * [Declarative Field History Tracking](https://medium.com/@gnemiq/declarative-configuration-for-field-history-tracking-d63525a5e7b2)
   * [Handling Entitlements](https://medium.com/@gnemiq/salesforce-entitlement-handling-9e69735e3687)
   * [Salesforce Apex Test Execution Performance Tuning](https://medium.com/@dieffrei/salesforce-apex-test-execution-performance-tuning-d38974a413ee)
-  * [sfpowerscripts orchestrator pool breaking changes](media-library/knowledge-articles/sfpowerscripts-orchestrator-pool-breaking-changes.md)
-  * [Streamlined Scratch Orgs are here!](media-library/knowledge-articles/streamlined-scratch-orgs-are-here.md)
   * [Building packages for deployment](media-library/knowledge-articles/building-packages-for-deployment.md)
   * [Version Controlling Profiles and Why It Makes Sense for Deployments?](media-library/knowledge-articles/version-controlling-profiles-and-why-it-makes-sense-for-deployments.md)
   * [Validation in Continuous Integration](media-library/knowledge-articles/validation-in-continuous-integration.md)
