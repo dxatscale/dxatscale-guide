@@ -19,3 +19,7 @@ Vu is a Technology Architect with a broad range of experience across different t
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Zhebin Liu</p></figcaption></figure>
 
 Zhebin is a Salesforce developer with a passion for improving the developer experience. He joined [DX@scale](mailto:DX@scale) in April 2022 as a software developer, He is keen to build streamlined Salesforce development and deployment framework for everyone in this Salesforce eco-system
+
+<figure><img src="../.gitbook/assets/ruslan-kurchenko.png" alt="drawing" width="200"><figcaption><p>Ruslan Kurchenko</p></figcaption></figure>
+
+Ruslan is always dedicated to leveraging contemporary software engineering methods for optimal application within the Salesforce platform. Committed to continuous improvement, he consistently seeks opportunities to enhance engineers' performance and drive efficiency. He aims to create an unparalleled modular engineering experience for the Salesforce experts while advocating strongly for Continuous Delivery practices leveraging DX@Scale since 2022. As a Salesforce Technical Architect, he is passionate about delivering exceptional results and driving successful outcomes through his expertise and commitment to excellence.
