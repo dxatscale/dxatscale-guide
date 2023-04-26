@@ -46,6 +46,15 @@
 * [Managing Profiles](development-practices/managing-profiles.md)
 * [Tracking Manual Steps](development-practices/tracking-manual-steps.md)
 
+## 🌲 Environment Management <a href="#environment" id="environment"></a>
+
+* [Environment Strategy](environment/env-strategy.md)
+* [Connecting Environments](environment/connecting-environments.md)
+* [Developer Environments](environment/developer-environments.md)
+* [CI Environments](environment/ci-environments.md)
+* [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
+* [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
+
 ## sfpowerscripts
 
 * [Overview](sfpowerscripts/sfpowerscripts.md)
@@ -81,15 +90,6 @@
 ## CraftFirst
 
 * [Overview](craftfirst/overview.md)
-
-## 🌲 Environment Management <a href="#environment" id="environment"></a>
-
-* [Environment Strategy](environment/env-strategy.md)
-* [Connecting Environments](environment/connecting-environments.md)
-* [Developer Environments](environment/developer-environments.md)
-* [CI Environments](environment/ci-environments.md)
-* [Pooling Scratch Orgs](environment/pooling-scratch-orgs.md)
-* [Refreshing Sandboxes](environment/refreshing-sandboxes.md)
 
 ## Release Management <a href="#release" id="release"></a>
 
