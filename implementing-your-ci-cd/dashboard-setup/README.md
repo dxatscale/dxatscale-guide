@@ -67,3 +67,22 @@ More detailed instruction on setting up in NewRelic is described in the below li
 {% content-ref url="new-relic.md" %}
 [new-relic.md](new-relic.md)
 {% endcontent-ref %}
+
+### Native Splunk Integration
+
+sfpowerscripts is also able to integrate into Splunk natively using HTTP/HTTPS integration. This feature allows one to directly post metrics to Splunk instance without using an intermittent StatsD server to aggregate metrics before reaching an analyzer.
+
+To setup native Splunk integration, you need to set the following environment variables
+
+```
+ # Set SPLUNK Environment Variables for logging metrics natively to Splunk
+ export SFPOWERSCRIPTS_SPLUNK=true
+ export SFPOWERSCRIPTS_SPLUNK_HOST=https://splunk-hec.your.app.com:your-port/services/collector/event // Or equivalent splunk region
+ export SFPOWERSCRIPTS_SPLUNK_API_KEY=<your api key> 
+```
+
+More detailed instruction on setting up in Splunk is described in the below link
+
+{% content-ref url="splunk.md" %}
+[splunk.md](splunk.md)
+{% endcontent-ref %}
