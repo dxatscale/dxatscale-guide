@@ -36,6 +36,7 @@
 * [Setting up Dashboards](implementing-your-ci-cd/dashboard-setup/README.md)
   * [New Relic](implementing-your-ci-cd/dashboard-setup/new-relic.md)
   * [Data Dog](implementing-your-ci-cd/dashboard-setup/data-dog.md)
+  * [Splunk](implementing-your-ci-cd/dashboard-setup/splunk.md)
 
 ## 🏗 Development Practices
 
