@@ -14,7 +14,7 @@ Apply the following steps
 * Create a new package (new name) with type as Org Dependent Unlocked Package
 
 ```
-//  sfdx force:package:create -n YourPackageName -d "Your Package Descripton" -t Unlocked -r directory --orgdepependentnt
+//  sfdx force:package:create -n YourPackageName -d "Your Package Description" -t Unlocked -r directory --orgdependent
 ```
 
 * Create a new version of the Org Dependent unlocked package
