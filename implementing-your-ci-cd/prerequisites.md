@@ -32,7 +32,7 @@ To setup a proper pipeline, a minimum of 2 orgs will be required to configured i
 
 * [ ] [Free Limited Access License](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/dev\_hub\_license.htm)
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Salesforce Limited Access - Free Licence</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Salesforce Limited Access - Free License</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (73).png" alt=""><figcaption><p>Profile: Limited Access User</p></figcaption></figure>
 

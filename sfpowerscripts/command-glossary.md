@@ -76,7 +76,7 @@ FLAGS
       The path to the ruleset if you are utilizing your own ruleset
 
   --sourcedir=<value>
-      The directory that is to be analzed using PMD, If omitted default project diretory as mentioned in sfdx-project.json
+      The directory that is to be analyzed using PMD, If omitted default project directory as mentioned in sfdx-project.json
       will be used
 
   --threshold=<value>
@@ -177,7 +177,7 @@ USAGE
 
 FLAGS
   -t, --testcoverage=<value>                                                        (required) The percentage of test
-                                                                                    coverage for apex clasess, that
+                                                                                    coverage for apex classes, that
                                                                                     should be as per the last test run
                                                                                     status
   -u, --targetorg=<value>                                                           [default: scratchorg] Alias or
@@ -346,12 +346,12 @@ FLAGS
   --buildnumber=<value>                                                             [default: 1] The build number to be
                                                                                     used for source packages, Unlocked
                                                                                     Packages will be assigned the
-                                                                                    buildnumber from Saleforce directly
+                                                                                    buildnumber from Salesforce directly
                                                                                     if using .NEXT
   --diffcheck                                                                       Only build the packages which have
                                                                                     changed by analyzing previous tags
   --executorcount=<value>                                                           [default: 5] Number of parallel
-                                                                                    package task schedulors
+                                                                                    package task schedulers
   --json                                                                            format output as json
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
                                                                                     this command invocation
@@ -369,7 +369,7 @@ _See code:_ [_src/commands/sfpowerscripts/orchestrator/build.ts_](https://github
 
 ## `sfdx sfpowerscripts:orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b <string> --skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
-Deploy packages from the provided aritfact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
+Deploy packages from the provided artifact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
 
 ```
 USAGE
@@ -1300,7 +1300,7 @@ DESCRIPTION
   Deletes the pooled scratch orgs from the Scratch Org Pool
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:delete -t core 
+  $ sfdx sfpowerscripts:pool:delete -t core
 
   $ sfdx sfpowerscripts:pool:delete -t core -v devhub
 ```
@@ -1339,7 +1339,7 @@ DESCRIPTION
   Gets an active/unused scratch org from the scratch org pool
 
 EXAMPLES
-  $ sfdx sfpowerkit:pool:fetch -t core 
+  $ sfdx sfpowerkit:pool:fetch -t core
 
   $ sfdx sfpowerkit:pool:fetch -t core -v devhub
 
@@ -1380,7 +1380,7 @@ DESCRIPTION
   will retrieve the passwords for the pool created by the user who is executing the command.
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:list -t core 
+  $ sfdx sfpowerscripts:pool:list -t core
 
   $ sfdx sfpowerscripts:pool:list -t core -v devhub
 
@@ -1500,7 +1500,7 @@ USAGE
 
 FLAGS
   -v, --targetdevhubusername=<value>                                                dev hub alias or username
-  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file 
+  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file
                                                                                     with expanded file
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
                                                                                     this command invocation
@@ -1522,7 +1522,7 @@ USAGE
 
 FLAGS
   -v, --targetdevhubusername=<value>                                                dev hub alias or username
-  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file 
+  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file
                                                                                     with shrank file
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
                                                                                     this command invocation

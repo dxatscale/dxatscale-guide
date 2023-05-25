@@ -8,7 +8,7 @@ Scratch orgs have been available in salesforce development for over three years 
 
 Imagine if you could have a “pool” of scratch orgs at your disposal? Pre-prepared with your packages, refreshed as required and available seamlessly? Imagine no more, DX@Scale has your solution and its completely open source.
 
-In part one let’s talk about preparing scratch orgs for use as "just-in-time" **Continous Integration Environments**
+In part one let’s talk about preparing scratch orgs for use as "just-in-time" **Continuous Integration Environments**
 
 sfpowerscripts [December 2020 release](https://github.com/Accenture/sfpowerscripts/releases/tag/Release\_18) introduced the “orchestrator:prepare” command which allows you to create a pool of scratch orgs, install all, some or no code in your repo as well as required managed packages to emulate your Production Org. But how? What exactly is happening under the “hood”? Well, the prepare commands works in this way:
 

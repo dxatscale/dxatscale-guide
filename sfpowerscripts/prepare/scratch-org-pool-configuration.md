@@ -94,7 +94,6 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
         "scope": "dxatscale"
       }
     }
- 
  }
 
 ```
