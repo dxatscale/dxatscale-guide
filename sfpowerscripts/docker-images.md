@@ -43,7 +43,7 @@ on:
     schedule:
         - cron: '0 0 * * *'
 
-# Read more about using contaniers
+# Read more about using containers
 # https://docs.github.com/en/actions/guides/about-service-containers
 
 # Jobs to be executed
@@ -59,7 +59,7 @@ jobs:
 pool:
     vmImage: 'ubuntu-latest'
 
-# Specify a container job to use the docker image. Read more about using 
+# Specify a container job to use the docker image. Read more about using
 # container jobs at https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases?view=azure-devops
 
 container: ghcr.io/dxatscale/sfpowerscripts:latest

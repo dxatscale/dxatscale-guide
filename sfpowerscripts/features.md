@@ -55,7 +55,7 @@ description: Learn about all the features in sfpowerscripts
 
 * Automated Release Notes Generator
 * Track Linked Work Items along with commits made to each package
-* Automated Release Refinition Generator&#x20;
+* Automated Release Definition Generator
 
 ## **Observability at its Best**
 

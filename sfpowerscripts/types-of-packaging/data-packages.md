@@ -22,7 +22,7 @@ Simply add an entry in the package directories, providing the package's name, pa
     "package": "name--of-the-data package", //mandatory, when used with sfpowerscripts
     "versionNumber": "X.Y.Z.0 // 0 will be replaced by the build number passed",
     "type": "data", // required
-    "postDeploymentScript":"path--to--script" // script such as populating the record ID to custom setting after data package is loaded 
+    "postDeploymentScript":"path--to--script" // script such as populating the record ID to custom setting after data package is loaded
   }
 ```
 
@@ -66,11 +66,11 @@ sfdx force:apex:execute -f scripts/datascript.apex -u $2
 
 ## Defining a vlocity Data Package
 
-sfpowerscripts support vlocity RBC migration usng the vlocity build tool (vbt). sfpowerscripts will be automatically able to detect whether a data package need to be deployed using vlocity or using sfdmu. (Please not to enable vlocity in preparing scratchOrgs, the enableVlocity flag need to be turned on in the pool configuration file)
+sfpowerscripts support vlocity RBC migration using the vlocity build tool (vbt). sfpowerscripts will be automatically able to detect whether a data package need to be deployed using vlocity or using sfdmu. (Please not to enable vlocity in preparing scratchOrgs, the enableVlocity flag need to be turned on in the pool configuration file)
 
 ![Defining a vlocity data package](<../../.gitbook/assets/image (18).png>)
 
-A vlocity data package need to have vlocityComponents.yaml file in the root of the package directory and it should have the following defintion
+A vlocity data package need to have vlocityComponents.yaml file in the root of the package directory and it should have the following definition
 
 ```
 projectPath: src/vlocity-config // Path to the package directory

@@ -51,8 +51,8 @@ The following are the list of metrics that are captured.
 | sfpowerscripts.prepare.packages.scheduled         | Number of packages scheduled for installation when preparing scratch org pools                                      | GAUGE |
 | sfpowerscripts.prepare.packages.succeeded         | Number of packages successfully installed when preparing scratch org pools                                          | GAUGE |
 | sfpowerscripts.prepare.packages.failed            | Number of packages failed to install when preparing scratch org pools                                               | GAUGE |
-| sfpowerscripts.so.packages.requested              | Number of packages requested to be installed to an individual scratch org in the pool                               | GUAGE |
-| sfpowerscripts.so.package.installed               | Number of packages successfully installed to an individual scratch org in the pool                                  | GUAGE |
+| sfpowerscripts.so.packages.requested              | Number of packages requested to be installed to an individual scratch org in the pool                               | GAUGE |
+| sfpowerscripts.so.package.installed               | Number of packages successfully installed to an individual scratch org in the pool                                  | GAUGE |
 | sfpowerscripts.pool.available                     | Number of scratch orgs that are available in a pool after fetched by validate command                               | GAUGE |
 | sfpowerscripts.release.scheduled                  | Number of scheduled releases                                                                                        | COUNT |
 | sfpowerscripts.release.succeeded                  | Number of successful releases                                                                                       | COUNT |
@@ -61,8 +61,8 @@ The following are the list of metrics that are captured.
 | sfpowerscripts.release.packages.scheduled         | Number of packages scheduled for release                                                                            | GAUGE |
 | sfpowerscripts.release.packages.succeeded         | Number of packages that were installed successfully in a release                                                    | GAUGE |
 | sfpowerscripts.release.packages.failed            | Number of packages that failed to install in a release                                                              | GAUGE |
-| sfpowerscripts.release.workitems                  | Aggregated count of workitems in a release (a release is identified by the identifier used in a release definition) | GUAGE |
-| sfpowerscripts.release.commits                    | Aggregated count of commits in a release (a release is identified by the identifier used in a release definition)   | GUAGE |
+| sfpowerscripts.release.workitems                  | Aggregated count of workitems in a release (a release is identified by the identifier used in a release definition) | GAUGE |
+| sfpowerscripts.release.commits                    | Aggregated count of commits in a release (a release is identified by the identifier used in a release definition)   | GAUGE |
 
 ## Sample Dashboards
 

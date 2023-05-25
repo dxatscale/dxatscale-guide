@@ -4,18 +4,18 @@ Generate a release definition from a provided git reference. The command can als
 
 ```
 sfdx sfpowerscripts:releasedefinition:generate -h
-Generates release defintion based on the artifacts installed from a commit reference
+Generates release definition based on the artifacts installed from a commit reference
 
 USAGE
   $ sfdx sfpowerscripts:releasedefinition:generate -c <value> -f <value> -n <value> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [-d
     <value>] [--nopush -b <value>] [--forcepush ]
 
 FLAGS
-  -b, --branchname=<value>                                                          Repository branch in which the release defintion files are to be written
-  -c, --gitref=<value>                                                              (required) Utilize the tags on the source branch to generate release definiton
-  -d, --directory=<value>                                                           Relative path to directory to which the release defintion file should be
+  -b, --branchname=<value>                                                          Repository branch in which the release definition files are to be written
+  -c, --gitref=<value>                                                              (required) Utilize the tags on the source branch to generate release definition
+  -d, --directory=<value>                                                           Relative path to directory to which the release definition file should be
                                                                                     generated, if the directory doesnt exist, it will be created
-  -f, --configfile=<value>                                                          (required) Path to the config file which determines how the release defintion
+  -f, --configfile=<value>                                                          (required) Path to the config file which determines how the release definition
                                                                                     should be generated
   -n, --releasename=<value>                                                         (required) Set a releasename on the release definition file created
   --forcepush                                                                       Force push changes to the repository branch
@@ -24,10 +24,10 @@ FLAGS
   --nopush                                                                          Do not push the changelog to a repository to the provided branch
 
 DESCRIPTION
-  Generates release defintion based on the artifacts installed from a commit reference
+  Generates release definition based on the artifacts installed from a commit reference
 
 EXAMPLES
-   $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName>  -b <branchame> -u <org>
+  $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName> -b <branchname> -u <org>
 ```
 
 ## Release Config File
@@ -56,7 +56,7 @@ releasedefinitionProperties:
 
 ```
 
-The below table list the options currently that are currently available for configuridefinitionntion
+The below table list the options that are currently available for release definition
 
 | Parameter                      | Required | Type   | Description                                                                                          |
 | ------------------------------ | -------- | ------ | ---------------------------------------------------------------------------------------------------- |
