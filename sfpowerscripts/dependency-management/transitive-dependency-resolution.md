@@ -42,19 +42,11 @@ Let's consider the following sfdx-project.json to explain how this feature works
 
 The above project manifest (sfdx-project.json) describes three packages, **sfdc-logging, feature-mgmt., core-crm .**  Each package are defined with dependencies as described below
 
-| Package      | Incorrectly Defined Dependencies |
-| ------------ | -------------------------------- |
-| sfdc-logging | None                             |
-| feature-mgmt | sfdc-logging                     |
-| core-crm     | feature-mgmt                     |
+<table><thead><tr><th width="218">Package</th><th>Incorrectly Defined Dependencies</th></tr></thead><tbody><tr><td>sfdc-logging</td><td>None</td></tr><tr><td>feature-mgmt</td><td>sfdc-logging</td></tr><tr><td>core-crm</td><td>feature-mgmt</td></tr></tbody></table>
 
 As you might have noticed, this is an incorrect representation, as per the definitions of unlocked package, the package 'core-crm' should be explicitly defining all its dependencies. This means it should be as described below.&#x20;
 
-| Package      | Correctly Defined Dependencies |
-| ------------ | ------------------------------ |
-| sfdc-logging | None                           |
-| feature-mgmt | sfdc-logging                   |
-| core-crm     | sfdc-logging, feature-mgmt     |
+<table><thead><tr><th width="218">Package</th><th>Correctly Defined Dependencies</th></tr></thead><tbody><tr><td>sfdc-logging</td><td>None</td></tr><tr><td>feature-mgmt</td><td>sfdc-logging</td></tr><tr><td>core-crm</td><td>sfdc-logging, feature-mgmt</td></tr></tbody></table>
 
 To successfully create a version of core-crm , both sfdc-logging and feature-mgmt. should be defined as an explicit dependency in the sfdx-project.json
 

@@ -32,6 +32,10 @@ Scratch Org pools need to be replenished in the following manner.
 
 Pipelines should be built and invoked using a scheduler to replenish the scratch orgs in the pool.
 
+## Limiting Packages in Pools
+
+As the number of packages in your repository increases, it would become a significant hurdle to build scratch org pools with all the packages in your repository.  sfpowerscripts provide options to limit the packages installed by using[ Release Config](../sfpowerscripts/release/release-definition-generator.md#release-config-file). Release config is available across most sfpowerscripts commands , including [Prepare ](../sfpowerscripts/prepare/)and [Validate](../sfpowerscripts/validate.md) enabling you to build subset of your repositories.
+
 ## Recreating Pools
 
 There would be situations when pools need to be killed, such as change in shape of the org or due to any other inconsistencies. This involves a significant downtime, as creating pool with full strength could take anywhere between 1-3 hours depending on the number of scratch orgs involved. This should be communicated to all the developers in the team workspace to let them know this is happening.
