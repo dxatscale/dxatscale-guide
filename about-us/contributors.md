@@ -21,7 +21,7 @@ Meng is a software engineer with a zest for creating and implementing tools and 
 
 ​Alan is a software engineer who builds automation and delivery tools for Salesforce. He has implemented effective CICD solutions on large-enterprise projects, and is a primary contributor to sfpowerscripts.
 
-<figure><img src="../.gitbook/assets/image (48).png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Caitlyn Millis</p></figcaption></figure>
 
 Caitlyn is a Software Engineer with a passion for all things IT, but particularly games. She has been involved with DX@Scale since April 2020 as an engineer, spokesperson, blog writer, trainer and troubleshooter. She loves working with DX@Scale and believes that anything which makes development and CICD simple is worth investing time and effort in.
 
@@ -54,7 +54,7 @@ Jothy Sivanand - is Accenture Certified Senior Technology Architect and an inven
 
 Hung set out the mission to tackle Salesforce DevOps practices head-on after he had been involved in delivering a large Salesforce transformation program and appalled at how far behind the DevOps capabilities were. Hung acts as an advisor to DX@Scale core team on tooling and practices.​
 
-![Eric Shen](<../.gitbook/assets/image (14).png>)
+![Eric Shen](<../.gitbook/assets/image (13).png>)
 
 Eric Shen is a Certified Technical Architect who has been using sfpower\* tools across multiple programs. He contributes additions and fixes to documentation, as well provide feedback on the various commands.
 

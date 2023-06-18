@@ -30,7 +30,7 @@ Simply add an entry in the package directories, providing the package's name, pa
 
 Export your Salesforce records to csv files using the [SFDMU plugin](https://github.com/forcedotcom/SFDX-Data-Move-Utility). For more information on plugin installation, creating an export.json file, and exporting to csv files, refer to _Plugin Basic > Basic Usage_ in SFDMU's [documentation](https://help.sfdmu.com/quick-start).
 
-![](<../../.gitbook/assets/image (59).png>)
+![](<../../.gitbook/assets/image (52).png>)
 
 ## **Options with Data Packages**
 
@@ -68,7 +68,7 @@ sfdx force:apex:execute -f scripts/datascript.apex -u $2
 
 sfpowerscripts support vlocity RBC migration using the vlocity build tool (vbt). sfpowerscripts will be automatically able to detect whether a data package need to be deployed using vlocity or using sfdmu. (Please not to enable vlocity in preparing scratchOrgs, the enableVlocity flag need to be turned on in the pool configuration file)
 
-![Defining a vlocity data package](<../../.gitbook/assets/image (35).png>)
+![Defining a vlocity data package](<../../.gitbook/assets/image (34).png>)
 
 A vlocity data package need to have vlocityComponents.yaml file in the root of the package directory and it should have the following definition
 

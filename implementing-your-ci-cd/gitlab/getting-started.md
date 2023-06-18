@@ -40,7 +40,7 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ![](<../../.gitbook/assets/image (6) (1).png>)
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../.gitbook/assets/image (18) (1).png>)
 
@@ -62,7 +62,7 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 
 ![](<../../.gitbook/assets/image (2) (1).png>)
 
-![](<../../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (11) (1).png>)
 
 ### D. Create Project Variables
 
@@ -77,9 +77,9 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](<../../.gitbook/assets/image (79).png>)
+![](<../../.gitbook/assets/image (39).png>)
 
-![](<../../.gitbook/assets/image (22).png>)
+![](<../../.gitbook/assets/image (21).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -100,7 +100,7 @@ Repeat the steps above and create the following variables below using the sfdxAu
 | UAT\_ALIAS                 | uat            | Variable | All (default) | No      | No   |
 | UAT\_SFDX\_AUTH\_URL       | \<sfdxAuthUrl> | File     | All (default) | No      | Yes  |
 
-![Project Variables](<../../.gitbook/assets/image (4).png>)
+![Project Variables](<../../.gitbook/assets/image (78).png>)
 
 {% hint style="info" %}
 The NPM\_SCOPE variable should start with the @ character. Read more about npm scope [here](https://docs.npmjs.com/cli/v7/using-npm/scope).
@@ -116,7 +116,7 @@ The [dxatscale-template](https://github.com/dxatscale/dxatscale-template) reposi
 git clone https://github.com/dxatscale/dxatscale-template.git
 ```
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (78).png>)
 
 ### B. Clone Project Repository
 
@@ -128,7 +128,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](<../../.gitbook/assets/image (58).png>)
+![](<../../.gitbook/assets/image (51).png>)
 
 ### C. Copy Template Contents to Project Folder
 
@@ -156,7 +156,7 @@ rsync -av dxatscale-template/* dxatscale-poc
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
 
 ### D. Commit Changes to Repository
 
@@ -184,7 +184,7 @@ Once the files have been committed, you can verify the files have been pushed th
 1. Navigate to **CI/CD > Pipelines**
 2. Verify the pipeline has been skipped
 
-![](<../../.gitbook/assets/image (28).png>)
+![](<../../.gitbook/assets/image (28) (1).png>)
 
 ## Part III - DX@Scale Setup
 
@@ -410,7 +410,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 9. Keep **Activated** checked to **Active**
 10. Click **Save pipeline schedule**
 
-![](<../../.gitbook/assets/image (40) (1).png>)
+![](<../../.gitbook/assets/image (40).png>)
 
 Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.
 
@@ -458,7 +458,7 @@ status       Assigned
 4. Enter **manual-delete-fetched-so** value for the **TARGETTASKNAME** variable key
 5. Click on **Run pipeline**
 
-![](<../../.gitbook/assets/image (35) (2).png>)
+![](<../../.gitbook/assets/image (35).png>)
 
 ### K. Merge Requests and Merge to Main
 

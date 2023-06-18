@@ -29,7 +29,7 @@ These commands follow the order of the the packages as ordered in your sfdx-proj
 
 **Scenario 1 : Build All**
 
-![](<../.gitbook/assets/image (82).png>)
+![](<../.gitbook/assets/image (42).png>)
 
 1. Trigger creation of package A
 2. Once A is completed, trigger creation of package B & C \*\*,\*\*using the version of A, created in step 1
@@ -37,13 +37,13 @@ These commands follow the order of the the packages as ordered in your sfdx-proj
 
 **Scenario 2 : Build with diffCheck enabled on a package with no dependencies**
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (82).png>)
 
 In this scenario, where only a single package has changed and **diffCheck** is enabled, the build command will only trigger the creation of Package B
 
 **Scenario 3 : Build with diffCheck enabled on changes in multiple packages**
 
-![](<../.gitbook/assets/image (53).png>)
+![](<../.gitbook/assets/image (46).png>)
 
 In this scenario, where there are changes in multiple packages, say B & C, the build command will trigger these packages in parallel, as their dependent package A has not changed (hence fulfilled). Please note even though there is a change in C, package D will not be triggered, unless there is an explicit version change of version number (major.minor.patch) of package D
 
