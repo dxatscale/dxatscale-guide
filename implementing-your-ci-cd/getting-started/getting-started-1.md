@@ -10,7 +10,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](<../../.gitbook/assets/image (17).png>)
+![](<../../.gitbook/assets/image (64).png>)
 
 ## B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -35,7 +35,7 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](<../../.gitbook/assets/image (62).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
 {% hint style="info" %}
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
@@ -137,17 +137,17 @@ For developers (who are on limited access license) to access scratch orgs create
 
 
 
-    <figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p>Public Group: CI Users<br></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Public Group: CI Users<br></p></figcaption></figure>
 
     * Developers (developers who are allowed to fetch scratch orgs from pool)\
 
 
-    <figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption><p>Public Group: Developers</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption><p>Public Group: Developers</p></figcaption></figure>
 2.  Create Sharing Rule **"ScratchOrgInfo RW to Developers"** **(Setup > Security > Sharing Settings)**
 
     * Grant Read/Write access to the ScratchOrgInfos records owned by the CI Users to Developers&#x20;
 
-    <figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption><p>Sharing Rule</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Sharing Rule</p></figcaption></figure>
 3.  Assign Users to Public Groups **(Setup > Security > Sharing Settings)**
 
     * CI Users
@@ -155,7 +155,7 @@ For developers (who are on limited access license) to access scratch orgs create
 
 
 
-    <figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption><p>Public Group: User Assignment</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (66).png" alt=""><figcaption><p>Public Group: User Assignment</p></figcaption></figure>
 
 ## J. Permission Set Creation for Developer Access to ScratchOrgInfo Object
 
@@ -177,7 +177,7 @@ The developers must also have object-level and FLS permissions on the ScratchOrg
 
 
 
-       <figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption><p>Permission Set: Object/Field Permissions</p></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Permission Set: Object/Field Permissions</p></figcaption></figure>
 
 **System Permissions:**
 
@@ -185,7 +185,7 @@ The developers must also have object-level and FLS permissions on the ScratchOrg
 * API Only User = False
 * Create and Update Second-Generation Packages = True
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption><p>Permission Set: System Permissions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Permission Set: System Permissions</p></figcaption></figure>
 
 ## **K. Profile and Permission Set Assignment for Developers in Production**
 

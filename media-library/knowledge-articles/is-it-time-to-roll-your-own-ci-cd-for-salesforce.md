@@ -4,7 +4,7 @@ description: Published on November 6, 2019 by Azlam Abdulsalam
 
 # Is it time to roll your own CI/CD for Salesforce?
 
-![](<../../.gitbook/assets/image (61).png>)
+![](<../../.gitbook/assets/image (17).png>)
 
 CI/CD for Salesforce is in a very exciting phase. On one end you have awesome 'only for Salesforce' DevOps platforms such as Autorabit, Gearset, Copado etc which gets you going as quickly as possible. On the other end, often in the case of large enterprises, a custom-built pipeline is often the preferred choice.
 

@@ -32,9 +32,9 @@ To setup a proper pipeline, a minimum of 2 orgs will be required to configured i
 
 * [ ] [Free Limited Access License](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/dev\_hub\_license.htm)
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption><p>Salesforce Limited Access - Free License</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption><p>Salesforce Limited Access - Free License</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Profile: Limited Access User</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption><p>Profile: Limited Access User</p></figcaption></figure>
 
 {% hint style="info" %}
 A maximum of 1 user license of "Salesforce Limited Access - Free" for every 2 scratch org licenses will be provided. Scratch Org [allocations](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_scratch\_orgs\_editions\_and\_allocations.htm) varies depending on your edition.\
@@ -42,7 +42,7 @@ A maximum of 1 user license of "Salesforce Limited Access - Free" for every 2 sc
 These will be used for fetching Scratch Orgs from the Scratch Org Pools for your developers.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Scratch Org Allocations for Dev Hub Editions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption><p>Scratch Org Allocations for Dev Hub Editions</p></figcaption></figure>
 
 {% hint style="info" %}
 Alternatively, if you are experimenting in a Developer Edition Org or a Production Org that does not have the Free Limited Access License, you can use the "[Minimum Access - Salesforce](https://help.salesforce.com/s/articleView?id=release-notes.rn\_forcecom\_general\_new\_profile.htm\&type=5\&release=226)" as your profile assignment to your developers instead. They will still consume a Salesforce or Salesforce Platform License so factor this into your decision. Best practice is to clone the "Minimum Access - Salesforce" Standard Profile and use the custom version.

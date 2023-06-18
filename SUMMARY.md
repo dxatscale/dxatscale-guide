@@ -111,11 +111,6 @@
   * [Data Package](faq/packaging/data-package.md)
 * [sfpowerscripts](faq/sfpowerscripts.md)
 
-## 🍕 INCUBATION
-
-* [sfp-cli](incubation/sfp-cli/README.md)
-  * [Command Glossary](incubation/sfp-cli/command-glossary.md)
-
 ## 🎬 Media Library
 
 * [Knowledge Articles](media-library/knowledge-articles/README.md)
