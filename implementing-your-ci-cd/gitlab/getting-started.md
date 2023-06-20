@@ -40,7 +40,7 @@ Most work in GitLab is done in a [project](https://docs.gitlab.com/ee/user/proje
 
 ![](<../../.gitbook/assets/image (6) (1).png>)
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 ![](<../../.gitbook/assets/image (18) (1).png>)
 
@@ -60,7 +60,7 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 6. Click on the **Create project access token** button
 7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
 
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 ![](<../../.gitbook/assets/image (11) (1).png>)
 
@@ -77,9 +77,9 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 7. Leave **Environment Scope** to **All (default)**
 8. Click on **Add variable** to save
 
-![](<../../.gitbook/assets/image (39).png>)
+![](<../../.gitbook/assets/image (47).png>)
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (62).png>)
 
 Repeat the steps above and create the following variables below using the sfdxAuthUrl created earlier from the Salesforce CLI.
 
@@ -128,7 +128,7 @@ git clone https://github.com/dxatscale/dxatscale-template.git
 git clone git@gitlab.com:groupname/dxatscale-poc.git
 ```
 
-![](<../../.gitbook/assets/image (52).png>)
+![](<../../.gitbook/assets/image (8).png>)
 
 ### C. Copy Template Contents to Project Folder
 
@@ -156,7 +156,7 @@ rsync -av dxatscale-template/* dxatscale-poc
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>Template Folder Structure</p></figcaption></figure>
 
 ### D. Commit Changes to Repository
 
@@ -179,7 +179,7 @@ Once the files have been committed, you can verify the files have been pushed th
 1. Navigate to **Repository > Files**
 2. Verify all the files are visible in the repository
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../.gitbook/assets/image (29) (1).png>)
 
 1. Navigate to **CI/CD > Pipelines**
 2. Verify the pipeline has been skipped
@@ -382,7 +382,7 @@ The release stage in the **.gitlab-ci.yml** file across the defined environments
 
 **No changes** to this command is required unless you want to change the branch name to something different than **changelog**.
 
-![](<../../.gitbook/assets/image (34) (1).png>)
+![](<../../.gitbook/assets/image (34).png>)
 
 ### G. Build Initial Package Artifacts
 
@@ -393,7 +393,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 3. Navigate to **Package & Registries > Package Registry**
 4. Verify that the latest **core** artifact has been created and tagged with **main** label.
 
-![](<../../.gitbook/assets/image (27) (1).png>)
+![](<../../.gitbook/assets/image (27).png>)
 
 ### H. Scheduled Jobs
 
@@ -410,7 +410,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 9. Keep **Activated** checked to **Active**
 10. Click **Save pipeline schedule**
 
-![](<../../.gitbook/assets/image (40).png>)
+![](<../../.gitbook/assets/image (40) (1).png>)
 
 Repeat the steps above for all the scheduled jobs below. Interval Pattern should be scheduled during non-peak development windows for your development team to ensure limited disruption.
 
@@ -425,7 +425,7 @@ Repeat the steps above for all the scheduled jobs below. Interval Pattern should
 **schedule-report-so-pool** is an optional job to configure if you intend to integrate to a Dashboard Platform such as New Relic and Data Dog. If not, you can skip this configuration.
 {% endhint %}
 
-![](<../../.gitbook/assets/image (31) (1).png>)
+![](<../../.gitbook/assets/image (31).png>)
 
 Once all schedule jobs have been configured, you can trigger the **schedule-prepare-ci-pool** and **schedule-prepare-dev-pool** jobs manually by clicking on the **play button** for each job.
 

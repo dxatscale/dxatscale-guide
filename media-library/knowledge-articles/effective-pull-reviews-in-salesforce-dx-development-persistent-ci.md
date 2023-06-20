@@ -4,7 +4,7 @@ description: Published on November 26, 2018 by Azlam Abdulsalam
 
 # Effective Pull Reviews in Salesforce DX Development - Persistent CI
 
-![](<../../.gitbook/assets/image (18).png>)
+![](<../../.gitbook/assets/image (70).png>)
 
 Salesforce DX is a combination of technologies and practices that bring modern development practices such as open and standard developer experience driven by a CLI (Command Line Interface), Repeatable deployment using packaging, automated testing and predominantly source driven development
 

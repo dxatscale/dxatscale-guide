@@ -88,10 +88,6 @@
 * [Environment Variables](sfpowerscripts/environment-variables.md)
 * [Command Glossary](sfpowerscripts/command-glossary.md)
 
-## CraftFirst
-
-* [Overview](craftfirst/overview.md)
-
 ## Release Management <a href="#release" id="release"></a>
 
 * [Releasing to an Environment](release/release-environment.md)

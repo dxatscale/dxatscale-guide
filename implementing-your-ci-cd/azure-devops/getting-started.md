@@ -66,7 +66,7 @@ To enable modular package development, there are a few configurations in Salesfo
 2. Go to **Development > Dev Hub**
 3. Toggle the button to on for **Enable Dev Hub**
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (58).png>)
 
 #### B. Enable Unlocked Packages and Second-Generation Managed Packages
 
@@ -91,7 +91,7 @@ For auditing purposes, it is best practice to create a separate [service account
 7. Set **Profile** to **System Administrator**
 8. Scroll down and click on **Save**
 
-![](<../../.gitbook/assets/image (63).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
 {% hint style="info" %}
 Only certain [editions](https://help.salesforce.com/s/articleView?id=000326486\&type=1) of Salesforce has API Access. It's best to create a new **Profile** or **Permission Set** and configure the **System Permissions** and enable the **API Enabled** and **Api Only User** permission.
