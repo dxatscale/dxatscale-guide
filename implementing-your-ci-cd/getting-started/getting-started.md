@@ -14,45 +14,21 @@ git version
 ### SFDX CLI
 
 ```bash
-npm install --global sfdx-cli
-
-sfdx version
-> sfdx-cli/7.180.0 darwin-x64 node-v18.7.0
-```
-
-### sfp-cli
-
-```
-npm i -g @dxatscale/sfp-cli
+npm install --global @salesforce/cli
 ```
 
 ### sfpowerscripts
 
 ```
-sfdx plugins:install @dxatscale/sfpowerscripts
+npm i --global @dxatscale/sfpowerscripts
 ```
 
 ### Other required plugins
 
 ```bash
-sfdx plugins:install sfpowerkit
 sfdx plugins:install sfdmu
 sfdx plugins:install sfdx-browserforce-plugin
 ```
 
-### Visual Studio Code
-
-```bash
-code --version
-> 1.72.2
-d045a5eda657f4d7b676dedbfa7aab8207f8a075
-x64
-```
-
-### NPM
-
-```bash
-npm --version
-> 8.15.0
-```
+###
 
