@@ -469,7 +469,7 @@ Prior to creating the scratch org pools, an initial version of artifacts should 
 Once the **prepare-dev-pool.yml** has been completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
 ```bash
-sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
+sfp pool:fetch -a <SOAlias> -t dev -v <DevHub>
 > ======== Scratch org details ========
 KEY          VALUE
 ───────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

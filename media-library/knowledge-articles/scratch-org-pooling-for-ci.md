@@ -26,7 +26,7 @@ And voila, that’s it – if you want to dig more in the nitty gritty of how, t
 So, you know what Is happening behind the scenes, but really, you just want to know how do YOU use this?! Well – it can be simple, there are some [prerequisites](https://github.com/Accenture/sfpowerkit/wiki/Getting-started-with-ScratchOrg-Pooling) (steps 1 and 2), but it really comes down to your production settings, pool config file and a simple command.
 
 ```
-sfdx sfpowerscripts:orchestrator:prepare -t CI_1 -v <devhub>
+sfp orchestrator:prepare -t CI_1 -v <devhub>
 ```
 
 Yes, there are some optional flags in the command to provide you with greater customisation and flexibility, but you can use this command at its most basic as well, which uses default values for the flags which aren’t provided.
@@ -44,7 +44,7 @@ What customisation is available?
 For example, creating a scratch org pool of **15**, with an expiry length of **3** days, all dependencies installed and being prepared **5** at a time in parallel looks like:
 
 ```
-sfdx sfpowerscripts:orchestrator:prepare -t CI_Example -v DevHub -e 3 -m 15 -batchsize 5
+sfp orchestrator:prepare -t CI_Example -v DevHub -e 3 -m 15 -batchsize 5
 ```
 
 You have the basics. If you need a further example, see [here](https://github.com/dxatscale/easy-spaces-lwc/blob/develop/.github/workflows/sfpowerscripts-prepare.yml). What do you do with it? Where does this command go?

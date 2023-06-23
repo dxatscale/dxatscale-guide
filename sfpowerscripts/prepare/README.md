@@ -8,11 +8,11 @@ Prepare command helps you to build a pool of pre-built scratch orgs which can in
 
 
 
-<pre class="language-markup"><code class="lang-markup"><strong>sfdx sfpowerscripts:orchestrator:prepare -h
+<pre class="language-markup"><code class="lang-markup"><strong>sfp orchestrator:prepare -h
 </strong>Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:prepare [-f &#x3C;filepath>] [--npmrcpath &#x3C;filepath>] [--keys &#x3C;string>] [-v &#x3C;string>] [--apiversion &#x3C;string>] [--json] [--loglevel
+  $ sfp orchestrator:prepare [-f &#x3C;filepath>] [--npmrcpath &#x3C;filepath>] [--keys &#x3C;string>] [-v &#x3C;string>] [--apiversion &#x3C;string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -30,7 +30,7 @@ DESCRIPTION
   Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:prepare -f config/mypoolconfig.json  -v &#x3C;devhub>
+  $ sfp orchestrator:prepare -f config/mypoolconfig.json  -v &#x3C;devhub>
 </code></pre>
 
 ## Building a Pool of Scratch Orgs
@@ -143,7 +143,7 @@ includeOnlyArtifacts:
 While scratch orgs created by prepare command will be automatically fetched by the [**validate**](../validate.md) command, for use as just-in-time environments for validating an incoming change. Developers who need a scratch org from the pool must issue the fetch command on their terminal
 
 ```javascript
-sfdx sfpowerscripts:pool:fetch -t <POOL_NAME> -v <devhub-alias> -a <scratchorg-alias>
+sfp pool:fetch -t <POOL_NAME> -v <devhub-alias> -a <scratchorg-alias>
 ```
 
 Developers need sufficient permission in the associated DevHub to fetch a scratch org. Read more about associated permissions [here](../../implementing-your-ci-cd/prerequisites.md).

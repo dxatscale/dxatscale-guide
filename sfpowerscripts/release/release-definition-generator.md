@@ -3,11 +3,11 @@
 Generate a release definition from a provided git reference. The command can also be used to commit and push the generated release definition file into a provided branch. The release definition file supports a YAML based schema (config file) which is required to create the release definition.
 
 ```
-sfdx sfpowerscripts:releasedefinition:generate -h
+sfp releasedefinition:generate -h
 Generates release definition based on the artifacts installed from a commit reference
 
 USAGE
-  $ sfdx sfpowerscripts:releasedefinition:generate -c <value> -f <value> -n <value> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [-d
+  $ sfp releasedefinition:generate -c <value> -f <value> -n <value> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [-d
     <value>] [--nopush -b <value>] [--forcepush ]
 
 FLAGS
@@ -27,7 +27,7 @@ DESCRIPTION
   Generates release definition based on the artifacts installed from a commit reference
 
 EXAMPLES
-  $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName> -b <branchname> -u <org>
+  $ sfp releasedefinition:generate -n <releaseName> -b <branchname> -u <org>
 ```
 
 ## Release Config File

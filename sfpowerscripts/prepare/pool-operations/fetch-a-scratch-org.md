@@ -3,7 +3,7 @@
 The developers can fetch a scratch org with all the dependencies installed and the latest code base has been pushed from a pool for their feature development. the developer can start developing new features without spending a few hours preparing the development environment.
 
 ```
-sfdx sfpowerscripts:pool:fetch -t dev-pool -v devhub
+sfp pool:fetch -t dev-pool -v devhub
 
 Fetching a scratch org from pool dev-pool in Org 00D6F000002Xfaixxx
 Enabling source tracking, this will take a bit of time, please hang on

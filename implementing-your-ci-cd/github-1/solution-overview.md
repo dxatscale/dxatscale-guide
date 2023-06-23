@@ -17,7 +17,7 @@ This pipeline triggers on a daily schedule at midnight, and it will build a pool
 Utilizing sfpowerscripts orchestrator command [prepare](https://sfpowerscripts.dxatscale.io/commands/prepare).
 
 ```
-sfdx sfpowerscripts:orchestrator:prepare --help
+sfp orchestrator:prepare --help
 ```
 
 #### Replenish DEV Pools - Auto Triggered | `env-operations-prepare-dev-pool.yml`
@@ -33,7 +33,7 @@ In order to fetch a scratch org to work on using the sfpowerscripts pool command
 {% endhint %}
 
 ```
-sfdx sfpowerscripts:orchestrator:prepare --help
+sfp orchestrator:prepare --help
 ```
 
 #### Scratch Org Pool Cleaner - Auto Scheduled | `env-operations-pool-cleaner.yml`
@@ -43,7 +43,7 @@ The pool cleaner pipelines trigger on a daily schedule at 11.00 pm; clean out un
 Utilizing sfpowerscripts pool command [delete](https://sfpowerscripts.dxatscale.io/commands/command-glossary#sfdx-sfpowerscripts-pool-delete).
 
 ```
-sfdx sfpowerscripts:pool:delete --help
+sfp pool:delete --help
 ```
 
 #### Scratch Org Recycler - User Triggered | `env-operations-delete-scratchorg-pool.yml`
@@ -51,7 +51,7 @@ sfdx sfpowerscripts:pool:delete --help
 This pipeline is manually triggered by the user where you are wanting to delete a particular scratch org pool. A typical use case would be when a developer can't access the scratch org.
 
 ```
-sfdx sfpowerscripts:pool:org:delete --help
+sfp pool:org:delete --help
 ```
 
 #### Publish Metrics for Scratch Org Pools | `env-operations-publish-pool-metrics.yml`
@@ -59,7 +59,7 @@ sfdx sfpowerscripts:pool:org:delete --help
 This pipeline publishes metrics about the scratch orgs to a Monitoring tool every 30 minutes.
 
 ```
-sfdx sfpowerscripts:pool:metrics:publish --help
+sfp pool:metrics:publish --help
 ```
 
 ### Check/Validate Pipeline
@@ -71,13 +71,13 @@ Pull request validation, as the name suggests. The validation pipeline will trig
 Validating package changes using sfpowerscripts orchestrator command [validate](https://sfpowerscripts.dxatscale.io/commands/validate).
 
 ```
-sfdx sfpowerscripts:orchestrator:validate --help
+sfp orchestrator:validate --help
 ```
 
 Performing a static analysis of Apex classes using the sfpowerscripts analyze command pmd.
 
 ```
-sfdx sfpowerscripts:analyze:pmd --help
+sfp analyze:pmd --help
 ```
 
 Validating metadata coverage for unlocked packages using sfpowerkit package command valid.
@@ -97,25 +97,25 @@ Within this stage, this YAML file the following sfpowerscripts orchestrator comm
 * The [quickbuild](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command will be the packages without triggering dependency validation or code coverage checks.
 
 ```
-sfdx sfpowerscripts:orchestrator:quickbuild --help
+sfp orchestrator:quickbuild --help
 ```
 
 * The [deploy](https://sfpowerscripts.dxatscale.io/commands/deploy) command removes the overhead of scripting individual package deployments. This will deploy the artifacts to Dev environment. however its dependent on **quickbuild** being successful.
 
 ```
-sfdx sfpowerscripts:orchestrator:deploy --help
+sfp orchestrator:deploy --help
 ```
 
 * The [Build](https://sfpowerscripts.dxatscale.io/commands/build-and-quickbuild) command generates fully validated packages that can be deployed to production. Once packages have been created we can publish build artifacts for publish.
 
 ```
-sfdx sfpowerscripts:orchestrator:build --help
+sfp orchestrator:build --help
 ```
 
 * The [Publish](https://sfpowerscripts.dxatscale.io/commands/publish) command publishes the artifacts that were created in build pushing to artifact registry for further utilization by a release pipeline and publishes into an NPM Registry.
 
 ```
-sfdx sfpowerscripts:orchestrator:publish --help
+sfp orchestrator:publish --help
 ```
 
 ### Continuous Delivery Pipeline
@@ -129,5 +129,5 @@ Within release.yml this must be manually triggered:
 Using the command [release](https://sfpowerscripts.dxatscale.io/commands/publish) will allow you to release to whichever environment you want e.g. ST, SIT, PROD and so on. It will fetch the artifacts published.
 
 ```bash
-sfdx sfpowerscripts:orchestrator:release --help
+sfp orchestrator:release --help
 ```

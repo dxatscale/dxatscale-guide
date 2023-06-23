@@ -15,7 +15,7 @@ Using open-source tooling, sfdx and scratch orgs, you can include your testing p
 The command to use, is deceptive, it looks too simple. Underneath the hood though, there is a lot of work happening which you as a developer would have to execute in separate tasks through your CI pipeline, or worse execute manually. Let’s have a look at the command:
 
 ```
-sfdx sfpowerscripts:orchestrator:validate -f $(devhubKey.secureFilePath) -i $(DEVHUB_CLIENT_ID) -p CI2 -u $(DEVHUB_USERNAME) -x
+sfp orchestrator:validate -f $(devhubKey.secureFilePath) -i $(DEVHUB_CLIENT_ID) -p CI2 -u $(DEVHUB_USERNAME) -x
 ```
 
 **Let’s give you a quick run through of what this command is doing:**

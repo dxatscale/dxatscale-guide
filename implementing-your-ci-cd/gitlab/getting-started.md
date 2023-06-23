@@ -436,7 +436,7 @@ The default tags for the pools are **ci** and **dev** and these can be reference
 Once the **schedule-prepare-dev-pool** has completed successfully, a pool of active/unused developer scratch orgs tagged to the pool name **dev** will be available to be fetched and used to build new features.
 
 ```bash
-sfdx sfpowerscripts:pool:fetch -a <SOAlias> -t dev -v <DevHub>
+sfp pool:fetch -a <SOAlias> -t dev -v <DevHub>
 > ======== Scratch org details ========
 KEY          VALUE
 ───────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

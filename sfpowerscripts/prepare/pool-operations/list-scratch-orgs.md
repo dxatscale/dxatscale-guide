@@ -3,7 +3,7 @@
 List all the active scratch orgs with the given pool tag, only 'available' and 'in progress' scratch orgs are displayed
 
 ```
-sfdx sfpowerscripts:pool:list -t dev-pool -v devhub
+sfp pool:list -t dev-pool -v devhub
 
 ======== Scratch org Details ========
 Unused Scratch Orgs in the Pool : 1 

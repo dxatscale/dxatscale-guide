@@ -4,45 +4,45 @@ description: Commands in sfpowercripts
 
 # Command Glossary
 
-* `sfdx sfpowerscripts:analyze:pmd`
-* `sfdx sfpowerscripts:apextests:trigger`
-* `sfdx sfpowerscripts:apextests:validate`
-* `sfdx sfpowerscripts:artifacts:fetch`
-* `sfdx sfpowerscripts:artifacts:query`
-* `sfdx sfpowerscripts:changelog:generate`
-* `sfdx sfpowerscripts:orchestrator:build`
-* `sfdx sfpowerscripts:orchestrator:deploy`
-* `sfdx sfpowerscripts:orchestrator:prepare`
-* `sfdx sfpowerscripts:orchestrator:promote`
-* `sfdx sfpowerscripts:orchestrator:publish`
-* `sfdx sfpowerscripts:orchestrator:quickbuild`
-* `sfdx sfpowerscripts:orchestrator:release`
-* `sfdx sfpowerscripts:orchestrator:validate`
-* `sfdx sfpowerscripts:orchestrator:validateAgainstOrg`
-* `sfdx sfpowerscripts:orchestrator:validateAgainstPool`
-* `sfdx sfpowerscripts:package:data:create`
-* `sfdx sfpowerscripts:package:data:install`
-* `sfdx sfpowerscripts:package:source:create`
-* `sfdx sfpowerscripts:package:source:install`
-* `sfdx sfpowerscripts:package:unlocked:create`
-* `sfdx sfpowerscripts:package:unlocked:install`
-* `sfdx sfpowerscripts:package:version:increment`
-* `sfdx sfpowerscripts:pool:delete`
-* `sfdx sfpowerscripts:pool:fetch`
-* `sfdx sfpowerscripts:pool:list`
-* `sfdx sfpowerscripts:pool:metrics:publish`
-* `sfdx sfpowerscripts:pool:org:delete`
-* `sfdx sfpowerscripts:releasedefinition:generate`
-* `sfdx sfpowerscripts:dependency:expand`
-* `sfdx sfpowerscripts:dependency:shrink`
+* `sfp analyze:pmd`
+* `sfp apextests:trigger`
+* `sfp apextests:validate`
+* `sfp artifacts:fetch`
+* `sfp artifacts:query`
+* `sfp changelog:generate`
+* `sfp orchestrator:build`
+* `sfp orchestrator:deploy`
+* `sfp orchestrator:prepare`
+* `sfp orchestrator:promote`
+* `sfp orchestrator:publish`
+* `sfp orchestrator:quickbuild`
+* `sfp orchestrator:release`
+* `sfp orchestrator:validate`
+* `sfp orchestrator:validateAgainstOrg`
+* `sfp orchestrator:validateAgainstPool`
+* `sfp package:data:create`
+* `sfp package:data:install`
+* `sfp package:source:create`
+* `sfp package:source:install`
+* `sfp package:unlocked:create`
+* `sfp package:unlocked:install`
+* `sfp package:version:increment`
+* `sfp pool:delete`
+* `sfp pool:fetch`
+* `sfp pool:list`
+* `sfp pool:metrics:publish`
+* `sfp pool:org:delete`
+* `sfp releasedefinition:generate`
+* `sfp dependency:expand`
+* `sfp dependency:shrink`
 
-## `sfdx sfpowerscripts:analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 This task is used to run a static analysis of the apex classes and triggers using PMD, Please ensure that the SFDX CLI and sfpowerkit plugin are installed before using this task
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o
+  $ sfp analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o
     <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -90,7 +90,7 @@ DESCRIPTION
   and sfpowerkit plugin are installed before using this task
 
 EXAMPLES
-  $ sfdx sfpowerscripts:analyze:pmd --sourcedir <dir>
+  $ sfp analyze:pmd --sourcedir <dir>
 
   Output variable:
 
@@ -101,13 +101,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/analyze/pmd.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/analyze/pmd.ts)
 
-## `sfdx sfpowerscripts:apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Triggers Apex unit test in an org. Supports test level RunAllTestsInPackage, which optionally allows validation of individual class code coverage
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests
+  $ sfp apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests
     <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -159,20 +159,20 @@ DESCRIPTION
   individual class code coverage
 
 EXAMPLES
-  $ sfdx sfpowerscripts:apextests:trigger -u scratchorg -l RunLocalTests -s
+  $ sfp apextests:trigger -u scratchorg -l RunLocalTests -s
 
-  $ sfdx sfpowerscripts:apextests:trigger -u scratchorg -l RunAllTestsInPackage -n <mypackage> -c
+  $ sfp apextests:trigger -u scratchorg -l RunAllTestsInPackage -n <mypackage> -c
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/apextests/trigger.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/apextests/trigger.ts)
 
-## `sfdx sfpowerscripts:apextests:validate -t <string> [-u <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp apextests:validate -t <string> [-u <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Validates apex test coverage in the org, Please ensure that the SFDX CLI and sfpowerkit plugin are installed before using this task.
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:apextests:validate -t <string> [-u <string>] [--json] [--loglevel
+  $ sfp apextests:validate -t <string> [-u <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -191,18 +191,18 @@ DESCRIPTION
   using this task.
 
 EXAMPLES
-  $ sfdx sfpowerscripts:apextests:validate -u scratchorg -t 80
+  $ sfp apextests:validate -u scratchorg -t 80
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/apextests/validate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/apextests/validate.ts)
 
-## `sfdx sfpowerscripts:artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
+  $ sfp artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
     <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -232,20 +232,20 @@ DESCRIPTION
   Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts
 
 EXAMPLES
-  $ sfdx sfpowerscripts:artifacts:fetch -p myreleasedefinition.yaml -f myscript.sh
+  $ sfp artifacts:fetch -p myreleasedefinition.yaml -f myscript.sh
 
-  $ sfdx sfpowerscripts:artifacts:fetch -p myreleasedefinition.yaml --npm --scope myscope --npmrcpath path/to/.npmrc
+  $ sfp artifacts:fetch -p myreleasedefinition.yaml --npm --scope myscope --npmrcpath path/to/.npmrc
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/artifacts/fetch.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/artifacts/fetch.ts)
 
-## `sfdx sfpowerscripts:artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Fetch details about artifacts installed in a target org
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -261,18 +261,18 @@ DESCRIPTION
   Fetch details about artifacts installed in a target org
 
 EXAMPLES
-  $ sfdx sfpowerscripts:artifacts:query -u <target_org>
+  $ sfp artifacts:query -u <target_org>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/artifacts/query.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/artifacts/query.ts)
 
-## `sfdx sfpowerscripts:changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl <string>] [--showallartifacts] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl <string>] [--showallartifacts] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Generates release changelog, providing a summary of artifact versions, work items and commits introduced in a release. Creates a release definition based on artifacts contained in the artifact directory, and compares it to previous release definition in changelog stored on a source repository
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl
+  $ sfp changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl
     <string>] [--showallartifacts] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -307,18 +307,18 @@ DESCRIPTION
   release definition in changelog stored on a source repository
 
 EXAMPLES
-  $ sfdx sfpowerscripts:changelog:generate -n <releaseName> -d path/to/artifact/directory -w <regexp> -r <repoURL> -b <branchName>
+  $ sfp changelog:generate -n <releaseName> -d path/to/artifact/directory -w <regexp> -r <repoURL> -b <branchName>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/changelog/generate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/changelog/generate.ts)
 
-## `sfdx sfpowerscripts:orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Build all packages (unlocked/source/data) in a repo in parallel, respecting the dependency of each packages and generate artifacts to a provided directory
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
+  $ sfp orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
     [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -367,13 +367,13 @@ DESCRIPTION
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/build.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/build.ts)
 
-## `sfdx sfpowerscripts:orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b <string> --skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b <string> --skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Deploy packages from the provided artifact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b
+  $ sfp orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b
     <string> --skipifalreadyinstalled] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -405,18 +405,18 @@ DESCRIPTION
   in sfdx-project.json
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:deploy -u <username>
+  $ sfp orchestrator:deploy -u <username>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/deploy.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/deploy.ts)
 
-## `sfdx sfpowerscripts:orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion
+  $ sfp orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion
     <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -448,18 +448,18 @@ DESCRIPTION
   optimized manner
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:prepare -f config/mypoolconfig.json  -v <devhub>
+  $ sfp orchestrator:prepare -f config/mypoolconfig.json  -v <devhub>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/prepare.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/prepare.ts)
 
-## `sfdx sfpowerscripts:orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Promotes validated unlocked packages with code coverage greater than 75%
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -478,18 +478,18 @@ DESCRIPTION
   Promotes validated unlocked packages with code coverage greater than 75%
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:promote -d path/to/artifacts -v <org>
+  $ sfp orchestrator:promote -d path/to/artifacts -v <org>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/promote.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/promote.ts)
 
-## `sfdx sfpowerscripts:orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string> [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string> [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Publish packages to an artifact registry, using a user-provided script that is responsible for authenticating & uploading to the registry.
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string>
+  $ sfp orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string>
     [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -534,24 +534,24 @@ DESCRIPTION
   uploading to the registry.
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:publish -f path/to/script
+  $ sfp orchestrator:publish -f path/to/script
 
-  $ sfdx sfpowerscripts:orchestrator:publish --npm
+  $ sfp orchestrator:publish --npm
 
-  $ sfdx sfpowerscripts:orchestrator:publish -f path/to/script -p -v HubOrg
+  $ sfp orchestrator:publish -f path/to/script -p -v HubOrg
 
-  $ sfdx sfpowerscripts:orchestrator:publish -f path/to/script --gittag --pushgittag
+  $ sfp orchestrator:publish -f path/to/script --gittag --pushgittag
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/publish.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/publish.ts)
 
-## `sfdx sfpowerscripts:orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Build packages (unlocked/source/data) in a repo in parallel, without validating depenencies or coverage in the case of unlocked packages
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
+  $ sfp orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
     [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -600,13 +600,13 @@ DESCRIPTION
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/quickbuild.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/quickbuild.ts)
 
-## `sfdx sfpowerscripts:orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Initiate a release to an org, according to the configuration defined in a release-definition YAML file
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
+  $ sfp orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
     <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog]
     [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -662,18 +662,18 @@ DESCRIPTION
   Initiate a release to an org, according to the configuration defined in a release-definition YAML file
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
+  $ sfp orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/release.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/release.ts)
 
-## sfdx sfpowerscripts:orchestrator:validate
+## sfp orchestrator:validate
 
 Validate the incoming change against an earlier prepared scratchorg
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:validate -p <array> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--releaseconfig <string>] [--coveragepercent <integer>] [-x]
+  $ sfp orchestrator:validate -p <array> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--releaseconfig <string>] [--coveragepercent <integer>] [-x]
     [--keys <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [-g <array>] [-v
     <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -704,21 +704,21 @@ DESCRIPTION
   Validate the incoming change against an earlier prepared scratchorg
 
 ALIASES
-  $ sfdx sfpowerscripts:orchestrator:validateAgainstPool
+  $ sfp orchestrator:validateAgainstPool
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" --mode=fastfeedback -v <devHubUsername>
+  $ sfp orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" --mode=fastfeedback -v <devHubUsername>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/validate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/validate.ts)
 
-## `sfdx sfpowerscripts:orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Validate the incoming change against target org
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g
+  $ sfp orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g
     <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -751,18 +751,18 @@ DESCRIPTION
   Validate the incoming change against target org
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:validateAgainstOrg -u <targetorg>
+  $ sfp orchestrator:validateAgainstOrg -u <targetorg>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/orchestrator/validateAgainstOrg.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/validateAgainstOrg.ts)
 
-## `sfdx sfpowerscripts:orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Validate the incoming change against an earlier prepared scratchorg
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys
+  $ sfp orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys
     <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag
     <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>]
     [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
@@ -829,19 +829,19 @@ DESCRIPTION
   Validate the incoming change against an earlier prepared scratchorg
 
 ALIASES
-  $ sfdx sfpowerscripts:orchestrator:validateAgainstPool
+  $ sfp orchestrator:validateAgainstPool
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" -v <devHubUsername>
+  $ sfp orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" -v <devHubUsername>
 ```
 
-## `sfdx sfpowerscripts:package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Creates a versioned artifact from a source directory containing SFDMU-based data (in csv format and export json). The artifact can be consumed by release pipelines, to deploy the data to orgs
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
+  $ sfp package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
     [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -882,9 +882,9 @@ DESCRIPTION
   artifact can be consumed by release pipelines, to deploy the data to orgs
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:data:create -n mypackage -v <version>
+  $ sfp package:data:create -n mypackage -v <version>
 
-  $ sfdx sfpowerscripts:package:data:create -n <mypackage> -v <version> --diffcheck --gittag
+  $ sfp package:data:create -n <mypackage> -v <version> --diffcheck --gittag
 
   Output variable:
 
@@ -899,13 +899,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/package/data/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/data/create.ts)
 
-## `sfdx sfpowerscripts:package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json]
+  $ sfp package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -930,18 +930,18 @@ DESCRIPTION
   Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:data:install -n mypackage -u <org>
+  $ sfp package:data:install -n mypackage -u <org>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/package/data/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/data/install.ts)
 
-## `sfdx sfpowerscripts:package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 This task simulates a packaging experience similar to unlocked packaging - creating an artifact that consists of the metadata (e.g. commit Id), source code & an optional destructive manifest. The artifact can then be consumed by release pipelines, to deploy the package
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
+  $ sfp package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
     [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -983,9 +983,9 @@ DESCRIPTION
   release pipelines, to deploy the package
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:source:create -n mypackage -v <version>
+  $ sfp package:source:create -n mypackage -v <version>
 
-  $ sfdx sfpowerscripts:package:source:create -n <mypackage> -v <version> --diffcheck --gittag
+  $ sfp package:source:create -n <mypackage> -v <version> --diffcheck --gittag
 
   Output variable:
 
@@ -1004,13 +1004,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/package/source/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/source/create.ts)
 
-## `sfdx sfpowerscripts:package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o] [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o] [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Installs a sfpowerscripts source package to the target org
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o]
+  $ sfp package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o]
     [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -1046,18 +1046,18 @@ DESCRIPTION
   Installs a sfpowerscripts source package to the target org
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:source:install -n mypackage -u <org>
+  $ sfp package:source:install -n mypackage -u <org>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/package/source/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/source/install.ts)
 
-## `sfdx sfpowerscripts:package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>] [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>] [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact can then be consumed by release pipelines, to install the unlocked package. Utilize this task in a package build for DX Unlocked Package
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber
+  $ sfp package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber
     <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>]
     [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
@@ -1134,9 +1134,9 @@ DESCRIPTION
   DX Unlocked Package
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --refname <name>
+  $ sfp package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --refname <name>
 
-  $ sfdx sfpowerscripts:package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --diffcheck --gittag
+  $ sfp package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --diffcheck --gittag
 
   Output variable:
 
@@ -1159,13 +1159,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/package/unlocked/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/unlocked/create.ts)
 
-## `sfdx sfpowerscripts:package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Installs an unlocked package using sfpowerscripts metadata
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype
+  $ sfp package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype
     <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -1209,18 +1209,18 @@ DESCRIPTION
   Installs an unlocked package using sfpowerscripts metadata
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:unlocked:install -n packagename -u sandboxalias -i
+  $ sfp package:unlocked:install -n packagename -u sandboxalias -i
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/package/unlocked/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/unlocked/install.ts)
 
-## `sfdx sfpowerscripts:package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Increment the selected version counter by one and optionally commit changes to sfdx-project.json. This command does not push changes to the source repository
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>]
+  $ sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>]
     [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1259,7 +1259,7 @@ DESCRIPTION
   not push changes to the source repository
 
 EXAMPLES
-  $ sfdx sfpowerscripts:package:version:increment --segment BuildNumber -n packagename -c
+  $ sfp package:version:increment --segment BuildNumber -n packagename -c
 
   Output variable:
 
@@ -1270,13 +1270,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/package/version/increment.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/version/increment.ts)
 
-## `sfdx sfpowerscripts:pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Deletes the pooled scratch orgs from the Scratch Org Pool
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1300,20 +1300,20 @@ DESCRIPTION
   Deletes the pooled scratch orgs from the Scratch Org Pool
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:delete -t core
+  $ sfp pool:delete -t core
 
-  $ sfdx sfpowerscripts:pool:delete -t core -v devhub
+  $ sfp pool:delete -t core -v devhub
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/pool/delete.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/delete.ts)
 
-## `sfdx sfpowerscripts:pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Gets an active/unused scratch org from the scratch org pool
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json]
+  $ sfp pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json]
     [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1350,13 +1350,13 @@ EXAMPLES
 
 _See code:_ [_src/commands/sfpowerscripts/pool/fetch.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/fetch.ts)
 
-## `sfdx sfpowerscripts:pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Retrieves a list of active scratch org and details from any pool. If this command is run with -m|--mypool, the command will retrieve the passwords for the pool created by the user who is executing the command.
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1380,24 +1380,24 @@ DESCRIPTION
   will retrieve the passwords for the pool created by the user who is executing the command.
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:list -t core
+  $ sfp pool:list -t core
 
-  $ sfdx sfpowerscripts:pool:list -t core -v devhub
+  $ sfp pool:list -t core -v devhub
 
-  $ sfdx sfpowerscripts:pool:list -t core -v devhub -m
+  $ sfp pool:list -t core -v devhub -m
 
-  $ sfdx sfpowerscripts:pool:list -t core -v devhub -m -a
+  $ sfp pool:list -t core -v devhub -m -a
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/pool/list.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/list.ts)
 
-## `sfdx sfpowerscripts:pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1414,18 +1414,18 @@ DESCRIPTION
   platforms
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:metrics:publish -v <myDevHub>
+  $ sfp pool:metrics:publish -v <myDevHub>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/pool/metrics/publish.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/metrics/publish.ts)
 
-## `sfdx sfpowerscripts:pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an adminsitrator
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfp pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1445,18 +1445,18 @@ DESCRIPTION
   delete any active scratch org record or to be used by an adminsitrator
 
 EXAMPLES
-  $ sfdx sfpowerscripts:pool:org:delete -u test-xasdasd@example.com -v devhub
+  $ sfp pool:org:delete -u test-xasdasd@example.com -v devhub
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/pool/org/delete.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/org/delete.ts)
 
-## `sfdx sfpowerscripts:releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Generates release defintion based on the artifacts installed in a org
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion
+  $ sfp releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion
     <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
@@ -1485,18 +1485,18 @@ DESCRIPTION
   Generates release defintion based on the artifacts installed in a org
 
 EXAMPLES
-  $ sfdx sfpowerscripts:releasedefinition:generate -n <releaseName>  -b <branchName> -u <org>
+  $ sfp releasedefinition:generate -n <releaseName>  -b <branchName> -u <org>
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/releasedefinition/generate._](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/releasedefinition/generate.ts)
 
-## `sfdx sfpowerscripts:dependency:expand -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp dependency:expand -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Expand dependency in sfdx-project.json
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:dependency:expand -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfp dependency:expand -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
   -v, --targetdevhubusername=<value>                                                dev hub alias or username
@@ -1509,16 +1509,16 @@ DESCRIPTION
   Expand package dependencies in sfdx-project.json file
 
 EXAMPLES
-  $ sfdx sfpowerscripts:dependency:expand -v HubOrg  -o
+  $ sfp dependency:expand -v HubOrg  -o
 ```
 
-## `sfdx sfpowerscripts:dependency:shrink -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp dependency:shrink -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 Shrink dependency in sfdx-project.json
 
 ```
 USAGE
-  $ sfdx sfpowerscripts:dependency:shrink -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfp dependency:shrink -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
   -v, --targetdevhubusername=<value>                                                dev hub alias or username
@@ -1531,5 +1531,5 @@ DESCRIPTION
   Shrink package dependencies in sfdx-project.json file
 
 EXAMPLES
-  $ sfdx sfpowerscripts:dependency:shrink -v HubOrg  -o
+  $ sfp dependency:shrink -v HubOrg  -o
 ```

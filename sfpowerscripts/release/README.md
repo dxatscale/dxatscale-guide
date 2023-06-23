@@ -3,11 +3,11 @@
 The `orchestrator:release` command brings uniformity to the CI/CD landscape, allowing you to define 'releases' no matter which platform you are on. A release is defined by a YAML file, where you can specify the artifacts to be installed in the org, in addition to other parameters. The release will then be orchestrated based on the configuration of the YAML definition file.
 
 ```
-sfdx sfpowerscripts:orchestrator:release -h
+sfp orchestrator:release -h
 Release a  collection of artifacts as defined in the release definition file
 
 USAGE
-  $ sfdx sfpowerscripts:orchestrator:release -u <string> [-p <array>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime
+  $ sfp orchestrator:release -u <string> [-p <array>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime
     <number>] [--keys <string>] [-d <string>] [-b <string> --generatechangelog] [-v <string>] [--json] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
@@ -40,7 +40,7 @@ DESCRIPTION
   Release a collection of artifacts as defined in the release definition file
 
 EXAMPLES
-  $ sfdx sfpowerscripts:orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
+  $ sfp orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
 ```
 
 ## Release Definition

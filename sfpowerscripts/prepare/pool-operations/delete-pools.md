@@ -3,7 +3,7 @@
 pool: delete allows you to delete scratch orgs associated with a pool.
 
 ```
-sfdx sfpowerscripts:pool:delete -h
+sfp pool:delete -h
 Deletes the pooled scratch orgs from the Scratch Org Pool
 
 USAGE
@@ -35,7 +35,7 @@ These scratch orgs titled **orphaned scratch orgs** in sfpowerscripts lingo can 
 
 ```
 // Example command & output demonstrating delete of orphaned scratch orgs
-sfdx sfpowerscripts:pool:delete -o -v dxatscale   
+sfp pool:delete -o -v dxatscale   
 
 -------------------------------------------------------------------------------------------
 sfpowerscripts  -- The DX@Scale CI/CD Orchestrator -Version:20.21.1 -Release:February 23
