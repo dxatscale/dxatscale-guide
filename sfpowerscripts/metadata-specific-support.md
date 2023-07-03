@@ -92,3 +92,15 @@ This feature can be controlled by specifying the value on the package descriptor
 ```
 ```n
 ````
+
+### Picklist Support
+
+sfpowerscripts supports picklist deployments during unlocked package upgrades, which has been a known issue of Salesforce
+
+{% embed url="https://issues.salesforce.com/issue/a028c00000qPzYUAA0/picklist-values-not-getting-deployed-during-unlocked-package-upgrades" %}
+
+During the build stage, sfpowerscripts checks if picklist exists in an unlocked package. As a pre-deployment step, it retrieves the picklist from the target org, compares it with the local changes and updates the org if any value changes are detected.&#x20;
+
+For more details, please check the below article
+
+{% embed url="https://medium.com/@gnemiq/deploy-picklists-from-unlocked-packages-102c1366664f" %}
