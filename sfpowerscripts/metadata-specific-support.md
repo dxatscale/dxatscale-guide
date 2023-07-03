@@ -104,3 +104,23 @@ During the build stage, sfpowerscripts checks if picklist exists in an unlocked 
 For more details, please check the below article
 
 {% embed url="https://medium.com/@gnemiq/deploy-picklists-from-unlocked-packages-102c1366664f" %}
+
+This feature is enabled by default, to disable this feature, add the following property to your package
+
+```json
+{
+    "packageDirectories": [
+        {
+            "path": "./src/sales-channels",
+            "package": "sales-channels",
+            "versionNumber": "1.0.0.NEXT",
+            "aliasfy": true,
+            "enablePicklist":false
+        }
+    ]
+  }
+```
+
+```n
+```
+
