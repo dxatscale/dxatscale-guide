@@ -20,10 +20,6 @@ Want to ask more of any of these practices, ask the team directly on Slack, Clic
 
 {% embed url="https://launchpass.com/dxatscale" %}
 
-For discussions on the tools visit the DX@Scale GitHub discussion pages.
-
-{% embed url="https://github.com/orgs/dxatscale/discussions" %}
-
 ## YouTube
 
 {% embed url="https://www.youtube.com/channel/UCZ4I3Llb9wmEjFAOfjufLNQ" %}
