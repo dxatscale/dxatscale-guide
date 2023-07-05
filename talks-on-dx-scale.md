@@ -4,6 +4,14 @@ description: A curated list of recorded talks on DX@Scale
 
 # Talks on DX@Scale
 
+
+
+{% embed url="https://youtu.be/I3gPL70kXzs" %}
+The power of integrated development environments&#x20;
+{% endembed %}
+
+
+
 {% embed url="https://www.youtube.com/watch?v=8wZhzA21Ee0" %}
 Data Innovation Forum - October 26, 2022
 {% endembed %}
