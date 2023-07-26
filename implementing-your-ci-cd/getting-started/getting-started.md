@@ -8,19 +8,26 @@ In order to successfully troubleshoot and interact with Salesforce and your pref
 
 ```bash
 git version
-> git version 2.33.1
+
+> git version 2.37.2
 ```
 
 ### SFDX CLI
 
 ```bash
-npm install --global @salesforce/cli
+npm i --global @salesforce/cli
+
+> sf version
+ @salesforce/cli/2.1.7 darwin-arm64 node-v20.3.1
 ```
 
 ### sfpowerscripts
 
-```
+```bash
 npm i --global @dxatscale/sfpowerscripts
+
+> sfp version
+  @dxatscale/sfpowerscripts/22.6.1 darwin-arm64 node-v20.3.1
 ```
 
 ### Other required plugins
@@ -28,6 +35,10 @@ npm i --global @dxatscale/sfpowerscripts
 ```bash
 sfdx plugins:install sfdmu
 sfdx plugins:install sfdx-browserforce-plugin
+
+> sfdx plugins 
+  sfdmu 4.29.4
+  sfdx-browserforce-plugin 2.11.0
 ```
 
 ###
