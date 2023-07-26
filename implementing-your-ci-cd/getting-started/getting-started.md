@@ -41,5 +41,5 @@ sfdx plugins:install sfdx-browserforce-plugin
   sfdx-browserforce-plugin 2.11.0
 ```
 
-###
+### Troubleshooting Issues
 
