@@ -26,7 +26,6 @@ description: Commands in sfpowercripts
 * `sfp package:source:install`
 * `sfp package:unlocked:create`
 * `sfp package:unlocked:install`
-* `sfp package:version:increment`
 * `sfp pool:delete`
 * `sfp pool:fetch`
 * `sfp pool:list`
@@ -854,7 +853,7 @@ FLAGS
 
   -v, --versionnumber=<value>
       (required) The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
+      sfdx-project.json.
 
   --artifactdir=<value>
       [default: artifacts] The directory where the artifact is to be written
@@ -954,7 +953,7 @@ FLAGS
 
   -v, --versionnumber=<value>
       (required) The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
+      sfdx-project.json.
 
   --artifactdir=<value>
       [default: artifacts] The directory where the artifact is to be written
@@ -1123,7 +1122,7 @@ FLAGS
 
   --versionnumber=<value>
       The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
+      sfdx-project.json.
 
   --waittime=<value>
       [default: 120] wait time for command to finish in minutes
@@ -1213,62 +1212,6 @@ EXAMPLES
 ```
 
 _See code:_ [_src/commands/sfpowerscripts/package/unlocked/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/unlocked/install.ts)
-
-## `sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Increment the selected version counter by one and optionally commit changes to sfdx-project.json. This command does not push changes to the source repository
-
-```
-USAGE
-  $ sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>]
-    [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -a, --appendbuildnumber
-      Set the build segment of the version number to the build number rather than incremenenting
-
-  -c, --commitchanges
-      Mark this if you want to commit the modified sfdx-project json, Please note this will not push to the repo only
-      commits in the local checked out repo, You would need to have a push to the repo at the end of the packaging task if
-      everything is successfull
-
-  -d, --projectdir=<value>
-      The directory should contain a sfdx-project.json for this command to succeed
-
-  -n, --package=<value>
-      The name of the package of which the version need to be incremented,If not specified the default package is utilized
-
-  -r, --runnumber=<value>
-      The build number of the CI pipeline, usually available through an environment variable
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
-
-  --segment=<option>
-      [default: BuildNumber] Select the segment of the version
-      <options: Major|Minor|Patch|BuildNumber>
-
-DESCRIPTION
-  Increment the selected version counter by one and optionally commit changes to sfdx-project.json. This command does
-  not push changes to the source repository
-
-EXAMPLES
-  $ sfp package:version:increment --segment BuildNumber -n packagename -c
-
-  Output variable:
-
-  sfpowerscripts_incremented_project_version
-
-  <refname>_sfpowerscripts_incremented_project_version
-```
-
-_See code:_ [_src/commands/sfpowerscripts/package/version/increment.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/version/increment.ts)
 
 ## `sfp pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
