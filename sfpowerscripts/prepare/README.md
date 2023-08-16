@@ -96,7 +96,7 @@ az artifacts universal download --feed myfeed --name $1 --version $2 --path $3 \
 
 ## Selective Deployment of Packages
 
-In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-definition-generator.md#release-config-file) Scratch Orgs prepared using this mechanism then could be used in validation with **fastfeedback-release-config** and **thorough-release-config** modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
+In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-config.md#release-config-file) Scratch Orgs prepared using this mechanism then could be used in validation with **fastfeedback-release-config** and **thorough-release-config** modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
 
 ````
 // Pool Configuration with releaseConfigFile

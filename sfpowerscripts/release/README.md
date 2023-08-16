@@ -98,8 +98,8 @@ as core\_crm: 3.0.0-6936
 
 In a high velocity project operating on a trunk and with substantial number of packages, manually generating release definition can be a chore. This can eased by using generating the release definition file automatically after every publish command. Read on more about release definition generation using the link below.
 
-{% content-ref url="release-definition-generator.md" %}
-[release-definition-generator.md](release-definition-generator.md)
+{% content-ref url="release-config.md" %}
+[release-config.md](release-config.md)
 {% endcontent-ref %}
 
 ## Fetching Artifacts for Release

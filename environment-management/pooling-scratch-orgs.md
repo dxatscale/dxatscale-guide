@@ -34,7 +34,7 @@ Pipelines should be built and invoked using a scheduler to replenish the scratch
 
 ## Limiting Packages in Pools
 
-As the number of packages in your repository increases, it would become a significant hurdle to build scratch org pools with all the packages in your repository.  sfpowerscripts provide options to limit the packages installed by using[ Release Config](../sfpowerscripts/release/release-definition-generator.md#release-config-file). Release config is available across most sfpowerscripts commands , including [Prepare ](../sfpowerscripts/prepare/)and [Validate](../sfpowerscripts/validate.md) enabling you to build subset of your repositories.
+As the number of packages in your repository increases, it would become a significant hurdle to build scratch org pools with all the packages in your repository.  sfpowerscripts provide options to limit the packages installed by using[ Release Config](../sfpowerscripts/release/release-config.md#release-config-file). Release config is available across most sfpowerscripts commands , including [Prepare ](../sfpowerscripts/prepare/)and [Validate](../sfpowerscripts/validate.md) enabling you to build subset of your repositories.
 
 ## Recreating Pools
 
