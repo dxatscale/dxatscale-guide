@@ -63,6 +63,7 @@
 * [Types of Packaging](sfpowerscripts/types-of-packaging/README.md)
   * [Unlocked Packages](sfpowerscripts/types-of-packaging/unlocked-packages.md)
   * [Source Packages](sfpowerscripts/types-of-packaging/source-packages.md)
+  * [Diff Package](sfpowerscripts/types-of-packaging/diff-package.md)
   * [Data Packages](sfpowerscripts/types-of-packaging/data-packages.md)
 * [Orchestrator](sfpowerscripts/orchestrator.md)
 * [Build & Quick Build](sfpowerscripts/build-and-quick-build.md)
