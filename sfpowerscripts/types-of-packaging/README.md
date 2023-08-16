@@ -10,6 +10,10 @@ The following pages help you understand the correct packaging technique dependin
 [source-packages.md](source-packages.md)
 {% endcontent-ref %}
 
+{% content-ref url="diff-package.md" %}
+[diff-package.md](diff-package.md)
+{% endcontent-ref %}
+
 {% content-ref url="data-packages.md" %}
 [data-packages.md](data-packages.md)
 {% endcontent-ref %}
