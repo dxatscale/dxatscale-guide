@@ -66,6 +66,13 @@ Alternatively, if you are experimenting in a Developer Edition Org or a Producti
 * [ ] [​sfpowerscripts Plugin](https://github.com/dxatscale/sfpowerscripts)​
 * [ ] ​[SFDX-Data-Move-Utility (SFDMU) Plugin](https://github.com/forcedotcom/SFDX-Data-Move-Utility)​
 
+## Salesforce Reference Documentation <a href="#dashboard-platform" id="dashboard-platform"></a>
+
+* [Salesforce Extensions for Visual Studio Code](https://developer.salesforce.com/tools/vscode/)
+* [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_setup.meta/sfdx\_setup/sfdx\_setup\_install\_cli.htm)
+* [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_cli\_reference.meta/sfdx\_cli\_reference/cli\_reference\_top.htm)
+* [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx\_dev.meta/sfdx\_dev/sfdx\_dev\_releasenotes.htm)
+
 ## Dashboard Platform (Optional) <a href="#dashboard-platform" id="dashboard-platform"></a>
 
 * ​[New Relic Account](https://newrelic.com/signup) _(Optional)_
