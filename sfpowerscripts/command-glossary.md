@@ -13,6 +13,27 @@ To list all the commands for sfpowerscripts, enter the following in your termina
 > sfpowerscripts
 > sfpowerscripts --help
 
+DX@Scale Toolkit
+
+VERSION
+  @dxatscale/sfpowerscripts/23.4.2 darwin-arm64 node-v20.3.1
+
+USAGE
+  $ @dxatscale/sfpowerscripts [COMMAND]
+
+TOPICS
+  apextests          Trigger Apex Tests and validate apex tests in a package
+  artifacts          Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts
+  changelog          Track your artifacts & user stories as they progress through different environments, with release changelogs
+  dependency         Commands to help with dependency management of a project
+  metrics            Report a custom metric to any sfpowerscripts supported metric provider
+  orchestrator       Orchestrate packages from a monorepo through its lifecycle, driven by descriptors in your sfdx-project.json
+  package            Work with various types of packages such as unlocked/source/data/delta individually
+  pool               Manage the pooled orgs created by the sfpowerscripts orchestrator in prepare stage
+  profile            This command is used in the lower environments such as ScratchOrgs , Development / System Testing Sandboxes, where a retrieved profile from production has to be cleaned up only
+                     for the metadata that is contained in the environment or  base it only as per the metadata that is contained in the packaging directory.
+  releasedefinition  Commands around release definition
+  repo               Commands to help with maintaing repository
 ```
 
 | Topics                                                    | Command                                                                                         | Description                                                                                                                                                                                                                                                                                                              |
