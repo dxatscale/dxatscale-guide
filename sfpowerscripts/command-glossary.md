@@ -1,162 +1,95 @@
 ---
-description: Commands in sfpowercripts
+description: '@dxatscale/sfpowerscripts/23.4.2 darwin-arm64 node-v20.3.1'
 ---
 
 # Command Glossary
 
-* `sfp analyze:pmd`
-* `sfp apextests:trigger`
-* `sfp apextests:validate`
-* `sfp artifacts:fetch`
-* `sfp artifacts:query`
-* `sfp changelog:generate`
-* `sfp orchestrator:build`
-* `sfp orchestrator:deploy`
-* `sfp orchestrator:prepare`
-* `sfp orchestrator:promote`
-* `sfp orchestrator:publish`
-* `sfp orchestrator:quickbuild`
-* `sfp orchestrator:release`
-* `sfp orchestrator:validate`
-* `sfp orchestrator:validateAgainstOrg`
-* `sfp orchestrator:validateAgainstPool`
-* `sfp package:data:create`
-* `sfp package:data:install`
-* `sfp package:source:create`
-* `sfp package:source:install`
-* `sfp package:unlocked:create`
-* `sfp package:unlocked:install`
-* `sfp package:version:increment`
-* `sfp pool:delete`
-* `sfp pool:fetch`
-* `sfp pool:list`
-* `sfp pool:metrics:publish`
-* `sfp pool:org:delete`
-* `sfp releasedefinition:generate`
-* `sfp dependency:expand`
-* `sfp dependency:shrink`
+To list all the commands for sfpowerscripts, enter the following in your terminal:
 
-## `sfp analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+```bash
+> sfp
+> sfp --help
 
-This task is used to run a static analysis of the apex classes and triggers using PMD, Please ensure that the SFDX CLI and sfpowerkit plugin are installed before using this task
+> sfpowerscripts
+> sfpowerscripts --help
 
 ```
-USAGE
-  $ sfp analyze:pmd [--sourcedir <string>] [--ruleset <string>] [--rulesetpath <string>] [--format <string>] [-o
-    <string>] [--version <string>] [--threshold <integer>] [-b] [--refname <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
-FLAGS
-  -b, --istobreakbuild
-      Enable this option if the build should be reported as failure if 1 or more critical defects are reported during the
-      analysis
+| Topics                                                    | Command                                                                                         | Description                                                                                                                                                                                                                                                                                                              |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| apextests                                                 |                                                                                                 | Trigger Apex Tests and validate apex tests in a package                                                                                                                                                                                                                                                                  |
+|                                                           | [apextests:trigger](command-glossary.md#sfp-apextests-trigger-help)                             | Triggers Apex unit test in an org. Supports test level RunAllTestsInPackage, which optionally allows validation of individual class code coverage                                                                                                                                                                        |
+| artifacts                                                 |                                                                                                 | Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts                                                                                                                                                                                                                  |
+|                                                           | [artifacts:fetch](command-glossary.md#sfp-artifacts-fetch-help)                                 | Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts                                                                                                                                                                                                                  |
+|                                                           | [artifacts:query](command-glossary.md#sfp-artifacts-query-help)                                 | Fetch details about artifacts installed in a target org                                                                                                                                                                                                                                                                  |
+| changelog                                                 |                                                                                                 | Track your artifacts & user stories as they progress through different environments, with release changelogs                                                                                                                                                                                                             |
+|                                                           | [changelog:generate](command-glossary.md#sfp-changelog-generate-help)                           | Generates release changelog, providing a summary of artifact versions, work items and commits introduced in a release. Creates a release definition based on artifacts contained in the artifact directory, and compares it to previous release definition in changelog stored on a source repository                    |
+| dependency                                                |                                                                                                 | Commands to help with dependency management of a project                                                                                                                                                                                                                                                                 |
+|                                                           | [dependency:expand](command-glossary.md#sfp-dependency-expand-help)                             | Expand the dependency list in sfdx-project.json file for each package, fix the gap of dependencies from its dependent packages                                                                                                                                                                                           |
+|                                                           | [dependency:install](command-glossary.md#sfp-dependency-install-help)                           | Install all the external dependencies of a given project                                                                                                                                                                                                                                                                 |
+|                                                           | [dependency:shrink](command-glossary.md#sfp-dependency-shrink-help)                             | Shrink the dependency list in sfdx-project.json file for each package, remove duplicate dependencies that already exist in its dependent packages                                                                                                                                                                        |
+| metrics                                                   |                                                                                                 | Report a custom metric to any sfpowerscripts supported metric provider                                                                                                                                                                                                                                                   |
+|                                                           | [metrics:report](command-glossary.md#sfp-metrics-report-help)                                   | Report a custom metric to any sfpowerscripts supported metric provider                                                                                                                                                                                                                                                   |
+| orchestrator                                              |                                                                                                 | Orchestrate packages from a monorepo through its lifecycle, driven by descriptors in your sfdx-project.json                                                                                                                                                                                                              |
+|                                                           | [orchestrator:build](command-glossary.md#sfp-orchestrator-build-help)                           | Build all packages (unlocked/source/data) in a repo in parallel, respecting the dependency of each packages and generate artifacts to a provided directory                                                                                                                                                               |
+|                                                           | [orchestrator:deploy](command-glossary.md#sfp-orchestrator-deploy-help)                         | Deploy packages from the provided aritfact directory, to a given org, using the order and configurable flags provided in sfdx-project.json                                                                                                                                                                               |
+|                                                           | [orchestrator:prepare](command-glossary.md#sfp-orchestrator-prepare-help)                       | Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner                                                                                                                                                                                         |
+|                                                           | [orchestrator:promote](command-glossary.md#sfp-orchestrator-promote-help)                       | Promotes validated unlocked packages with code coverage greater than 75%                                                                                                                                                                                                                                                 |
+|                                                           | [orchestrator:publish](command-glossary.md#sfp-orchestrator-publish-help)                       | Publish packages to an artifact registry, using a user-provided script that is responsible for authenticating & uploading to the registry.                                                                                                                                                                               |
+|                                                           | [orchestrator:quickbuild](command-glossary.md#sfp-orchestrator-quickbuild-help)                 | Build packages (unlocked/source/data) in a repo in parallel, without validating depenencies or coverage in the case of unlocked packages                                                                                                                                                                                 |
+|                                                           | [orchestrator:release](command-glossary.md#sfp-orchestrator-release-help)                       | Release a collection of artifacts as defined in the release definition file                                                                                                                                                                                                                                              |
+|                                                           | [orchestrator:validate](command-glossary.md#sfp-orchestrator-validate-help)                     | Validate the incoming change against an earlier prepared scratchorg                                                                                                                                                                                                                                                      |
+|                                                           | [orchestrator:validateAgainstOrg](command-glossary.md#sfp-orchestrator-validateagainstorg-help) | Validate the incoming change against target org                                                                                                                                                                                                                                                                          |
+| package                                                   |                                                                                                 | Work with various types of packages such as unlocked/source/data/delta individually                                                                                                                                                                                                                                      |
+|                                                           | [package:data](command-glossary.md#sfp-package-data-help)                                       | Commands to create and install data packages (sfdmu)                                                                                                                                                                                                                                                                     |
+|                                                           | [package:source](command-glossary.md#sfp-package-source-help)                                   | Commands to create and install sfpowerscripts source packages                                                                                                                                                                                                                                                            |
+|                                                           | [package:unlocked](command-glossary.md#sfp-package-unlocked-help)                               | Commands to create and install unlocked packages                                                                                                                                                                                                                                                                         |
+| pool                                                      |                                                                                                 | Manage the pooled orgs created by the sfpowerscripts orchestrator in prepare stage                                                                                                                                                                                                                                       |
+| [pool:metrics](command-glossary.md#sfp-pool-metrics-help) |                                                                                                 | Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms                                                                                                                                                                                                |
+|                                                           | [pool:metrics:publish](command-glossary.md#sfp-pool-metrics-publish-help)                       | Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms                                                                                                                                                                                                |
+| pool:org                                                  |                                                                                                 | Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an administrator                                                                                                                                |
+|                                                           | [pool:org:delete](command-glossary.md#sfp-pool-org-delete-help)                                 | Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an administrator                                                                                                                                |
+| pool                                                      |                                                                                                 | Manage the pooled orgs created by the sfpowerscripts orchestrator in prepare stage                                                                                                                                                                                                                                       |
+|                                                           | [pool:delete](command-glossary.md#sfp-pool-delete-help)                                         | Deletes the pooled scratch orgs from the Scratch Org Pool                                                                                                                                                                                                                                                                |
+|                                                           | [pool:fetch](command-glossary.md#sfp-pool-fetch-help)                                           | Gets an active/unused scratch org from the scratch org pool                                                                                                                                                                                                                                                              |
+|                                                           | [pool:list](command-glossary.md#sfp-pool-list-help)                                             | Retrieves a list of active scratch org and details from any pool. If this command is run with -m\|--mypool, the command will retrieve the passwords for the pool created by the user who is executing the command.                                                                                                       |
+| profile                                                   |                                                                                                 | This command is used in the lower environments such as ScratchOrgs , Development / System Testing Sandboxes, where a retrieved profile from production has to be cleaned up only for the metadata that is contained in the environment or base it only as per the metadata that is contained in the packaging directory. |
+|                                                           | [profile:reconcile](command-glossary.md#sfp-profile-reconcile-help)                             | This command is used in the lower environments such as ScratchOrgs , Development / System Testing Sandboxes, where a retrieved profile from production has to be cleaned up only for the metadata that is contained in the environment or base it only as per the metadata that is contained in the packaging directory. |
+| releasedefinition                                         |                                                                                                 | Commands around release definition                                                                                                                                                                                                                                                                                       |
+|                                                           | [releasedefinition:generate](command-glossary.md#sfp-releasedefinition-generate-help)           | Generates release defintion based on the artifacts installed from a commit reference                                                                                                                                                                                                                                     |
+| repo                                                      |                                                                                                 | Commands to help with maintaining repository                                                                                                                                                                                                                                                                             |
+|                                                           | [repo:patch](command-glossary.md#sfp-repo-patch-help)                                           | \[Alpha] Patch a branch in the repository as per the release definition and create a new branch                                                                                                                                                                                                                          |
 
-  -o, --outputpath=<value>
-      The file to which the output for static analysis will be written
 
-  --format=<option>
-      [default: text] https://pmd.github.io/latest/pmd_userdocs_cli_reference.html#available-report-formats
-      <options: text|textcolor|csv|emacs|summaryhtml|html|xml|xslt|yahtml|vbhtml|textpad|sarif>
 
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
-
-  --ruleset=<option>
-      [default: sfpowerkit] Inbuilt is the default ruleset that comes with the task, If you choose custom, please provide
-      the path to the ruleset
-      <options: sfpowerkit|Custom>
-
-  --rulesetpath=<value>
-      The path to the ruleset if you are utilizing your own ruleset
-
-  --sourcedir=<value>
-      The directory that is to be analyzed using PMD, If omitted default project directory as mentioned in sfdx-project.json
-      will be used
-
-  --threshold=<value>
-      [default: 1] Violations with a priority less than or equal to the threshold will cause the command to fail
-
-  --version=<value>
-      [default: 6.39.0] The version of PMD to be used for static analysis
-
-DESCRIPTION
-  This task is used to run a static analysis of the apex classes and triggers using PMD, Please ensure that the SFDX CLI
-  and sfpowerkit plugin are installed before using this task
-
-EXAMPLES
-  $ sfp analyze:pmd --sourcedir <dir>
-
-  Output variable:
-
-  sfpowerscripts_pmd_output_path
-
-  <refname>_sfpowerscripts_pmd_output_path
-```
-
-_See code:_ [_src/commands/sfpowerscripts/analyze/pmd.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/analyze/pmd.ts)
-
-## `sfp apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp apextests:trigger --help`
 
 Triggers Apex unit test in an org. Supports test level RunAllTestsInPackage, which optionally allows validation of individual class code coverage
 
 ```
 USAGE
-  $ sfp apextests:trigger [-l <string>] [-n <string>] [-c] [--validatepackagecoverage] [-s] [--specifiedtests
-    <string>] [--apextestsuite <string>] [-p <integer>] [-w <number>] [-u <string>] [--apiversion <string>] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts apextests:trigger -u <value> [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [--apiversion <value>] [-l
+    RunSpecifiedTests|RunApexTestSuite|RunLocalTests|RunAllTestsInOrg|RunAllTestsInPackage] [-n <value>] [-c] [--validatepackagecoverage] [--specifiedtests <value>] [--apextestsuite <value>] [-p
+    <value>] [-w <value>]
 
 FLAGS
-  -c, --validateindividualclasscoverage
-      Validate that individual classes have a coverage greater than the minimum required percentage coverage, only
-      available when test level is RunAllTestsInPackage
-
-  -l, --testlevel=<option>
-      [default: RunLocalTests] The test level of the test that need to be executed when the code is to be deployed
-      <options: RunSpecifiedTests|RunApexTestSuite|RunLocalTests|RunAllTestsInOrg|RunAllTestsInPackage>
-
-  -n, --package=<value>
-      Name of the package to run tests. Required when test level is RunAllTestsInPackage
-
-  -p, --coveragepercent=<value>
-      [default: 75] Minimum required percentage coverage, when validating code coverage
-
-  -s, --synchronous
-      Select an option if the tests are to be run synchronously
-
-  -u, --targetusername=<value>
-      username or alias for the target org; overrides default target org
-
-  -w, --waittime=<value>
-      [default: 60] wait time for command to finish in minutes
-
-  --apextestsuite=<value>
-      comma-separated list of Apex test suite names to run
-
-  --apiversion=<value>
-      override the api version used for api requests made by this command
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --specifiedtests=<value>
-      comma-separated list of Apex test class names or IDs and, if applicable, test methods to run
-
-  --validatepackagecoverage
-      Validate that the package coverage is greater than the minimum required percentage coverage, only available when
-      test level is RunAllTestsInPackage
+  -c, --validateindividualclasscoverage  Validate that individual classes have a coverage greater than the minimum required percentage coverage, only available when test level is
+                                         RunAllTestsInPackage
+  -l, --testlevel=<option>               [default: RunLocalTests] The test level of the test that need to be executed when the code is to be deployed
+                                         <options: RunSpecifiedTests|RunApexTestSuite|RunLocalTests|RunAllTestsInOrg|RunAllTestsInPackage>
+  -n, --package=<value>                  Name of the package to run tests. Required when test level is RunAllTestsInPackage
+  -p, --coveragepercent=<value>          [default: 75] Minimum required percentage coverage, when validating code coverage
+  -u, --targetusername=<value>           (required) Username or alias of the target org.
+  -w, --waittime=<value>                 [default: 60] wait time for command to finish in minutes
+  --apextestsuite=<value>                comma-separated list of Apex test suite names to run
+  --apiversion=<value>                   Override the api version used for api requests made by this command
+  --loglevel=<option>                    [default: info] logging level for this command invocation
+                                         <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --specifiedtests=<value>               comma-separated list of Apex test class names or IDs and, if applicable, test methods to run
+  --validatepackagecoverage              Validate that the package coverage is greater than the minimum required percentage coverage, only available when test level is RunAllTestsInPackage
 
 DESCRIPTION
-  Triggers Apex unit test in an org. Supports test level RunAllTestsInPackage, which optionally allows validation of
-  individual class code coverage
+  Triggers Apex unit test in an org. Supports test level RunAllTestsInPackage, which optionally allows validation of individual class code coverage
 
 EXAMPLES
   $ sfp apextests:trigger -u scratchorg -l RunLocalTests -s
@@ -164,69 +97,24 @@ EXAMPLES
   $ sfp apextests:trigger -u scratchorg -l RunAllTestsInPackage -n <mypackage> -c
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/apextests/trigger.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/apextests/trigger.ts)
-
-## `sfp apextests:validate -t <string> [-u <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Validates apex test coverage in the org, Please ensure that the SFDX CLI and sfpowerkit plugin are installed before using this task.
-
-```
-USAGE
-  $ sfp apextests:validate -t <string> [-u <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -t, --testcoverage=<value>                                                        (required) The percentage of test
-                                                                                    coverage for apex classes, that
-                                                                                    should be as per the last test run
-                                                                                    status
-  -u, --targetorg=<value>                                                           [default: scratchorg] Alias or
-                                                                                    username of the target org
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-
-DESCRIPTION
-  Validates apex test coverage in the org, Please ensure that the SFDX CLI and sfpowerkit plugin are installed before
-  using this task.
-
-EXAMPLES
-  $ sfp apextests:validate -u scratchorg -t 80
-```
-
-_See code:_ [_src/commands/sfpowerscripts/apextests/validate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/apextests/validate.ts)
-
-## `sfp artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` artifacts:fetch `--help`
 
 Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts
 
 ```
 USAGE
-  $ sfp artifacts:fetch -d <directory> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
-    <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts artifacts:fetch -d <value> [-p <value>] [--scope <value> [--npm | -f <value>]] [--npmrcpath <value> ] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -d, --artifactdir=<value>                                                         (required) [default: artifacts]
-                                                                                    Directory to save downloaded
-                                                                                    artifacts
-  -f, --scriptpath=<value>                                                          (Optional: no-NPM) Path to script
-                                                                                    that authenticates and downloads
-                                                                                    artifacts from the registry
-  -p, --releasedefinition=<value>                                                   Path to YAML file containing map of
-                                                                                    packages and package versions to
-                                                                                    download
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --npm                                                                             Download artifacts from a
-                                                                                    pre-authenticated private npm
-                                                                                    registry
-  --npmrcpath=<value>                                                               Path to .npmrc file used for
-                                                                                    authentication to registry. If left
-                                                                                    blank, defaults to home directory
-  --scope=<value>                                                                   (required for NPM) User or
-                                                                                    Organisation scope of the NPM
-                                                                                    package
+  -d, --artifactdir=<value>        (required) [default: artifacts] Directory to save downloaded artifacts
+  -f, --scriptpath=<value>         (Optional: no-NPM) Path to script that authenticates and downloads artifacts from the registry
+  -p, --releasedefinition=<value>  Path to YAML file containing map of packages and package versions to download
+  --loglevel=<option>              [default: info] logging level for this command invocation
+                                   <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --npm                            Download artifacts from a pre-authenticated private npm registry
+  --npmrcpath=<value>              Path to .npmrc file used for authentication to registry. If left blank, defaults to home directory
+  --scope=<value>                  (required for NPM) User or Organisation scope of the NPM package
 
 DESCRIPTION
   Fetch artifacts from an artifact registry that is either NPM compatible or supports universal artifacts
@@ -237,25 +125,21 @@ EXAMPLES
   $ sfp artifacts:fetch -p myreleasedefinition.yaml --npm --scope myscope --npmrcpath path/to/.npmrc
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/artifacts/fetch.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/artifacts/fetch.ts)
+## `sfp` artifacts:query `--help`
 
-## `sfp artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Fetch details about artifacts installed in a target org
+Fetch details about artifacts installed in a target org.
 
 ```
 USAGE
-  $ sfp artifacts:query [-u <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts artifacts:query -u <value> [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -u, --targetusername=<value>                                                      username or alias for the target
-                                                                                    org; overrides default target org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -u, --targetusername=<value>  (required) Username or alias of the target org.
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Fetch details about artifacts installed in a target org
@@ -264,1076 +148,557 @@ EXAMPLES
   $ sfp artifacts:query -u <target_org>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/artifacts/query.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/artifacts/query.ts)
-
-## `sfp changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl <string>] [--showallartifacts] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` changelog:generate `--help`
 
 Generates release changelog, providing a summary of artifact versions, work items and commits introduced in a release. Creates a release definition based on artifacts contained in the artifact directory, and compares it to previous release definition in changelog stored on a source repository
 
 ```
 USAGE
-  $ sfp changelog:generate -d <directory> -n <string> -w <string> -b <string> [--limit <integer>] [--workitemurl
-    <string>] [--showallartifacts] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts changelog:generate -d <value> -n <value> -w <value> [--limit <value>] [--workitemurl <value>] [-r <value>] [--directory <value>] (--nopush -b <value>)
+    [--showallartifacts] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -b, --branchname=<value>                                                          (required) Repository branch in
-                                                                                    which the changelog files are
-                                                                                    located
-  -d, --artifactdir=<value>                                                         (required) [default: artifacts]
-                                                                                    Directory containing sfpowerscripts
-                                                                                    artifacts
-  -n, --releasename=<value>                                                         (required) Name of the release for
-                                                                                    which to generate changelog
-  -w, --workitemfilter=<value>                                                      (required) Regular expression used
-                                                                                    to search for work items (user
-                                                                                    stories) introduced in release
-  --json                                                                            format output as json
-  --limit=<value>                                                                   limit the number of releases to
-                                                                                    display in changelog markdown
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --showallartifacts                                                                Show all artifacts in changelog
-                                                                                    markdown, including those that have
-                                                                                    not changed in the release
-  --workitemurl=<value>                                                             Generic URL for work items. Each
-                                                                                    work item ID will be appended to the
-                                                                                    URL, providing quick access to work
-                                                                                    items
+  -b, --branchname=<value>      (required) Repository branch in which the changelog files are located
+  -d, --artifactdir=<value>     (required) [default: artifacts] Directory containing sfpowerscripts artifacts
+  -n, --releasename=<value>     (required) Name of the release for which to generate changelog
+  -r, --repourl=<value>         Repository in which the changelog files are located. Assumes user is already authenticated.
+  -w, --workitemfilter=<value>  (required) Regular expression used to search for work items (user stories) introduced in release
+  --directory=<value>           Relative path to directory to which the release defintion file should be generated, if the directory doesnt exist, it will be created
+  --limit=<value>               limit the number of releases to display in changelog markdown
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --nopush                      Do not push the changelog to a repository to the provided branch
+  --showallartifacts            Show all artifacts in changelog markdown, including those that have not changed in the release
+  --workitemurl=<value>         Generic URL for work items. Each work item ID will be appended to the URL, providing quick access to work items
 
 DESCRIPTION
-  Generates release changelog, providing a summary of artifact versions, work items and commits introduced in a release.
-  Creates a release definition based on artifacts contained in the artifact directory, and compares it to previous
-  release definition in changelog stored on a source repository
+  Generates release changelog, providing a summary of artifact versions, work items and commits introduced in a release. Creates a release definition based on artifacts contained in the artifact
+  directory, and compares it to previous release definition in changelog stored on a source repository
 
 EXAMPLES
-  $ sfp changelog:generate -n <releaseName> -d path/to/artifact/directory -w <regexp> -r <repoURL> -b <branchName>
+  $ sfpowerscripts changelog:generate -n <releaseName> -d path/to/artifact/directory -w <regexp> -r <repoURL> -b <branchName>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/changelog/generate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/changelog/generate.ts)
+## `sfp` dependency:expand `--help`
 
-## `sfp orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+Expand the dependency list in sfdx-project.json file for each package, fix the gap of dependencies from its dependent packages
+
+```
+USAGE
+  $ @dxatscale/sfpowerscripts dependency:expand -v <value> [-o] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -o, --overwrite                     Flag to overwrite existing sfdx-project.json file
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+DESCRIPTION
+  Expand the dependency list in sfdx-project.json file for each package, fix the gap of dependencies from its dependent packages
+```
+
+## `sfp` dependency:install `--help`
+
+Install all the external dependencies of a given project
+
+```
+USAGE
+  $ @dxatscale/sfpowerscripts dependency:install -u <value> -v <value> [-k <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -k, --installationkeys=<value>      Installation key for key-protected packages (format is packagename:key --> core:key nCino:key vlocity:key to allow some packages without installation key)
+  -u, --targetusername=<value>        (required) Username or alias of the target org.
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+DESCRIPTION
+  Install all the external dependencies of a given project
+```
+
+## `sfp` dependency:shrink `--help`
+
+Shrink the dependency list in sfdx-project.json file for each package, remove duplicate dependencies that already exist in its dependent packages
+
+```
+USAGE
+  $ @dxatscale/sfpowerscripts dependency:shrink -v <value> [-o] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -o, --overwrite                     Flag to overwrite existing sfdx-project.json file
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+DESCRIPTION
+  Shrink the dependency list in sfdx-project.json file for each package, remove duplicate dependencies that already exist in its dependent packages
+```
+
+## `sfp` metrics:report `--help`
+
+Report a custom metric to any sfpowerscripts supported metric provider
+
+```
+USAGE
+  $ @dxatscale/sfpowerscripts metrics:report -m <value> -t gauge|counter|timer [-v <value>] [-g <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -g, --tags=<value>    tags for metric
+  -m, --metric=<value>  (required) metrics to publish
+  -t, --type=<option>   (required) type of metric
+                        <options: gauge|counter|timer>
+  -v, --value=<value>   value of metric
+  --loglevel=<option>   [default: info] logging level for this command invocation
+                        <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+DESCRIPTION
+  Report a custom metric to any sfpowerscripts supported metric provider
+
+EXAMPLES
+  $ sfpowerscripts metrics:report -m <metric> -t <type> -v <value>
+```
+
+## `sfp` orchestrator:build `--help`
 
 Build all packages (unlocked/source/data) in a repo in parallel, respecting the dependency of each packages and generate artifacts to a provided directory
 
 ```
 USAGE
-  $ sfp orchestrator:build --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
-    [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:build -v <value> --branch <value> [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [--apiversion <value>] [--diffcheck] [-r
+    <value>] [-f <value>] [--artifactdir <value>] [--waittime <value>] [--buildnumber <value>] [--executorcount <value>] [--tag <value>] [--releaseconfig <value>]
 
 FLAGS
-  -f, --configfilepath=<value>                                                      [default:
-                                                                                    config/project-scratch-def.json]
-                                                                                    Path in the current project
-                                                                                    directory containing  config file
-                                                                                    for the packaging org
-  -r, --repourl=<value>                                                             Custom source repository URL to use
-                                                                                    in artifact metadata, overrides
-                                                                                    origin URL defined in git config
-  -v, --devhubalias=<value>                                                         [default: HubOrg] Provide the alias
-                                                                                    of the devhub previously
-                                                                                    authenticated, default value is
-                                                                                    HubOrg if using the Authenticate
-                                                                                    Devhub task
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    where the generated artifact is to
-                                                                                    be written
-  --branch=<value>                                                                  (required) The git branch that this
-                                                                                    build is triggered on, Useful for
-                                                                                    metrics and general identification
-                                                                                    purposes
-  --buildnumber=<value>                                                             [default: 1] The build number to be
-                                                                                    used for source packages, Unlocked
-                                                                                    Packages will be assigned the
-                                                                                    buildnumber from Salesforce directly
-                                                                                    if using .NEXT
-  --diffcheck                                                                       Only build the packages which have
-                                                                                    changed by analyzing previous tags
-  --executorcount=<value>                                                           [default: 5] Number of parallel
-                                                                                    package task schedulers
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --tag=<value>                                                                     Tag the build with a label, useful
-                                                                                    to identify in metrics
-  --waittime=<value>                                                                [default: 120] Wait time for command
-                                                                                    to finish in minutes
+  -f, --configfilepath=<value>  [default: config/project-scratch-def.json] Path in the current project directory containing  config file for the packaging org
+  -r, --repourl=<value>         Custom source repository URL to use in artifact metadata, overrides origin URL defined in git config
+  -v, --devhubalias=<value>     (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>          Override the api version used for api requests made by this command
+  --artifactdir=<value>         [default: artifacts] The directory where the generated artifact is to be written
+  --branch=<value>              (required) The git branch that this build is triggered on, Useful for metrics and general identification purposes
+  --buildnumber=<value>         [default: 1] The build number to be used for source packages, Unlocked Packages will be assigned the buildnumber from Saleforce directly if using .NEXT
+  --diffcheck                   Only build the packages which have changed by analyzing previous tags
+  --executorcount=<value>       [default: 5] Number of parallel package task schedulors
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --releaseconfig=<value>       Path to the release config file which determines what packages should be built
+  --tag=<value>                 Tag the build with a label, useful to identify in metrics
+  --waittime=<value>            [default: 120] Wait time for command to finish in minutes
 
 DESCRIPTION
-  Build all packages (unlocked/source/data) in a repo in parallel, respecting the dependency of each packages and
-  generate artifacts to a provided directory
+  Build all packages (unlocked/source/data) in a repo in parallel, respecting the dependency of each packages and generate artifacts to a provided directory
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/build.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/build.ts)
+## `sfp` orchestrator:deploy `--help`
 
-## `sfp orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b <string> --skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Deploy packages from the provided artifact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
+Deploy packages from the provided aritfact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
 
 ```
 USAGE
-  $ sfp orchestrator:deploy -u <string> [--artifactdir <directory>] [--waittime <number>] [-g <array>] [-t <string>] [-b
-    <string> --skipifalreadyinstalled] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:deploy -u <value> [--artifactdir <value>] [--waittime <value>] [-t <value>] [-b <value> --skipifalreadyinstalled] [--releaseconfig <value>]
+    [--enablesourcetracking] [-g <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -b, --baselineorg=<value>                                                         The org against which the package
-                                                                                    skip should be baselined
-  -g, --logsgroupsymbol=<value>                                                     Symbol used by CICD platform to
-                                                                                    group/collapse logs in the console.
-                                                                                    Provide an opening group, and an
-                                                                                    optional closing group symbol.
-  -t, --tag=<value>                                                                 Tag the deploy with a label, useful
-                                                                                    for identification in metrics
-  -u, --targetorg=<value>                                                           (required) [default: scratchorg]
-                                                                                    Alias/User Name of the target
-                                                                                    environment
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    containing artifacts to be deployed
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --skipifalreadyinstalled                                                          Skip the package installation if the
-                                                                                    package is already installed in the
-                                                                                    org
-  --waittime=<value>                                                                [default: 120] Wait time for command
-                                                                                    to finish in minutes
+  -b, --baselineorg=<value>         The org against which the package skip should be baselined
+  -g, --logsgroupsymbol=<value>...  Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -t, --tag=<value>                 Tag the deploy with a label, useful for identification in metrics
+  -u, --targetorg=<value>           (required) Username or alias of the target org.
+  --artifactdir=<value>             [default: artifacts] The directory containing artifacts to be deployed
+  --enablesourcetracking            Enable source tracking on the packages being deployed to an org
+  --loglevel=<option>               [default: info] logging level for this command invocation
+                                    <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --releaseconfig=<value>           Path to the config file which determines how the packages are deployed based on the filters in release config
+  --skipifalreadyinstalled          Skip the package installation if the package is already installed in the org
+  --waittime=<value>                [default: 120] Wait time for command to finish in minutes
 
 DESCRIPTION
-  Deploy packages from the provided aritfact directory, to a given org, using the order and configurable flags provided
-  in sfdx-project.json
+  Deploy packages from the provided aritfact directory, to a given org, using the order and configurable flags provided in sfdx-project.json
 
 EXAMPLES
-  $ sfp orchestrator:deploy -u <username>
+  $ sfpowerscripts orchestrator:deploy -u <username>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/deploy.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/deploy.ts)
-
-## `sfp orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` orchestrator:prepare `--help`
 
 Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 ```
 USAGE
-  $ sfp orchestrator:prepare [-f <filepath>] [--npmrcpath <filepath>] [--keys <string>] [-v <string>] [--apiversion
-    <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:prepare -v <value> [-f <value>] [--npmrcpath <value>] [--keys <value>] [-g <value>] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -f, --poolconfig=<value>
-      [default: config/poolconfig.json] The path to the configuration file for creating a pool of scratch orgs
-
-  -v, --targetdevhubusername=<value>
-      username or alias for the dev hub org; overrides default dev hub org
-
-  --apiversion=<value>
-      override the api version used for api requests made by this command
-
-  --json
-      format output as json
-
-  --keys=<value>
-      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs
-      separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --npmrcpath=<value>
-      Path to .npmrc file used for authentication to a npm registry when using npm based artifacts. If left blank,
-      defaults to home directory
+  -f, --poolconfig=<value>            [default: config/poolconfig.json] The path to the configuration file for creating a pool of scratch orgs
+  -g, --logsgroupsymbol=<value>...    Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --keys=<value>                      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs separated by spaces e.g. packageA:pw123
+                                      packageB:pw123 packageC:pw123
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --npmrcpath=<value>                 Path to .npmrc file used for authentication to a npm registry when using npm based artifacts. If left blank, defaults to home directory
 
 DESCRIPTION
-  Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an
-  optimized manner
+  Prepare a pool of scratchorgs with all the packages upfront, so that any incoming change can be validated in an optimized manner
 
 EXAMPLES
-  $ sfp orchestrator:prepare -f config/mypoolconfig.json  -v <devhub>
+  $ sfpowerscripts orchestrator:prepare -f config/mypoolconfig.json  -v <devhub>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/prepare.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/prepare.ts)
-
-## `sfp orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` orchestrator:promote `--help`
 
 Promotes validated unlocked packages with code coverage greater than 75%
 
 ```
 USAGE
-  $ sfp orchestrator:promote -d <directory> [-v <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:promote -v <value> -d <value> [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -d, --artifactdir=<value>                                                         (required) [default: artifacts] The
-                                                                                    directory where artifacts are
-                                                                                    located
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -d, --artifactdir=<value>           (required) [default: artifacts] The directory where artifacts are located
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
 
 DESCRIPTION
   Promotes validated unlocked packages with code coverage greater than 75%
 
 EXAMPLES
-  $ sfp orchestrator:promote -d path/to/artifacts -v <org>
+  $ sfpowerscripts orchestrator:promote -d path/to/artifacts -v <org>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/promote.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/promote.ts)
-
-## `sfp orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string> [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` orchestrator:publish `--help`
 
 Publish packages to an artifact registry, using a user-provided script that is responsible for authenticating & uploading to the registry.
 
 ```
 USAGE
-  $ sfp orchestrator:publish -d <directory> [-p -v <string>] [-t <string>] [--gittag] [--pushgittag] [--scope <string>
-    [--npm | -f <filepath>]] [--npmtag <string> ] [--npmrcpath <filepath> ] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:publish -d <value> [-p -v <value>] [-t <value>] [--gittag] [--gittaglimit <value>] [--gittagage <value>] [--pushgittag] [--scope <value> [--npm | -f
+    <value>]] [--npmtag <value> ] [--npmrcpath <value> ] [-g <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -d, --artifactdir=<value>                                                         (required) [default: artifacts] The
-                                                                                    directory containing artifacts to be
-                                                                                    published
-  -f, --scriptpath=<value>                                                          Path to script that authenticates
-                                                                                    and uploaded artifacts to the
-                                                                                    registry
-  -p, --publishpromotedonly                                                         Only publish unlocked packages that
-                                                                                    have been promoted
-  -t, --tag=<value>                                                                 Tag the publish with a label, useful
-                                                                                    for identification in metrics
-  -v, --devhubalias=<value>                                                         Provide the alias of the devhub
-                                                                                    previously authenticated
-  --gittag                                                                          Tag the current commit ID with an
-                                                                                    annotated tag containing the package
-                                                                                    name and version - does not push tag
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --npm                                                                             Upload artifacts to a
-                                                                                    pre-authenticated private npm
-                                                                                    registry
-  --npmrcpath=<value>                                                               Path to .npmrc file used for
-                                                                                    authentication to registry. If left
-                                                                                    blank, defaults to home directory
-  --npmtag=<value>                                                                  Add an optional distribution tag to
-                                                                                    NPM packages. If not provided, the
-                                                                                    'latest' tag is set to the published
-                                                                                    version.
-  --pushgittag                                                                      Pushes the git tags created by this
-                                                                                    command to the repo, ensure you have
-                                                                                    access to the repo
-  --scope=<value>                                                                   (required for NPM) User or
-                                                                                    Organisation scope of the NPM
-                                                                                    package
+  -d, --artifactdir=<value>         (required) [default: artifacts] The directory containing artifacts to be published
+  -f, --scriptpath=<value>          Path to script that authenticates and uploaded artifacts to the registry
+  -g, --logsgroupsymbol=<value>...  Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -p, --publishpromotedonly         Only publish unlocked packages that have been promoted
+  -t, --tag=<value>                 Tag the publish with a label, useful for identification in metrics
+  -v, --devhubalias=<value>         Username or alias of the Dev Hub org.
+  --gittag                          Tag the current commit ID with an annotated tag containing the package name and version - does not push tag
+  --gittagage=<value>               Specifies the number of days,for a tag to be retained,any tags older the provided number will be deleted
+  --gittaglimit=<value>             Specifies the minimum number of  tags to be retained for a package
+  --loglevel=<option>               [default: info] logging level for this command invocation
+                                    <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --npm                             Upload artifacts to a pre-authenticated private npm registry
+  --npmrcpath=<value>               Path to .npmrc file used for authentication to registry. If left blank, defaults to home directory
+  --npmtag=<value>                  Add an optional distribution tag to NPM packages. If not provided, the 'latest' tag is set to the published version.
+  --pushgittag                      Pushes the git tags created by this command to the repo, ensure you have access to the repo
+  --scope=<value>                   (required for NPM) User or Organisation scope of the NPM package
 
 DESCRIPTION
-  Publish packages to an artifact registry, using a user-provided script that is responsible for authenticating &
-  uploading to the registry.
+  Publish packages to an artifact registry, using a user-provided script that is responsible for authenticating & uploading to the registry.
 
 EXAMPLES
-  $ sfp orchestrator:publish -f path/to/script
+  $ sfpowerscripts orchestrator:publish -f path/to/script
 
-  $ sfp orchestrator:publish --npm
+  $ sfpowerscripts orchestrator:publish --npm
 
-  $ sfp orchestrator:publish -f path/to/script -p -v HubOrg
+  $ sfpowerscripts orchestrator:publish -f path/to/script -p -v HubOrg
 
-  $ sfp orchestrator:publish -f path/to/script --gittag --pushgittag
+  $ sfpowerscripts orchestrator:publish -f path/to/script --gittag --pushgittag
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/publish.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/publish.ts)
-
-## `sfp orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>] [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` orchestrator:quickbuild `--help`
 
 Build packages (unlocked/source/data) in a repo in parallel, without validating depenencies or coverage in the case of unlocked packages
 
 ```
 USAGE
-  $ sfp orchestrator:quickbuild --branch <string> [--diffcheck] [-r <string>] [-f <filepath>] [--artifactdir <directory>]
-    [--waittime <number>] [--buildnumber <number>] [--executorcount <number>] [--tag <string>] [-v <string>] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:quickbuild -v <value> --branch <value> [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL] [--apiversion <value>] [--diffcheck] [-r
+    <value>] [-f <value>] [--artifactdir <value>] [--waittime <value>] [--buildnumber <value>] [--executorcount <value>] [--tag <value>] [--releaseconfig <value>]
 
 FLAGS
-  -f, --configfilepath=<value>                                                      [default:
-                                                                                    config/project-scratch-def.json]
-                                                                                    Path in the current project
-                                                                                    directory containing  config file
-                                                                                    for the packaging org
-  -r, --repourl=<value>                                                             Custom source repository URL to use
-                                                                                    in artifact metadata, overrides
-                                                                                    origin URL defined in git config
-  -v, --devhubalias=<value>                                                         [default: HubOrg] Provide the alias
-                                                                                    of the devhub previously
-                                                                                    authenticated, default value is
-                                                                                    HubOrg if using the Authenticate
-                                                                                    Devhub task
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    where the generated artifact is to
-                                                                                    be written
-  --branch=<value>                                                                  (required) The git branch that this
-                                                                                    build is triggered on, Useful for
-                                                                                    metrics and general identification
-                                                                                    purposes
-  --buildnumber=<value>                                                             [default: 1] The build number to be
-                                                                                    used for source packages, Unlocked
-                                                                                    Packages will be assigned the
-                                                                                    buildnumber from Saleforce directly
-                                                                                    if using .NEXT
-  --diffcheck                                                                       Only build the packages which have
-                                                                                    changed by analyzing previous tags
-  --executorcount=<value>                                                           [default: 5] Number of parallel
-                                                                                    package task schedulors
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --tag=<value>                                                                     Tag the build with a label, useful
-                                                                                    to identify in metrics
-  --waittime=<value>                                                                [default: 120] Wait time for command
-                                                                                    to finish in minutes
+  -f, --configfilepath=<value>  [default: config/project-scratch-def.json] Path in the current project directory containing  config file for the packaging org
+  -r, --repourl=<value>         Custom source repository URL to use in artifact metadata, overrides origin URL defined in git config
+  -v, --devhubalias=<value>     (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>          Override the api version used for api requests made by this command
+  --artifactdir=<value>         [default: artifacts] The directory where the generated artifact is to be written
+  --branch=<value>              (required) The git branch that this build is triggered on, Useful for metrics and general identification purposes
+  --buildnumber=<value>         [default: 1] The build number to be used for source packages, Unlocked Packages will be assigned the buildnumber from Saleforce directly if using .NEXT
+  --diffcheck                   Only build the packages which have changed by analyzing previous tags
+  --executorcount=<value>       [default: 5] Number of parallel package task schedulors
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --releaseconfig=<value>       Path to the release config file which determines what packages should be built
+  --tag=<value>                 Tag the build with a label, useful to identify in metrics
+  --waittime=<value>            [default: 120] Wait time for command to finish in minutes
 
 DESCRIPTION
-  Build packages (unlocked/source/data) in a repo in parallel, without validating depenencies or coverage in the case of
-  unlocked packages
+  Build packages (unlocked/source/data) in a repo in parallel, without validating depenencies or coverage in the case of unlocked packages
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/quickbuild.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/quickbuild.ts)
+## `sfp` orchestrator:release `--help`
 
-## `sfp orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog] [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Initiate a release to an org, according to the configuration defined in a release-definition YAML file
+Release a collection of artifacts as defined in the release definition file
 
 ```
 USAGE
-  $ sfp orchestrator:release -u <string> [-p <filepath>] [--scope <string> [--npm | -f <filepath>]] [--npmrcpath
-    <filepath> ] [-g <array>] [-t <string>] [--waittime <number>] [--keys <string>] [-b <string> --generatechangelog]
-    [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:release -p <value> -u <value> [--scope <value> [--npm | -f <value>]] [--npmrcpath <value> ] [-g <value>] [-t <value>] [--waittime <value>] [--keys <value>]
+    [-d <value>] [-b <value> --generatechangelog] [-v <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -b, --branchname=<value>
-      Repository branch in which the changelog files are located
-
-  -f, --scriptpath=<value>
-      (Optional: no-NPM) Path to script that authenticates and downloads artifacts from the registry
-
-  -g, --logsgroupsymbol=<value>
-      Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional
-      closing group symbol.
-
-  -p, --releasedefinition=<value>
-      Path to YAML file containing map of packages and package versions to download
-
-  -t, --tag=<value>
-      Tag the release with a label, useful for identification in metrics
-
-  -u, --targetorg=<value>
-      (required) [default: scratchorg] Alias/User Name of the target environment
-
-  -v, --devhubalias=<value>
-      Provide the alias of the devhub previously authenticated, default value is HubOrg
-
-  --generatechangelog
-      Create a release changelog
-
-  --json
-      format output as json
-
-  --keys=<value>
-      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs
-      separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --npm
-      Download artifacts from a pre-authenticated private npm registry
-
-  --npmrcpath=<value>
-      Path to .npmrc file used for authentication to registry. If left blank, defaults to home directory
-
-  --scope=<value>
-      (required for NPM) User or Organisation scope of the NPM package
-
-  --waittime=<value>
-      [default: 120] Wait time for package installation
+  -b, --branchname=<value>            Repository branch in which the changelog files are located
+  -d, --directory=<value>             Relative path to directory to which the changelog should be generated, if the directory doesnt exist, it will be created
+  -f, --scriptpath=<value>            (Optional: no-NPM) Path to script that authenticates and downloads artifacts from the registry
+  -g, --logsgroupsymbol=<value>...    Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -p, --releasedefinition=<value>...  (required) Path to release definiton yaml, Multiple paths can be seperated by commas
+  -t, --tag=<value>                   Tag the release with a label, useful for identification in metrics
+  -u, --targetorg=<value>             (required) Username or alias of the target org.
+  -v, --devhubalias=<value>           Username or alias of the Dev Hub org.
+  --generatechangelog                 Create a release changelog
+  --keys=<value>                      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs separated by spaces e.g. packageA:pw123
+                                      packageB:pw123 packageC:pw123
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --npm                               Download artifacts from a pre-authenticated private npm registry
+  --npmrcpath=<value>                 Path to .npmrc file used for authentication to registry. If left blank, defaults to home directory
+  --scope=<value>                     (required for NPM) User or Organisation scope of the NPM package
+  --waittime=<value>                  [default: 120] Wait time for package installation
 
 DESCRIPTION
-  Initiate a release to an org, according to the configuration defined in a release-definition YAML file
+  Release a  collection of artifacts as defined in the release definition file
 
 EXAMPLES
-  $ sfp orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
+  sfpowerscripts orchestrator:release -p path/to/releasedefinition.yml -u myorg --npm --scope myscope --generatechangelog
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/release.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/release.ts)
-
-## sfp orchestrator:validate
+## `sfp` orchestrator:validate `--help`
 
 Validate the incoming change against an earlier prepared scratchorg
 
 ```
 USAGE
-  $ sfp orchestrator:validate -p <array> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--releaseconfig <string>] [--coveragepercent <integer>] [-x]
-    [--keys <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [-g <array>] [-v
-    <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts orchestrator:validate -p <value> -v <value> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--installdeps] [--releaseconfig <value>]
+    [--coveragepercent <value>] [--disablesourcepkgoverride] [-x] [--orginfo] [--keys <value>] [--enableimpactanalysis --basebranch <value>] [--enabledependencyvalidation ] [--tag <value>]
+    [--disableparalleltesting] [--disablediffcheck] [--disableartifactupdate] [-g <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -g, --logsgroupsymbol=<value>                                                        Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an
-                                                                                       optional closing group symbol.
-  -p, --pools=<value>                                                                  (required) Fetch scratch-org validation environment from one of listed pools, sequentially
-  -v, --targetdevhubusername=<value>                                                   username or alias for the dev hub org; overrides default dev hub org
-  -x, --deletescratchorg                                                               Delete scratch-org validation environment, after the command has finished running
-  --apiversion=<value>                                                                 override the api version used for api requests made by this command
-  --basebranch=<value>                                                                 The pull request base branch
-  --coveragepercent=<value>                                                            [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex
-                                                                                       classes
-  --disableartifactupdate                                                              Do not update information about deployed artifacts to the org
-  --disablediffcheck                                                                   Disables diff check while validating, this will validate all the packages in the repository
-  --enabledependencyvalidation                                                         Validate dependencies between packages for changed components
-  --enableimpactanalysis                                                               Visualize components impacted by changes in pull request
-  --json                                                                               format output as json
-  --keys=<value>                                                                       Keys to be used while installing any managed package dependencies. Required format is a string of
-                                                                                       key-value pairs separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)     [default: info] logging level for this command invocation
-  --mode=(individual|fastfeedback|thorough|ff-release-config|thorough-release-config)  (required) [default: thorough] validation mode
-  --releaseconfig=<value>                                                              (Required if the release modes are ff-relese-config or thorough-release-config), Path to the config
-                                                                                       file which determines how the release defintion should be generated
-  --tag=<value>                                                                        Tag the build with a label, useful to identify in metrics
+  -g, --logsgroupsymbol=<value>...    Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -p, --pools=<value>...              (required) Fetch scratch-org validation environment from one of listed pools, sequentially
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  -x, --deletescratchorg              Delete scratch-org validation environment, after the command has finished running
+  --basebranch=<value>                The pull request base branch
+  --coveragepercent=<value>           [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex classes
+  --disableartifactupdate             Do not update information about deployed artifacts to the org
+  --disablediffcheck                  Disables diff check while validating, this will validate all the packages in the repository
+  --disableparalleltesting            Disable test execution in parallel, this will execute apex tests in serial
+  --disablesourcepkgoverride          Disables overriding unlocked package installation as source package installation during validate
+  --enabledependencyvalidation        Validate dependencies between packages for changed components
+  --enableimpactanalysis              Visualize components impacted by changes in pull request
+  --installdeps                       Install dependencies during fast feedback
+  --keys=<value>                      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs separated by spaces e.g. packageA:pw123
+                                      packageB:pw123 packageC:pw123
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --mode=<option>                     (required) [default: thorough] validation mode
+                                      <options: individual|fastfeedback|thorough|ff-release-config|thorough-release-config>
+  --orginfo                           Display info about the org that is used for validation
+  --releaseconfig=<value>             (Required if the release modes are ff-relese-config or thorough-release-config), Path to the config file which determines how the release defintion should be
+                                      generated
+  --tag=<value>                       Tag the build with a label, useful to identify in metrics
 
 DESCRIPTION
   Validate the incoming change against an earlier prepared scratchorg
-
-ALIASES
-  $ sfp orchestrator:validateAgainstPool
-
-EXAMPLES
-  $ sfp orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" --mode=fastfeedback -v <devHubUsername>
-```
-
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/validate.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/validate.ts)
-
-## `sfp orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Validate the incoming change against target org
-
-```
-USAGE
-  $ sfp orchestrator:validateAgainstOrg -u <string> [--coveragepercent <integer>] [--diffcheck] [--disableartifactupdate] [-g
-    <array>] [--basebranch <string>] [--fastfeedback] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -g, --logsgroupsymbol=<value>                                                     Symbol used by CICD platform to
-                                                                                    group/collapse logs in the console.
-                                                                                    Provide an opening group, and an
-                                                                                    optional closing group symbol.
-  -u, --targetorg=<value>                                                           (required) Alias/User Name of the
-                                                                                    target environment
-  --basebranch=<value>                                                              The pull request base branch
-  --coveragepercent=<value>                                                         [default: 75] Minimum required
-                                                                                    percentage coverage for validating
-                                                                                    code coverage of packages with Apex
-                                                                                    classes
-  --diffcheck                                                                       Only build the packages which have
-                                                                                    changed by analyzing previous tags
-  --disableartifactupdate                                                           Do not update information about
-                                                                                    deployed artifacts to the org
-  --fastfeedback                                                                    Enable validation in fast feedback
-                                                                                    mode, In fast feedback mode,
-                                                                                    validation will only do selective
-                                                                                    deployment of changed components and
-                                                                                    selective tests
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-
-DESCRIPTION
-  Validate the incoming change against target org
-
-EXAMPLES
-  $ sfp orchestrator:validateAgainstOrg -u <targetorg>
-```
-
-_See code:_ [_src/commands/sfpowerscripts/orchestrator/validateAgainstOrg.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/orchestrator/validateAgainstOrg.ts)
-
-## `sfp orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Validate the incoming change against an earlier prepared scratchorg
-
-```
-USAGE
-  $ sfp orchestrator:validateAgainstPool -p <array> [--shapefile <string>] [--coveragepercent <integer>] [-g <array>] [-x] [--keys
-    <string>] [-c <string>] [--enableimpactanalysis --basebranch <string>] [--enabledependencyvalidation ] [--tag
-    <string>] [--disablediffcheck] [--disableartifactupdate] [--fastfeedback] [-v <string>] [--apiversion <string>]
-    [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -c, --visualizechangesagainst=<value>
-      Branch to conduct change analysis against. Enables visualization of changes and the components affected
-
-  -g, --logsgroupsymbol=<value>
-      Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional
-      closing group symbol.
-
-  -p, --pools=<value>
-      (required) Fetch scratch-org validation environment from one of listed pools, sequentially
-
-  -v, --targetdevhubusername=<value>
-      username or alias for the dev hub org; overrides default dev hub org
-
-  -x, --deletescratchorg
-      Delete scratch-org validation environment, after the command has finished running
-
-  --apiversion=<value>
-      override the api version used for api requests made by this command
-
-  --basebranch=<value>
-      The pull request base branch
-
-  --coveragepercent=<value>
-      [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex classes
-
-  --disableartifactupdate
-      Do not update information about deployed artifacts to the org
-
-  --disablediffcheck
-      Disables diff check while validating, this will validate all the packages in the repository
-
-  --enabledependencyvalidation
-      Validate dependencies between packages for changed components
-
-  --enableimpactanalysis
-      Visualize components impacted by changes in pull request
-
-  --fastfeedback
-      Enable validation in fast feedback mode, In fast feedback mode, validation will only do selective deployment of and
-      selective tests
-
-  --json
-      format output as json
-
-  --keys=<value>
-      Keys to be used while installing any managed package dependencies. Required format is a string of key-value pairs
-      separated by spaces e.g. packageA:pw123 packageB:pw123 packageC:pw123
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --shapefile=<value>
-      Path to .zip file of scratch org shape / metadata to deploy
-
-  --tag=<value>
-      Tag the build with a label, useful to identify in metrics
-
-DESCRIPTION
-  Validate the incoming change against an earlier prepared scratchorg
-
-ALIASES
-  $ sfp orchestrator:validateAgainstPool
 
 EXAMPLES
   $ sfp orchestrator:validate -p "POOL_TAG_1,POOL_TAG_2" -v <devHubUsername>
 ```
 
-## `sfp package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` orchestrator:validateAgainstOrg `--help`
 
-Creates a versioned artifact from a source directory containing SFDMU-based data (in csv format and export json). The artifact can be consumed by release pipelines, to deploy the data to orgs
+Validate the incoming change against target org
 
 ```
 USAGE
-  $ sfp package:data:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
-    [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel
+  $ @dxatscale/sfpowerscripts orchestrator:validateAgainstOrg -u <value> --mode individual|fastfeedback|thorough|ff-release-config|thorough-release-config [--releaseconfig <value>] [--coveragepercent <value>]
+    [--diffcheck] [--disableartifactupdate] [-g <value>] [--basebranch <value>] [--orginfo] [--installdeps] (--disablesourcepkgoverride -v <value>) [--disableparalleltesting] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -n, --package=<value>
-      (required) The name of the package
-
-  -r, --repourl=<value>
-      Custom source repository URL to use in artifact metadata, overrides origin URL defined in git config
-
-  -v, --versionnumber=<value>
-      (required) The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
-
-  --artifactdir=<value>
-      [default: artifacts] The directory where the artifact is to be written
-
-  --branch=<value>
-      The git branch that this build is triggered on, Useful for metrics and general identification purposes
-
-  --diffcheck
-      Only build when the package has changed
-
-  --gittag
-      Tag the current commit ID with an annotated tag containing the package name and version - does not push tag
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
+  -g, --logsgroupsymbol=<value>...  Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -u, --targetorg=<value>           (required) Username or alias of the target org.
+  -v, --devhubalias=<value>         (required) Username or alias of the Dev Hub org.
+  --basebranch=<value>              The pull request base branch
+  --coveragepercent=<value>         [default: 75] Minimum required percentage coverage for validating code coverage of packages with Apex classes
+  --diffcheck                       Only build the packages which have changed by analyzing previous tags
+  --disableartifactupdate           Do not update information about deployed artifacts to the org
+  --disableparalleltesting          Disable test execution in parallel, this will execute apex tests in serial
+  --disablesourcepkgoverride        Disables overriding unlocked package installation as source package installation during validate
+  --installdeps                     Install dependencies during fast feedback
+  --loglevel=<option>               [default: info] logging level for this command invocation
+                                    <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --mode=<option>                   (required) [default: thorough] validation mode
+                                    <options: individual|fastfeedback|thorough|ff-release-config|thorough-release-config>
+  --orginfo                         Display info about the org that is used for validation
+  --releaseconfig=<value>           (Required if the release modes are ff-relese-config or thorough-release-config), Path to the config file which determines how the release defintion should be
+                                    generated
 
 DESCRIPTION
-  Creates a versioned artifact from a source directory containing SFDMU-based data (in csv format and export json). The
-  artifact can be consumed by release pipelines, to deploy the data to orgs
+  Validate the incoming change against target org
 
 EXAMPLES
-  $ sfp package:data:create -n mypackage -v <version>
-
-  $ sfp package:data:create -n <mypackage> -v <version> --diffcheck --gittag
-
-  Output variable:
-
-  sfpowerscripts_artifact_directory
-
-  <refname>_sfpowerscripts_artifact_directory
-
-  sfpowerscripts_package_version_number
-
-  <refname>_sfpowerscripts_package_version_number
+  $ sfpowerscripts orchestrator:validateAgainstOrg -u <targetorg>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/data/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/data/create.ts)
+## `sfp` package:data `--help`
 
-## `sfp package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
+Commands to create and install data packages (sfdmu)
 
 ```
 USAGE
-  $ sfp package:data:install -n <string> -u <string> [--artifactdir <directory>] [-s] [--skipifalreadyinstalled] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts package:data:COMMAND
 
-FLAGS
-  -n, --package=<value>                                                             (required) Name of the package to be
-                                                                                    installed
-  -s, --skiponmissingartifact                                                       Skip package installation if the
-                                                                                    build artifact is missing. Enable
-                                                                                    this if artifacts are only being
-                                                                                    created for modified packages
-  -u, --targetorg=<value>                                                           (required) Alias/User Name of the
-                                                                                    target environment
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    where the artifact is located
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --skipifalreadyinstalled                                                          Skip the package installation if the
-                                                                                    package is already installed in the
-                                                                                    org
-
-DESCRIPTION
-  Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
-
-EXAMPLES
-  $ sfp package:data:install -n mypackage -u <org>
+COMMANDS
+  package:data:create   Creates a versioned artifact from a source directory containing SFDMU-based data (in csv format and export json). The artifact can be consumed by release pipelines, to deploy
+                        the data to orgs
+  package:data:install  Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/data/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/data/install.ts)
+## `sfp` package:source `--help`
 
-## `sfp package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>] [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-This task simulates a packaging experience similar to unlocked packaging - creating an artifact that consists of the metadata (e.g. commit Id), source code & an optional destructive manifest. The artifact can then be consumed by release pipelines, to deploy the package
+Commands to create and install sfpowerscripts source packages
 
 ```
 USAGE
-  $ sfp package:source:create -n <string> -v <string> [--artifactdir <directory>] [--diffcheck] [--branch <string>]
-    [--gittag] [-r <string>] [--refname <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts package:source:COMMAND
 
-FLAGS
-  -n, --package=<value>
-      (required) The name of the package
-
-  -r, --repourl=<value>
-      Custom source repository URL to use in artifact metadata, overrides origin URL defined in git config
-
-  -v, --versionnumber=<value>
-      (required) The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
-
-  --artifactdir=<value>
-      [default: artifacts] The directory where the artifact is to be written
-
-  --branch=<value>
-      The git branch that this build is triggered on, Useful for metrics and general identification purposes
-
-  --diffcheck
-      Only build when the package has changed
-
-  --gittag
-      Tag the current commit ID with an annotated tag containing the package name and version - does not push tag
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
-
-DESCRIPTION
-  This task simulates a packaging experience similar to unlocked packaging - creating an artifact that consists of the
-  metadata (e.g. commit Id), source code & an optional destructive manifest. The artifact can then be consumed by
-  release pipelines, to deploy the package
-
-EXAMPLES
-  $ sfp package:source:create -n mypackage -v <version>
-
-  $ sfp package:source:create -n <mypackage> -v <version> --diffcheck --gittag
-
-  Output variable:
-
-  sfpowerscripts_artifact_metadata_directory
-
-  <refname>_sfpowerscripts_artifact_metadata_directory
-
-  sfpowerscripts_artifact_directory
-
-  <refname>_sfpowerscripts_artifact_directory
-
-  sfpowerscripts_package_version_number
-
-  <refname>_sfpowerscripts_package_version_number
+COMMANDS
+  package:source:create   This task simulates a packaging experience similar to unlocked packaging - creating an artifact that consists of the metadata (e.g. commit Id), source code & an optional
+                          destructive manifest. The artifact can then be consumed by release pipelines, to deploy the package
+  package:source:install  Installs a sfpowerscripts source package to the target org
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/source/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/source/create.ts)
+## `sfp` package:unlocked `--help`
 
-## `sfp package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o] [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+Commands to create and install unlocked packages
 
-Installs a sfpowerscripts source package to the target org
+```
+COMMANDS
+  package:unlocked:create   Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact can then be consumed by release pipelines, to
+                            install the unlocked package. Utilize this task in a package build for DX Unlocked Package
+  package:unlocked:install  Installs an unlocked package using sfpowerscripts metadata
+```
+
+## `sfp` pool:metrics `--help`
+
+Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
 
 ```
 USAGE
-  $ sfp package:source:install -n <string> -u <string> [--artifactdir <directory>] [--skipifalreadyinstalled] [-s] [-o]
-    [-t] [--waittime <string>] [--refname <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:metrics:COMMAND
 
-FLAGS
-  -n, --package=<value>                                                             (required) Name of the package to be
-                                                                                    installed
-  -o, --optimizedeployment                                                          Optimize deployment by triggering
-                                                                                    test classes that are in the
-                                                                                    package, rather than using the whole
-                                                                                    tests in the org
-  -s, --skiponmissingartifact                                                       Skip package installation if the
-                                                                                    build artifact is missing. Enable
-                                                                                    this if artifacts are only being
-                                                                                    created for modified packages
-  -t, --skiptesting                                                                 Skips running test when deploying to
-                                                                                    a sandbox
-  -u, --targetorg=<value>                                                           (required) Alias/User Name of the
-                                                                                    target environment
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    where the artifact is located
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --refname=<value>                                                                 Reference name to be prefixed to
-                                                                                    output variables
-  --skipifalreadyinstalled                                                          Skip the package installation if the
-                                                                                    package is already installed in the
-                                                                                    org
-  --waittime=<value>                                                                [default: 120] wait time for command
-                                                                                    to finish in minutes
-
-DESCRIPTION
-  Installs a sfpowerscripts source package to the target org
-
-EXAMPLES
-  $ sfp package:source:install -n mypackage -u <org>
+COMMANDS
+  pool:metrics:publish  Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/source/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/source/install.ts)
+## `sfp` pool:metrics:publish `--help`
 
-## `sfp package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>] [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact can then be consumed by release pipelines, to install the unlocked package. Utilize this task in a package build for DX Unlocked Package
+Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
 
 ```
 USAGE
-  $ sfp package:unlocked:create -n <string> [-b] [-k <string> | -x] [--diffcheck] [--gittag] [-r <string>] [--versionnumber
-    <string>] [-f <filepath>] [--artifactdir <directory>] [--enablecoverage] [-s] [--branch <string>] [--tag <string>]
-    [--waittime <string>] [--refname <string>] [-v <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:metrics:publish -v <value> [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -b, --buildartifactenabled
-      Create a build artifact, so that this pipeline can be consumed by a release pipeline
-
-  -f, --configfilepath=<value>
-      [default: config/project-scratch-def.json] Path in the current project directory containing  config file for the
-      packaging org
-
-  -k, --installationkey=<value>
-      Installation key for this package
-
-  -n, --package=<value>
-      (required) ID (starts with 0Ho) or alias of the package to create a version of
-
-  -r, --repourl=<value>
-      Custom source repository URL to use in artifact metadata, overrides origin URL defined in git config
-
-  -s, --isvalidationtobeskipped
-      Skips validation of dependencies, package ancestors, and metadata during package version creation. Skipping
-      validation reduces the time it takes to create a new package version, but package versions created without
-      validation can’t be promoted.
-
-  -v, --targetdevhubusername=<value>
-      username or alias for the dev hub org; overrides default dev hub org
-
-  -x, --installationkeybypass
-      Bypass the requirement for having an installation key for this version of the package
-
-  --apiversion=<value>
-      override the api version used for api requests made by this command
-
-  --artifactdir=<value>
-      [default: artifacts] The directory where the artifact is to be written
-
-  --branch=<value>
-      The git branch that this build is triggered on, Useful for metrics and general identification purposes
-
-  --diffcheck
-      Only build when the package has changed
-
-  --enablecoverage
-      Please note this command takes a longer time to compute, activating this on every packaging build might not
-      necessary
-
-  --gittag
-      Tag the current commit ID with an annotated tag containing the package name and version - does not push tag
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
-
-  --tag=<value>
-      the package version's tag
-
-  --versionnumber=<value>
-      The format is major.minor.patch.buildnumber . This will override the build number mentioned in the
-      sfdx-project.json, Try considering the use of Increment Version Number task before this task
-
-  --waittime=<value>
-      [default: 120] wait time for command to finish in minutes
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
 
 DESCRIPTION
-  Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact
-  can then be consumed by release pipelines, to install the unlocked package. Utilize this task in a package build for
-  DX Unlocked Package
+  Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
 
 EXAMPLES
-  $ sfp package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --refname <name>
-
-  $ sfp package:unlocked:create -n <packagealias> -b -x -v <devhubalias> --diffcheck --gittag
-
-  Output variable:
-
-  sfpowerscripts_package_version_id
-
-  <refname>_sfpowerscripts_package_version_id
-
-  sfpowerscripts_artifact_metadata_directory
-
-  <refname>_sfpowerscripts_artifact_metadata_directory
-
-  sfpowerscripts_artifact_directory
-
-  <refname>_sfpowerscripts_artifact_directory
-
-  sfpowerscripts_package_version_number
-
-  <refname>_sfpowerscripts_package_version_number
+  $ sfpowerscripts pool:metrics:publish -v <myDevHub>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/unlocked/create.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/unlocked/create.ts)
+## `sfp` pool:org `--help`
 
-## `sfp package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Installs an unlocked package using sfpowerscripts metadata
+Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an administrator
 
 ```
 USAGE
-  $ sfp package:unlocked:install [-n <string>] [-u <string>] [-k <string>] [-a] [--artifactdir <directory>] [--securitytype
-    <string>] [-f] [-s ] [--upgradetype <string>] [--waittime <string>] [--publishwaittime <string>] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:org:COMMAND
 
-FLAGS
-  -a, --apexcompileonlypackage                                                      Each package installation triggers a
-                                                                                    compilation of apex, flag to trigger
-                                                                                    compilation of package only
-  -f, --skipifalreadyinstalled                                                      Skip the package installation if the
-                                                                                    package is already installed in the
-                                                                                    org
-  -k, --installationkey=<value>                                                     installation key for key-protected
-                                                                                    package
-  -n, --package=<value>                                                             Name of the package to be installed
-  -s, --skiponmissingartifact                                                       Skip package installation if the
-                                                                                    build artifact is missing. Enable
-                                                                                    this if artifacts are only being
-                                                                                    created for modified packages
-  -u, --targetorg=<value>                                                           Alias/User Name of the target
-                                                                                    environment
-  --artifactdir=<value>                                                             [default: artifacts] The directory
-                                                                                    where the artifact is located
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --publishwaittime=<value>                                                         [default: 10] number of minutes to
-                                                                                    wait for subscriber package version
-                                                                                    ID to become available in the target
-                                                                                    org
-  --securitytype=<option>                                                           [default: AllUsers] Select the
-                                                                                    security access for the package
-                                                                                    installation
-                                                                                    <options: AllUsers|AdminsOnly>
-  --upgradetype=<option>                                                            [default: Mixed] the upgrade type
-                                                                                    for the package installation
-                                                                                    <options:
-                                                                                    DeprecateOnly|Mixed|Delete>
-  --waittime=<value>                                                                [default: 120] wait time for command
-                                                                                    to finish in minutes
-
-DESCRIPTION
-  Installs an unlocked package using sfpowerscripts metadata
-
-EXAMPLES
-  $ sfp package:unlocked:install -n packagename -u sandboxalias -i
+COMMANDS
+  pool:org:delete  Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an
+                   adminsitrator
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/unlocked/install.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/unlocked/install.ts)
+## `sfp` pool:org:delete `--help`
 
-## `sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Increment the selected version counter by one and optionally commit changes to sfdx-project.json. This command does not push changes to the source repository
+Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an adminsitrator
 
 ```
 USAGE
-  $ sfp package:version:increment [--segment <string>] [-a -r <string>] [-n <string>] [-d <string>] [-c] [--refname <string>]
-    [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:org:delete -u <value> -v <value> [--apiversion <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -a, --appendbuildnumber
-      Set the build segment of the version number to the build number rather than incremenenting
-
-  -c, --commitchanges
-      Mark this if you want to commit the modified sfdx-project json, Please note this will not push to the repo only
-      commits in the local checked out repo, You would need to have a push to the repo at the end of the packaging task if
-      everything is successfull
-
-  -d, --projectdir=<value>
-      The directory should contain a sfdx-project.json for this command to succeed
-
-  -n, --package=<value>
-      The name of the package of which the version need to be incremented,If not specified the default package is utilized
-
-  -r, --runnumber=<value>
-      The build number of the CI pipeline, usually available through an environment variable
-
-  --json
-      format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
-      [default: info] logging level for this command invocation
-
-  --refname=<value>
-      Reference name to be prefixed to output variables
-
-  --segment=<option>
-      [default: BuildNumber] Select the segment of the version
-      <options: Major|Minor|Patch|BuildNumber>
+  -u, --requiredUserNameFlag=<value>  (required) Username or alias of the target org.
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>                Override the api version used for api requests made by this command
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
 
 DESCRIPTION
-  Increment the selected version counter by one and optionally commit changes to sfdx-project.json. This command does
-  not push changes to the source repository
+  Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an adminsitrator
 
 EXAMPLES
-  $ sfp package:version:increment --segment BuildNumber -n packagename -c
-
-  Output variable:
-
-  sfpowerscripts_incremented_project_version
-
-  <refname>_sfpowerscripts_incremented_project_version
+  $ sfpowerscripts pool:org:delete -u test-xasdasd@example.com -v devhub
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/package/version/increment.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/package/version/increment.ts)
-
-## `sfp pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` pool:delete `--help`
 
 Deletes the pooled scratch orgs from the Scratch Org Pool
 
 ```
 USAGE
-  $ sfp pool:delete -t <string> [-m] [-i | -a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:delete -v <value> [-t <value>] [-i | -a] [-o] [--apiversion <value>] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -a, --allscratchorgs                                                              Deletes all used and unused Scratch
-                                                                                    orgs from pool by the tag
-  -i, --inprogressonly                                                              Deletes all In Progress Scratch orgs
-                                                                                    from pool by the tag
-  -m, --mypool                                                                      Filter only Scratch orgs created by
-                                                                                    current user in the pool
-  -t, --tag=<value>                                                                 (required) tag used to identify the
-                                                                                    scratch org pool
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -a, --allscratchorgs                Deletes all used and unused Scratch orgs from pool by the tag
+  -i, --inprogressonly                Deletes all In Progress Scratch orgs from pool by the tag
+  -o, --orphans                       Recovers scratch orgs that were created by salesforce but were not tagged to sfpowerscripts due to timeouts etc.
+  -t, --tag=<value>                   tag used to identify the scratch org pool
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>                Override the api version used for api requests made by this command
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
 
 DESCRIPTION
   Deletes the pooled scratch orgs from the Scratch Org Pool
 
 EXAMPLES
-  $ sfp pool:delete -t core
+  $ sfpowerscripts pool:delete -t core
 
-  $ sfp pool:delete -t core -v devhub
+  $ sfpowerscripts pool:delete -t core -v devhub
+
+  $ sfpowerscripts pool:delete --orphans -v devhub
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/pool/delete.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/delete.ts)
-
-## `sfp pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` pool:fetch `--help`
 
 Gets an active/unused scratch org from the scratch org pool
 
 ```
 USAGE
-  $ sfp pool:fetch -t <string> [-a <string>] [-s <string>] [-d] [-v <string>] [--apiversion <string>] [--json]
-    [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ @dxatscale/sfpowerscripts pool:fetch -v <value> -t <value> [-a <value>] [-s <value>] [-d] [--nosourcetracking] [--apiversion <value>] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -a, --alias=<value>                                                               Fetch and set an alias for the org
-  -d, --setdefaultusername                                                          set the authenticated org as the
-                                                                                    default username that all commands
-                                                                                    run against
-  -s, --sendtouser=<value>                                                          Send the credentials of the fetched
-                                                                                    scratchorg to another DevHub user,
-                                                                                    Useful for situations when pool is
-                                                                                    only limited to certain users
-  -t, --tag=<value>                                                                 (required) (required) tag used to
-                                                                                    identify the scratch org pool
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -a, --alias=<value>                 Fetch and set an alias for the org
+  -d, --setdefaultusername            set the authenticated org as the default username that all commands run against
+  -s, --sendtouser=<value>            Send the credentials of the fetched scratchorg to another DevHub user, Useful for situations when pool is only limited to certain users
+  -t, --tag=<value>                   (required) (required) tag used to identify the scratch org pool
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>                Override the api version used for api requests made by this command
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --nosourcetracking                  Do not set source tracking while fetching the scratch org
 
 DESCRIPTION
   Gets an active/unused scratch org from the scratch org pool
@@ -1348,188 +713,124 @@ EXAMPLES
   $ sfdx sfpowerkit:pool:fetch -t core -v devhub -s testuser@test.com
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/pool/fetch.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/fetch.ts)
-
-## `sfp pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfp` pool:list `--help`
 
 Retrieves a list of active scratch org and details from any pool. If this command is run with -m|--mypool, the command will retrieve the passwords for the pool created by the user who is executing the command.
 
 ```
 USAGE
-  $ sfp pool:list [-t <string>] [-m] [-a] [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ @dxatscale/sfpowerscripts pool:list -v <value> [--json] [--apiversion <value>] [-t <value>] [-m] [-a] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -a, --allscratchorgs                Gets all used and unused Scratch orgs from pool
+  -m, --mypool                        Filter the tag for any additions created  by the executor of the command
+  -t, --tag=<value>                   tag used to identify the scratch org pool
+  -v, --targetdevhubusername=<value>  (required) Username or alias of the Dev Hub org.
+  --apiversion=<value>                Override the api version used for api requests made by this command
+  --loglevel=<option>                 [default: info] logging level for this command invocation
+                                      <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Retrieves a list of active scratch org and details from any pool. If this command is run with -m|--mypool, the command will retrieve the passwords for the pool created by the user who is executing
+  the command.
+
+EXAMPLES
+  $ sfpowerscripts pool:list -t core
+
+  $ sfpowerscripts pool:list -t core -v devhub
+
+  $ sfpowerscripts pool:list -t core -v devhub -m
+
+  $ sfpowerscripts pool:list -t core -v devhub -m -a
+```
+
+## `sfp` profile:reconcile `--help`
+
+This command is used in the lower environments such as ScratchOrgs , Development / System Testing Sandboxes, where a retrieved profile from production has to be cleaned up only for the metadata that is contained in the environment or base it only as per the metadata that is contained in the packaging directory.
+
+```
+USAGE
+  $ @dxatscale/sfpowerscripts profile:reconcile -u <value> [-f <value>] [-n <value>] [-d <value>] [-s] [--apiversion <value>] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -a, --allscratchorgs                                                              Gets all used and unused Scratch
-                                                                                    orgs from pool
-  -m, --mypool                                                                      Filter the tag for any additions
-                                                                                    created  by the executor of the
-                                                                                    command
-  -t, --tag=<value>                                                                 tag used to identify the scratch org
-                                                                                    pool
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -d, --destfolder=<value>      the destination folder for reconciled profiles, if omitted existing profiles will be reconciled and will be rewritten in the current location
+  -f, --folder=<value>...       path to the folder which contains the profiles to be reconciled,if project contain multiple package directories, please provide a comma seperated list, if omitted,
+                                all the package directories will be checked for profiles
+  -n, --profilelist=<value>...  list of profiles to be reconciled. If ommited, all the profiles components will be reconciled.
+  -s, --sourceonly              set this flag to reconcile profiles only against component available in the project only. Configure ignored perissions in sfdx-project.json file in the array
+                                plugins->sfpowerkit->ignoredPermissions.
+  -u, --targetorg=<value>       (required) Username or alias of the target org.
+  --apiversion=<value>          Override the api version used for api requests made by this command
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
 
 DESCRIPTION
-  Retrieves a list of active scratch org and details from any pool. If this command is run with -m|--mypool, the command
-  will retrieve the passwords for the pool created by the user who is executing the command.
+  This command is used in the lower environments such as ScratchOrgs , Development / System Testing Sandboxes, where a retrieved profile from production has to be cleaned up only for the metadata
+  that is contained in the environment or  base it only as per the metadata that is contained in the packaging directory.
 
 EXAMPLES
-  $ sfp pool:list -t core
+  $ sfpowerscripts profile:reconcile  --folder force-app -d destfolder -s
 
-  $ sfp pool:list -t core -v devhub
+  $ sfpowerscripts profile:reconcile  --folder force-app,module2,module3 -u sandbox -d destfolder
 
-  $ sfp pool:list -t core -v devhub -m
-
-  $ sfp pool:list -t core -v devhub -m -a
+  $ sfpowerscripts profile:reconcile  -u myscratchorg -d destfolder
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/pool/list.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/list.ts)
+## `sfp` releasedefinition:generate `--help`
 
-## `sfp pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms
+Generates release definition based on the artifacts installed from a commit reference
 
 ```
 USAGE
-  $ sfp pool:metrics:publish [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ @dxatscale/sfpowerscripts releasedefinition:generate -c <value> -f <value> -n <value> [-b <value>] [-d <value>] [--nopush] [--forcepush ] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -b, --branchname=<value>   Repository branch in which the release defintion files are to be written
+  -c, --gitref=<value>       (required) Utilize the tags on the source branch to generate release definiton
+  -d, --directory=<value>    Relative path to directory to which the release defintion file should be generated, if the directory doesnt exist, it will be created
+  -f, --configfile=<value>   (required) Path to the config file which determines how the release defintion should be generated
+  -n, --releasename=<value>  (required) Set a releasename on the release definition file created
+  --forcepush                Force push changes to the repository branch
+  --loglevel=<option>        [default: info] logging level for this command invocation
+                             <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --nopush                   Do not push the changelog to a repository to the provided branch
 
 DESCRIPTION
-  Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported
-  platforms
+  Generates release defintion based on the artifacts installed from a commit reference
 
 EXAMPLES
-  $ sfp pool:metrics:publish -v <myDevHub>
+  $ sfpowerscripts releasedefinition:generate -n <releaseName>
 ```
 
-_See code:_ [_src/commands/sfpowerscripts/pool/metrics/publish.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/metrics/publish.ts)
+## `sfp` repo:patch `--help`
 
-## `sfp pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to delete any active scratch org record or to be used by an adminsitrator
+\[Alpha] Patch a branch in the repository as per the release definition and create a new branch
 
 ```
 USAGE
-  $ sfp pool:org:delete -u <string> [-v <string>] [--apiversion <string>] [--json] [--loglevel
+  $ @dxatscale/sfpowerscripts repo:patch -p <value> -s <value> -t <value> [--scope <value> [--npm | -f <value>]] [--npmrcpath <value> ] [-g <value>] [--loglevel
     trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 FLAGS
-  -u, --username=<value>                                                            (required) Username of the
-                                                                                    scratchOrg to be deleted, not
-                                                                                    aliases
-  -v, --targetdevhubusername=<value>                                                username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
+  -f, --scriptpath=<value>             (Optional: no-NPM) Path to script that authenticates and downloads artifacts from the registry
+  -g, --logsgroupsymbol=<value>...     Symbol used by CICD platform to group/collapse logs in the console. Provide an opening group, and an optional closing group symbol.
+  -p, --releasedefinitions=<value>...  (required) Path to release definiton yaml
+  -s, --sourcebranchname=<value>       (required) Name of the source branch to be used on which the alignment need to be applied
+  -t, --targetbranchname=<value>       (required) Name of the target branch to be created after the alignment
+  --loglevel=<option>                  [default: info] logging level for this command invocation
+                                       <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --npm                                Download artifacts from a pre-authenticated private npm registry
+  --npmrcpath=<value>                  Path to .npmrc file used for authentication to registry. If left blank, defaults to home directory
+  --scope=<value>                      (required for NPM) User or Organisation scope of the NPM package
 
 DESCRIPTION
-  Deletes a particular scratch org in the pool, This command is to be used in a pipeline with correct permissions to
-  delete any active scratch org record or to be used by an adminsitrator
+  [Alpha] Patch a branch in the repository as per the release definition and create a new branch
 
 EXAMPLES
-  $ sfp pool:org:delete -u test-xasdasd@example.com -v devhub
-```
-
-_See code:_ [_src/commands/sfpowerscripts/pool/org/delete.ts_](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/pool/org/delete.ts)
-
-## `sfp releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Generates release defintion based on the artifacts installed in a org
-
-```
-USAGE
-  $ sfp releasedefinition:generate (-n <string> | -n <string>) [-b <string> --push] [--forcepush ] [-u <string>] [--apiversion
-    <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -b, --branchname=<value>                                                          Repository branch in which the
-                                                                                    release defintion files are to be
-                                                                                    written
-  -n, --changelogbranchref=<value>                                                  (required) Branch where
-                                                                                    releasechangelog.json exists, use
-                                                                                    when name should be auto generated
-  -n, --releasename=<value>                                                         (required) Name of the release
-                                                                                    definition file, ideally the same
-                                                                                    name generated by changelog
-  -u, --targetusername=<value>                                                      username or alias for the target
-                                                                                    org; overrides default target org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --forcepush                                                                       Force push changes to the repository
-                                                                                    branch
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-  --push                                                                            Push the changelog to a repository
-                                                                                    to the provided branch
-
-DESCRIPTION
-  Generates release defintion based on the artifacts installed in a org
-
-EXAMPLES
-  $ sfp releasedefinition:generate -n <releaseName>  -b <branchName> -u <org>
-```
-
-_See code:_ [_src/commands/sfpowerscripts/releasedefinition/generate._](https://github.com/dxatscale/sfpowerscripts/blob/v15.6.0/src/commands/sfpowerscripts/releasedefinition/generate.ts)
-
-## `sfp dependency:expand -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Expand dependency in sfdx-project.json
-
-```
-USAGE
-  $ sfp dependency:expand -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -v, --targetdevhubusername=<value>                                                dev hub alias or username
-  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file
-                                                                                    with expanded file
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-
-DESCRIPTION
-  Expand package dependencies in sfdx-project.json file
-
-EXAMPLES
-  $ sfp dependency:expand -v HubOrg  -o
-```
-
-## `sfp dependency:shrink -v <string> [-o ] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-Shrink dependency in sfdx-project.json
-
-```
-USAGE
-  $ sfp dependency:shrink -v <string> [-o ]  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -v, --targetdevhubusername=<value>                                                dev hub alias or username
-  -o, --overwrite                                                                   Overwritten exsiting SFDX-project.json file
-                                                                                    with shrank file
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: info] logging level for
-                                                                                    this command invocation
-
-DESCRIPTION
-  Shrink package dependencies in sfdx-project.json file
-
-EXAMPLES
-  $ sfp dependency:shrink -v HubOrg  -o
+  $ sfpowerscripts repo:patch -n <releaseName>
 ```
