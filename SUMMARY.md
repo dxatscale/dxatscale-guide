@@ -103,8 +103,14 @@
 ## sfops
 
 * [Overview](sfops/overview.md)
+* [Scheduled Jobs](sfops/scheduled-jobs/README.md)
+  * [Job - CI Sandbox - Creator](sfops/scheduled-jobs/job-ci-sandbox-creator.md)
+  * [Job - CI Sandbox - Allocate to Pool](sfops/scheduled-jobs/job-ci-sandbox-allocate-to-pool.md)
+  * [Jobs - Report results of all tests](sfops/scheduled-jobs/jobs-report-results-of-all-tests.md)
 * [Workflows](sfops/workflows/README.md)
+  * [Build, Test & Publish](sfops/workflows/build-test-and-publish.md)
   * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
+* [Developer Dashboard](sfops/developer-dashboard.md)
 * [IssueOps](sfops/issueops/README.md)
   * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)
   * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)
