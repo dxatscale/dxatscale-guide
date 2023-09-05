@@ -68,7 +68,7 @@ Avoid checking in the updated **"Account id"** file directly in your repository 
     \
 
 
-    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Metrics are meant to be reviewed and monitored to ensure the success of your CI/CD setup.  Ensure that the team is reviewing the dashboard frequently and identify issues across Scratch Org Creations, Deployments,
