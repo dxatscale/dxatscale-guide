@@ -103,8 +103,8 @@
 ## sfops
 
 * [sfops](sfops/sfops.md)
-* [Issue Templates](sfops/issue-templates/README.md)
-  * [Request a Developer Sandbox](sfops/issue-templates/request-a-developer-sandbox.md)
+* [IssueOps](sfops/issueops/README.md)
+  * [Request a Developer Sandbox](sfops/issueops/request-a-developer-sandbox.md)
 
 ## ⁉ faq
 
