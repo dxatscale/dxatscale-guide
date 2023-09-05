@@ -102,7 +102,9 @@
 
 ## sfops
 
-* [sfops](sfops/sfops.md)
+* [Overview](sfops/overview.md)
+* [Workflows](sfops/workflows/README.md)
+  * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
 * [IssueOps](sfops/issueops/README.md)
   * [Request a Developer Sandbox](sfops/issueops/request-a-developer-sandbox.md)
   * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)

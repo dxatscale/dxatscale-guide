@@ -1,0 +1,35 @@
+# Hotfix Workflow
+
+This document explains how the  "Build-hotfix" and "request-a-release-release-envs" GitHub workflows operate . These workflows automate the process of patching an existing release branch, releasing changes to STAGING and PROD environments, and handling hotfix builds respectively.
+
+### Hotfix Process
+
+#### Step 1: Patch the Release Branch
+
+Create an issue using the '[Request a release branch for hotfix](../issueops/request-a-release-branch-for-hotfix.md)' issue template in your repository
+
+#### Step 2: Create and Validate a Hotfix Pull Request
+
+Create a Pull Request against the newly created release branch with your hotfix changes. This change is validated against a CI-HOTFIX sandbox environment. Once the validation is successful and the changes have been peer-reviewed, the Pull Request can be merged.
+
+#### Step 3: Build and Cherry-Pick the Hotfix
+
+Upon merging the Pull Request, the "Build-hotfix" workflow will be executed. The workflow uses the respective release branch such as release/frameworks&#x20;
+
+This workflow will build and publish the updated packages to be included in the release. Additionally, an automated cherry-picker process will create a new Pull Request against the main branch with the hotfix changes.
+
+It's crucial to review this automated cherry-pick Pull Request on priority. The decision to merge or not depends on the change and what's currently in flight. This step ensures that the hotfix is also applied to the main branch, allowing the changes to persist in future releases.
+
+#### Step 4: Release to STAGING and PROD
+
+Once the hotfix is ready, you can manually trigger a release of the newly created release definition from the sfops-dev-dashboard  to release the hotfix to the STAGING and PROD environments.
+
+This will release the patched versions to STAGING and PROD environments, with the newly built hotfix included.
+
+Please note, if the STAGING environment is currently testing an inflight release, you might choose to skip the STAGING step and directly release the hotfix to the PROD environment.
+
+### Note:
+
+Always refer to the release definition file documentation at [dxatscale docs](https://docs.dxatscale.io/sfpowerscripts/release/release-definition-generator#release-config-file) for further information on how to configure the release.
+
+For more details on how to use sfpowerscripts, visit [sfpowerscripts documentation](https://docs.dxatscale.io/).
