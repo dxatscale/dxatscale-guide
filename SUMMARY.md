@@ -106,7 +106,7 @@
 * [Workflows](sfops/workflows/README.md)
   * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
 * [IssueOps](sfops/issueops/README.md)
-  * [Request a Developer Sandbox](sfops/issueops/request-a-developer-sandbox.md)
+  * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)
   * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)
 
 ## ⁉ faq
