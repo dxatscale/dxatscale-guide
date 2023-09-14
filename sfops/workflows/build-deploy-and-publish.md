@@ -14,7 +14,7 @@ sfops features prebuilt workflows that is deployed to your projects. These workf
 
 This workflow gets triggered on a merge to the `main` branch (or any other configured branches).&#x20;
 
-Upon merge, sfops computes the impacted domains (or release configs) and triggers the build-deploy-publish of each domain in parallel.  \
+Upon merge, sfops computes the impacted domains (or release configs) and triggers the build-deploy-publish of each domain in the sequence of impacted packages\
 \
 Within an individual build-deploy-publish cycle,   the following happens in sequence
 
