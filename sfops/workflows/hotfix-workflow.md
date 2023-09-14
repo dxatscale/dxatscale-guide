@@ -14,7 +14,7 @@ Create a Pull Request against the newly created release branch with your hotfix 
 
 #### Step 3: Build and Cherry-Pick the Hotfix
 
-Upon merging the Pull Request, the "Build-hotfix" workflow will be executed. The workflow uses the respective release branch such as release/frameworks&#x20;
+Upon merging the Pull Request, the ["Build, Deploy & Publish"](build-deploy-and-publish.md) workflow will be executed. The workflow uses the respective release branch that was created.
 
 This workflow will build and publish the updated packages to be included in the release. Additionally, an automated cherry-picker process will create a new Pull Request against the main branch with the hotfix changes.
 
