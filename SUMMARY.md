@@ -91,15 +91,6 @@
 * [Environment Variables](sfpowerscripts/environment-variables.md)
 * [Command Glossary](sfpowerscripts/command-glossary.md)
 
-## Release Management
-
-* [Releasing to an Environment](release-management/release-environment.md)
-* [Monitoring Releases](release-management/monrel.md)
-
-## Team Topology
-
-* [Team Structure and Roles](team-topology/team.md)
-
 ## sfops
 
 * [Overview](sfops/overview.md)
@@ -114,6 +105,15 @@
 * [IssueOps](sfops/issueops/README.md)
   * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)
   * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)
+
+## Release Management
+
+* [Releasing to an Environment](release-management/release-environment.md)
+* [Monitoring Releases](release-management/monrel.md)
+
+## Team Topology
+
+* [Team Structure and Roles](team-topology/team.md)
 
 ## ⁉ faq
 

@@ -6,16 +6,13 @@ A release is a set of packages (or artifacts) and their dependencies being deplo
 [release](../sfpowerscripts/release/)
 {% endcontent-ref %}
 
-DX@Scale is typically applied to enterprise development, where you have **major releases**, which can be either a combination of a couple or more sprints, usually developed in the trunk and run through various stages of testing before hitting production or **minor release (quick release),** which is changes to say a layout or a hotfix and have a fast-tracked release process.
-
-Assuming you are following the release model mentioned below, there will be artifacts that are generated from the trunk (dev channel) which will be tested in the day-to-day cycle, and once it is satisfactorily tested, a release branch is cut to release to production. Please check the [branching model ](../source-code-management/branching-model/)and [environment strategy](../environment-management/env-strategy.md) to understand it further.
+Assuming you are following the release model described the environment strategy below, there will be artifacts that are generated from the trunk (dev channel) which will be tested in the day-to-day cycle, and once it is satisfactorily tested, the release candidate (defined by the [release definition ](../sfpowerscripts/release/release-defn-generator.md)) can be promoted to the release channel
 
 ![](../.gitbook/assets/environment-strategy-revised.png)
 
-For every major release, we ask you to define an individual release definition file, the release definition should have the name of the release and a list of the packages that are planned during the phase. The release definition will typically have the artifacts pointing to the **LATEST\_TAG** (implies that it utilizes the latest git tags filtered to the branch if the release definition exists on the same branch as of the code base)
+A release candidate  is generated automatically by the release definition generator at the end of the publish job. The release definition will typically have the artifacts pointing to the versions of packages at that point in time. These candidates compose of artifacts from the trunk (main) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.
 
-1. **Releases from the dev channel** These are releases composed of artifacts from the trunk (main) and is quite frequent, often multiple times throughout a day. The release pipelines could be designed to be either on a scheduled interval or could be triggered on demand as required.
-2. **Releases from the release channel** Once release is cut from a particular commit id from the develop branch, the release definition based on **LATEST\_TAG** or **exact version** is utilized to form the release. The release pipelines are triggered on demand.
+To release to the environments in the release channel, the release command is triggered by selecting the release candidate and providing it to the release commands.
 
 ## Activities during a Release to non-prod environment
 
