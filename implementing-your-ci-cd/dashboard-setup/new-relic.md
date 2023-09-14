@@ -30,7 +30,7 @@
 6.  Copy the **key** from the new "**Ingest - Licence"** and create a variable in your pipeline labeled "`SFPOWERSCRIPTS_NEWRELIC_API_KEY`" and assign the value of the key.  Ensure to mask this value.\
 
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Sample GitLab Variable for New Relic API Key</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Sample GitLab Variable for New Relic API Key</p></figcaption></figure>
 7.  Add another additional variable named "SFPOWERSCRIPTS\_NEWRELIC" and set the value to "**true**". \
 
 
@@ -68,7 +68,7 @@ Avoid checking in the updated **"Account id"** file directly in your repository 
     \
 
 
-    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Metrics are meant to be reviewed and monitored to ensure the success of your CI/CD setup.  Ensure that the team is reviewing the dashboard frequently and identify issues across Scratch Org Creations, Deployments,

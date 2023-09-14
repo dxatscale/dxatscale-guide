@@ -61,9 +61,8 @@ Alternatively, if you are experimenting in a Developer Edition Org or a Producti
     * [ ] [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)​​
 * [ ] ​[git](https://git-scm.com)​
 * [ ] ​[Salesforce CLI](https://www.npmjs.com/package/sfdx-cli)
-* [ ] [Node.js](https://nodejs.org/en/download/)
-* [ ] [​sfpowerkit Plugin](https://github.com/dxatscale/sfpowerkit)​
-* [ ] [​sfpowerscripts Plugin](https://github.com/dxatscale/sfpowerscripts)​
+* [ ] [Node.js](https://nodejs.org/en/download/)​
+* [ ] [​sfpowerscripts​](https://www.npmjs.com/package/@dxatscale/sfpowerscripts)
 * [ ] ​[SFDX-Data-Move-Utility (SFDMU) Plugin](https://github.com/forcedotcom/SFDX-Data-Move-Utility)​
 
 ## Salesforce Reference Documentation <a href="#dashboard-platform" id="dashboard-platform"></a>
