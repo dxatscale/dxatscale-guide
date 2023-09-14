@@ -8,7 +8,7 @@ sfops features prebuilt workflows that is deployed to your projects. These workf
 \
 
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
