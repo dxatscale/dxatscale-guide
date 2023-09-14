@@ -101,7 +101,6 @@
 * [Workflows](sfops/workflows/README.md)
   * [Build, Deploy & Publish](sfops/workflows/build-deploy-and-publish.md)
   * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
-* [Developer Dashboard](sfops/developer-dashboard.md)
 * [IssueOps](sfops/issueops/README.md)
   * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)
   * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)
