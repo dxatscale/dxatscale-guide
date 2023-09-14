@@ -1,12 +1,20 @@
 # Hotfix Workflow
 
-This document explains how the  "Build-hotfix" and "request-a-release-release-envs" GitHub workflows operate . These workflows automate the process of patching an existing release branch, releasing changes to STAGING and PROD environments, and handling hotfix builds respectively.
+This section explains how a hotfix if required  could be applied in the context of sfops. These workflows automate the process of patching an existing release branch, and could be used for an accelerated delivery to release changes to **RELEASE** environments\
+
+
+{% hint style="danger" %}
+Please note hotfix is an anti pattern and should not be used. We have kept this feature for teams who are on their journey to continuously deploying
+{% endhint %}
 
 ### Hotfix Process
 
-#### Step 1: Patch the Release Branch
+#### Step 1:  Activate Apply a Patch action  in sfops dashboard&#x20;
 
-Create an issue using the '[Request a release branch for hotfix](../issueops/request-a-release-branch-for-hotfix.md)' issue template in your repository
+\
+\
+\
+
 
 #### Step 2: Create and Validate a Hotfix Pull Request
 

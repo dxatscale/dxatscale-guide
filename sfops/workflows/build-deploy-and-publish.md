@@ -4,7 +4,7 @@ description: CI Pipeline
 
 # Build, Deploy & Publish
 
-sfops features prebuilt workflows that is deployed to your projects. These workflows follow roughly the prescribed environment strategy mentioned in DX@Scale docs, at the same time it is slightly different. The below sections details the workflow on how a **Release Candidate** gets created upon every merge.\
+sfops features prebuilt workflows that is deployed to your projects. These workflows follow roughly the prescribed environment strategy mentioned in DX@Scale docs, at the same time it is slightly different. The below sections details the workflow on how a **Release Candidate** gets created upon every merge and how built packages are deployed to **TEST** environments\
 \
 
 
