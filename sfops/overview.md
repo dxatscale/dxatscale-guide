@@ -30,6 +30,3 @@ sfops utilize the concept of IssueOps, where the ops activities are carried out 
 
 
 
-
-
-<figure><img src="../.gitbook/assets/initiate-release_v2 (1).gif" alt=""><figcaption><p>Initiating a release in sfops</p></figcaption></figure>
