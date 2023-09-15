@@ -100,6 +100,7 @@
   * [Jobs - Report results of all tests](sfops/scheduled-jobs/jobs-report-results-of-all-tests.md)
 * [Workflows](sfops/workflows/README.md)
   * [Build, Deploy & Publish](sfops/workflows/build-deploy-and-publish.md)
+  * [Release a Domain](sfops/workflows/release-a-domain.md)
   * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
 * [IssueOps](sfops/issueops/README.md)
   * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)

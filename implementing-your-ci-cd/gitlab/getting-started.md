@@ -60,7 +60,7 @@ Project Access Tokens are only supported on self-managed instances on Free Tier 
 6. Click on the **Create project access token** button
 7. Save the **project access token value** to be used in subsequent steps in the project variable steps.
 
-![](<../../.gitbook/assets/image (2) (1) (1).png>)
+![](<../../.gitbook/assets/image (2) (1) (1) (1).png>)
 
 ![](<../../.gitbook/assets/image (11) (1).png>)
 

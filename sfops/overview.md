@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# sfops
+# Overview
 
 {% hint style="info" %}
 sfops is currently available only to sponsors who use Github as their CI/CD platform. If you want more information on sfops, contact the #maintainers on DX@Scale channel
@@ -20,7 +20,7 @@ sfops is currently available only to sponsors who use Github as their CI/CD plat
 
 sfops is a collection of reusable  Github Actions, Reusable Workflows along with a Github pages based dashboad which aims to convert your Github Repo for Salesforce into a control centre for DX@Scale.
 
-sfops utilize the concept of IssueOps, where the administration of ops activities are carried out by a user by creating an issue.
+sfops utilize the concept of IssueOps, where the ops activities are carried out by a user by creating an issue. sfops accelerates the adoption of DX@Scale within your project  and make it friendly for users who are familiar with other ClickOps solution.
 
 
 
@@ -32,4 +32,4 @@ sfops utilize the concept of IssueOps, where the administration of ops activitie
 
 
 
-<figure><img src="../.gitbook/assets/initiate-release_v2.gif" alt=""><figcaption><p>Initiating a release in sfops</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/initiate-release_v2 (1).gif" alt=""><figcaption><p>Initiating a release in sfops</p></figcaption></figure>
