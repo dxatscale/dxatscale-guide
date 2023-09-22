@@ -33,6 +33,8 @@ EXAMPLES
 
 ## Building a Pool of Scratch Orgs
 
+
+
 As you try to automate more of your business processes in Salesforce, you cannot avoid adding third party managed packages as a dependency to your configuration metadata and code in your repository. The time required to spin up a just-in-time CI scratch org or even a developer environment (one need to run data loading scripts, assign permission sets etc.) would increase and the value of scratch org diminishes, as teams find it cumbersome.
 
 Scratch org pools pre-installed with managed packages along with your custom configuration and code and required test data from your repository will significantly enhance the developer experience.
@@ -63,9 +65,13 @@ The prepare command does the following sequence of activities:
 
 ## **Using pre-existing artifacts in Scratch Org Pools**
 
+
+
 Building packages from source code during pooling takes a considerable amount of time, and there could be situations where the latest head is broken. Hence, we recommend using the last-known successful build from the artifact repository. When the `installall` and `fetchArtifacts` configurations are specified, the user can either use **NPM** to fetch artifacts or define the path to a shell script containing the logic for fetching artifacts from a registry.
 
-{% hint style="info" %}
+{% hint style="warning" %}
+Please ensure you have a set of published packages, before proceeding to prepare a pool of scratch orgs. If you don't want use existing artifacts, and want to build during prepare,  please remove fetchArtifacts from your pool config\
+\
 If the `installall` configuration is specified without`fetchArtifacts`, then new packages will be built, from the checked-out source code, and installed in the scratch orgs.
 {% endhint %}
 

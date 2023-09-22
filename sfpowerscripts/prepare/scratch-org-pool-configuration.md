@@ -19,6 +19,7 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
 | installAll                          | boolean | Install all package artifacts, in addition to the managed package dependencies                                        |
 | releaseConfigFile                   | string  | Path to a release config file to create pools with selected packages. Use in conjunction with installAll              |
 | enableSourceTracking                | boolean | Enable source tracking by deploying packages using source:push and persisting source tracking files                   |
+| disableSourcePackageOverride        | boolean | Disable overriding unlocked packages as source packages, Rather  install unlocked packages as unlocked                |
 | relaxAllIPRanges                    | boolean | Relax all IP addresses, allowing all global access to scratch orgs                                                    |
 | ipRangesToBeRelaxed                 | array   | Range of IP addresses that can access the scratch orgs                                                                |
 | retryOnFailure                      | boolean | Retry installation of a package on a failed deployment                                                                |
