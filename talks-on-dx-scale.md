@@ -11,6 +11,11 @@ The power of integrated development environments&#x20;
 {% endembed %}
 
 
+{% embed url="https://m.youtube.com/watch?v=oCXM-2yPW2g&t=21s" %}
+DX@Scale at Valantic - When click meets code!&#x20;
+{% endembed %}
+
+
 
 {% embed url="https://www.youtube.com/watch?v=8wZhzA21Ee0" %}
 Data Innovation Forum - October 26, 2022
