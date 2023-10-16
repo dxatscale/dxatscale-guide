@@ -1,5 +1,13 @@
 # Environment Strategy
 
+
+
+{% hint style="info" %}
+This document is being updated to reflect new approaches. To discuss more head over to [dxatscale slack channel](https://launchpass.com/dxatscale)
+{% endhint %}
+
+\
+\
 One of the key tenants of DX@Scale is a simplified environment strategy that is based on these principles
 
 * Any org should be able to be recreated using artifacts and associated run books (if required)
