@@ -5,18 +5,6 @@
 * [Talks on DX@Scale](talks-on-dx-scale.md)
 * [Principles](principles.md)
 
-## 🧬 Source Code Management
-
-* [Repository Structure](source-code-management/repository-structure.md)
-* [Branching Model](source-code-management/branching-model/README.md)
-  * [Feature Toggling](source-code-management/branching-model/feature-toggling.md)
-  * [Branching Conventions](source-code-management/branching-model/branching-conventions.md)
-
-## ♾ CI/CD
-
-* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
-* [Artifacts](ci-cd/artifacts.md)
-
 ## 💞 Implementing your CI-CD
 
 * [Audience](implementing-your-ci-cd/github.md)
@@ -37,6 +25,18 @@
   * [New Relic](implementing-your-ci-cd/dashboard-setup/new-relic.md)
   * [Data Dog](implementing-your-ci-cd/dashboard-setup/data-dog.md)
   * [Splunk](implementing-your-ci-cd/dashboard-setup/splunk.md)
+
+## 🧬 Source Code Management
+
+* [Repository Structure](source-code-management/repository-structure.md)
+* [Branching Model](source-code-management/branching-model/README.md)
+  * [Feature Toggling](source-code-management/branching-model/feature-toggling.md)
+  * [Branching Conventions](source-code-management/branching-model/branching-conventions.md)
+
+## ♾ CI/CD
+
+* [A Typical CI/CD Pipeline](ci-cd/a-typical-ci-cd-pipeline.md)
+* [Artifacts](ci-cd/artifacts.md)
 
 ## 🏗 Development Practices
 
