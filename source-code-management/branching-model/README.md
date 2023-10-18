@@ -42,7 +42,7 @@ The best plan of action to handle concurrent release strategy is not to handle i
 
 If the components that are being developed, could be segmented into a new package and ensuring the package doesn't get deployed is an alternate option to using branches in version control.
 
-**3. Feature Toggling**
+### 3. Feature Toggling
 
 Read more about how feature toggling could be applied in Salesforce development in the [next section](feature-toggling.md)
 
