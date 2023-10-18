@@ -16,5 +16,16 @@ When sandbox pools are used in the context of DX@Scale  Validation workflow, the
 
 
 
-We recommend only to use half of your total sandbox capacity as the maximum count of available sandboxes when determining the pool allocation and then allocating to each pool accordingly, as sandboxes can be only recycled every 24 hours.
+We recommend only to use half of your total sandbox capacity as the maximum count of available sandboxes when determining the pool allocation and then allocating to each pool accordingly, as sandboxes can be only recycled every 24 hours.\
+\
+Continue reading more on Sandbox Pooling workflows in [sfops](broken-reference) here\
+
+
+{% content-ref url="../sfops/scheduled-jobs/job-ci-sandbox-creator.md" %}
+[job-ci-sandbox-creator.md](../sfops/scheduled-jobs/job-ci-sandbox-creator.md)
+{% endcontent-ref %}
+
+{% content-ref url="../sfops/scheduled-jobs/job-ci-sandbox-allocate-to-pool.md" %}
+[job-ci-sandbox-allocate-to-pool.md](../sfops/scheduled-jobs/job-ci-sandbox-allocate-to-pool.md)
+{% endcontent-ref %}
 

@@ -54,7 +54,7 @@
 * [Developer Environments](environment-management/developer-environments.md)
 * [CI Environments](environment-management/ci-environments.md)
 * [Pooling Scratch Orgs](environment-management/pooling-scratch-orgs.md)
-* [Pooling Sandboxes](environment-management/pooling-sandboxes.md)
+* [Pooling Sandboxes](environment-management/pooling-scratch-orgs-1.md)
 * [Refreshing Sandboxes](environment-management/refreshing-sandboxes.md)
 
 ## sfpowerscripts
