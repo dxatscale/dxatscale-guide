@@ -3,7 +3,7 @@
 
 
 {% hint style="info" %}
-This secton is being updated to reflect newer approaches. To discuss on these aspects,  head over to [dxatscale slack channel](https://launchpass.com/dxatscale)
+This section is being updated to reflect newer approaches. To discuss on these aspects,  head over to [dxatscale slack channel](https://launchpass.com/dxatscale)
 {% endhint %}
 
 \
