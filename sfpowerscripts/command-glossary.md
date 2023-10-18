@@ -1,5 +1,5 @@
 ---
-description: '@dxatscale/sfpowerscripts/23.4.2 darwin-arm64 node-v20.3.1'
+description: '@dxatscale/sfpowerscripts/25.0.6 linux-x64 node-v18.18.2'
 ---
 
 # Command Glossary
@@ -16,7 +16,7 @@ To list all the commands for sfpowerscripts, enter the following in your termina
 DX@Scale Toolkit
 
 VERSION
-  @dxatscale/sfpowerscripts/23.4.2 darwin-arm64 node-v20.3.1
+   @dxatscale/sfpowerscripts/25.0.6 linux-x64 node-v18.18.2
 
 USAGE
   $ @dxatscale/sfpowerscripts [COMMAND]
@@ -578,7 +578,7 @@ USAGE
 COMMANDS
   package:data:create   Creates a versioned artifact from a source directory containing SFDMU-based data (in csv format and export json). The artifact can be consumed by release pipelines, to deploy
                         the data to orgs
-  package:data:install  Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
+  package:data:install  (DEPRECATED) Installs a SFDMU-based data package consisting of csvfiles and export.json to a target org
 ```
 
 ## `sfp` package:source `--help`
@@ -592,7 +592,7 @@ USAGE
 COMMANDS
   package:source:create   This task simulates a packaging experience similar to unlocked packaging - creating an artifact that consists of the metadata (e.g. commit Id), source code & an optional
                           destructive manifest. The artifact can then be consumed by release pipelines, to deploy the package
-  package:source:install  Installs a sfpowerscripts source package to the target org
+  package:source:install  (DEPRECATED) Installs a sfpowerscripts source package to the target org
 ```
 
 ## `sfp` package:unlocked `--help`
@@ -603,7 +603,7 @@ Commands to create and install unlocked packages
 COMMANDS
   package:unlocked:create   Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact can then be consumed by release pipelines, to
                             install the unlocked package. Utilize this task in a package build for DX Unlocked Package
-  package:unlocked:install  Installs an unlocked package using sfpowerscripts metadata
+  package:unlocked:install  (DEPRECATED) Installs an unlocked package using sfpowerscripts metadata
   
 ```
 
