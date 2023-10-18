@@ -65,6 +65,7 @@ TOPICS
 |                                                           | [package:data](command-glossary.md#sfp-package-data-help)                                       | Commands to create and install data packages (sfdmu)                                                                                                                                                                                                                                                                     |
 |                                                           | [package:source](command-glossary.md#sfp-package-source-help)                                   | Commands to create and install sfpowerscripts source packages                                                                                                                                                                                                                                                            |
 |                                                           | [package:unlocked](command-glossary.md#sfp-package-unlocked-help)                               | Commands to create and install unlocked packages                                                                                                                                                                                                                                                                         |
+|                                                           | [package:install](command-glossary.md#sfp-package-install-help)                                 | Unified command to install any sfpowerscripts  packages/artifacts                                                                                                                                                                                                                                                        |
 | pool                                                      |                                                                                                 | Manage the pooled orgs created by the sfpowerscripts orchestrator in prepare stage                                                                                                                                                                                                                                       |
 | [pool:metrics](command-glossary.md#sfp-pool-metrics-help) |                                                                                                 | Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms                                                                                                                                                                                                |
 |                                                           | [pool:metrics:publish](command-glossary.md#sfp-pool-metrics-publish-help)                       | Publish metrics about scratch org pools to your observability platform, via StatsD or direct APIs for supported platforms                                                                                                                                                                                                |
@@ -603,7 +604,47 @@ COMMANDS
   package:unlocked:create   Creates a new package version, and generates an artifact that consists of the metadata (e.g. version Id). The artifact can then be consumed by release pipelines, to
                             install the unlocked package. Utilize this task in a package build for DX Unlocked Package
   package:unlocked:install  Installs an unlocked package using sfpowerscripts metadata
+  
 ```
+
+## `sfp package:install --help`
+
+Unified command to install any type of sfp package individually to a given org
+
+```
+Installs a sfpowerscripts artifact to an org
+
+USAGE
+  $ @dxatscale/sfpowerscripts package:install -u <value> [-n <value>] [--artifactdir <value>] [--securitytype full|none] [-f] [--upgradetype
+    delete-only|deprecate-only|mixed-mode] [-o] [-t] [--waittime <value>] [--publishwaittime <value>] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -f, --skipifalreadyinstalled  Skip the installation if the package is already installed in the org
+  -n, --package=<value>         Name of the package to be installed
+  -o, --optimizedeployment      (source) Optimize deployment by triggering test classes that are in the package, rather than using the whole
+                                tests in the org
+  -t, --skiptesting             (source) Skips running test when deploying to a sandbox
+  -u, --targetorg=<value>       (required) Username or alias of the target org.
+  --artifactdir=<value>         [default: artifacts] The directory where the artifact is located
+  --loglevel=<option>           [default: info] logging level for this command invocation
+                                <options: trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL>
+  --publishwaittime=<value>     [default: 10] (unlocked) number of minutes to wait for subscriber package version ID to become available in the
+                                target org
+  --securitytype=<option>       [default: none] (unlocked) Select the security access for the package installation
+                                <options: full|none>
+  --upgradetype=<option>        [default: mixed-mode] (unlocked)the upgrade type for the package installation
+                                <options: delete-only|deprecate-only|mixed-mode>
+  --waittime=<value>            [default: 120] wait time for command to finish in minutes
+
+DESCRIPTION
+  Installs a sfpowerscripts artifact to an org
+
+EXAMPLES
+  $ sfp package:install -n packagename -u sandboxalias -i
+```
+
+##
 
 ## `sfp` pool:metrics `--help`
 
