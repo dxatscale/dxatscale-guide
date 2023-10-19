@@ -95,6 +95,7 @@
 
 * [Overview](sfops/overview.md)
 * [Environments](sfops/environments/README.md)
+  * [Creating an Environment](sfops/environments/creating-an-environment.md)
   * [Authenticating to Environments](sfops/environments/authenticating-to-environments.md)
 * [Scheduled Jobs](sfops/scheduled-jobs/README.md)
   * [Job - CI Sandbox - Creator](sfops/scheduled-jobs/job-ci-sandbox-creator.md)
