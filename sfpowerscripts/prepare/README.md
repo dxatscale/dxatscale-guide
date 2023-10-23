@@ -100,6 +100,28 @@ az artifacts universal download --feed myfeed --name $1 --version $2 --path $3 \
     --organization "https://dev.azure.com/myorg/" --project myproject --scope project
 ```
 
+## Using Scratch Orgs with Org Shape
+
+To take all advantages from DX@Scale and be compliant with your current org, you can use the Org Shape feature, but when you do it you need to add an extra parameter on your scratch-def.json which is the **Security Settings > Password Policies > Minimum Password Lifetime = FALSE**.
+
+The reason behind this need, is because when you spin a Scratch Org with Org Shape that feature will be TRUE (no matter how your source org is configured or not), and it will break your pipeline during the password reset process which DX@Scale uses. This issue is affected only with Org Shape feature.
+
+```bash
+{
+    "orgName": "DX@Scale Demo Org,
+    "sourceOrg": "00DB123w0400Ifx5",
+    "settings": {
+        "securitySettings": {
+            "passwordPolicies": {
+                "minimumPasswordLifetime": false
+            }
+        }
+    }
+}
+```
+
+##
+
 ## Selective Deployment of Packages
 
 In scenarios such as multiple teams working on respective domains independently, one would like to have pools created with a selection of packages as opposed to every package in the repo. sfpowerscripts support the ability to create scratch org pools by limiting the packages deployed using a [release config file.](../release/release-config.md#release-config-file) Scratch Orgs prepared using this mechanism then could be used in validation with **fastfeedback-release-config** and **thorough-release-config** modes. Follow the link here for more instructions on [validate modes](../validate.md#validate-modes).
