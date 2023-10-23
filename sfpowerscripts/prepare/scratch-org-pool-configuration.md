@@ -81,7 +81,7 @@ The `orchestrator:prepare` command accepts a JSON configuration file that define
 // Pool Configuration with releaseConfigFile
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/dxatscale/sfpowerscripts/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dxatscale/sfpowerscripts/main/packages/core/resources/pooldefinition.schema.json",
   "tag": "cipool-release",
    "maxAllocation": 4,
    "expiry": 2,
