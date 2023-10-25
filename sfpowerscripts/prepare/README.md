@@ -35,7 +35,7 @@ EXAMPLES
 
 
 
-As you try to automate more of your business processes in Salesforce, you cannot avoid adding third party managed packages as a dependency to your configuration metadata and code in your repository. The time required to spin up a just-in-time CI scratch org or even a developer environment (one need to run data loading scripts, assign permission sets etc.) would increase and the value of scratch org diminishes, as teams find it cumbersome.
+As you try to automate more of your business processes in Salesforce, you cannot avoid adding third party managed packages as a dependency to your configuration metadata and code in your repository. The time required to spin up a just-in-time CI scratch org or even a developer environment (for tasks such as data loading scripts, assign permission sets etc.) would increase and the value of scratch org diminishes, as teams find it cumbersome.
 
 Scratch org pools pre-installed with managed packages along with your custom configuration and code and required test data from your repository will significantly enhance the developer experience.
 
@@ -56,7 +56,7 @@ The prepare command does the following sequence of activities:
    * Install SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE (04t1P000000ka9mQAA) for keeping track of all the packages which will be installed in the org. You can set an environment variable SFPOWERSCRIPTS\_ARTIFACT\_PACKAGE to override the installation with your own package id (the source code is available [here](https://github.com/dxatscale/sfpowerscripts-artifact))
    * Install all the dependencies of your packages, such as managed packages that are marked as dependencies in your sfdx-project.json
    * Install all the artifacts that is either built/fetched
-   * If `enableSourceTracking` is specified in the configuration, the command will create and deploy "sourceTrackingFiles" using sfpowerscripts artifacts to the scratch org. To store local source tracking files, we re-create it when fetching a scratch org from a pool, using the [@salesforce/source-tracking](https://github.com/forcedotcom/source-tracking) library. Checkout the commit from which each sfpowerscripts artifact was created, and update the local source tracking using the package directory. The files are retrieved to the local ".sfdx" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking. Refer to the [decision log](https://github.com/dxatscale/sfpowerscripts/blob/main/decision%20records/prepare/001-prepare-source-tracking.md) for more details.
+   * If `enableSourceTracking` is specified in the configuration, the command will create and deploy "sourceTrackingFiles" using sfpowerscripts artifacts to the scratch org. To store local source tracking files, we re-create it when fetching a scratch org from a pool, using the [@salesforce/source-tracking](https://github.com/forcedotcom/source-tracking) library. Checkout the commit from which each sfpowerscripts artifact was created, and update the local source tracking using the package directory. The files are retrieved to the local ".sf" directory, when using `sfpowerscripts:pool:fetch` to fetch a scratch org, and allows users to deploy their changes only, through source tracking. Refer to the [decision log](https://github.com/dxatscale/sfpowerscripts/blob/main/decision%20records/prepare/001-prepare-source-tracking.md) for more details.
 5. **Mark each completed scratch org as "Available", depending on the pool config \`succeedOnDeploymentErrors\` is true, else scratch orgs are deleted**
 
 {% hint style="warning" %}
@@ -177,7 +177,7 @@ When [Free Limited Access Licenses](https://developer.salesforce.com/docs/atlas.
 {% endhint %}
 
 {% hint style="info" %}
-Please check the pre-requisites to learn more about and the steps required to enable pooling in your DevHub
+Please check the [pre-requisites](../../implementing-your-ci-cd/getting-started/getting-started-1.md) to learn more about and the steps required to enable pooling in your DevHub
 {% endhint %}
 
 ## Managing Package Dependencies
@@ -217,7 +217,7 @@ The Prepare command has inbuilt capability to orchestrate installation of extern
       ]
     }
   ],
-  "sourceApiVersion": "55.0",
+  "sourceApiVersion": "59.0",
   "packageAliases": {
     "TriggerFramework": "0HoB00000004RFpLAM",
     "Expense Manager - Util": "0HoB00000004CFpKAM",
