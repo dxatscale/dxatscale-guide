@@ -1,32 +1,36 @@
 ---
-description: Published on March 11, 2021 by Vu Ha
+description: Originally Published on March 11th, 2021 by Vu Ha
 ---
 
 # Version Controlling Profiles and Why It Makes Sense for Deployments?
 
+
+
+{% hint style="success" %}
+Updated on October 24th, 2023 to reflect deprecated sfpowerkit and commands being merged into [sfpowerscripts](https://github.com/dxatscale/sfpowerscripts) (sfp).  Also, all previous "sfdx" commands now have been updated to their new "sf" commands to reflect the push from the [forcedotcom/cli](https://github.com/forcedotcom/cli) team's unification effort.
+{% endhint %}
+
 Profiles have long been a sore spot for Salesforce professionals to deploy, manage, and keep in sync across all environments. Although Salesforce is pushing to move to a more **Permission Set/Permission Set Group** centric model to customers, the truth is that Profiles, for most organizations, are not going to go away any time soon. Profiles serve as the security foundation to define what users can have access to within the Salesforce application as well as to core system permissions. There are still a handful of features such as **Default Record Type, Page Layouts, Login Hours & IP Ranges** that can only be configured through Profiles and not available through Permission sets. As a result, this is the one of the reasons why Profiles will continue to be a mainstay feature to your overall Security Design in Salesforce.
 
-Due to the ease of point-and-click configuration in Salesforce, adding or removing permissions for a Profile is simple. It's managing a constant influx of changes during each sprint or release, across multiple environments that make Profiles a nightmare for most companies to manage. There are many commercial DevOps tools and ISV Managed Packages in the market place that seek to provide insights and visibility to Profile discrepancies across environments. Some of these tools also have in addition to comparison features, their own native solution to synchronize the changes. From my experience, another option to handle this is through source control, source packaging via SFDX and open source cli plugin extensions.
+{% hint style="danger" %}
+End of life (EOL) of permissions on profiles is scheduled for the [Spring ’26 release](https://admin.salesforce.com/blog/2023/permissions-updates-learn-moar-spring-23).  Although Salesforce is known to move dates on GA releases, at least we know the end is near, finally!
+{% endhint %}
+
+Due to the ease of point-and-click configuration in Salesforce, adding or removing permissions for a Profile is simple. It's managing a constant influx of changes during each sprint or release, across multiple environments that make Profiles a nightmare for most companies to manage. There are many commercial DevOps tools and ISV Managed Packages in the market place that seek to provide insights and visibility to Profile discrepancies across environments. Some of these tools also have in addition to comparison features, their own native solution to synchronize the changes. From my experience, another option to handle this is through source control, source packaging via SFDX and open source cli commands.
 
 Organizing your metadata in your production org can be a daunting task and there are a number of articles and point of views out there describing how you can embark on that journey to modularization and unlocked packaging. One metadata area to start when examining what makes sense to package first are Profiles. This will create a single, source of truth for Profiles in your version control system. It help alleviate environment permission discrepancies most teams face over the course of their projects. Not only will you have a complete history of changes for your profiles as they grow in size, but it will empower your release managers with the confidence that they are deploying the most up to date "package" of Profiles (and or Permission Sets) across environments. Deployment of the profile packages can be done via source or mdapi deployment commands from the SFDX CLI. If you are looking to for more advanced open-source orchestration tools to facilitate the deployment, there are options too some links below for more information. Either way, with the packaging of profiles and/or permission sets under the "**access management**" packaging concept, you will improve your development and operational workflows and get one step closer to the modularization of your metadata. This is the future of Salesforce Development Best Practices and there is no better opportunity than now to get started.
 
-SFDX CLI provides you some commands to retrieve Profiles via the mdapi or source retrieve commands.
+SF CLI provides you some commands to retrieve Profiles via project retrieve start commands.
 
 ```
-sfdx force:mdapi:retrieve
-```
-
-* Uses Metadata API to retrieve a .zip of XML files that represent metadata from the targeted org
-
-```
-sfdx force:source:retrieve -m "Profile:My Profile"
+sf project retrieve start -m "Profile:My Profile"
 ```
 
 * Retrieves metadata in source format from an org to your local Salesforce DX project
 
-The limitations for these standard SFDX command for Profile retrieval is they are limited to the contents of metadata stored in the source repository and/or the completeness of the manifest file pass as a parameter. If you are dependent on capturing all access permissions to standard objects or metadata within managed packages, the native CLI commands will not capture these in the generated profile metadata file. Also, the source and mdapi retrieve commands may extract additional user permissions in the profiles that potentially cause deployment validation failures across target sandboxes and scratch orgs that do not support the permissions. This is where the open source community comes into play.
+The limitations for these standard SFDX command for Profile retrieval is they are limited to the contents of metadata stored in the source repository and/or the completeness of the manifest file pass as a parameter. If you are dependent on capturing all access permissions to standard objects or metadata within managed packages, the native CLI commands will not capture these in the generated profile metadata file. Also, the project retrieve start commands may extract additional user permissions in the profiles that potentially cause deployment validation failures across target sandboxes and scratch orgs that do not support the permissions. This is where the open source community comes into play.
 
-The two plugin commands that have proven invaluable to managing profiles are **sfpowerkit:source:profile:retrieve** and **sfpowerkit:source:profile:reconcile**. Underneath the hood, the **retrieve** command utilizes the underlying Salesforce Metadata API and data model to query and identify metadata in the target orgs. Once the list has been retrieved, it generates a full profile file comprising of the following supported metadata types: **ApexClass, CustomApplication, CustomObject, CustomField, Layout, ApexPage, CustomTab, RecordType, SystemPermissions**. The **reconcile** command takes the output profile file generated from the retrieve command and then goes through a series of steps to cleanse the file of metadata items that are not present in the target org. This automation ensures that you have a profile metadata file that is in a deployable state to your target org.
+The two cli commands that have proven invaluable to managing profiles are **sfp profile:retrieve** and **sfp profile:reconcile**. Underneath the hood, the **retrieve** command utilizes the underlying Salesforce Metadata API and data model to query and identify metadata in the target orgs. Once the list has been retrieved, it generates a full profile file comprising of the following supported metadata types: **ApexClass, CustomApplication, CustomObject, CustomField, Layout, ApexPage, CustomTab, RecordType, SystemPermissions**. The **reconcile** command takes the output profile file generated from the retrieve command and then goes through a series of steps to cleanse the file of metadata items that are not present in the target org. This automation ensures that you have a profile metadata file that is in a deployable state to your target org.
 
 Once this file is validated to the target org, it can be baseline in your source repository to ensure future additions and modifications are tracked. Repeat the process over again each time you want to obtain a complete set of permissions from your source of truth org for Profiles (eg. Production initially or Developer Sandboxes for new development going forward). You now have the option to leverage the retrieve and reconcile commands to get the latest updates from your shared development environment or incrementally merge additional permissions to the profiles during the course of your agile development process.
 
@@ -41,7 +45,7 @@ Please note that each time you modify the profiles, whether through tooling or m
 3 - Retrieve a baseline of all the profile from Production that you need to track and deploy across environments. At a minimum, this typically consists of your Admin Profile, an Integration Profile, and some additional cloned Standard User Profiles that you have created for your applications in Salesforce.
 
 ```
-sfdx sfpowerkit:source:profile:retrieve -n "Admin, Custom1, Custom2, Custom3" -u orgAlias
+sfp profile:retrieve -n "Admin, Custom1, Custom2, Custom3" -u orgAlias
 ```
 
 4 - The profiles will be retrieved to your default package directory, in this case, "**src-temp**". Move the profiles files to the "**src-access-mgmt**" folder after as this will be the home for the profiles for deployments.
@@ -49,13 +53,13 @@ sfdx sfpowerkit:source:profile:retrieve -n "Admin, Custom1, Custom2, Custom3" -u
 5 - Create a new Developer Sandbox from Production and attempt to validate the package to new sandbox.
 
 ```
-sfdx force:source:deploy -u newDevOrg -c -p src-access-mgmt -w 30 --testlevel=RunLocalTests
+sf project deploy start -o newDevOrg -d src-access-mgmt --dry-run -w 30 --test-level=RunLocalTests
 ```
 
 6 - If there are errors, use the reconcile command to cleanse the profile file to a deployable state.
 
 ```
-sfdx sfpowerkit:source:profile:reconcile -u newDevOrg -f src-access-mgmt/main/default/profiles -n "Admin, Custom1, Custom2, Custom3"
+sfp profile:reconcile -u newDevOrg -f src-access-mgmt/main/default/profiles -n "Admin, Custom1, Custom2, Custom3"
 ```
 
 7 - Commit your code to your repository to baseline the set of profiles.
@@ -80,9 +84,9 @@ Hopefully this blog gets you started on your journey to **DevOps Maturity** and 
 ## References
 
 * [Salesforce Profile Help Article Reference](https://help.salesforce.com/articleView?id=sf.admin\_userprofiles.htm\&type=5)
+* [Permissions Updates | Learn MOAR Spring ’23](https://admin.salesforce.com/blog/2023/permissions-updates-learn-moar-spring-23)
 * [User Profile permission descriptions](https://help.salesforce.com/articleView?id=000332385\&type=1\&mode=1)
 * [Admin's Guide to Profiles & Permissions](https://www.youtube.com/watch?v=7SLxHuc68x8)
-* [SFDX sfpowerkit plugin](https://github.com/Accenture/sfpowerkit)
-* [sfpowerscripts](https://dxatscale.gitbook.io/sfpowerscripts/)
+* [sfpowerscripts (sfp)](https://github.com/dxatscale/sfpowerscripts)
 
 All opinions are my own in this article are of my own and based on experiences using the tools and frameworks out there. Enjoy your DevOps Journey!
