@@ -9,5 +9,5 @@ Scratch orgs helps to create environments at any specific point in time in your 
 {% embed url="https://twitter.com/dxatscale/status/1485701086878961664?s=20&t=evQTq447ilXDZYHotw_www" %}
 
 {% hint style="info" %}
-DX@Scale utilizes scratch org's as preferred mechanism for developer environments, with a scratch org being utilized for each individual work item. Sandboxes with source tracking could be utilized in a similar fashion, However there is limited tooling support.
+DX@Scale utilizes scratch org's as preferred mechanism for developer environments, with a scratch org being utilized for each individual work item. Sandboxes with source tracking could be utilized in a similar fashion, Refer to [Sandbox Pools](pooling-scratch-orgs-1.md)
 {% endhint %}
