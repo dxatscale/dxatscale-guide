@@ -1,7 +1,7 @@
 # Scratch Org Pool Configuration
 
 {% hint style="info" %}
-The latest JSON schema for scratch org pool configuration can be found [here](https://github.com/Accenture/sfpowerscripts/blob/develop/packages/sfpowerscripts-cli/resources/schemas/pooldefinition.schema.json).
+The latest JSON schema for scratch org pool configuration can be found[ here.](https://github.com/dxatscale/sfpowerscripts/blob/main/packages/core/resources/pooldefinition.schema.json)
 {% endhint %}
 
 The `orchestrator:prepare` command accepts a JSON configuration file that defines settings and attributes of the scratch org pool. The properties accepted by the configuration file are shown in the table below.
