@@ -18,7 +18,9 @@ For any issues with our tools, submit an issue at their respective GitHub pages
 
 Want to ask more of any of these practices, ask the team directly on Slack, Click the below link to get an invite
 
-{% embed url="https://launchpass.com/dxatscale" %}
+{% embed url="https://launchpass.com/flxblio" %}
+
+
 
 ## YouTube
 
