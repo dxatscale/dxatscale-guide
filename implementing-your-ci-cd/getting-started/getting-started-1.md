@@ -112,7 +112,7 @@ cat authFile.json
     "id": "XXXXYYY",
     "accessToken": "00D8G0000009g7h!uhuRfGKbvPeubTZKztmFWgrykDuuVdxbffzjjVTqjMyRcV{wb+2JtxsevgKfGiGXRz02jY83uNBsD4CuWHwv.b21KZdFxbTi",
     "instanceUrl": "https://your.salesforce.com",
-    "username": "vu.ha@accenture.com.dxatscale.shareddev",
+    "username": "vu.ha@dxatscale.io.dxatscale.shareddev",
     "clientId": "PlatformCLI",
     "connectedStatus": "Connected",
     "sfdxAuthUrl": "force://PlatformCLI::Cq$QLeQvDxpvUoNKgiDkoTqyVHdeoMupiZvkgHYcdVHsfMaDpqKJNbg#8ZtUpfBuIdVaUD0B21cFav5X2Pzv5X2@yoursalesforce.com",

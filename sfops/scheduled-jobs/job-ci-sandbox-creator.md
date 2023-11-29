@@ -1,7 +1,7 @@
 # Job - CI Sandbox - Creator
 
 {% hint style="info" %}
-Read more about [Sandbox Pooling here](../../environment-management/pooling-scratch-orgs-1.md).
+Read more about [Sandbox Pooling here](../../environment-management/pooling-sandboxes.md).
 {% endhint %}
 
 The CI Sandbox Creator is a specialized GitHub Actions workflow to manage the lifecycle of Salesforce CI sandboxes. The workflow performs two pivotal tasks:
