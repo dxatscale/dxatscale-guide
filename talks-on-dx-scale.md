@@ -4,9 +4,13 @@ description: A curated list of recorded talks on DX@Scale
 
 # Talks on DX@Scale
 
+{% embed url="https://youtu.be/nch-NppqFUI?si=YKQhNubjKHll-SM0" %}
+
 {% embed url="https://youtu.be/I3gPL70kXzs" %}
 The power of integrated development environments
 {% endembed %}
+
+
 
 {% embed url="https://m.youtube.com/watch?v=oCXM-2yPW2g&t=21s" %}
 DX@Scale at Valantic - When click meets code!
