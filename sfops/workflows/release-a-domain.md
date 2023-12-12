@@ -1,6 +1,6 @@
 # Release a Domain
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Release a domain workflow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Release a domain workflow</p></figcaption></figure>
 
 The above diagram describes the "Release a Domain" workflow.  This workflow is triggered by creating an issue or by  clicking the "Initiate Release" from the dashboard. &#x20;
 

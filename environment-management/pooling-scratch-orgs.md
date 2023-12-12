@@ -8,6 +8,10 @@ Scratch Org pools help development teams to solve the time taken to spin up a sc
 
 The following sections deal with the typical pool strategies followed by DX@Scale practitioners.
 
+
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Scratch Org Pools in sfops dev central</p></figcaption></figure>
+
 ## Number of Pools Required
 
 At the minimum, DX@Scale requires 3 pools to be created. These pools serve different purposes:

@@ -2,7 +2,13 @@
 
 DX@Scale advocates for Scratch Org based development. However, we understand for existing projects, to refactor and ensuring your project working on a scratch org can be challenging and one that consumes a fair bit of time. In these circumstances, one can utilize Sandboxes or rather a pool of Sandboxes to act as your validation environments during continuous integration. Sandbox pools can also be utilized as just in time test environments.
 
-Considering the rolling limit of sandboxes,  that you can only delete a sandbox once in 24 hours, the time taken to provision a sandbox, naming restrictions, we have designed the pooling of sandboxes bit differently compared to pooling scratch orgs\
+Considering the rolling limit of sandboxes,  that you can only delete a sandbox once in 24 hours, the time taken to provision a sandbox, naming restrictions, we have designed the pooling of sandboxes bit differently compared to pooling scratch orgs
+
+
+
+<figure><img src="../.gitbook/assets/sandbox-pools.png" alt=""><figcaption><p>Sandbox Pools in sfops dev central</p></figcaption></figure>
+
+\
 \
 Sandbox Pools utilize a provided source sandbox or from production.  When created from production, the sandboxes will be using the 'DEVELOPER' licenses, otherwise the sandboxes in the pools will have the exact same license type as your source sandbox. During pooling, all active users in the sandboxes is deactivated except for the users mentioned in the configuration. This allows&#x20;
 
