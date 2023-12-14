@@ -36,7 +36,7 @@ Under **Name** type in `DEVHUB_SFDX_AUTH_URL` and under **Value**, copy and past
 ![](../../.gitbook/assets/screen-shot-2021-09-09-at-10.45.34-am.png)
 
 {% hint style="info" %}
-Once you have done that repeat this step for all other orgs you have for your organisation such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_AUTH\_URL
+Once you have done that repeat this step for all other orgs you have for your organization such as SIT, QA, STAGING, PROD and so on. this is important when we go through the release stage of the pipelines. e.g. PROD\_SFDX\_AUTH\_URL
 {% endhint %}
 
 ## C. Test your pipelines
