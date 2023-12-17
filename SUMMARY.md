@@ -104,12 +104,9 @@
   * [Job - CI Sandbox - Allocate to Pool](sfops/scheduled-jobs/job-ci-sandbox-allocate-to-pool.md)
   * [Jobs - Report results of all tests](sfops/scheduled-jobs/jobs-report-results-of-all-tests.md)
 * [Workflows](sfops/workflows/README.md)
-  * [Build, Deploy & Publish](sfops/workflows/build-deploy-and-publish.md)
+  * [On Push](sfops/workflows/build-deploy-and-publish.md)
   * [Release a Domain](sfops/workflows/release-a-domain.md)
   * [Hotfix Workflow](sfops/workflows/hotfix-workflow.md)
-* [IssueOps](sfops/issueops/README.md)
-  * [Request a new developer sandbox](sfops/issueops/request-a-new-developer-sandbox.md)
-  * [Request a release branch for hotfix](sfops/issueops/request-a-release-branch-for-hotfix.md)
 
 ## Release Management
 

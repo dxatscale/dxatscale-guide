@@ -4,6 +4,8 @@ description: A curated list of recorded talks on DX@Scale
 
 # Talks on DX@Scale
 
+{% embed url="https://youtu.be/nch-NppqFUI?feature=shared" %}
+
 {% embed url="https://youtu.be/I3gPL70kXzs" %}
 The power of integrated development environments
 {% endembed %}
