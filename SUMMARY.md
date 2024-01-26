@@ -49,7 +49,6 @@
 
 ## 🌲 Environment Management
 
-* [Environment Strategy](environment-management/env-strategy.md)
 * [Connecting Environments](environment-management/connecting-environments.md)
 * [Developer Environments](environment-management/developer-environments.md)
 * [CI Environments](environment-management/ci-environments.md)

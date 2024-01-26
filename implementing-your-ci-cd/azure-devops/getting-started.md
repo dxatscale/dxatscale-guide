@@ -243,7 +243,7 @@ After a few minutes, your repository will be set up in Azure DevOps.
 
 1. Click on **Connect to Feed** and navigate to **npm** section.
 
-
+***
 
 ![Connect to feed](../../.gitbook/assets/azuredevops\_connect-to-feed.png)
 
